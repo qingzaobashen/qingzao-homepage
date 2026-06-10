@@ -1,130 +1,185 @@
 /**
  * Products 组件样式
- * Supabase 风格：12px圆角，1px边框，微阴影
+ * Intercom 风格：大图 + 文字描述交替排列
  */
 
 .products {
-  padding: 96px 24px;
+  padding: 160px 24px 96px;
   background: var(--color-canvas);
-  border-top: 1px solid var(--color-hairline-cool);
 }
 
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: 24px;
-  max-width: 1280px;
+.section-label {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+/* 特性列表 */
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.product-card {
-  background: var(--color-canvas);
-  border: 1px solid var(--color-hairline);
-  border-radius: var(--rounded-lg);
-  padding: 32px;
+.feature-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  animation: fadeIn 0.8s ease-out both;
+}
+
+.feature-item.reverse {
+  direction: rtl;
+}
+
+.feature-item.reverse > * {
+  direction: ltr;
+}
+
+/* 内容区 */
+.feature-content {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  transition: all var(--transition-base);
-  animation: fadeIn 0.5s ease-out both;
+  gap: 20px;
 }
 
-.product-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  transform: translateY(-2px);
+.feature-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  background: var(--color-primary-soft);
+  border-radius: var(--rounded-full);
+  width: fit-content;
 }
 
-.card-top {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.product-icon {
-  font-size: 32px;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--color-canvas-soft);
-  border-radius: var(--rounded-sm);
-}
-
-.product-name {
+.feature-title {
   font-family: var(--font-family);
-  font-size: 22px;
-  font-weight: 500;
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 600;
   line-height: 1.2;
   color: var(--color-ink);
+  letter-spacing: -0.02em;
 }
 
-.product-description {
-  font-size: 16px;
+.feature-description {
+  font-size: 17px;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.7;
   color: var(--color-ink-mute);
-  flex: 1;
+  max-width: 480px;
 }
 
-.product-tags {
+/* 统计数据 */
+.feature-stats {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.tag {
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--color-ink);
-  background: var(--color-canvas-soft);
-  padding: 2px 8px;
-  border-radius: var(--rounded-full);
-  border: 1px solid var(--color-hairline-cool);
-}
-
-.product-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--color-ink);
-  text-decoration: none;
-  padding: 6px 0;
-  transition: all var(--transition-base);
+  gap: 40px;
   margin-top: 8px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-hairline-cool);
 }
 
-.product-link:hover {
-  color: var(--color-ink-mute);
-  gap: 10px;
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.product-link svg {
-  transition: transform var(--transition-base);
+.stat-value {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--color-ink);
+  line-height: 1;
+  letter-spacing: -0.02em;
 }
 
-.product-link:hover svg {
-  transform: translateX(3px);
+.stat-label {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-ink-mute-2);
+}
+
+/* 图片区 */
+.feature-image {
+  position: relative;
+}
+
+.image-frame {
+  position: relative;
+  border-radius: var(--rounded-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  background: var(--color-canvas-soft);
+}
+
+.image-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--rounded-lg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.image-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.image-frame:hover img {
+  transform: scale(1.02);
 }
 
 /* 响应式 */
 @media (max-width: 768px) {
   .products {
-    padding: 64px 16px;
+    padding: 120px 16px 64px;
   }
 
-  .products-grid {
+  .features-list {
+    gap: 64px;
+  }
+
+  .feature-item {
     grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .feature-item.reverse {
+    direction: ltr;
+  }
+
+  .feature-content {
     gap: 16px;
   }
 
-  .product-card {
-    padding: 24px;
+  .feature-description {
+    font-size: 16px;
   }
 
-  .product-name {
-    font-size: 20px;
+  .feature-stats {
+    gap: 24px;
+    margin-top: 4px;
+    padding-top: 20px;
+  }
+
+  .stat-value {
+    font-size: 24px;
   }
 }

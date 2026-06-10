@@ -1,22 +1,29 @@
 /**
  * Footer 组件样式
- * Supabase 风格：白底灰字，简洁链接，细边框分隔
+ * Intercom 风格：深色背景，多列链接
  */
 
 .footer {
-  background: var(--color-canvas);
-  border-top: 1px solid var(--color-hairline);
-  padding: 64px 24px 40px;
+  background: var(--color-canvas-night);
+  padding: 80px 24px 40px;
+  color: #ffffff;
 }
 
-.footer-content {
-  max-width: 1280px;
+.footer .container {
+  max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
 }
 
+/* 上半部分 */
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  padding-bottom: 64px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 品牌区 */
 .footer-brand {
   animation: fadeIn 0.5s ease-out;
 }
@@ -28,66 +35,98 @@
   font-family: var(--font-family);
   font-size: 20px;
   font-weight: 600;
-  color: var(--color-ink);
-  margin-bottom: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  margin-bottom: 16px;
+  transition: opacity var(--transition-base);
 }
 
-.logo-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: var(--rounded-full);
-  background: var(--color-primary);
-  display: inline-block;
+.footer-logo:hover {
+  opacity: 0.8;
+}
+
+.footer-logo svg {
+  color: var(--color-primary);
 }
 
 .footer-desc {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
-  color: var(--color-ink-mute);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 280px;
 }
 
+/* 导航链接 */
 .footer-nav {
-  display: flex;
-  gap: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
   animation: fadeIn 0.5s ease-out 0.1s both;
 }
 
-.nav-group {
+.footer-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-group-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+.footer-group-links {
+  list-style: none;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.nav-title {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--color-ink);
-  margin-bottom: 4px;
-}
-
-.nav-group a {
+.footer-group-links a {
   font-size: 14px;
   font-weight: 400;
-  color: var(--color-ink-mute);
+  color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
   transition: color var(--transition-base);
 }
 
-.nav-group a:hover {
-  color: var(--color-ink);
+.footer-group-links a:hover {
+  color: rgba(255, 255, 255, 0.85);
 }
 
+/* 底部版权 */
 .footer-bottom {
-  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding-top: 32px;
-  border-top: 1px solid var(--color-hairline-cool);
   animation: fadeIn 0.5s ease-out 0.2s both;
 }
 
-.copyright {
+.footer-copyright {
   font-size: 13px;
   font-weight: 400;
-  color: var(--color-ink-mute-2);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-legal {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-legal a {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.footer-legal a:hover {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* 响应式 */
@@ -96,16 +135,20 @@
     padding: 48px 16px 32px;
   }
 
-  .footer-content {
+  .footer-top {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 48px;
+    padding-bottom: 40px;
   }
 
   .footer-nav {
+    grid-template-columns: repeat(2, 1fr);
     gap: 32px;
   }
 
   .footer-bottom {
-    padding-top: 24px;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
   }
 }

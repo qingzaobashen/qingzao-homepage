@@ -1,116 +1,164 @@
 /**
  * About 组件样式
- * Supabase 风格：白底灰字，技能条，极简排版
+ * Intercom 风格：公开信式文字 + 右侧装饰卡片
  */
 
 .about {
-  padding: 96px 24px;
-  background: var(--color-canvas);
+  padding: 120px 24px;
+  background: var(--color-canvas-warm);
   border-top: 1px solid var(--color-hairline-cool);
 }
 
-.about-content {
+.about-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  max-width: 1000px;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 100px;
+  max-width: 1200px;
   margin: 0 auto;
+  align-items: start;
 }
 
-.about-intro {
-  animation: slideInLeft 0.6s ease-out;
+/* 左侧信件 */
+.about-letter {
+  animation: slideInLeft 0.8s ease-out both;
 }
 
-.intro-block {
-  margin-bottom: 40px;
-}
-
-.intro-block:last-child {
-  margin-bottom: 0;
-}
-
-.intro-heading {
-  font-family: var(--font-family);
-  font-size: 22px;
+.letter-label {
+  display: inline-block;
+  font-size: 13px;
   font-weight: 500;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+}
+
+.letter-title {
+  font-family: var(--font-family);
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 600;
   line-height: 1.2;
   color: var(--color-ink);
-  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
 }
 
-.intro-text {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.55;
-  color: var(--color-ink-mute);
-}
-
-.skills-block {
-  animation: slideInRight 0.6s ease-out;
-}
-
-.skills-heading {
-  font-family: var(--font-family);
-  font-size: 22px;
-  font-weight: 500;
-  line-height: 1.2;
-  color: var(--color-ink);
-  margin-bottom: 28px;
-}
-
-.skills-list {
+.letter-body {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.skill-item {
-  animation: fadeIn 0.5s ease-out both;
-}
-
-.skill-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.skill-name {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--color-ink);
-}
-
-.skill-percent {
-  font-size: 13px;
+.letter-body p {
+  font-size: 17px;
   font-weight: 400;
+  line-height: 1.8;
   color: var(--color-ink-mute);
 }
 
-.skill-track {
-  height: 6px;
-  background: var(--color-hairline-cool);
+.letter-signature {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--color-hairline-cool);
+}
+
+.signature-avatar {
+  width: 48px;
+  height: 48px;
   border-radius: var(--rounded-full);
   overflow: hidden;
+  flex-shrink: 0;
 }
 
-.skill-fill {
+.signature-avatar img {
+  width: 100%;
   height: 100%;
-  background: var(--color-primary);
-  border-radius: var(--rounded-full);
-  transition: width 1.2s ease-out;
-  position: relative;
+  object-fit: cover;
 }
 
-.skill-fill::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  animation: shimmer 2s infinite;
+.signature-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.signature-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.signature-role {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-ink-mute-2);
+}
+
+/* 右侧视觉装饰 */
+.about-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: slideInRight 0.8s ease-out 0.2s both;
+}
+
+.visual-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline-cool);
+  border-radius: var(--rounded-lg);
+  transition: all var(--transition-base);
+}
+
+.visual-card:hover {
+  box-shadow: var(--shadow-2);
+  transform: translateY(-2px);
+}
+
+.visual-card-offset {
+  margin-left: 30px;
+}
+
+.visual-icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+  border-radius: var(--rounded-md);
+  flex-shrink: 0;
+}
+
+.visual-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.visual-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.visual-number {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-ink-faint);
+  letter-spacing: 0.05em;
+}
+
+.visual-desc {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-ink);
 }
 
 /* 响应式 */
@@ -119,24 +167,25 @@
     padding: 64px 16px;
   }
 
-  .about-content {
+  .about-layout {
     grid-template-columns: 1fr;
     gap: 48px;
   }
 
-  .intro-block {
-    margin-bottom: 32px;
+  .letter-title {
+    margin-bottom: 24px;
   }
 
-  .intro-text {
-    font-size: 15px;
+  .letter-body p {
+    font-size: 16px;
   }
 
-  .skills-heading {
-    margin-bottom: 20px;
+  .letter-signature {
+    margin-top: 32px;
+    padding-top: 24px;
   }
 
-  .skills-list {
-    gap: 16px;
+  .visual-card-offset {
+    margin-left: 0;
   }
 }

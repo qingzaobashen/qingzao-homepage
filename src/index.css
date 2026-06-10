@@ -1,32 +1,33 @@
 /**
  * 全局样式文件
- * 基于 Supabase 设计系统 - 翡翠绿主色，极简白底，技术感
+ * Intercom 风格 - 浅色主题，白色画布，清晰排版
  */
 
 /* CSS 变量定义 - 色彩系统 */
 :root {
-  /* 品牌色 - 翡翠绿 */
-  --color-primary: #3ecf8e;
-  --color-primary-deep: #24b47e;
-  --color-primary-soft: #4ade80;
+  /* 品牌色 - 深蓝色 */
+  --color-primary: #1f8ded;
+  --color-primary-deep: #0068c9;
+  --color-primary-soft: #e8f4fd;
 
   /* 文字色 */
-  --color-ink: #171717;
-  --color-ink-secondary: #212121;
-  --color-ink-mute: #707070;
-  --color-ink-mute-2: #9a9a9a;
-  --color-ink-faint: #b2b2b2;
+  --color-ink: #1c1c1c;
+  --color-ink-secondary: #333333;
+  --color-ink-mute: #5c5c5c;
+  --color-ink-mute-2: #777777;
+  --color-ink-faint: #999999;
 
   /* 背景色 */
   --color-canvas: #ffffff;
-  --color-canvas-soft: #fafafa;
+  --color-canvas-soft: #f7f7f7;
+  --color-canvas-warm: #faf9f7;
   --color-canvas-night: #1c1c1c;
-  --color-canvas-night-soft: #202020;
+  --color-canvas-night-soft: #2a2a2a;
 
   /* 边框 */
-  --color-hairline: #dfdfdf;
-  --color-hairline-strong: #c7c7c7;
-  --color-hairline-cool: #ededed;
+  --color-hairline: #e5e5e5;
+  --color-hairline-strong: #d0d0d0;
+  --color-hairline-cool: #eeeeee;
 
   /* 阴影层级 */
   --shadow-0: none;
@@ -62,8 +63,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
-  color: #ffffff;
-  background: #000000;
+  color: var(--color-ink);
+  background: var(--color-canvas);
   overflow-x: hidden;
   font-weight: 400;
 }
@@ -100,34 +101,7 @@ a {
   transition: color var(--transition-base);
 }
 
-a:hover {
-  color: var(--color-ink-secondary);
-}
-
-/* 按钮重置 */
-button {
-  cursor: pointer;
-  border: none;
-  outline: none;
-  font-family: inherit;
-  background: transparent;
-}
-
-/* 图片重置 */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* 容器 */
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-/* 通用 section 标题 */
+/* 通用区块标题样式 */
 .section-header {
   text-align: center;
   margin-bottom: 64px;
@@ -135,22 +109,29 @@ img {
 
 .section-title {
   font-family: var(--font-family);
-  font-size: 48px;
+  font-size: clamp(32px, 4vw, 48px);
   font-weight: 500;
-  line-height: 1.1;
-  letter-spacing: -1.44px;
+  line-height: 1.15;
   color: var(--color-ink);
   margin-bottom: 16px;
+  letter-spacing: -0.02em;
 }
 
 .section-subtitle {
   font-size: 18px;
   font-weight: 400;
-  line-height: 1.55;
   color: var(--color-ink-mute);
+  line-height: 1.5;
 }
 
-/* 通用动画 */
+/* 通用容器 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 动画关键帧 */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -165,7 +146,7 @@ img {
 @keyframes slideInLeft {
   from {
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translateX(-24px);
   }
   to {
     opacity: 1;
@@ -176,22 +157,11 @@ img {
 @keyframes slideInRight {
   from {
     opacity: 0;
-    transform: translateX(20px);
+    transform: translateX(24px);
   }
   to {
     opacity: 1;
     transform: translateX(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
   }
 }
 
@@ -200,22 +170,17 @@ img {
   100% { transform: translateX(100%); }
 }
 
-/* 响应式 */
+/* 响应式字体调整 */
 @media (max-width: 768px) {
-  .container {
-    padding: 0 16px;
-  }
-
   .section-header {
-    margin-bottom: 48px;
-  }
-
-  .section-title {
-    font-size: 36px;
-    letter-spacing: -0.72px;
+    margin-bottom: 40px;
   }
 
   .section-subtitle {
     font-size: 16px;
+  }
+
+  .container {
+    padding: 0 16px;
   }
 }

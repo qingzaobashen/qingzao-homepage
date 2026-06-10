@@ -1,33 +1,62 @@
 /**
  * Contact 组件样式
- * Supabase 风格：白色卡片，1px边框，hover微阴影
+ * Intercom 风格：简洁卡片，清晰层级
  */
 
 .contact {
-  padding: 96px 24px;
+  padding: 120px 24px;
   background: var(--color-canvas);
   border-top: 1px solid var(--color-hairline-cool);
 }
 
-.contact-content {
-  max-width: 640px;
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: 1000px;
   margin: 0 auto;
+  align-items: start;
 }
 
-.contact-lead {
-  font-size: 18px;
+/* 左侧介绍 */
+.contact-intro {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.contact-label {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+.contact-title {
+  font-family: var(--font-family);
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.contact-desc {
+  font-size: 17px;
   font-weight: 400;
-  line-height: 1.55;
+  line-height: 1.7;
   color: var(--color-ink-mute);
-  text-align: center;
-  margin-bottom: 48px;
-  animation: fadeIn 0.5s ease-out;
+  max-width: 360px;
 }
 
+/* 右侧联系卡片 */
 .contact-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
+  animation: slideInRight 0.6s ease-out 0.1s both;
 }
 
 .contact-card {
@@ -35,7 +64,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 20px 24px;
+  padding: 24px;
   background: var(--color-canvas);
   border: 1px solid var(--color-hairline);
   border-radius: var(--rounded-lg);
@@ -45,7 +74,7 @@
 }
 
 .contact-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-2);
   transform: translateX(4px);
   border-color: var(--color-hairline-strong);
 }
@@ -56,10 +85,12 @@
   gap: 4px;
 }
 
-.contact-label {
+.contact-type {
   font-size: 12px;
-  font-weight: 400;
-  color: var(--color-ink-mute);
+  font-weight: 500;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .contact-value {
@@ -68,14 +99,29 @@
   color: var(--color-ink);
 }
 
+.contact-note {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-ink-mute-2);
+}
+
 .contact-arrow {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--rounded-full);
+  background: var(--color-canvas-soft);
   color: var(--color-ink-mute);
   transition: all var(--transition-base);
+  flex-shrink: 0;
 }
 
 .contact-card:hover .contact-arrow {
-  color: var(--color-ink);
-  transform: translateX(3px);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  transform: translateX(2px);
 }
 
 /* 响应式 */
@@ -84,12 +130,16 @@
     padding: 64px 16px;
   }
 
-  .contact-lead {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-desc {
     font-size: 16px;
-    margin-bottom: 32px;
   }
 
   .contact-card {
-    padding: 16px 20px;
+    padding: 20px;
   }
 }

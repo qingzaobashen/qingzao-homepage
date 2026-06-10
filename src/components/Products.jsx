@@ -3,25 +3,31 @@ import './Products.css'
 
 /**
  * 产品展示组件
- * Supabase 风格：12px圆角卡片，1px边框，翡翠绿标签
+ * Intercom 风格：大图 + 文字描述交替排列
  */
 function Products() {
-  const products = [
+  const features = [
     {
       id: 1,
-      name: '装修导图',
-      description: '装修知识思维导图工具，帮助用户系统化学习装修知识，规划装修流程。从水电到软装，全流程覆盖。',
-      url: 'https://decoration.qingzao.site',
-      icon: '🏠',
-      tags: ['React', 'Vite', '思维导图']
+      label: '装修导图',
+      title: '系统化装修知识，一张图理清全流程',
+      description: '从水电到软装，装修导图覆盖装修全流程的关键节点。通过可视化的思维导图形式，帮助用户建立系统的装修知识框架，避免遗漏重要环节。',
+      image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80',
+      stats: [
+        { value: '50+', label: '节点覆盖' },
+        { value: '1000+', label: '用户使用' }
+      ]
     },
     {
       id: 2,
-      name: '更多产品',
-      description: '正在开发中，敬请期待更多实用工具...',
-      url: '#',
-      icon: '🚀',
-      tags: ['即将上线']
+      label: '即将推出',
+      title: '更多实用工具正在开发中',
+      description: '我们持续探索生活中的痛点，致力于打造简洁高效的数字产品。每一个工具都经过精心设计和打磨，确保能够真正解决用户的问题。',
+      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80',
+      stats: [
+        { value: '3+', label: '在研产品' },
+        { value: '∞', label: '持续迭代' }
+      ]
     }
   ]
 
@@ -29,43 +35,37 @@ function Products() {
     <section id="products" className="products">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">产品列表</h2>
-          <p className="section-subtitle">精心打造，解决实际问题</p>
+          <span className="section-label">产品</span>
+          <h2 className="section-title">精心打造，解决实际问题</h2>
+          <p className="section-subtitle">
+            每一个产品都源于真实的需求，经过反复打磨和验证
+          </p>
         </div>
 
-        <div className="products-grid">
-          {products.map((product, index) => (
+        <div className="features-list">
+          {features.map((feature, index) => (
             <div
-              key={product.id}
-              className="product-card"
-              style={{ animationDelay: `${index * 0.15}s` }}
+              key={feature.id}
+              className={`feature-item ${index % 2 === 1 ? 'reverse' : ''}`}
             >
-              <div className="card-top">
-                <div className="product-icon">{product.icon}</div>
-                <h3 className="product-name">{product.name}</h3>
+              <div className="feature-content">
+                <span className="feature-label">{feature.label}</span>
+                <h3 className="feature-title">{feature.title}</h3>
+                <p className="feature-description">{feature.description}</p>
+                <div className="feature-stats">
+                  {feature.stats.map((stat, statIndex) => (
+                    <div key={statIndex} className="stat-item">
+                      <span className="stat-value">{stat.value}</span>
+                      <span className="stat-label">{stat.label}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-
-              <p className="product-description">{product.description}</p>
-
-              <div className="product-tags">
-                {product.tags.map((tag, tagIndex) => (
-                  <span key={tagIndex} className="tag">{tag}</span>
-                ))}
+              <div className="feature-image">
+                <div className="image-frame">
+                  <img src={feature.image} alt={feature.title} />
+                </div>
               </div>
-
-              {product.url !== '#' && (
-                <a
-                  href={product.url}
-                  className="product-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span>访问产品</span>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
-              )}
             </div>
           ))}
         </div>

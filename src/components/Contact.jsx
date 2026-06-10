@@ -3,7 +3,7 @@ import './Contact.css'
 
 /**
  * 联系方式组件
- * Supabase 风格：极简卡片，清晰层级
+ * Intercom 风格：简洁卡片，清晰层级
  */
 function Contact() {
   const contacts = [
@@ -11,28 +11,32 @@ function Contact() {
       label: '邮箱',
       value: 'contact@qingzao.site',
       href: 'mailto:contact@qingzao.site',
-      type: 'email'
+      type: 'email',
+      desc: '一般咨询与合作'
     },
     {
       label: 'GitHub',
-      value: 'github.com',
+      value: 'github.com/qingzao',
       href: 'https://github.com',
-      type: 'link'
+      type: 'link',
+      desc: '开源项目与代码'
     }
   ]
 
   return (
     <section id="contact" className="contact">
       <div className="container">
-        <div className="section-header">
-          <h2 className="section-title">联系我</h2>
-          <p className="section-subtitle">期待与您的交流与合作</p>
-        </div>
-
-        <div className="contact-content">
-          <p className="contact-lead">
-            如果你有任何问题、建议或合作意向，欢迎通过以下方式联系我。
-          </p>
+        <div className="contact-layout">
+          <div className="contact-intro">
+            <span className="contact-label">联系我们</span>
+            <h2 className="contact-title">
+              期待与你的交流
+            </h2>
+            <p className="contact-desc">
+              无论是产品反馈、合作意向，还是单纯想聊聊，
+              我们都欢迎你的来信。
+            </p>
+          </div>
 
           <div className="contact-list">
             {contacts.map((item, index) => (
@@ -45,12 +49,13 @@ function Contact() {
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
                 <div className="contact-info">
-                  <span className="contact-label">{item.label}</span>
+                  <span className="contact-type">{item.label}</span>
                   <span className="contact-value">{item.value}</span>
+                  <span className="contact-note">{item.desc}</span>
                 </div>
                 <div className="contact-arrow">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M7 15L13 10L7 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
               </a>
