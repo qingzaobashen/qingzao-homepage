@@ -1,0 +1,95 @@
+/**
+ * Contact 组件样式
+ * Supabase 风格：白色卡片，1px边框，hover微阴影
+ */
+
+.contact {
+  padding: 96px 24px;
+  background: var(--color-canvas);
+  border-top: 1px solid var(--color-hairline-cool);
+}
+
+.contact-content {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.contact-lead {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--color-ink-mute);
+  text-align: center;
+  margin-bottom: 48px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--rounded-lg);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  animation: fadeIn 0.5s ease-out both;
+}
+
+.contact-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateX(4px);
+  border-color: var(--color-hairline-strong);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-label {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-ink-mute);
+}
+
+.contact-value {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.contact-arrow {
+  color: var(--color-ink-mute);
+  transition: all var(--transition-base);
+}
+
+.contact-card:hover .contact-arrow {
+  color: var(--color-ink);
+  transform: translateX(3px);
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .contact {
+    padding: 64px 16px;
+  }
+
+  .contact-lead {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+
+  .contact-card {
+    padding: 16px 20px;
+  }
+}

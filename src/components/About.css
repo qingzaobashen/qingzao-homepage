@@ -1,0 +1,142 @@
+/**
+ * About 组件样式
+ * Supabase 风格：白底灰字，技能条，极简排版
+ */
+
+.about {
+  padding: 96px 24px;
+  background: var(--color-canvas);
+  border-top: 1px solid var(--color-hairline-cool);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-intro {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.intro-block {
+  margin-bottom: 40px;
+}
+
+.intro-block:last-child {
+  margin-bottom: 0;
+}
+
+.intro-heading {
+  font-family: var(--font-family);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-ink);
+  margin-bottom: 12px;
+}
+
+.intro-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--color-ink-mute);
+}
+
+.skills-block {
+  animation: slideInRight 0.6s ease-out;
+}
+
+.skills-heading {
+  font-family: var(--font-family);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-ink);
+  margin-bottom: 28px;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skill-item {
+  animation: fadeIn 0.5s ease-out both;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.skill-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.skill-percent {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-ink-mute);
+}
+
+.skill-track {
+  height: 6px;
+  background: var(--color-hairline-cool);
+  border-radius: var(--rounded-full);
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: var(--rounded-full);
+  transition: width 1.2s ease-out;
+  position: relative;
+}
+
+.skill-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .about {
+    padding: 64px 16px;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .intro-block {
+    margin-bottom: 32px;
+  }
+
+  .intro-text {
+    font-size: 15px;
+  }
+
+  .skills-heading {
+    margin-bottom: 20px;
+  }
+
+  .skills-list {
+    gap: 16px;
+  }
+}

@@ -1,0 +1,111 @@
+/**
+ * Footer 组件样式
+ * Supabase 风格：白底灰字，简洁链接，细边框分隔
+ */
+
+.footer {
+  background: var(--color-canvas);
+  border-top: 1px solid var(--color-hairline);
+  padding: 64px 24px 40px;
+}
+
+.footer-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.footer-brand {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-family);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-bottom: 8px;
+}
+
+.logo-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--rounded-full);
+  background: var(--color-primary);
+  display: inline-block;
+}
+
+.footer-desc {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-ink-mute);
+}
+
+.footer-nav {
+  display: flex;
+  gap: 48px;
+  animation: fadeIn 0.5s ease-out 0.1s both;
+}
+
+.nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nav-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-ink);
+  margin-bottom: 4px;
+}
+
+.nav-group a {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-ink-mute);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.nav-group a:hover {
+  color: var(--color-ink);
+}
+
+.footer-bottom {
+  grid-column: 1 / -1;
+  padding-top: 32px;
+  border-top: 1px solid var(--color-hairline-cool);
+  animation: fadeIn 0.5s ease-out 0.2s both;
+}
+
+.copyright {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-ink-mute-2);
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .footer {
+    padding: 48px 16px 32px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .footer-nav {
+    gap: 32px;
+  }
+
+  .footer-bottom {
+    padding-top: 24px;
+  }
+}

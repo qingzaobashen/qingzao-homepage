@@ -1,0 +1,25 @@
+/**
+ * 主应用样式文件
+ * 极简布局，白色画布为主
+ */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--color-canvas);
+}
+
+main {
+  flex: 1;
+}
+
+/* 页面过渡动画 */
+@keyframes pageLoad {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.app > * {
+  animation: pageLoad 0.4s ease-out;
+}

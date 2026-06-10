@@ -1,0 +1,130 @@
+/**
+ * Products 组件样式
+ * Supabase 风格：12px圆角，1px边框，微阴影
+ */
+
+.products {
+  padding: 96px 24px;
+  background: var(--color-canvas);
+  border-top: 1px solid var(--color-hairline-cool);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--rounded-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all var(--transition-base);
+  animation: fadeIn 0.5s ease-out both;
+}
+
+.product-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.product-icon {
+  font-size: 32px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-canvas-soft);
+  border-radius: var(--rounded-sm);
+}
+
+.product-name {
+  font-family: var(--font-family);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-ink);
+}
+
+.product-description {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-ink-mute);
+  flex: 1;
+}
+
+.product-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-ink);
+  background: var(--color-canvas-soft);
+  padding: 2px 8px;
+  border-radius: var(--rounded-full);
+  border: 1px solid var(--color-hairline-cool);
+}
+
+.product-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-ink);
+  text-decoration: none;
+  padding: 6px 0;
+  transition: all var(--transition-base);
+  margin-top: 8px;
+}
+
+.product-link:hover {
+  color: var(--color-ink-mute);
+  gap: 10px;
+}
+
+.product-link svg {
+  transition: transform var(--transition-base);
+}
+
+.product-link:hover svg {
+  transform: translateX(3px);
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .products {
+    padding: 64px 16px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .product-card {
+    padding: 24px;
+  }
+
+  .product-name {
+    font-size: 20px;
+  }
+}
