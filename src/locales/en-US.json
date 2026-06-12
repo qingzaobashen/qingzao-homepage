@@ -1,0 +1,139 @@
+{
+  "common": {
+    "language": {
+      "zh": "中文",
+      "en": "English"
+    }
+  },
+  "header": {
+    "logo": "Qingzao",
+    "nav": {
+      "products": "Products",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "cta": "Get Started",
+    "menuAriaLabel": "Toggle menu"
+  },
+  "hero": {
+    "title": "Creating Practical Tools",
+    "titleLine2": "Making Work Simpler",
+    "subtitle": "Qingzao focuses on building simple and efficient digital products that help users solve real problems",
+    "actions": {
+      "explore": "Explore Products",
+      "learnMore": "Learn More"
+    },
+    "midText": "Qingzao is an independent studio focused on practical tool development",
+    "midTextLine2": "Committed to simplifying your workflow with technology",
+    "tags": {
+      "decoration": "Decoration",
+      "ai": "AI Tools",
+      "efficiency": "Efficiency Apps",
+      "knowledge": "Knowledge Base",
+      "more": "More"
+    },
+    "productWindow": {
+      "title": "Qingzao Toolbox",
+      "chatName": "Decoration Assistant",
+      "chatStatus": "Running"
+    },
+    "productCaption": "One-stop decoration management tool to keep your renovation organized"
+  },
+  "products": {
+    "label": "Products",
+    "title": "Carefully Crafted, Solving Real Problems",
+    "subtitle": "Every product originates from real needs, refined and validated repeatedly",
+    "items": {
+      "decoration": {
+        "label": "Decoration Map",
+        "title": "Systematic Renovation Knowledge, Clear Process in One Map",
+        "description": "From plumbing to soft furnishings, the decoration map covers key nodes throughout the renovation process. Through visual mind mapping, it helps users establish a systematic knowledge framework and avoid missing important steps.",
+        "stats": {
+          "nodes": "Nodes Covered",
+          "users": "Users"
+        }
+      },
+      "comingSoon": {
+        "label": "Coming Soon",
+        "title": "More Practical Tools in Development",
+        "description": "We continuously explore pain points in daily life, committed to building simple and efficient digital products. Each tool undergoes careful design and refinement to ensure it truly solves user problems.",
+        "stats": {
+          "products": "In Development",
+          "iteration": "Continuous Iteration"
+        }
+      }
+    }
+  },
+  "about": {
+    "label": "Our Philosophy",
+    "title": "Technology Should Make Life Simpler, Not More Complex",
+    "paragraphs": {
+      "p1": "In this era of information overload, we find too many tools designed to be overly complex, actually increasing users' cognitive burden. Qingzao was born from a simple belief: good products should be as natural as air—you almost don't feel its presence, but it's always there helping you.",
+      "p2": "Every product starts from real needs. We don't chase trends or pile on features, we only focus on solving one specific problem and doing it best. The decoration map was born this way—we found that information is scattered and processes are chaotic during renovation, so we created a clear mind map to help users establish a systematic cognitive framework.",
+      "p3": "In the future, we will continue to uphold this philosophy and build more simple and practical tools. If you have similar ideas, we welcome you to connect with us."
+    },
+    "signature": {
+      "name": "Qingzao Team",
+      "role": "Focused on Practical Tool Development"
+    },
+    "visuals": {
+      "discover": "Discover Problems",
+      "refine": "Refine Solutions",
+      "iterate": "Continuous Iteration"
+    }
+  },
+  "contact": {
+    "label": "Contact Us",
+    "title": "Looking Forward to Connecting",
+    "description": "Whether it's product feedback, partnership inquiries, or just want to chat, we welcome your message.",
+    "items": {
+      "email": {
+        "label": "Email",
+        "value": "contact@qingzao.site",
+        "desc": "General Inquiries & Collaboration"
+      },
+      "github": {
+        "label": "GitHub",
+        "value": "github.com/qingzao",
+        "desc": "Open Source Projects & Code"
+      }
+    }
+  },
+  "footer": {
+    "brand": {
+      "logo": "Qingzao",
+      "desc": "Creating practical tools, making work simpler"
+    },
+    "nav": {
+      "products": {
+        "title": "Products",
+        "links": {
+          "decoration": "Decoration Map",
+          "features": "Features",
+          "guide": "User Guide"
+        }
+      },
+      "company": {
+        "title": "Company",
+        "links": {
+          "about": "About Us",
+          "contact": "Contact",
+          "join": "Join Us"
+        }
+      },
+      "resources": {
+        "title": "Resources",
+        "links": {
+          "blog": "Blog",
+          "github": "GitHub",
+          "changelog": "Changelog"
+        }
+      }
+    },
+    "copyright": "© {year} Qingzao. All rights reserved.",
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    }
+  }
+}

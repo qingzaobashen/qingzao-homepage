@@ -1,18 +1,22 @@
 import React from 'react'
+import { useLanguage } from '../hooks/useLanguage'
 import './Hero.css'
 
 /**
  * Intercom 风格 Hero 组件
  * 长图式第一屏：全宽大图背景 + 顶部标题 + 中间过渡文字 + 底部产品界面
+ * 支持多语言显示
  */
 function Hero() {
+  const { t } = useLanguage()
+
   return (
     <section className="hero">
       {/* 背景大图 */}
       <div className="hero-bg">
         <img
           src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80"
-          alt="山景背景"
+          alt={t('hero.title')}
           className="hero-bg-img"
         />
         {/* 渐变遮罩 - 整体暗化 + 底部加深 */}
@@ -22,19 +26,19 @@ function Hero() {
       {/* 顶部内容区 - 标题 + 按钮 */}
       <div className="hero-content">
         <h1 className="hero-title">
-          创造实用工具
+          {t('hero.title')}
           <br />
-          让工作更简单
+          {t('hero.titleLine2')}
         </h1>
         <p className="hero-subtitle">
-          青枣专注于打造简洁高效的数字产品，帮助用户解决实际问题
+          {t('hero.subtitle')}
         </p>
         <div className="hero-actions">
           <a href="#products" className="hero-btn hero-btn-primary">
-            探索产品
+            {t('hero.actions.explore')}
           </a>
           <a href="#about" className="hero-btn hero-btn-secondary">
-            了解更多
+            {t('hero.actions.learnMore')}
           </a>
         </div>
       </div>
@@ -42,16 +46,16 @@ function Hero() {
       {/* 中间过渡文字 */}
       <div className="hero-mid">
         <p className="hero-mid-text">
-          青枣是专注于实用工具开发的独立工作室
+          {t('hero.midText')}
           <br />
-          致力于用技术简化你的工作流程
+          {t('hero.midTextLine2')}
         </p>
         <div className="hero-mid-tags">
-          <span className="mid-tag">装修管理</span>
-          <span className="mid-tag">AI 工具</span>
-          <span className="mid-tag">效率应用</span>
-          <span className="mid-tag">知识库</span>
-          <span className="mid-tag">更多</span>
+          <span className="mid-tag">{t('hero.tags.decoration')}</span>
+          <span className="mid-tag">{t('hero.tags.ai')}</span>
+          <span className="mid-tag">{t('hero.tags.efficiency')}</span>
+          <span className="mid-tag">{t('hero.tags.knowledge')}</span>
+          <span className="mid-tag">{t('hero.tags.more')}</span>
         </div>
       </div>
 
@@ -64,7 +68,7 @@ function Hero() {
               <div className="window-dot yellow" />
               <div className="window-dot green" />
             </div>
-            <div className="window-title">青枣工具箱</div>
+            <div className="window-title">{t('hero.productWindow.title')}</div>
           </div>
           <div className="product-window-body">
             <div className="window-sidebar">
@@ -77,8 +81,8 @@ function Hero() {
               <div className="window-chat-header">
                 <div className="chat-avatar" />
                 <div className="chat-info">
-                  <div className="chat-name">装修管家</div>
-                  <div className="chat-status">运行中</div>
+                  <div className="chat-name">{t('hero.productWindow.chatName')}</div>
+                  <div className="chat-status">{t('hero.productWindow.chatStatus')}</div>
                 </div>
               </div>
               <div className="window-chat-content">
@@ -117,7 +121,7 @@ function Hero() {
           </div>
         </div>
         <p className="hero-product-caption">
-          一站式装修全流程管理工具，让你的装修井井有条
+          {t('hero.productCaption')}
         </p>
       </div>
     </section>

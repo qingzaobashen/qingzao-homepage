@@ -1,0 +1,139 @@
+{
+  "common": {
+    "language": {
+      "zh": "中文",
+      "en": "English"
+    }
+  },
+  "header": {
+    "logo": "青枣",
+    "nav": {
+      "products": "产品",
+      "about": "关于",
+      "contact": "联系"
+    },
+    "cta": "开始使用",
+    "menuAriaLabel": "切换菜单"
+  },
+  "hero": {
+    "title": "创造实用工具",
+    "titleLine2": "让工作更简单",
+    "subtitle": "青枣专注于打造简洁高效的数字产品，帮助用户解决实际问题",
+    "actions": {
+      "explore": "探索产品",
+      "learnMore": "了解更多"
+    },
+    "midText": "青枣是专注于实用工具开发的独立工作室",
+    "midTextLine2": "致力于用技术简化你的工作流程",
+    "tags": {
+      "decoration": "装修管理",
+      "ai": "AI 工具",
+      "efficiency": "效率应用",
+      "knowledge": "知识库",
+      "more": "更多"
+    },
+    "productWindow": {
+      "title": "青枣工具箱",
+      "chatName": "装修管家",
+      "chatStatus": "运行中"
+    },
+    "productCaption": "一站式装修全流程管理工具，让你的装修井井有条"
+  },
+  "products": {
+    "label": "产品",
+    "title": "精心打造，解决实际问题",
+    "subtitle": "每一个产品都源于真实的需求，经过反复打磨和验证",
+    "items": {
+      "decoration": {
+        "label": "装修导图",
+        "title": "系统化装修知识，一张图理清全流程",
+        "description": "从水电到软装，装修导图覆盖装修全流程的关键节点。通过可视化的思维导图形式，帮助用户建立系统的装修知识框架，避免遗漏重要环节。",
+        "stats": {
+          "nodes": "节点覆盖",
+          "users": "用户使用"
+        }
+      },
+      "comingSoon": {
+        "label": "即将推出",
+        "title": "更多实用工具正在开发中",
+        "description": "我们持续探索生活中的痛点，致力于打造简洁高效的数字产品。每一个工具都经过精心设计和打磨，确保能够真正解决用户的问题。",
+        "stats": {
+          "products": "在研产品",
+          "iteration": "持续迭代"
+        }
+      }
+    }
+  },
+  "about": {
+    "label": "我们的理念",
+    "title": "技术应该让生活更简单，而不是更复杂",
+    "paragraphs": {
+      "p1": "在这个信息过载的时代，我们发现太多工具设计得过于复杂，反而增加了用户的认知负担。青枣的诞生源于一个简单的信念：好的产品应该像空气一样自然——你几乎感觉不到它的存在，但它却无时无刻不在帮助你。",
+      "p2": "每一个产品都从真实的需求出发。我们不追逐热点，不堆砌功能，只专注于解决一个具体的问题，并把它做到最好。装修导图就是这样诞生的——我们发现装修过程中信息分散、流程混乱，于是做了一张清晰的思维导图，帮助用户建立系统化的认知框架。",
+      "p3": "未来，我们会继续秉持这个理念，打造更多简洁实用的工具。如果你也有类似的想法，欢迎与我们交流。"
+    },
+    "signature": {
+      "name": "青枣团队",
+      "role": "专注于实用工具开发"
+    },
+    "visuals": {
+      "discover": "发现问题",
+      "refine": "打磨方案",
+      "iterate": "持续迭代"
+    }
+  },
+  "contact": {
+    "label": "联系我们",
+    "title": "期待与你的交流",
+    "description": "无论是产品反馈、合作意向，还是单纯想聊聊，我们都欢迎你的来信。",
+    "items": {
+      "email": {
+        "label": "邮箱",
+        "value": "contact@qingzao.site",
+        "desc": "一般咨询与合作"
+      },
+      "github": {
+        "label": "GitHub",
+        "value": "github.com/qingzao",
+        "desc": "开源项目与代码"
+      }
+    }
+  },
+  "footer": {
+    "brand": {
+      "logo": "青枣",
+      "desc": "创造实用工具，让工作更简单"
+    },
+    "nav": {
+      "products": {
+        "title": "产品",
+        "links": {
+          "decoration": "装修导图",
+          "features": "功能介绍",
+          "guide": "使用指南"
+        }
+      },
+      "company": {
+        "title": "公司",
+        "links": {
+          "about": "关于我们",
+          "contact": "联系方式",
+          "join": "加入我们"
+        }
+      },
+      "resources": {
+        "title": "资源",
+        "links": {
+          "blog": "博客",
+          "github": "GitHub",
+          "changelog": "更新日志"
+        }
+      }
+    },
+    "copyright": "© {year} 青枣. 保留所有权利.",
+    "legal": {
+      "privacy": "隐私政策",
+      "terms": "服务条款"
+    }
+  }
+}

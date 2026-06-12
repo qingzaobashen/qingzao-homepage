@@ -1,32 +1,36 @@
 import React from 'react'
+import { useLanguage } from '../hooks/useLanguage'
 import './Products.css'
 
 /**
  * 产品展示组件
  * Intercom 风格：大图 + 文字描述交替排列
+ * 支持多语言显示
  */
 function Products() {
+  const { t } = useLanguage()
+
   const features = [
     {
       id: 1,
-      label: '装修导图',
-      title: '系统化装修知识，一张图理清全流程',
-      description: '从水电到软装，装修导图覆盖装修全流程的关键节点。通过可视化的思维导图形式，帮助用户建立系统的装修知识框架，避免遗漏重要环节。',
+      label: t('products.items.decoration.label'),
+      title: t('products.items.decoration.title'),
+      description: t('products.items.decoration.description'),
       image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80',
       stats: [
-        { value: '50+', label: '节点覆盖' },
-        { value: '1000+', label: '用户使用' }
+        { value: '50+', label: t('products.items.decoration.stats.nodes') },
+        { value: '1000+', label: t('products.items.decoration.stats.users') }
       ]
     },
     {
       id: 2,
-      label: '即将推出',
-      title: '更多实用工具正在开发中',
-      description: '我们持续探索生活中的痛点，致力于打造简洁高效的数字产品。每一个工具都经过精心设计和打磨，确保能够真正解决用户的问题。',
+      label: t('products.items.comingSoon.label'),
+      title: t('products.items.comingSoon.title'),
+      description: t('products.items.comingSoon.description'),
       image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80',
       stats: [
-        { value: '3+', label: '在研产品' },
-        { value: '∞', label: '持续迭代' }
+        { value: '3+', label: t('products.items.comingSoon.stats.products') },
+        { value: '∞', label: t('products.items.comingSoon.stats.iteration') }
       ]
     }
   ]
@@ -35,10 +39,10 @@ function Products() {
     <section id="products" className="products">
       <div className="container">
         <div className="section-header">
-          <span className="section-label">产品</span>
-          <h2 className="section-title">精心打造，解决实际问题</h2>
+          <span className="section-label">{t('products.label')}</span>
+          <h2 className="section-title">{t('products.title')}</h2>
           <p className="section-subtitle">
-            每一个产品都源于真实的需求，经过反复打磨和验证
+            {t('products.subtitle')}
           </p>
         </div>
 

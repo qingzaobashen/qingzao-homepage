@@ -1,36 +1,39 @@
 import React from 'react'
+import { useLanguage } from '../hooks/useLanguage'
 import './Footer.css'
 
 /**
  * 页脚组件
  * Intercom 风格：深色背景，多列链接，清晰分层
+ * 支持多语言显示
  */
 function Footer() {
+  const { t } = useLanguage()
   const currentYear = new Date().getFullYear()
 
   const footerLinks = [
     {
-      title: '产品',
+      title: t('footer.nav.products.title'),
       links: [
-        { label: '装修导图', href: 'https://decoration.qingzao.site' },
-        { label: '功能介绍', href: '#products' },
-        { label: '使用指南', href: '#' },
+        { label: t('footer.nav.products.links.decoration'), href: 'https://decoration.qingzao.site' },
+        { label: t('footer.nav.products.links.features'), href: '#products' },
+        { label: t('footer.nav.products.links.guide'), href: '#' },
       ]
     },
     {
-      title: '公司',
+      title: t('footer.nav.company.title'),
       links: [
-        { label: '关于我们', href: '#about' },
-        { label: '联系方式', href: '#contact' },
-        { label: '加入我们', href: '#' },
+        { label: t('footer.nav.company.links.about'), href: '#about' },
+        { label: t('footer.nav.company.links.contact'), href: '#contact' },
+        { label: t('footer.nav.company.links.join'), href: '#' },
       ]
     },
     {
-      title: '资源',
+      title: t('footer.nav.resources.title'),
       links: [
-        { label: '博客', href: '#' },
-        { label: 'GitHub', href: 'https://github.com' },
-        { label: '更新日志', href: '#' },
+        { label: t('footer.nav.resources.links.blog'), href: '#' },
+        { label: t('footer.nav.resources.links.github'), href: 'https://github.com' },
+        { label: t('footer.nav.resources.links.changelog'), href: '#' },
       ]
     }
   ]
@@ -46,10 +49,10 @@ function Footer() {
                 <circle cx="12" cy="12" r="10"/>
                 <path d="M8 12h8M12 8v8"/>
               </svg>
-              <span>青枣</span>
+              <span>{t('footer.brand.logo')}</span>
             </a>
             <p className="footer-desc">
-              创造实用工具，让工作更简单
+              {t('footer.brand.desc')}
             </p>
           </div>
 
@@ -79,11 +82,11 @@ function Footer() {
         {/* 底部版权 */}
         <div className="footer-bottom">
           <p className="footer-copyright">
-            © {currentYear} 青枣. 保留所有权利.
+            {t('footer.copyright', { year: currentYear })}
           </p>
           <div className="footer-legal">
-            <a href="#">隐私政策</a>
-            <a href="#">服务条款</a>
+            <a href="#">{t('footer.legal.privacy')}</a>
+            <a href="#">{t('footer.legal.terms')}</a>
           </div>
         </div>
       </div>

@@ -1,25 +1,29 @@
 import React from 'react'
+import { useLanguage } from '../hooks/useLanguage'
 import './Contact.css'
 
 /**
  * 联系方式组件
  * Intercom 风格：简洁卡片，清晰层级
+ * 支持多语言显示
  */
 function Contact() {
+  const { t } = useLanguage()
+
   const contacts = [
     {
-      label: '邮箱',
-      value: 'contact@qingzao.site',
+      label: t('contact.items.email.label'),
+      value: t('contact.items.email.value'),
       href: 'mailto:contact@qingzao.site',
       type: 'email',
-      desc: '一般咨询与合作'
+      desc: t('contact.items.email.desc')
     },
     {
-      label: 'GitHub',
-      value: 'github.com/qingzao',
+      label: t('contact.items.github.label'),
+      value: t('contact.items.github.value'),
       href: 'https://github.com',
       type: 'link',
-      desc: '开源项目与代码'
+      desc: t('contact.items.github.desc')
     }
   ]
 
@@ -28,13 +32,12 @@ function Contact() {
       <div className="container">
         <div className="contact-layout">
           <div className="contact-intro">
-            <span className="contact-label">联系我们</span>
+            <span className="contact-label">{t('contact.label')}</span>
             <h2 className="contact-title">
-              期待与你的交流
+              {t('contact.title')}
             </h2>
             <p className="contact-desc">
-              无论是产品反馈、合作意向，还是单纯想聊聊，
-              我们都欢迎你的来信。
+              {t('contact.description')}
             </p>
           </div>
 

@@ -1,0 +1,140 @@
+/**
+ * 语言切换组件样式
+ * Intercom 风格：简洁、现代、响应式
+ */
+
+/* 语言切换器容器 */
+.language-switcher {
+  position: relative;
+  display: inline-block;
+}
+
+/* 语言切换按钮 */
+.language-switcher-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  color: #1a1a1a;
+}
+
+.language-switcher-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.language-switcher-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+/* 语言图标 */
+.language-icon {
+  flex-shrink: 0;
+}
+
+/* 语言文本 */
+.language-text {
+  font-weight: 500;
+}
+
+/* 下拉箭头 */
+.language-arrow {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.language-switcher-btn[aria-expanded="true"] .language-arrow {
+  transform: rotate(180deg);
+}
+
+/* 语言下拉菜单 */
+.language-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 120px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 4px 0;
+  margin: 0;
+  z-index: 1000;
+  animation: dropdownFadeIn 0.2s ease;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 语言选项 */
+.language-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.language-option:hover {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.language-option.active {
+  background: rgba(59, 130, 246, 0.05);
+  color: #3b82f6;
+}
+
+/* 选项名称 */
+.option-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* 选中标记 */
+.option-check {
+  flex-shrink: 0;
+  color: #3b82f6;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .language-switcher-btn {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .language-text {
+    display: none;
+  }
+
+  .language-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .language-dropdown {
+    right: 0;
+    min-width: 100px;
+  }
+
+  .language-option {
+    padding: 10px 12px;
+  }
+}
