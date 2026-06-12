@@ -27,7 +27,7 @@ function Hero() {
           让工作更简单
         </h1>
         <p className="hero-subtitle">
-          轻造专注于打造简洁高效的数字产品，帮助用户解决实际问题
+          青枣专注于打造简洁高效的数字产品，帮助用户解决实际问题
         </p>
         <div className="hero-actions">
           <a href="#products" className="hero-btn hero-btn-primary">
@@ -42,7 +42,7 @@ function Hero() {
       {/* 中间过渡文字 */}
       <div className="hero-mid">
         <p className="hero-mid-text">
-          轻造是专注于实用工具开发的独立工作室
+          青枣是专注于实用工具开发的独立工作室
           <br />
           致力于用技术简化你的工作流程
         </p>
@@ -64,7 +64,7 @@ function Hero() {
               <div className="window-dot yellow" />
               <div className="window-dot green" />
             </div>
-            <div className="window-title">轻造工具箱</div>
+            <div className="window-title">青枣工具箱</div>
           </div>
           <div className="product-window-body">
             <div className="window-sidebar">

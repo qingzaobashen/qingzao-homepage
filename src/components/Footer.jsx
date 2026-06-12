@@ -46,7 +46,7 @@ function Footer() {
                 <circle cx="12" cy="12" r="10"/>
                 <path d="M8 12h8M12 8v8"/>
               </svg>
-              <span>轻造</span>
+              <span>青枣</span>
             </a>
             <p className="footer-desc">
               创造实用工具，让工作更简单
@@ -79,7 +79,7 @@ function Footer() {
         {/* 底部版权 */}
         <div className="footer-bottom">
           <p className="footer-copyright">
-            © {currentYear} 轻造. 保留所有权利.
+            © {currentYear} 青枣. 保留所有权利.
           </p>
           <div className="footer-legal">
             <a href="#">隐私政策</a>

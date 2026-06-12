@@ -2,8 +2,8 @@
 ### 一、项目架构规划
 
 ```
-qingzao.site (主域名 - 个人主页)
-├── 个人介绍
+qingzao.site (主域名 - 工作室主页)
+├── 工作室介绍
 ├── 产品列表
 │   ├── 装修导图 → decoration.qingzao.site
 │   └── 其他产品...
@@ -13,9 +13,9 @@ decoration.qingzao.site (子域名 - 装修导图)
 └── 装修导图应用
 ```
 
-#### 创建个人主页项目
+#### 创建工作室主页项目
 
-我帮你创建一个简单的个人主页项目模板。请在 `d:\workT\wx_smallPrograms` 目录下创建新项目：
+我帮你创建一个简单的工作室主页项目模板。请在 `d:\workT\wx_smallPrograms` 目录下创建新项目：
 
 **1.1 创建项目结构**
 
@@ -31,7 +31,7 @@ cd qingzao-homepage
 {
   "name": "qingzao-homepage",
   "version": "1.0.0",
-  "description": "轻造个人主页 - 展示产品与个人介绍",
+  "description": "青枣工作室主页 - 展示产品与工作室介绍",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -72,9 +72,9 @@ export default defineConfig({
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="轻造 - 个人主页，展示创新产品与解决方案">
-  <meta name="keywords" content="轻造,个人主页,产品展示,装修导图">
-  <title>轻造 - 个人主页</title>
+  <meta name="description" content="青枣 - 工作室主页，展示创新产品与解决方案">
+  <meta name="keywords" content="青枣,工作室主页,产品展示,装修导图">
+  <title>青枣 - 工作室主页</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 <body>
@@ -112,8 +112,8 @@ import Footer from './components/Footer'
 import './App.css'
 
 /**
- * 个人主页主应用组件
- * 展示个人介绍、产品列表、联系方式等信息
+ * 工作室主页主应用组件
+ * 展示工作室介绍、产品列表、联系方式等信息
  */
 function App() {
   return (
@@ -228,7 +228,7 @@ function Header() {
     <header className="header">
       <div className="container header-content">
         <div className="logo">
-          <a href="/">轻造</a>
+          <a href="/">青枣</a>
         </div>
         <nav className="nav">
           <a href="#products">产品</a>
@@ -303,14 +303,14 @@ import './Hero.css'
 
 /**
  * 首页英雄区组件
- * 展示个人介绍和主要信息
+ * 展示工作室介绍和主要信息
  */
 function Hero() {
   return (
     <section className="hero">
       <div className="container hero-content">
         <h1 className="hero-title">
-          欢迎来到<span className="highlight">轻造</span>
+          欢迎来到<span className="highlight">青枣</span>
         </h1>
         <p className="hero-subtitle">
           专注于创造实用的数字产品，让生活更简单
@@ -580,7 +580,7 @@ import './About.css'
 
 /**
  * 关于我组件
- * 展示个人介绍和技能
+ * 展示工作室介绍和技能
  */
 function About() {
   return (

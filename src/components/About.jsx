@@ -19,7 +19,7 @@ function About() {
             <div className="letter-body">
               <p>
                 在这个信息过载的时代，我们发现太多工具设计得过于复杂，反而增加了用户的认知负担。
-                轻造的诞生源于一个简单的信念：好的产品应该像空气一样自然——你几乎感觉不到它的存在，
+                青枣的诞生源于一个简单的信念：好的产品应该像空气一样自然——你几乎感觉不到它的存在，
                 但它却无时无刻不在帮助你。
               </p>
               <p>
@@ -40,7 +40,7 @@ function About() {
                 />
               </div>
               <div className="signature-info">
-                <span className="signature-name">轻造团队</span>
+                <span className="signature-name">青枣团队</span>
                 <span className="signature-role">专注于实用工具开发</span>
               </div>
             </div>

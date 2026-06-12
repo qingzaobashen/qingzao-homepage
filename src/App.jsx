@@ -8,8 +8,8 @@ import Footer from './components/Footer'
 import './App.css'
 
 /**
- * 个人主页主应用组件
- * 展示个人介绍、产品列表、联系方式等信息
+ * 工作室主页主应用组件
+ * 展示工作室介绍、产品列表、联系方式等信息
  */
 function App() {
   return (

@@ -14,8 +14,8 @@
 ### 一、项目架构规划
 
 ```
-qingzao.site (主域名 - 个人主页)
-├── 个人介绍
+qingzao.site (主域名 - 工作室主页)
+├── 工作室介绍
 ├── 产品列表
 │   ├── 装修导图 → decoration.qingzao.site
 │   └── 其他产品...
@@ -40,9 +40,9 @@ decoration.qingzao.site (子域名 - 装修导图)
 
 ### 三、详细部署步骤
 
-#### 步骤 1：创建个人主页项目
+#### 步骤 1：创建工作室主页项目
 
-我已经为你创建了完整的个人主页项目模板，包含以下文件：
+我已经为你创建了完整的工作室主页项目模板，包含以下文件：
 
 **项目结构：**
 ```
@@ -211,7 +211,7 @@ import { FaBars, FaTimes, FaUser, FaCrown } from 'react-icons/fa';
 
 ### 五、Vercel 部署步骤
 
-#### 5.1 部署个人主页项目
+#### 5.1 部署工作室主页项目
 
 **步骤 1：安装 Vercel CLI**
 
@@ -225,7 +225,7 @@ npm install -g vercel
 vercel login
 ```
 
-**步骤 3：部署个人主页项目**
+**步骤 3：部署工作室主页项目**
 
 ```bash
 cd d:\workT\wx_smallPrograms\qingzao-homepage
@@ -284,13 +284,13 @@ vercel domains add www.decoration.qingzao.site
 
 #### 6.1 将项目推送到 GitHub
 
-**个人主页项目：**
+**工作室主页项目：**
 
 ```bash
 cd d:\workT\wx_smallPrograms\qingzao-homepage
 git init
 git add .
-git commit -m "Initial commit: 个人主页"
+git commit -m "Initial commit: 工作室主页"
 git branch -M main
 git remote add origin https://github.com/你的用户名/qingzao-homepage.git
 git push -u origin main
@@ -352,7 +352,7 @@ sudo apt install certbot python3-certbot-nginx -y
 
 #### 7.2 构建项目
 
-**个人主页项目：**
+**工作室主页项目：**
 
 ```bash
 cd d:\workT\wx_smallPrograms\qingzao-homepage
@@ -373,7 +373,7 @@ npm run build
 使用 FTP 或 SCP 上传 `dist` 目录到服务器：
 
 ```bash
-# 个人主页
+# 工作室主页
 scp -r dist/* user@your-server:/var/www/qingzao-homepage/
 
 # 装修导图
@@ -382,7 +382,7 @@ scp -r dist/* user@your-server:/var/www/decoration-mindmap/
 
 #### 7.4 配置 Nginx
 
-**创建个人主页配置：**
+**创建工作室主页配置：**
 
 ```nginx
 # /etc/nginx/sites-available/qingzao.site
@@ -477,7 +477,7 @@ sudo systemctl restart nginx
 使用 Certbot 自动配置 Let's Encrypt SSL 证书：
 
 ```bash
-# 为个人主页配置 SSL
+# 为工作室主页配置 SSL
 sudo certbot --nginx -d qingzao.site -d www.qingzao.site
 
 # 为装修导图配置 SSL
@@ -662,7 +662,7 @@ location ~* \.(jpg|jpeg|png|gif|ico|css|js|svg|woff|woff2|ttf|eot|webp)$ {
 
 我已经为你提供了完整的域名配置和部署方案，包括：
 
-1. ✅ **个人主页项目模板** - 完整的 React + Vite 项目
+1. ✅ **工作室主页项目模板** - 完整的 React + Vite 项目
 2. ✅ **装修导图项目修改** - 添加返回主页链接
 3. ✅ **DNS 解析配置** - 详细的 DNS 记录设置
 4. ✅ **Vercel 部署方案** - 推荐的部署方式
@@ -672,7 +672,7 @@ location ~* \.(jpg|jpeg|png|gif|ico|css|js|svg|woff|woff2|ttf|eot|webp)$ {
 8. ✅ **监控与维护** - 长期运维建议
 
 **推荐部署流程：**
-1. 先按照上面的代码创建个人主页项目
+1. 先按照上面的代码创建工作室主页项目
 2. 接受装修导图项目的修改（添加返回主页链接）
 3. 选择 Vercel 部署（更简单）
 4. 配置 DNS 解析
