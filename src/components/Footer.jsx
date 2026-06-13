@@ -1,35 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom'
 import { useLanguage } from '../hooks/useLanguage'
-import LegalModal from './LegalModal'
 import './Footer.css'
 
 /**
  * 页脚组件
  * Intercom 风格：深色背景，多列链接，清晰分层
- * 支持多语言显示，集成隐私政策和服务条款模态窗口
+ * 支持多语言显示，隐私政策和服务条款使用路由跳转
  */
 function Footer() {
   const { t } = useLanguage()
   const currentYear = new Date().getFullYear()
-
-  /** 当前打开的法律文档类型：privacy | terms | null */
-  const [legalType, setLegalType] = useState(null)
-
-  /**
-   * 打开法律文档模态窗口
-   * @param {'privacy'|'terms'} type - 文档类型
-   */
-  const handleLegalClick = (type) => (e) => {
-    e.preventDefault()
-    setLegalType(type)
-  }
-
-  /**
-   * 关闭法律文档模态窗口
-   */
-  const handleCloseModal = () => {
-    setLegalType(null)
-  }
 
   const footerLinks = [
     {
@@ -105,14 +86,11 @@ function Footer() {
             {t('footer.copyright', { year: currentYear })}
           </p>
           <div className="footer-legal">
-            <a href="#" onClick={handleLegalClick('privacy')}>{t('footer.legal.privacy')}</a>
-            <a href="#" onClick={handleLegalClick('terms')}>{t('footer.legal.terms')}</a>
+            <Link to="/privacy">{t('footer.legal.privacy')}</Link>
+            <Link to="/terms">{t('footer.legal.terms')}</Link>
           </div>
         </div>
       </div>
-
-      {/* 法律文档模态窗口 */}
-      <LegalModal type={legalType} onClose={handleCloseModal} />
     </footer>
   )
 }
