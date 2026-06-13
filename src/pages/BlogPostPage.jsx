@@ -184,6 +184,59 @@ function BlogPostPage() {
     )
   }
 
+  /**
+   * 生成 JSON-LD 结构化数据
+   * @returns {string} JSON-LD script 标签
+   */
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline: post.title,
+        description: post.excerpt,
+        datePublished: post.date,
+        author: {
+          '@type': 'Organization',
+          name: '青枣工作室',
+          url: 'https://qingzao.site',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: '青枣工作室',
+          url: 'https://qingzao.site',
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': `https://qingzao.site/blog/${post.slug}`,
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: language === 'zh-CN' ? '首页' : 'Home',
+            item: 'https://qingzao.site/',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: language === 'zh-CN' ? '博客' : 'Blog',
+            item: 'https://qingzao.site/blog',
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: post.title,
+            item: `https://qingzao.site/blog/${post.slug}`,
+          },
+        ],
+      },
+    ],
+  }
+
   return (
     <div className="blog-post-page">
       <SEO
@@ -191,6 +244,11 @@ function BlogPostPage() {
         description={post.excerpt}
         canonical={`/blog/${post.slug}`}
         type="article"
+      />
+      {/* JSON-LD 结构化数据 */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       {/* 文章头部 */}
       <section className="post-header">

@@ -235,7 +235,10 @@
         {
           "title": "5. Use of Cookies",
           "content": [
-            "We use cookies and similar technologies to enhance your user experience. Cookies are small text files stored on your device that help us remember your preferences (such as language selection). You can manage or delete cookies through your browser settings, but this may affect the functionality of some features."
+            "We use cookies and similar technologies to enhance your user experience. Cookies are small text files stored on your device that help us remember your preferences (such as language selection).",
+            "We also use third-party services such as Google Analytics to analyze website traffic and usage patterns. Google may use cookies to collect and analyze information about website usage. Google AdSense may use DoubleClick cookies to serve personalized advertisements.",
+            "You can manage or disable cookies through your browser settings. You can also opt out of personalized advertising by visiting Google's Ads Settings page (https://adssettings.google.com). Disabling cookies may affect the functionality of some features.",
+            "By continuing to use this website, you consent to our use of cookies and the collection and use of your data by us and third parties."
           ]
         },
         {
@@ -465,5 +468,16 @@
         "answer": "We take data security seriously. All data transfers use encryption protocols. Please refer to our Privacy Policy for details."
       }
     }
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "desc": "Sorry, the page you are looking for does not exist or has been moved.",
+    "goHome": "Go Home",
+    "goBlog": "Browse Blog"
+  },
+  "cookieConsent": {
+    "text": "This website uses cookies to enhance your experience. By continuing to use this site, you consent to our use of cookies.",
+    "learnMore": "Learn More",
+    "accept": "Accept"
   }
 }

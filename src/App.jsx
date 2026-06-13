@@ -16,6 +16,7 @@ import DisclaimerPage from './pages/DisclaimerPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import NotFoundPage from './pages/NotFoundPage'
+import CookieConsent from './components/CookieConsent'
 import './App.css'
 
 /**
@@ -62,6 +63,7 @@ function App() {
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
+        <CookieConsent />
       </div>
     </LanguageProvider>
   )
