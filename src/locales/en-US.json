@@ -17,8 +17,8 @@
   },
   "hero": {
     "title": "Creating Practical Tools",
-    "titleLine2": "Making Work Simpler",
-    "subtitle": "Qingzao focuses on building simple and efficient digital products that help users solve real problems",
+    "titleLine2": "Making Work and Life Simpler",
+    "subtitle": "Qingzao Studio focuses on building simple and efficient digital products that help users solve real problems",
     "actions": {
       "explore": "Explore Products",
       "learnMore": "Learn More"
@@ -26,7 +26,8 @@
     "midText": "Qingzao is an independent studio focused on practical tool development",
     "midTextLine2": "Committed to simplifying your workflow with technology",
     "tags": {
-      "decoration": "Decoration",
+      "decoration": "Decoration Map",
+      "imageTrimer": "Image Trimmer",
       "ai": "AI Tools",
       "efficiency": "Efficiency Apps",
       "knowledge": "Knowledge Base",
@@ -34,10 +35,56 @@
     },
     "productWindow": {
       "title": "Qingzao Toolbox",
-      "chatName": "Decoration Assistant",
+      "chatName": "Decoration Map",
       "chatStatus": "Running"
     },
-    "productCaption": "One-stop decoration management tool to keep your renovation organized"
+    "productCaption": "One-stop knowledge mind map tool for the entire decoration process, keeping your renovation organized",
+    "sidebar": {
+      "decoration": "Decoration",
+      "trimmer": "Trimmer"
+    },
+    "chat": {
+      "decoration": {
+        "name": "Decoration Assistant",
+        "status": "Online · Ready"
+      },
+      "trimmer": {
+        "name": "Trimmer Assistant",
+        "status": "Online · AI Model Loaded"
+      }
+    },
+    "inputPlaceholder": {
+      "decoration": "One-stop knowledge mind map tool for the entire decoration process, keeping your renovation organized",
+      "trimmer": "AI-powered image trimming, one-click removal of plain backgrounds, export PNGs with transparency"
+    },
+    "panel": {
+      "decoration": {
+        "title": "Decoration Flow Map",
+        "images": ["/images/decoration_page_en.png","/images/decoration_page1.png"],
+        "description": "A systematic walkthrough of the entire decoration process, covering preparation, HVAC & doors/windows, hard installation, and soft furnishing stages, with practical tools including budget tables, contract templates, and material selection guides.",
+        "features": [
+          "📋 1.1 Renovation Fundamentals",
+          "🏠 1.2 Decoration Style Categories",
+          "📑 1.3 Home Inspection & 1.4 Contract Signing",
+          "🛠️ 1.5 Kickoff Prep & Material Selection",
+          "🚪 Stage 2 HVAC & Doors · Stage 3 Hard Install"
+        ],
+        "tags": ["Decoration Map", "Process Guide", "Knowledge Base"]
+      },
+      "trimmer": {
+        "title": "White-Background Image Trimmer",
+        "images": ["/images/image_trimer_en.png"],
+        "description": "AI-powered image trimming that removes plain backgrounds in one click. Four modes—Smart Cutout, Magic Wand, Brush Stroke, and Shape Cutout—preserve fine subject details and export PNGs with transparency.",
+        "features": [
+          "🤖 AI model ready · advanced model available",
+          "🪄 Smart Cutout / Magic Wand / Brush Stroke",
+          "🔲 Shape Cutout: quickly frame the subject",
+          "📏 Min region area · post-process fine-tuning",
+          "💾 Undo / Redo / Re-upload / Download"
+        ],
+        "tags": ["AI Trimmer", "Background Replace", "PNG Transparency"]
+      }
+    }
   },
   "products": {
     "label": "Products",
@@ -47,20 +94,24 @@
       "decoration": {
         "label": "Decoration Map",
         "title": "Systematic Renovation Knowledge, Clear Process in One Map",
+        "images": ["/images/decoration_page_en.png","/images/decoration_page1.png"],
         "description": "From plumbing to soft furnishings, the decoration map covers key nodes throughout the renovation process. Through visual mind mapping, it helps users establish a systematic knowledge framework and avoid missing important steps.",
         "stats": {
           "nodes": "Nodes Covered",
           "users": "Users"
-        }
+        },
+        "button": "Visit Decoration Site"
       },
-      "comingSoon": {
-        "label": "Coming Soon",
-        "title": "More Practical Tools in Development",
-        "description": "We continuously explore pain points in daily life, committed to building simple and efficient digital products. Each tool undergoes careful design and refinement to ensure it truly solves user problems.",
+      "trimmer": {
+        "label": "White-Background Image Trimmer",
+        "title": "AI-Powered Image Trimming, One-Click Background Removal",
+        "images": ["/images/image_trimer_en.png"],
+        "description": "Intelligently detect subject edges and remove plain backgrounds in one click. Supports four modes—Smart Cutout, Magic Wand, Brush Stroke, and Shape Cutout—preserving fine details and exporting PNGs with transparency. Ideal for product photos, ID pictures, and design drafts.",
         "stats": {
-          "products": "In Development",
-          "iteration": "Continuous Iteration"
-        }
+          "modes": "Cutout Modes",
+          "output": "Transparent Output"
+        },
+        "button": "Visit Trimmer Site"
       }
     }
   },
@@ -89,13 +140,13 @@
     "items": {
       "email": {
         "label": "Email",
-        "value": "contact@qingzao.site",
+        "value": "xiayiye580@gmail.com",
         "desc": "General Inquiries & Collaboration"
       },
-      "github": {
-        "label": "GitHub",
-        "value": "github.com/qingzao",
-        "desc": "Open Source Projects & Code"
+      "Twitter": {
+        "label": "Twitter",
+        "value": "twitter.com/qingzao (Temporary Unavailable)",
+        "desc": "Follow Us on Twitter"
       }
     }
   },
@@ -125,7 +176,7 @@
         "title": "Resources",
         "links": {
           "blog": "Blog",
-          "github": "GitHub",
+          "twitter": "Twitter",
           "changelog": "Changelog"
         }
       }

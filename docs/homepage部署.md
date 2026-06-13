@@ -85,7 +85,7 @@ toolName: show_diff
 status: success
           
             
-filePath: d:\workT\wx_smallPrograms\Decorations\DecorationMindMap_github\src\components\Sidebar.jsx
+filePath: d:\workT\wx_smallPrograms\Decorations\DecorationMindMap_Twitter\src\components\Sidebar.jsx
           
 changes: 
               
@@ -171,7 +171,7 @@ toolName: show_diff
 status: success
           
             
-filePath: d:\workT\wx_smallPrograms\Decorations\DecorationMindMap_github\src\components\Sidebar.jsx
+filePath: d:\workT\wx_smallPrograms\Decorations\DecorationMindMap_Twitter\src\components\Sidebar.jsx
           
 changes: 
               
@@ -263,7 +263,7 @@ decoration.qingzao.site
 **步骤 2：部署项目**
 
 ```bash
-cd d:\workT\wx_smallPrograms\Decorations\DecorationMindMap_github
+cd d:\workT\wx_smallPrograms\Decorations\DecorationMindMap_Twitter
 vercel
 ```
 
@@ -280,9 +280,9 @@ vercel domains add www.decoration.qingzao.site
 
 ---
 
-### 六、GitHub 自动部署（推荐）
+### 六、Twitter 自动部署（推荐）
 
-#### 6.1 将项目推送到 GitHub
+#### 6.1 将项目推送到 Twitter
 
 **工作室主页项目：**
 
@@ -292,14 +292,14 @@ git init
 git add .
 git commit -m "Initial commit: 工作室主页"
 git branch -M main
-git remote add origin https://github.com/你的用户名/qingzao-homepage.git
+git remote add origin https://Twitter.com/你的用户名/qingzao-homepage.git
 git push -u origin main
 ```
 
 **装修导图项目：**
 
 ```bash
-cd d:\workT\wx_smallPrograms\Decorations\DecorationMindMap_github
+cd d:\workT\wx_smallPrograms\Decorations\DecorationMindMap_Twitter
 git add .
 git commit -m "Update: 添加返回主页链接"
 git push
@@ -310,7 +310,7 @@ git push
 1. 登录 [Vercel](https://vercel.com)
 2. 点击 "New Project"
 3. 选择 "Import Git Repository"
-4. 选择你的 GitHub 仓库
+4. 选择你的 Twitter 仓库
 5. 配置项目设置
 6. 点击 "Deploy"
 
@@ -363,7 +363,7 @@ npm run build
 **装修导图项目：**
 
 ```bash
-cd d:\workT\wx_smallPrograms\Decorations\DecorationMindMap_github
+cd d:\workT\wx_smallPrograms\Decorations\DecorationMindMap_Twitter
 npm install
 npm run build
 ```

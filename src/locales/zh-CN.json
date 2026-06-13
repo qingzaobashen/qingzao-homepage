@@ -17,8 +17,8 @@
   },
   "hero": {
     "title": "创造实用工具",
-    "titleLine2": "让工作更简单",
-    "subtitle": "青枣专注于打造简洁高效的数字产品，帮助用户解决实际问题",
+    "titleLine2": "让工作与生活更简单",
+    "subtitle": "青枣工作室专注于打造简洁高效的数字产品，帮助用户解决实际问题",
     "actions": {
       "explore": "探索产品",
       "learnMore": "了解更多"
@@ -26,7 +26,8 @@
     "midText": "青枣是专注于实用工具开发的独立工作室",
     "midTextLine2": "致力于用技术简化你的工作流程",
     "tags": {
-      "decoration": "装修管理",
+      "decoration": "装修思维导图工具",
+      "imageTrimer": "白底抠图工具",
       "ai": "AI 工具",
       "efficiency": "效率应用",
       "knowledge": "知识库",
@@ -34,10 +35,56 @@
     },
     "productWindow": {
       "title": "青枣工具箱",
-      "chatName": "装修管家",
+      "chatName": "装修思维导图工具",
       "chatStatus": "运行中"
     },
-    "productCaption": "一站式装修全流程管理工具，让你的装修井井有条"
+    "productCaption": "一站式装修全流程知识导图工具，让你的装修井井有条",
+    "sidebar": {
+      "decoration": "装修导图",
+      "trimmer": "白底抠图"
+    },
+    "chat": {
+      "decoration": {
+        "name": "装修小助手",
+        "status": "在线 · 准备就绪"
+      },
+      "trimmer": {
+        "name": "抠图小助手",
+        "status": "在线 · AI 模型已加载"
+      }
+    },
+    "inputPlaceholder": {
+      "decoration": "一站式装修全流程知识导图工具，让你的装修井井有条",
+      "trimmer": "AI 智能抠图，一键去除纯色背景，输出 PNG 透明图"
+    },
+    "panel": {
+      "decoration": {
+        "title": "装修流程导图",
+        "images": ["/images/decoration_page.png","/images/decoration_page1.png"],
+        "description": "系统梳理装修全流程，覆盖准备、暖通门窗、硬装、软装等关键阶段，内含预算表、合同模板、选材指南等实用工具。",
+        "features": [
+          "📋 1.1 装修入门知识",
+          "🏠 1.2 装修方式分类挑选",
+          "📑 1.3 收房验房 & 1.4 合同签订",
+          "🛠️ 1.5 开工准备 & 主辅材挑选",
+          "🚪 2 暖通门窗阶段 · 3 硬装阶段"
+        ],
+        "tags": ["装修导图", "流程梳理", "知识库"]
+      },
+      "trimmer": {
+        "title": "白底抠图工具",
+        "images": ["/images/image_trimer.png"],
+        "description": "AI 智能抠图，一键去除纯色背景。支持智能抠图、魔术棒、画笔涂抹、形状抠图四种模式，保留主体细节，输出 PNG 透明图。",
+        "features": [
+          "🤖 AI 模型已就绪 · 高级模型可选",
+          "🪄 智能抠图 / 魔术棒 / 画笔涂抹",
+          "🔲 形状抠图：快速框选主体",
+          "📏 最小区域面积 · 后处理微调",
+          "💾 撤销 / 重做 / 重新上传 / 下载"
+        ],
+        "tags": ["AI 抠图", "白底替换", "PNG 透明"]
+      }
+    }
   },
   "products": {
     "label": "产品",
@@ -45,22 +92,26 @@
     "subtitle": "每一个产品都源于真实的需求，经过反复打磨和验证",
     "items": {
       "decoration": {
-        "label": "装修导图",
+        "label": "装修思维导图",
         "title": "系统化装修知识，一张图理清全流程",
-        "description": "从水电到软装，装修导图覆盖装修全流程的关键节点。通过可视化的思维导图形式，帮助用户建立系统的装修知识框架，避免遗漏重要环节。",
+        "images": ["/images/decoration_page.png","/images/decoration_page1.png"],
+        "description": "从水电到软装，装修思维导图覆盖装修全流程的关键节点。通过可视化的思维导图形式，帮助用户建立系统的装修知识框架，避免遗漏重要环节。",
         "stats": {
           "nodes": "节点覆盖",
           "users": "用户使用"
-        }
+        },
+        "button": "前往装修导图网站"
       },
-      "comingSoon": {
-        "label": "即将推出",
-        "title": "更多实用工具正在开发中",
-        "description": "我们持续探索生活中的痛点，致力于打造简洁高效的数字产品。每一个工具都经过精心设计和打磨，确保能够真正解决用户的问题。",
+      "trimmer": {
+        "label": "白底抠图工具",
+        "title": "AI 智能抠图，一键去除背景",
+        "images": ["/images/image_trimer.png"],
+        "description": "智能识别主体边缘，一键去除纯色背景。支持智能抠图、魔术棒、画笔涂抹、形状抠图四种模式，保留主体细节，输出 PNG 透明图，适合电商主图、证件照、设计稿等场景。",
         "stats": {
-          "products": "在研产品",
-          "iteration": "持续迭代"
-        }
+          "modes": "抠图模式",
+          "output": "透明输出"
+        },
+        "button": "前往抠图工具网站"
       }
     }
   },
@@ -89,13 +140,13 @@
     "items": {
       "email": {
         "label": "邮箱",
-        "value": "contact@qingzao.site",
-        "desc": "一般咨询与合作"
+        "value": "xiayiye580@gmail.com",
+        "desc": "咨询与合作"
       },
-      "github": {
-        "label": "GitHub",
-        "value": "github.com/qingzao",
-        "desc": "开源项目与代码"
+      "Twitter": {
+        "label": "Twitter",
+        "value": "Twitter.com/qingzao（暂未开通）",
+        "desc": "关注我们，获取最新动态"
       }
     }
   },
@@ -108,7 +159,7 @@
       "products": {
         "title": "产品",
         "links": {
-          "decoration": "装修导图",
+          "decoration": "装修思维导图工具",
           "features": "功能介绍",
           "guide": "使用指南"
         }
@@ -125,7 +176,7 @@
         "title": "资源",
         "links": {
           "blog": "博客",
-          "github": "GitHub",
+          "Twitter": "Twitter",
           "changelog": "更新日志"
         }
       }

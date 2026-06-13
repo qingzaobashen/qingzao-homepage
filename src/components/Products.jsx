@@ -1,11 +1,21 @@
 import React from 'react'
 import { useLanguage } from '../hooks/useLanguage'
+import Carousel from './Carousel'
 import './Products.css'
+
+/**
+ * 各产品对应的外部链接（与 Hero 中的 PRODUCT_LINKS 保持一致），
+ * 这里独立定义一份，避免循环依赖；如需调整请同步两边
+ */
+const PRODUCT_LINKS = {
+  decoration: 'https://qingzao.site',
+  trimmer: 'https://image.qingzao.site'
+}
 
 /**
  * 产品展示组件
  * Intercom 风格：大图 + 文字描述交替排列
- * 支持多语言显示
+ * 支持多语言显示；每项产品底部带「前往产品站」跳转按钮
  */
 function Products() {
   const { t } = useLanguage()
@@ -13,25 +23,30 @@ function Products() {
   const features = [
     {
       id: 1,
+      link: PRODUCT_LINKS.decoration,
       label: t('products.items.decoration.label'),
       title: t('products.items.decoration.title'),
+      // 改为数组，支持多张图轮播；i18n 里可继续追加路径
+      images: t('products.items.decoration.images', { returnObjects: true }) || [],
       description: t('products.items.decoration.description'),
-      image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80',
       stats: [
         { value: '50+', label: t('products.items.decoration.stats.nodes') },
         { value: '1000+', label: t('products.items.decoration.stats.users') }
-      ]
+      ],
+      button: t('products.items.decoration.button')
     },
     {
       id: 2,
-      label: t('products.items.comingSoon.label'),
-      title: t('products.items.comingSoon.title'),
-      description: t('products.items.comingSoon.description'),
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80',
+      link: PRODUCT_LINKS.trimmer,
+      label: t('products.items.trimmer.label'),
+      title: t('products.items.trimmer.title'),
+      images: t('products.items.trimmer.images', { returnObjects: true }) || [],
+      description: t('products.items.trimmer.description'),
       stats: [
-        { value: '3+', label: t('products.items.comingSoon.stats.products') },
-        { value: '∞', label: t('products.items.comingSoon.stats.iteration') }
-      ]
+        { value: '4', label: t('products.items.trimmer.stats.modes') },
+        { value: 'PNG', label: t('products.items.trimmer.stats.output') }
+      ],
+      button: t('products.items.trimmer.button')
     }
   ]
 
@@ -64,10 +79,24 @@ function Products() {
                     </div>
                   ))}
                 </div>
+                {/* 产品站跳转按钮 */}
+                <a
+                  href={feature.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="feature-btn"
+                >
+                  {feature.button}
+                  <span className="feature-btn-arrow" aria-hidden="true">→</span>
+                </a>
               </div>
               <div className="feature-image">
                 <div className="image-frame">
-                  <img src={feature.image} alt={feature.title} />
+                  <Carousel
+                    images={feature.images}
+                    alt={feature.title}
+                    className="feature-carousel"
+                  />
                 </div>
               </div>
             </div>

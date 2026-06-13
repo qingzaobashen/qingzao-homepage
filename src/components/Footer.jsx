@@ -32,7 +32,7 @@ function Footer() {
       title: t('footer.nav.resources.title'),
       links: [
         { label: t('footer.nav.resources.links.blog'), href: '#' },
-        { label: t('footer.nav.resources.links.github'), href: 'https://github.com' },
+        { label: t('footer.nav.resources.links.Twitter'), href: 'https://Twitter.com' },
         { label: t('footer.nav.resources.links.changelog'), href: '#' },
       ]
     }

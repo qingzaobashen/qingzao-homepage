@@ -130,7 +130,7 @@
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 60px 24px 40px;
+  padding: 0px 24px 40px;
   animation: fadeIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
 }
 
@@ -148,7 +148,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 18px;
   flex-wrap: wrap;
 }
 
@@ -165,10 +165,27 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   transition: all var(--transition-base);
+  text-decoration: none;
 }
 
 .mid-tag:hover {
   background: rgba(255, 255, 255, 0.2);
+}
+
+/* 链接型 mid 标签：点击跳转产品站 */
+.mid-tag-link {
+  cursor: pointer;
+}
+
+.mid-tag-link:hover {
+  background: rgba(255, 255, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.mid-tag-link:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
 }
 
 /* 底部产品展示 */
@@ -221,37 +238,77 @@
   color: var(--color-ink-mute);
 }
 
-/* 产品窗口主体 */
+/* 产品窗口主体：栅格三列：侧边栏 | 主区 | 介绍面板 */
 .product-window-body {
   display: grid;
-  grid-template-columns: 48px 1fr 200px;
-  min-height: 380px;
+  grid-template-columns: 152px minmax(0, 1fr) 260px;
+  min-height: 420px;
 }
 
 /* 侧边栏 */
 .window-sidebar {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  padding: 16px 0;
+  align-items: stretch;
+  gap: 6px;
+  padding: 12px 10px;
   background: var(--color-canvas-soft);
   border-right: 1px solid var(--color-hairline-cool);
 }
 
 .sidebar-item {
-  width: 28px;
-  height: 28px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 36px;
+  padding: 6px 10px;
   border-radius: var(--rounded-sm);
-  background: var(--color-canvas);
-  border: 1px solid var(--color-hairline-cool);
+  background: transparent;
+  border: 1px solid transparent;
   cursor: pointer;
   transition: all var(--transition-base);
+  /* 重置 <button> 元素默认浏览器样式 */
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  text-align: left;
+  color: var(--color-ink);
+}
+
+.sidebar-item:hover {
+  background: var(--color-canvas);
+  border-color: var(--color-hairline-cool);
+}
+
+.sidebar-item:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-primary-soft);
 }
 
 .sidebar-item.active {
   background: var(--color-primary-soft);
   border-color: var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.sidebar-item-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  font-size: 14px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.sidebar-item-label {
+  font-size: 12px;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* 主内容区 */
@@ -259,6 +316,9 @@
   display: flex;
   flex-direction: column;
   border-right: 1px solid var(--color-hairline-cool);
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .window-chat-header {
@@ -286,6 +346,25 @@
   font-size: 13px;
   font-weight: 600;
   color: var(--color-ink);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+/* 链接型 chat-name：点击跳转产品站 */
+.chat-name-link {
+  cursor: pointer;
+}
+
+.chat-name-link:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.chat-name-link:focus-visible {
+  outline: 2px solid var(--color-primary-soft);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 .chat-status {
@@ -298,9 +377,11 @@
   flex: 1;
   padding: 16px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 12px;
-  overflow-y: auto;
+  overflow: hidden;
+  min-height: 0;
 }
 
 .chat-bubble {
@@ -353,10 +434,18 @@
 
 .chat-input-placeholder {
   flex: 1;
+  display: flex;
+  align-items: center;
   height: 32px;
+  padding: 0 14px;
   background: var(--color-canvas-soft);
   border-radius: var(--rounded-full);
   border: 1px solid var(--color-hairline-cool);
+  font-size: 12px;
+  color: var(--color-ink-mute);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .chat-input-btn {
@@ -372,6 +461,9 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  /* 限制最大高度，防止英文内容过多时撑高整行，超出部分内部滚动 */
+  max-height: 420px;
+  overflow-y: auto;
 }
 
 .panel-section {
@@ -409,16 +501,123 @@
   border-radius: var(--rounded-full);
 }
 
-/* 产品说明文字 */
-.hero-product-caption {
-  text-align: center;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
-  margin-top: 20px;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+/* 装修导图预览图片 */
+.window-chat-image {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #f6fbf7;
 }
 
-/* 动画 */
+/* Hero 聊天区轮播图容器：填满 .window-chat-content 并保留浅绿底色 */
+.hero-preview-carousel {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  border-radius: 26px;
+  background: #f6fbf7;
+}
+
+/* 装修导图介绍侧栏 - 标题 */
+.panel-title {
+  display: inline-block;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+/* 链接型 panel-title：点击跳转产品站 */
+.panel-title-link {
+  cursor: pointer;
+}
+
+.panel-title-link:hover {
+  color: var(--color-primary);
+  opacity: 0.75;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.panel-title-link:focus-visible {
+  outline: 2px solid var(--color-primary-soft);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* 装修导图介绍侧栏 - 描述 */
+.panel-desc {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--color-ink-mute);
+}
+
+/* 装修导图介绍侧栏 - 特性列表 */
+.panel-feature-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.panel-feature-item {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--color-ink);
+  padding: 4px 0;
+}
+
+/* 装修导图介绍侧栏 - 文本标签 */
+.panel-tag-text {
+  display: inline-block;
+  font-size: 11px;
+  padding: 4px 10px;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  border-radius: var(--rounded-full);
+  border: 1px solid var(--color-hairline-cool);
+}
+
+/* 聊天区头部头像配色变体（按 Tab 切换） */
+.chat-avatar-decoration {
+  background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-primary) 100%);
+}
+
+.chat-avatar-trimer {
+  background: linear-gradient(135deg, #dbeafe 0%, #6366f1 100%);
+}
+
+/* Tab 切换过渡动画：聊天区头部 / 预览图 / 聊天输入 / 介绍面板在 remount 时滑入 */
+.window-chat-header,
+.window-chat-content,
+.window-chat-input,
+.window-panel {
+  animation: panelSwapIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes panelSwapIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -472,11 +671,21 @@
   }
 
   .product-window-body {
-    grid-template-columns: 40px 1fr;
+    grid-template-columns: 40px minmax(0, 1fr);
     min-height: 300px;
   }
 
   .window-panel {
     display: none;
+  }
+
+  /* 移动端侧边栏只显示图标，隐藏 label */
+  .sidebar-item-label {
+    display: none;
+  }
+
+  .sidebar-item {
+    justify-content: center;
+    padding: 6px;
   }
 }

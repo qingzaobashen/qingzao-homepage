@@ -43,7 +43,7 @@ function Header() {
         {/* 右侧按钮 */}
         <div className={`header-right ${isMobileMenuOpen ? 'open' : ''}`}>
           <LanguageSwitcher />
-          <a href="#contact" className="btn-nav btn-nav-primary">{t('header.cta')}</a>
+          <a href="#products" className="btn-nav btn-nav-primary">{t('header.cta')}</a>
         </div>
 
         {/* 移动端菜单按钮 */}

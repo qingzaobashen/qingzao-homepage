@@ -694,12 +694,12 @@ function Contact() {
           <div className="contact-methods">
             <div className="contact-method">
               <span className="contact-icon">📧</span>
-              <span>contact@qingzao.site</span>
+              <span>xiayiye580@gmail.com</span>
             </div>
             <div className="contact-method">
               <span className="contact-icon">🌐</span>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-                GitHub
+              <a href="https://Twitter.com" target="_blank" rel="noopener noreferrer">
+                Twitter
               </a>
             </div>
           </div>

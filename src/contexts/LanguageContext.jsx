@@ -96,11 +96,14 @@ export const LanguageProvider = ({ children }) => {
 
   /**
    * 获取翻译文本
-   * 支持嵌套键名和参数替换
+   * 支持嵌套键名、参数替换、数组 / 对象直返
    *
    * @param {string} key - 翻译键名（支持点分隔的嵌套键，如 'header.nav.products'）
-   * @param {Object} params - 可选的参数对象，用于替换文本中的占位符
-   * @returns {string} 翻译后的文本
+   * @param {Object} [params] - 可选参数：
+   *   - 普通占位符：`{ name: '青枣' }` 替换 `你好 {name}`
+   *   - 数组 / 对象直返：`{ returnObjects: true }` 让函数返回原始数组或对象，
+   *     用于面板功能列表、标签列表等需要遍历的场景
+   * @returns {string|Array|Object} 翻译后的文本 / 数组 / 对象
    */
   const t = useCallback((key, params) => {
     const keys = key.split('.')
@@ -116,7 +119,12 @@ export const LanguageProvider = ({ children }) => {
       }
     }
 
-    // 如果值不是字符串，返回键名
+    // 调用方显式声明需要原始对象（数组 / 对象）时，原样返回
+    if (params && params.returnObjects) {
+      return value
+    }
+
+    // 如果值不是字符串（且没声明 returnObjects），按 fallback 返回键名
     if (typeof value !== 'string') {
       console.warn(`Translation value is not a string for key: ${key}`)
       return key

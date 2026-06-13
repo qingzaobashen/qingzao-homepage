@@ -14,16 +14,16 @@ function Contact() {
     {
       label: t('contact.items.email.label'),
       value: t('contact.items.email.value'),
-      href: 'mailto:contact@qingzao.site',
+      href: 'mailto:xiayiye580@gmail.com',
       type: 'email',
       desc: t('contact.items.email.desc')
     },
     {
-      label: t('contact.items.github.label'),
-      value: t('contact.items.github.value'),
-      href: 'https://github.com',
+      label: t('contact.items.Twitter.label'),
+      value: t('contact.items.Twitter.value'),
+      href: 'https://Twitter.com',
       type: 'link',
-      desc: t('contact.items.github.desc')
+      desc: t('contact.items.Twitter.desc')
     }
   ]
 
