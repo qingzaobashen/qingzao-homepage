@@ -194,7 +194,7 @@ function Hero() {
           <a href="#products" className="hero-btn hero-btn-primary">
             {t('hero.actions.explore')}
           </a>
-          <a href="#about" className="hero-btn hero-btn-secondary">
+          <a href="/about" className="hero-btn hero-btn-secondary">
             {t('hero.actions.learnMore')}
           </a>
         </div>

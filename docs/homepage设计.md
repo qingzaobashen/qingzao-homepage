@@ -232,7 +232,7 @@ function Header() {
         </div>
         <nav className="nav">
           <a href="#products">产品</a>
-          <a href="#about">关于</a>
+          <a href="/about">关于</a>
           <a href="#contact">联系</a>
         </nav>
       </div>
