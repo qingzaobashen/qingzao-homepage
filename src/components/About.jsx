@@ -34,8 +34,11 @@ function About() {
             <div className="letter-signature">
               <div className="signature-avatar">
                 <img
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80"
+                  src="/images/avatar.jpg"
                   alt={t('about.signature.name')}
+                  loading="lazy"
+                  width="100"
+                  height="100"
                 />
               </div>
               <div className="signature-info">

@@ -1,23 +1,14 @@
 /**
  * Header 组件样式
- * Intercom 风格：白色背景，简洁导航栏
+ * 首页(.home)：fixed + 透明背景，滚动后变白
+ * 内页(.inner)：relative + 白色背景，不跟随滚动
  */
 
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: transparent;
-  transition: background var(--transition-base), box-shadow var(--transition-base);
-}
+/* ==================== 通用基础样式 ==================== */
 
-.header.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 1px 0 var(--color-hairline-cool);
+.header {
+  z-index: 1000;
+  transition: background var(--transition-base), box-shadow var(--transition-base);
 }
 
 .header-inner {
@@ -30,38 +21,7 @@
   position: relative;
 }
 
-/* Logo - 未滚动时白色，滚动后深色 */
-.header-logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-family);
-  font-size: 18px;
-  font-weight: 600;
-  color: #ffffff;
-  text-decoration: none;
-  transition: color var(--transition-base);
-  z-index: 2;
-}
-
-.header.scrolled .header-logo {
-  color: var(--color-ink);
-}
-
-.header-logo:hover {
-  opacity: 0.8;
-}
-
-.header.scrolled .header-logo:hover {
-  color: var(--color-ink-secondary);
-  opacity: 1;
-}
-
-.header-logo svg {
-  color: var(--color-primary);
-}
-
-/* 中间导航 - 未滚动时白色，滚动后深色 */
+/* 中间导航 */
 .header-nav {
   display: flex;
   align-items: center;
@@ -71,28 +31,7 @@
   transform: translateX(-50%);
 }
 
-.header-nav a {
-  font-size: 14px;
-  font-weight: 500;
-  color: #ffffff;
-  text-decoration: none;
-  transition: color var(--transition-base);
-}
-
-.header-nav a:hover {
-  opacity: 0.7;
-}
-
-.header.scrolled .header-nav a {
-  color: var(--color-ink);
-}
-
-.header.scrolled .header-nav a:hover {
-  color: var(--color-ink-mute);
-  opacity: 1;
-}
-
-/* 右侧按钮 */
+/* 右侧按钮区域 */
 .header-right {
   display: flex;
   align-items: center;
@@ -114,29 +53,6 @@
   cursor: pointer;
 }
 
-/* 未滚动时白色按钮 */
-.btn-nav-primary {
-  background: #ffffff;
-  color: var(--color-ink);
-  border: 1px solid #ffffff;
-}
-
-.btn-nav-primary:hover {
-  background: rgba(255, 255, 255, 0.9);
-}
-
-/* 滚动后品牌色按钮 */
-.header.scrolled .btn-nav-primary {
-  background: var(--color-primary);
-  color: #ffffff;
-  border: 1px solid var(--color-primary);
-}
-
-.header.scrolled .btn-nav-primary:hover {
-  background: var(--color-primary-deep);
-  border-color: var(--color-primary-deep);
-}
-
 /* 移动端菜单按钮 */
 .mobile-menu-btn {
   display: none;
@@ -155,13 +71,8 @@
 .mobile-menu-btn span {
   width: 22px;
   height: 2px;
-  background: #ffffff;
   border-radius: 1px;
   transition: all var(--transition-base);
-}
-
-.header.scrolled .mobile-menu-btn span {
-  background: var(--color-ink);
 }
 
 .mobile-menu-btn.active span:nth-child(1) {
@@ -176,7 +87,133 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* 响应式 */
+/* Logo SVG 颜色 */
+.header-logo svg {
+  color: var(--color-primary);
+}
+
+
+/* ==================== 首页模式：fixed + 透明 ==================== */
+
+.header.home {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+}
+
+.header.home.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 var(--color-hairline-cool);
+}
+
+/* 首页 - Logo：未滚动白色，滚动后深色 */
+.header.home .header-logo {
+  color: #ffffff;
+}
+.header.home.scrolled .header-logo {
+  color: var(--color-ink);
+}
+.header.home .header-logo:hover {
+  opacity: 0.8;
+}
+.header.home.scrolled .header-logo:hover {
+  color: var(--color-ink-secondary);
+  opacity: 1;
+}
+
+/* 首页 - 导航链接：未滚动白色，滚动后深色 */
+.header.home .header-nav a {
+  color: #ffffff;
+}
+.header.home .header-nav a:hover {
+  opacity: 0.7;
+}
+.header.home.scrolled .header-nav a {
+  color: var(--color-ink);
+}
+.header.home.scrolled .header-nav a:hover {
+  color: var(--color-ink-mute);
+  opacity: 1;
+}
+
+/* 首页 - CTA按钮：未滚动白底，滚动后品牌色 */
+.header.home .btn-nav-primary {
+  background: #ffffff;
+  color: var(--color-ink);
+  border: 1px solid #ffffff;
+}
+.header.home .btn-nav-primary:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+.header.home.scrolled .btn-nav-primary {
+  background: var(--color-primary);
+  color: #ffffff;
+  border: 1px solid var(--color-primary);
+}
+.header.home.scrolled .btn-nav-primary:hover {
+  background: var(--color-primary-deep);
+  border-color: var(--color-primary-deep);
+}
+
+/* 首页 - 汉堡菜单：未滚动白色，滚动后深色 */
+.header.home .mobile-menu-btn span {
+  background: #ffffff;
+}
+.header.home.scrolled .mobile-menu-btn span {
+  background: var(--color-ink);
+}
+
+
+/* ==================== 内页模式：relative + 白底 ==================== */
+
+.header.inner {
+  position: relative;
+  background: #ffffff;
+}
+
+.header.inner.scrolled {
+  box-shadow: 0 1px 0 var(--color-hairline-cool);
+}
+
+/* 内页 - Logo：始终深色 */
+.header.inner .header-logo {
+  color: var(--color-ink);
+}
+.header.inner .header-logo:hover {
+  color: var(--color-ink-secondary);
+}
+
+/* 内页 - 导航链接：始终深色 */
+.header.inner .header-nav a {
+  color: var(--color-ink);
+}
+.header.inner .header-nav a:hover {
+  color: var(--color-ink-secondary);
+}
+
+/* 内页 - CTA按钮：品牌色 */
+.header.inner .btn-nav-primary {
+  background: var(--color-primary);
+  color: #ffffff;
+  border: 1px solid var(--color-primary);
+}
+.header.inner .btn-nav-primary:hover {
+  background: var(--color-primary-deep);
+  border-color: var(--color-primary-deep);
+}
+
+/* 内页 - 汉堡菜单：始终深色 */
+.header.inner .mobile-menu-btn span {
+  background: var(--color-ink);
+}
+
+
+/* ==================== 响应式设计 ==================== */
+
 @media (max-width: 768px) {
   .header-inner {
     padding: 14px 16px;

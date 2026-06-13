@@ -5,6 +5,7 @@
  */
 
 import React, { useEffect } from 'react'
+import SEO from '../components/SEO'
 import LegalPage from './LegalPage'
 
 /**
@@ -18,11 +19,18 @@ function TermsPage() {
   }, [])
 
   return (
-    <LegalPage
-      titleKey="legal.terms.title"
-      introKey="legal.terms.intro"
-      sectionsKey="legal.terms.sections"
-    />
+    <>
+      <SEO
+        title="服务条款"
+        description="青枣工作室服务条款，了解使用我们产品和服务的权利与义务。"
+        canonical="/terms"
+      />
+      <LegalPage
+        titleKey="legal.terms.title"
+        introKey="legal.terms.intro"
+        sectionsKey="legal.terms.sections"
+      />
+    </>
   )
 }
 

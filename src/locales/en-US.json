@@ -10,7 +10,8 @@
     "nav": {
       "products": "Products",
       "about": "About",
-      "contact": "Contact"
+      "contact": "Contact",
+      "blog": "Blog"
     },
     "cta": "Get Started",
     "menuAriaLabel": "Toggle menu"
@@ -184,7 +185,8 @@
     "copyright": "© {year} Qingzao. All rights reserved.",
     "legal": {
       "privacy": "Privacy Policy",
-      "terms": "Terms of Service"
+      "terms": "Terms of Service",
+      "disclaimer": "Disclaimer"
     }
   },
   "legal": {
@@ -344,6 +346,124 @@
           ]
         }
       ]
+    },
+    "disclaimer": {
+      "title": "Disclaimer",
+      "intro": "Welcome to the products and services of Qingzao Studio (hereinafter referred to as \"we\"). Please read the following disclaimer carefully before using our products and services. By using our products and services, you acknowledge that you have read, understood, and agreed to the following content.",
+      "sections": [
+        {
+          "title": "1. Content for Reference Only",
+          "content": [
+            "1. All content on this website (qingzao.site), including but not limited to articles, guides, tutorials, images, and tool descriptions, is for reference and educational purposes only and does not constitute professional advice of any kind.",
+            "2. We strive to ensure the accuracy and timeliness of our content but make no express or implied warranties regarding the completeness, accuracy, reliability, or applicability of the content.",
+            "3. You should consult relevant professionals before making any decisions based on your specific circumstances."
+          ]
+        },
+        {
+          "title": "2. Home Decoration Content Disclaimer",
+          "content": [
+            "1. The decoration guides, process suggestions, and material recommendations provided on this website are for reference only and do not replace the opinions of professional designers, contractors, or supervisors.",
+            "2. Home decoration involves structural safety, plumbing and electrical work, and other professional fields. Please consult qualified professionals before actual construction.",
+            "3. We assume no responsibility for any loss, damage, or disputes arising from decoration work based on the content of this website."
+          ]
+        },
+        {
+          "title": "3. Image Processing Content Disclaimer",
+          "content": [
+            "1. The image processing tools and techniques provided on this website are intended for lawful and compliant use. Users bear full responsibility for their processing and use of images.",
+            "2. We do not guarantee the applicability of image processing results (e.g., whether they meet e-commerce platform requirements).",
+            "3. Users must ensure they have legal rights to the images they process and must not use our tools to infringe upon the intellectual property or other legal rights of others."
+          ]
+        },
+        {
+          "title": "4. External Links Disclaimer",
+          "content": [
+            "1. This website may contain links to third-party websites or services. These external links are provided for your convenience only and do not imply our endorsement, recommendation, or guarantee of third-party content.",
+            "2. We assume no responsibility for the content, privacy policies, products, or services of third-party websites.",
+            "3. We recommend that you carefully review the terms of use and privacy policies of third-party websites before visiting them."
+          ]
+        },
+        {
+          "title": "5. Product Features",
+          "content": [
+            "1. The product features, characteristics, and effects described on this website are subject to actual use. We reserve the right to modify, update, or discontinue product features at any time.",
+            "2. Product screenshots, examples, and demonstrations may not reflect the final product appearance or functionality. Please refer to the actual product.",
+            "3. Free and paid features may be adjusted at any time, and we will make reasonable efforts to notify you in advance."
+          ]
+        },
+        {
+          "title": "6. Intellectual Property Notice",
+          "content": [
+            "1. All content on this website (including but not limited to text, images, icons, interface designs, and software code) is protected by the intellectual property laws of the People's Republic of China and belongs to Qingzao Studio or the relevant rights holders.",
+            "2. Without our written permission, you may not copy, modify, distribute, or use the above content for commercial purposes in any way.",
+            "3. Content you create through our products (such as exported mind maps, processed images, etc.) belongs to you."
+          ]
+        },
+        {
+          "title": "7. Limitation of Liability",
+          "content": [
+            "1. To the maximum extent permitted by law, we are not liable for any direct, indirect, incidental, special, or consequential damages arising from the use or inability to use this website and products.",
+            "2. We do not guarantee that the service will be uninterrupted, secure, or error-free.",
+            "3. We are not responsible for any service interruptions caused by communication failures, system failures, network outages, or other reasons."
+          ]
+        },
+        {
+          "title": "8. Modifications to This Disclaimer",
+          "content": [
+            "We reserve the right to modify this disclaimer at any time. Modified content will be published on this page with an updated \"Last Updated\" date. For significant changes, we will notify you through reasonable means. Continued use of our services constitutes acceptance of the modified terms."
+          ]
+        },
+        {
+          "title": "9. Contact Information",
+          "content": [
+            "If you have any questions or suggestions about this disclaimer, please contact us at:",
+            "Email: xiayiye580@gmail.com",
+            "Last Updated: January 2025"
+          ]
+        }
+      ]
+    }
+  },
+  "aboutPage": {
+    "title": "About Qingzao Studio",
+    "subtitle": "Learn about our team, philosophy, and mission",
+    "values": {
+      "title": "Our Values",
+      "userFirst": {
+        "title": "User First",
+        "desc": "Every feature is designed from user needs. We listen to feedback and continuously optimize the experience."
+      },
+      "simpleDesign": {
+        "title": "Simple Design",
+        "desc": "Less is more. We pursue clean interfaces and intuitive operations to make tools effortless to use."
+      },
+      "continuousIteration": {
+        "title": "Continuous Iteration",
+        "desc": "Great products are built through iteration. We release fast, gather feedback, and keep improving."
+      }
+    },
+    "cta": {
+      "text": "Want to learn more? Check out our blog posts.",
+      "btn": "Visit Blog"
+    }
+  },
+  "contactPage": {
+    "title": "Contact Us",
+    "subtitle": "We always welcome your feedback and suggestions",
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": {
+        "title": "Is the product free?",
+        "answer": "Our basic features are completely free, with paid plans for advanced features. You can try it for free first and upgrade when you're satisfied."
+      },
+      "q2": {
+        "title": "How can I report issues or give suggestions?",
+        "answer": "You can contact us via the email or social media above. We'll respond as soon as possible. You're also welcome to leave comments on our blog posts."
+      },
+      "q3": {
+        "title": "Is my data safe?",
+        "answer": "We take data security seriously. All data transfers use encryption protocols. Please refer to our Privacy Policy for details."
+      }
     }
   }
 }

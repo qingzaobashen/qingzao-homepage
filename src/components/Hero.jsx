@@ -169,9 +169,12 @@ function Hero() {
       {/* 背景大图 */}
       <div className="hero-bg">
         <img
-          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80"
+          src="/images/hero-bg.jpg"
           alt={t('hero.title')}
           className="hero-bg-img"
+          loading="eager"
+          width="1920"
+          height="1080"
         />
         {/* 渐变遮罩 - 整体暗化 + 底部加深 */}
         <div className="hero-bg-overlay" />

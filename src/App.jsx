@@ -1,6 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { LanguageProvider } from './contexts/LanguageContext'
+import SEO from './components/SEO'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Products from './components/Products'
@@ -9,6 +10,12 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import PrivacyPage from './pages/PrivacyPage'
 import TermsPage from './pages/TermsPage'
+import BlogListPage from './pages/BlogListPage'
+import BlogPostPage from './pages/BlogPostPage'
+import DisclaimerPage from './pages/DisclaimerPage'
+import AboutPage from './pages/AboutPage'
+import ContactPage from './pages/ContactPage'
+import NotFoundPage from './pages/NotFoundPage'
 import './App.css'
 
 /**
@@ -18,6 +25,11 @@ import './App.css'
 function HomePage() {
   return (
     <>
+      <SEO
+        title="青枣工作室 - 创新装修与图片处理工具"
+        description="青枣工作室提供装修流程导图、白底抠图等实用工具，让装修和图片处理更简单高效。"
+        canonical="/"
+      />
       <Header />
       <main>
         <Hero />
@@ -43,6 +55,12 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
+          <Route path="/disclaimer" element={<DisclaimerPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/blog" element={<BlogListPage />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>
     </LanguageProvider>

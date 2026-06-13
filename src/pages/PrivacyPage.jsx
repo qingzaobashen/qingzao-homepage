@@ -5,6 +5,7 @@
  */
 
 import React, { useEffect } from 'react'
+import SEO from '../components/SEO'
 import LegalPage from './LegalPage'
 
 /**
@@ -18,11 +19,18 @@ function PrivacyPage() {
   }, [])
 
   return (
-    <LegalPage
-      titleKey="legal.privacy.title"
-      introKey="legal.privacy.intro"
-      sectionsKey="legal.privacy.sections"
-    />
+    <>
+      <SEO
+        title="隐私政策"
+        description="青枣工作室隐私政策，了解我们如何保护您的个人信息。"
+        canonical="/privacy"
+      />
+      <LegalPage
+        titleKey="legal.privacy.title"
+        introKey="legal.privacy.intro"
+        sectionsKey="legal.privacy.sections"
+      />
+    </>
   )
 }
 

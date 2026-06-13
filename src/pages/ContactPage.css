@@ -1,0 +1,92 @@
+/**
+ * 联系我们页面样式
+ */
+
+.contact-page {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  padding-top: 72px;
+}
+
+.contact-page-header {
+  text-align: center;
+  padding: 60px 0 20px;
+}
+
+.contact-page-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.contact-page-subtitle {
+  font-size: 20px;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* 调整首页 Contact 组件在独立页面的样式 */
+.contact-page .contact {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+/* FAQ 区域 */
+.contact-page-faq {
+  padding: 60px 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f2937;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.faq-item {
+  background: white;
+  border-radius: 12px;
+  padding: 24px 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.faq-item h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.faq-item p {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .contact-page-title {
+    font-size: 36px;
+  }
+
+  .contact-page-subtitle {
+    font-size: 16px;
+  }
+
+  .contact-page-header {
+    padding: 40px 20px 20px;
+  }
+}

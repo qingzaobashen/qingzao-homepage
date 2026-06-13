@@ -24,15 +24,15 @@ function Footer() {
     {
       title: t('footer.nav.company.title'),
       links: [
-        { label: t('footer.nav.company.links.about'), href: '#about' },
-        { label: t('footer.nav.company.links.contact'), href: '#contact' },
+        { label: t('footer.nav.company.links.about'), href: '/about', isRoute: true },
+        { label: t('footer.nav.company.links.contact'), href: '/contact', isRoute: true },
         { label: t('footer.nav.company.links.join'), href: '#' },
       ]
     },
     {
       title: t('footer.nav.resources.title'),
       links: [
-        { label: t('footer.nav.resources.links.blog'), href: '#' },
+        { label: t('footer.nav.resources.links.blog'), href: '/blog', isRoute: true },
         { label: t('footer.nav.resources.links.Twitter'), href: 'https://Twitter.com' },
         { label: t('footer.nav.resources.links.changelog'), href: '#' },
       ]
@@ -65,13 +65,17 @@ function Footer() {
                 <ul className="footer-group-links">
                   {group.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
-                      <a
-                        href={link.href}
-                        target={link.href.startsWith('http') ? '_blank' : undefined}
-                        rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      >
-                        {link.label}
-                      </a>
+                      {link.isRoute ? (
+                        <Link to={link.href}>{link.label}</Link>
+                      ) : (
+                        <a
+                          href={link.href}
+                          target={link.href.startsWith('http') ? '_blank' : undefined}
+                          rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        >
+                          {link.label}
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -88,6 +92,7 @@ function Footer() {
           <div className="footer-legal">
             <Link to="/privacy">{t('footer.legal.privacy')}</Link>
             <Link to="/terms">{t('footer.legal.terms')}</Link>
+            <Link to="/disclaimer">{t('footer.legal.disclaimer')}</Link>
           </div>
         </div>
       </div>
