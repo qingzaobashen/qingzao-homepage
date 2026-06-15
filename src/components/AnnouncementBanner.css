@@ -60,6 +60,36 @@
   color: #0068c9;
 }
 
+/* 关闭按钮 */
+.announcement-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-left: 4px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  color: #856404;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.announcement-close:hover {
+  background: rgba(133, 100, 4, 0.15);
+  color: #5c4503;
+}
+
+.announcement-close:focus-visible {
+  outline: 2px solid #1f8ded;
+  outline-offset: 1px;
+}
+
 /* 小屏幕：内容可能太长，允许换行并稍微缩小 */
 @media (max-width: 600px) {
   .announcement-banner {
