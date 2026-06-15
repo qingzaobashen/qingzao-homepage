@@ -34,7 +34,6 @@ function HomePage() {
         canonical="/"
       />
       <Header />
-      <AnnouncementBanner />
       <main>
         <Hero />
         <Products />
@@ -42,6 +41,7 @@ function HomePage() {
         <Contact />
       </main>
       <Footer />
+      <AnnouncementBanner />
     </>
   )
 }

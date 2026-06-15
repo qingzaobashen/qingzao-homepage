@@ -1,28 +1,46 @@
 /**
  * 公告横幅组件样式
- * 放置于 Header 下方，显示迁移通知等临时公告
- * 小喇叭图标 + 可点击链接，不遮挡顶部菜单
+ * 悬空的小横幅，固定在顶部菜单下方居中显示
+ * 顶部菜单在首页是 fixed 定位，横幅需要相应偏移
  */
 
 .announcement-banner {
-  display: flex;
+  position: fixed;
+  top: 72px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 998;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 10px 24px;
-  background: linear-gradient(135deg, #fff8e1, #fff3cd);
-  border-bottom: 1px solid #ffeeba;
-  font-size: 14px;
+  gap: 6px;
+  padding: 6px 16px;
+  background: rgba(255, 248, 225, 0.95);
+  border: 1px solid #ffeeba;
+  border-radius: 9999px;
+  font-size: 13px;
   color: #856404;
-  line-height: 1.5;
-  position: relative;
-  z-index: 999;
-  flex-shrink: 0;
+  line-height: 1.4;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: bannerSlideDown 0.4s ease-out;
+}
+
+@keyframes bannerSlideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 .announcement-banner .horn-icon {
   flex-shrink: 0;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1;
 }
 
@@ -42,12 +60,14 @@
   color: #0068c9;
 }
 
-/* 响应式 - 小屏幕换行 */
-@media (max-width: 480px) {
+/* 小屏幕：内容可能太长，允许换行并稍微缩小 */
+@media (max-width: 600px) {
   .announcement-banner {
-    padding: 8px 16px;
-    font-size: 13px;
-    flex-wrap: wrap;
+    top: 64px;
+    padding: 5px 12px;
+    font-size: 12px;
+    white-space: normal;
+    max-width: calc(100vw - 32px);
     text-align: center;
   }
 }
