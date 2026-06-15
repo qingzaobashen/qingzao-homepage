@@ -1,0 +1,60 @@
+/**
+ * ProductsPage 产品页面样式
+ * 产品独立页面的视觉布局
+ */
+
+/* 页面容器 */
+.products-page {
+  padding: 80px 24px 100px;
+  background: var(--color-canvas);
+  min-height: 60vh;
+}
+
+/* 页面头部 */
+.products-page-header {
+  text-align: center;
+  margin-bottom: 48px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.products-page-title {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 600;
+  color: var(--color-ink);
+  line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.products-page-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-ink-mute);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* 隐藏 Products 组件内部的 section-header（避免重复） */
+.products-page .products .section-header {
+  display: none;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .products-page {
+    padding: 48px 16px 64px;
+  }
+
+  .products-page-header {
+    margin-bottom: 32px;
+  }
+
+  .products-page-title {
+    margin-bottom: 12px;
+  }
+
+  .products-page-subtitle {
+    font-size: 15px;
+  }
+}

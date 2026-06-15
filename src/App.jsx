@@ -15,6 +15,7 @@ import BlogPostPage from './pages/BlogPostPage'
 import DisclaimerPage from './pages/DisclaimerPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
+import ProductsPage from './pages/ProductsPage'
 import NotFoundPage from './pages/NotFoundPage'
 import CookieConsent from './components/CookieConsent'
 import './App.css'
@@ -54,6 +55,7 @@ function App() {
       <div className="app">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/products" element={<ProductsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/disclaimer" element={<DisclaimerPage />} />

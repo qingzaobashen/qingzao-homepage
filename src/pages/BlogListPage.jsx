@@ -8,6 +8,8 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../hooks/useLanguage'
 import SEO from '../components/SEO'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 import postsZh from '../data/posts/posts-zh.json'
 import postsEn from '../data/posts/posts-en.json'
 import './BlogListPage.css'
@@ -75,7 +77,7 @@ function BlogListPage() {
   }, [])
 
   return (
-    <div className="blog-list-page">
+    <>
       <SEO
         title={language === 'zh-CN' ? '博客' : 'Blog'}
         description={language === 'zh-CN'
@@ -84,78 +86,82 @@ function BlogListPage() {
         }
         canonical="/blog"
       />
-      {/* 页面头部 */}
-      <section className="blog-header">
-        <div className="container">
-          <h1 className="blog-title">
-            {language === 'zh-CN' ? '博客' : 'Blog'}
-          </h1>
-          <p className="blog-subtitle">
-            {language === 'zh-CN'
-              ? '装修指南、图片处理技巧和产品更新'
-              : 'Decoration guides, image processing tips, and product updates'
-            }
-          </p>
-        </div>
-      </section>
-
-      {/* 分类筛选 */}
-      <section className="blog-filter">
-        <div className="container">
-          <div className="filter-buttons">
-            <button
-              className={`filter-btn ${activeCategory === 'all' ? 'active' : ''}`}
-              onClick={() => handleCategoryFilter('all')}
-            >
-              {language === 'zh-CN' ? '全部' : 'All'}
-            </button>
-            {categories.map((category, index) => (
-              <button
-                key={index}
-                className={`filter-btn ${activeCategory === category ? 'active' : ''}`}
-                onClick={() => handleCategoryFilter(category)}
-              >
-                {category}
-              </button>
-            ))}
+      <Header />
+      <div className="blog-list-page">
+        {/* 页面头部 */}
+        <section className="blog-header">
+          <div className="container">
+            <h1 className="blog-title">
+              {language === 'zh-CN' ? '博客' : 'Blog'}
+            </h1>
+            <p className="blog-subtitle">
+              {language === 'zh-CN'
+                ? '装修指南、图片处理技巧和产品更新'
+                : 'Decoration guides, image processing tips, and product updates'
+              }
+            </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* 文章列表 */}
-      <section className="blog-content">
-        <div className="container">
-          {filteredPosts.length > 0 ? (
-            <div className="posts-grid">
-              {filteredPosts.map((post, index) => (
-                <article key={index} className="post-card">
-                  <div className="post-meta">
-                    <span className="post-category">{post.category}</span>
-                    <span className="post-date">{formatDate(post.date)}</span>
-                  </div>
-                  <h2 className="post-title">
-                    <Link to={`/blog/${post.slug}`}>{post.title}</Link>
-                  </h2>
-                  <p className="post-excerpt">{post.excerpt}</p>
-                  <div className="post-tags">
-                    {post.tags.map((tag, tagIndex) => (
-                      <span key={tagIndex} className="post-tag">#{tag}</span>
-                    ))}
-                  </div>
-                  <Link to={`/blog/${post.slug}`} className="post-read-more">
-                    {language === 'zh-CN' ? '阅读全文 →' : 'Read More →'}
-                  </Link>
-                </article>
+        {/* 分类筛选 */}
+        <section className="blog-filter">
+          <div className="container">
+            <div className="filter-buttons">
+              <button
+                className={`filter-btn ${activeCategory === 'all' ? 'active' : ''}`}
+                onClick={() => handleCategoryFilter('all')}
+              >
+                {language === 'zh-CN' ? '全部' : 'All'}
+              </button>
+              {categories.map((category, index) => (
+                <button
+                  key={index}
+                  className={`filter-btn ${activeCategory === category ? 'active' : ''}`}
+                  onClick={() => handleCategoryFilter(category)}
+                >
+                  {category}
+                </button>
               ))}
             </div>
-          ) : (
-            <div className="no-posts">
-              <p>{language === 'zh-CN' ? '暂无文章' : 'No posts yet.'}</p>
-            </div>
-          )}
-        </div>
-      </section>
-    </div>
+          </div>
+        </section>
+
+        {/* 文章列表 */}
+        <section className="blog-content">
+          <div className="container">
+            {filteredPosts.length > 0 ? (
+              <div className="posts-grid">
+                {filteredPosts.map((post, index) => (
+                  <article key={index} className="post-card">
+                    <div className="post-meta">
+                      <span className="post-category">{post.category}</span>
+                      <span className="post-date">{formatDate(post.date)}</span>
+                    </div>
+                    <h2 className="post-title">
+                      <Link to={`/blog/${post.slug}`}>{post.title}</Link>
+                    </h2>
+                    <p className="post-excerpt">{post.excerpt}</p>
+                    <div className="post-tags">
+                      {post.tags.map((tag, tagIndex) => (
+                        <span key={tagIndex} className="post-tag">#{tag}</span>
+                      ))}
+                    </div>
+                    <Link to={`/blog/${post.slug}`} className="post-read-more">
+                      {language === 'zh-CN' ? '阅读全文 →' : 'Read More →'}
+                    </Link>
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <div className="no-posts">
+                <p>{language === 'zh-CN' ? '暂无文章' : 'No posts yet.'}</p>
+              </div>
+            )}
+          </div>
+        </section>
+      </div>
+      <Footer />
+    </>
   )
 }
 

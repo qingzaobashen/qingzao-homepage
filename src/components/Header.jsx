@@ -43,9 +43,13 @@ function Header() {
 
         {/* 中间导航链接 */}
         <nav className={`header-nav ${isMobileMenuOpen ? 'open' : ''}`}>
-          <a href="#products" onClick={() => setIsMobileMenuOpen(false)}>{t('header.nav.products')}</a>
           {isHome ? (
-            <a href="/about" onClick={() => setIsMobileMenuOpen(false)}>{t('header.nav.about')}</a>
+            <a href="#products" onClick={() => setIsMobileMenuOpen(false)}>{t('header.nav.products')}</a>
+          ) : (
+            <Link to="/products" onClick={() => setIsMobileMenuOpen(false)}>{t('header.nav.products')}</Link>
+          )}
+          {isHome ? (
+            <a href="#about" onClick={() => setIsMobileMenuOpen(false)}>{t('header.nav.about')}</a>
           ) : (
             <Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>{t('header.nav.about')}</Link>
           )}
@@ -60,7 +64,11 @@ function Header() {
         {/* 右侧按钮 */}
         <div className={`header-right ${isMobileMenuOpen ? 'open' : ''}`}>
           <LanguageSwitcher />
-          <a href="#products" className="btn-nav btn-nav-primary">{t('header.cta')}</a>
+          {isHome ? (
+            <a href="#products" className="btn-nav btn-nav-primary">{t('header.cta')}</a>
+          ) : (
+            <Link to="/products" className="btn-nav btn-nav-primary">{t('header.cta')}</Link>
+          )}
         </div>
 
         {/* 移动端菜单按钮 */}

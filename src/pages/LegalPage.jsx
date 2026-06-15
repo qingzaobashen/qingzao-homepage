@@ -6,6 +6,8 @@
 
 import React from 'react'
 import { useLanguage } from '../hooks/useLanguage'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 import './LegalPage.css'
 
 /**
@@ -24,31 +26,35 @@ function LegalPage({ titleKey, introKey, sectionsKey }) {
   const isValidSections = Array.isArray(sections)
 
   return (
-    <div className="legal-page">
-      <div className="container">
-        <div className="legal-page-content">
-          {/* 页面标题 */}
-          <h1 className="legal-page-title">{t(titleKey)}</h1>
+    <>
+      <Header />
+      <div className="legal-page">
+        <div className="container">
+          <div className="legal-page-content">
+            {/* 页面标题 */}
+            <h1 className="legal-page-title">{t(titleKey)}</h1>
 
-          {/* 引言 */}
-          <p className="legal-page-intro">{t(introKey)}</p>
+            {/* 引言 */}
+            <p className="legal-page-intro">{t(introKey)}</p>
 
-          {/* 章节列表 */}
-          {isValidSections && sections.map((section, index) => (
-            <section key={index} className="legal-section">
-              <h2 className="legal-section-title">{section.title}</h2>
-              {Array.isArray(section.content) ? (
-                section.content.map((paragraph, pIndex) => (
-                  <p key={pIndex} className="legal-section-text">{paragraph}</p>
-                ))
-              ) : (
-                <p className="legal-section-text">{section.content}</p>
-              )}
-            </section>
-          ))}
+            {/* 章节列表 */}
+            {isValidSections && sections.map((section, index) => (
+              <section key={index} className="legal-section">
+                <h2 className="legal-section-title">{section.title}</h2>
+                {Array.isArray(section.content) ? (
+                  section.content.map((paragraph, pIndex) => (
+                    <p key={pIndex} className="legal-section-text">{paragraph}</p>
+                  ))
+                ) : (
+                  <p className="legal-section-text">{section.content}</p>
+                )}
+              </section>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   )
 }
 

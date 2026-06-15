@@ -8,6 +8,8 @@ import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { useLanguage } from '../hooks/useLanguage'
 import SEO from '../components/SEO'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 import postsZh from '../data/posts/posts-zh.json'
 import postsEn from '../data/posts/posts-en.json'
 import './BlogPostPage.css'
@@ -164,23 +166,27 @@ function BlogPostPage() {
   // 文章未找到
   if (!post) {
     return (
-      <div className="blog-post-page">
+      <>
         <SEO title="文章未找到" description="抱歉，您访问的文章不存在。" canonical="/blog" />
-        <div className="container">
-          <div className="post-not-found">
-            <h1>{language === 'zh-CN' ? '文章未找到' : 'Post Not Found'}</h1>
-            <p>
-              {language === 'zh-CN'
-                ? '抱歉，您访问的文章不存在。'
-                : 'Sorry, the post you are looking for does not exist.'
-              }
-            </p>
-            <Link to="/blog" className="back-to-blog">
-              {language === 'zh-CN' ? '← 返回博客列表' : '← Back to Blog'}
-            </Link>
+        <Header />
+        <div className="blog-post-page">
+          <div className="container">
+            <div className="post-not-found">
+              <h1>{language === 'zh-CN' ? '文章未找到' : 'Post Not Found'}</h1>
+              <p>
+                {language === 'zh-CN'
+                  ? '抱歉，您访问的文章不存在。'
+                  : 'Sorry, the post you are looking for does not exist.'
+                }
+              </p>
+              <Link to="/blog" className="back-to-blog">
+                {language === 'zh-CN' ? '← 返回博客列表' : '← Back to Blog'}
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+        <Footer />
+      </>
     )
   }
 
@@ -238,85 +244,89 @@ function BlogPostPage() {
   }
 
   return (
-    <div className="blog-post-page">
+    <>
       <SEO
         title={post.title}
         description={post.excerpt}
         canonical={`/blog/${post.slug}`}
         type="article"
       />
+      <Header />
       {/* JSON-LD 结构化数据 */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      {/* 文章头部 */}
-      <section className="post-header">
-        <div className="container">
-          <div className="post-breadcrumb">
-            <Link to="/">{language === 'zh-CN' ? '首页' : 'Home'}</Link>
-            <span className="breadcrumb-separator">/</span>
-            <Link to="/blog">{language === 'zh-CN' ? '博客' : 'Blog'}</Link>
-            <span className="breadcrumb-separator">/</span>
-            <span className="breadcrumb-current">{post.title}</span>
-          </div>
-          <div className="post-meta-top">
-            <span className="post-category-badge">{post.category}</span>
-            <span className="post-date-badge">{formatDate(post.date)}</span>
-          </div>
-          <h1 className="post-title-main">{post.title}</h1>
-          <p className="post-excerpt-main">{post.excerpt}</p>
-          <div className="post-tags-top">
-            {post.tags.map((tag, index) => (
-              <span key={index} className="post-tag-badge">#{tag}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 文章正文 */}
-      <section className="post-body">
-        <div className="container">
-          <div className="post-content">
-            {renderContent(post.content)}
-          </div>
-        </div>
-      </section>
-
-      {/* 相关文章 */}
-      {relatedPosts.length > 0 && (
-        <section className="related-posts">
+      <div className="blog-post-page">
+        {/* 文章头部 */}
+        <section className="post-header">
           <div className="container">
-            <h2 className="related-title">
-              {language === 'zh-CN' ? '相关文章' : 'Related Posts'}
-            </h2>
-            <div className="related-grid">
-              {relatedPosts.map((relatedPost, index) => (
-                <article key={index} className="related-card">
-                  <div className="related-meta">
-                    <span className="related-category">{relatedPost.category}</span>
-                    <span className="related-date">{formatDate(relatedPost.date)}</span>
-                  </div>
-                  <h3 className="related-title-link">
-                    <Link to={`/blog/${relatedPost.slug}`}>{relatedPost.title}</Link>
-                  </h3>
-                  <p className="related-excerpt">{relatedPost.excerpt}</p>
-                </article>
+            <div className="post-breadcrumb">
+              <Link to="/">{language === 'zh-CN' ? '首页' : 'Home'}</Link>
+              <span className="breadcrumb-separator">/</span>
+              <Link to="/blog">{language === 'zh-CN' ? '博客' : 'Blog'}</Link>
+              <span className="breadcrumb-separator">/</span>
+              <span className="breadcrumb-current">{post.title}</span>
+            </div>
+            <div className="post-meta-top">
+              <span className="post-category-badge">{post.category}</span>
+              <span className="post-date-badge">{formatDate(post.date)}</span>
+            </div>
+            <h1 className="post-title-main">{post.title}</h1>
+            <p className="post-excerpt-main">{post.excerpt}</p>
+            <div className="post-tags-top">
+              {post.tags.map((tag, index) => (
+                <span key={index} className="post-tag-badge">#{tag}</span>
               ))}
             </div>
           </div>
         </section>
-      )}
 
-      {/* 返回链接 */}
-      <section className="post-footer">
-        <div className="container">
-          <Link to="/blog" className="back-to-blog">
-            {language === 'zh-CN' ? '← 返回博客列表' : '← Back to Blog'}
-          </Link>
-        </div>
-      </section>
-    </div>
+        {/* 文章正文 */}
+        <section className="post-body">
+          <div className="container">
+            <div className="post-content">
+              {renderContent(post.content)}
+            </div>
+          </div>
+        </section>
+
+        {/* 相关文章 */}
+        {relatedPosts.length > 0 && (
+          <section className="related-posts">
+            <div className="container">
+              <h2 className="related-title">
+                {language === 'zh-CN' ? '相关文章' : 'Related Posts'}
+              </h2>
+              <div className="related-grid">
+                {relatedPosts.map((relatedPost, index) => (
+                  <article key={index} className="related-card">
+                    <div className="related-meta">
+                      <span className="related-category">{relatedPost.category}</span>
+                      <span className="related-date">{formatDate(relatedPost.date)}</span>
+                    </div>
+                    <h3 className="related-title-link">
+                      <Link to={`/blog/${relatedPost.slug}`}>{relatedPost.title}</Link>
+                    </h3>
+                    <p className="related-excerpt">{relatedPost.excerpt}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* 返回链接 */}
+        <section className="post-footer">
+          <div className="container">
+            <Link to="/blog" className="back-to-blog">
+              {language === 'zh-CN' ? '← 返回博客列表' : '← Back to Blog'}
+            </Link>
+          </div>
+        </section>
+      </div>
+      <Footer />
+    </>
   )
 }
 

@@ -450,6 +450,11 @@
       "btn": "Visit Blog"
     }
   },
+  "productsPage": {
+    "title": "Our Products",
+    "subtitle": "Qingzao Studio focuses on building simple and efficient tools to help users solve practical problems like renovation process management and image processing.",
+    "description": "Qingzao Studio provides renovation flowchart and white background image trimming tools, making renovation and image processing simpler and more efficient."
+  },
   "contactPage": {
     "title": "Contact Us",
     "subtitle": "We always welcome your feedback and suggestions",
