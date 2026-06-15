@@ -18,6 +18,7 @@ import ContactPage from './pages/ContactPage'
 import ProductsPage from './pages/ProductsPage'
 import NotFoundPage from './pages/NotFoundPage'
 import CookieConsent from './components/CookieConsent'
+import AnnouncementBanner from './components/AnnouncementBanner'
 import './App.css'
 
 /**
@@ -33,6 +34,7 @@ function HomePage() {
         canonical="/"
       />
       <Header />
+      <AnnouncementBanner />
       <main>
         <Hero />
         <Products />
