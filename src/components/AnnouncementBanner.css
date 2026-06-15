@@ -1,69 +1,53 @@
 /**
- * 公告横幅样式
- * 醒目的彩色横幅，置于页面顶部
+ * 公告横幅组件样式
+ * 放置于 Header 下方，显示迁移通知等临时公告
+ * 小喇叭图标 + 可点击链接，不遮挡顶部菜单
  */
 
 .announcement-banner {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 48px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: #fff;
-  font-size: 15px;
-  line-height: 1.6;
-  z-index: 100;
+  gap: 8px;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #fff8e1, #fff3cd);
+  border-bottom: 1px solid #ffeeba;
+  font-size: 14px;
+  color: #856404;
+  line-height: 1.5;
+  position: relative;
+  z-index: 999;
   flex-shrink: 0;
 }
 
-.announcement-text {
-  text-align: center;
-}
-
-.announcement-link {
-  color: #ffd700;
-  font-weight: 600;
-  text-decoration: underline;
-  margin: 0 4px;
-  transition: opacity 0.2s;
-}
-
-.announcement-link:hover {
-  opacity: 0.8;
-  color: #fff;
-}
-
-.announcement-close {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 22px;
-  cursor: pointer;
-  padding: 4px 8px;
+.announcement-banner .horn-icon {
+  flex-shrink: 0;
+  font-size: 16px;
   line-height: 1;
-  border-radius: 4px;
-  transition: background 0.2s, color 0.2s;
 }
 
-.announcement-close:hover {
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
+.announcement-banner .announcement-text {
+  display: inline;
 }
 
-/* 移动端适配 */
-@media (max-width: 768px) {
+.announcement-banner .announcement-link {
+  color: #1f8ded;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.announcement-banner .announcement-link:hover {
+  color: #0068c9;
+}
+
+/* 响应式 - 小屏幕换行 */
+@media (max-width: 480px) {
   .announcement-banner {
-    padding: 10px 40px 10px 16px;
+    padding: 8px 16px;
     font-size: 13px;
-  }
-
-  .announcement-close {
-    right: 8px;
-    font-size: 20px;
+    flex-wrap: wrap;
+    text-align: center;
   }
 }

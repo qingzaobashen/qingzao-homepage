@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import { LanguageProvider } from './contexts/LanguageContext'
 import SEO from './components/SEO'
 import Header from './components/Header'
+import AnnouncementBanner from './components/AnnouncementBanner'
 import Hero from './components/Hero'
 import Products from './components/Products'
 import About from './components/About'
@@ -18,12 +19,11 @@ import ContactPage from './pages/ContactPage'
 import ProductsPage from './pages/ProductsPage'
 import NotFoundPage from './pages/NotFoundPage'
 import CookieConsent from './components/CookieConsent'
-import AnnouncementBanner from './components/AnnouncementBanner'
 import './App.css'
 
 /**
  * 首页布局组件
- * 包含 Header、主要内容区、Footer
+ * 包含 Header、公告横幅、主要内容区、Footer
  */
 function HomePage() {
   return (
