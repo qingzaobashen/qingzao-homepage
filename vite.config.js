@@ -6,6 +6,7 @@ import react from '@vitejs/plugin-react'
  * 配置 React 插件、开发服务器端口和构建输出目录
  */
 export default defineConfig({
+  base: '/qingzao-homepage/', // GitHub Pages 子路径
   plugins: [react()],
   server: {
     port: 22333,
