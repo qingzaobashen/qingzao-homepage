@@ -37,13 +37,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
+  /* background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.35) 0%,
     rgba(0, 0, 0, 0.4) 30%,
     rgba(0, 0, 0, 0.5) 60%,
     rgba(0, 0, 0, 0.7) 100%
-  );
+  ); */
 }
 
 /* 顶部内容区 */
