@@ -87,9 +87,16 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Logo SVG 颜色 */
-.header-logo svg {
-  color: var(--color-primary);
+/* Logo 图片样式 */
+.header-logo-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+.header-logo:hover .header-logo-img {
+  transform: scale(1.05);
 }
 
 
@@ -104,10 +111,11 @@
 }
 
 .header.home.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 1px 0 var(--color-hairline-cool);
+  /* 首页滚动后保持透明背景，仅加细微模糊区分 */
+  background: rgba(0, 0, 0, 0.0);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: none;
 }
 
 /* 首页 - Logo：未滚动白色，滚动后深色 */

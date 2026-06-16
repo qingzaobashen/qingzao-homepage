@@ -20,7 +20,7 @@ function AnnouncementBanner() {
   const handleClose = () => {
     setIsVisible(false)
     try {
-      localStorage.setItem('announcement-dismissed', 'true')
+      //localStorage.setItem('announcement-dismissed', 'true')
     } catch {
       // 忽略存储失败（隐私模式等）
     }

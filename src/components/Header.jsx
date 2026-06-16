@@ -34,10 +34,7 @@ function Header() {
       <div className="header-inner">
         {/* 左侧 Logo */}
         <Link to="/" className="header-logo">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M8 12h8M12 8v8"/>
-          </svg>
+          <img src="/favicon.svg" alt="Qingzao Logo" className="header-logo-img" />
           <span>{t('header.logo')}</span>
         </Link>
 
