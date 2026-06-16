@@ -48,7 +48,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Build
-        run: pnpm run build
+        # 使用 build:full 以触发预渲染脚本，为每个 SPA 路由生成对应的 index.html，
+        # 避免 GitHub Pages 在直接访问子路由（如 /blog）时返回 404
+        run: pnpm run build:full
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
