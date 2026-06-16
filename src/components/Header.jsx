@@ -56,9 +56,19 @@ function Header() {
             <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>{t('header.nav.contact')}</Link>
           )}
           <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)}>{t('header.nav.blog')}</Link>
+
+          {/* 移动端展开面板专属：语言切换 + CTA 按钮，桌面端隐藏 */}
+          <div className="header-nav-extra">
+            <LanguageSwitcher />
+            {isHome ? (
+              <a href="#products" className="btn-nav btn-nav-primary" onClick={() => setIsMobileMenuOpen(false)}>{t('header.cta')}</a>
+            ) : (
+              <Link to="/products" className="btn-nav btn-nav-primary" onClick={() => setIsMobileMenuOpen(false)}>{t('header.cta')}</Link>
+            )}
+          </div>
         </nav>
 
-        {/* 右侧按钮 */}
+        {/* 右侧按钮（桌面端使用，移动端隐藏） */}
         <div className={`header-right ${isMobileMenuOpen ? 'open' : ''}`}>
           <LanguageSwitcher />
           {isHome ? (

@@ -26,7 +26,6 @@ function Footer() {
       links: [
         { label: t('footer.nav.company.links.about'), href: '/about', isRoute: true },
         { label: t('footer.nav.company.links.contact'), href: '/contact', isRoute: true },
-        { label: t('footer.nav.company.links.join'), href: '#' },
       ]
     },
     {
