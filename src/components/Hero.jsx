@@ -9,7 +9,7 @@ import './Hero.css'
  * 1 - 白底抠图工具 -> image.qingzao.site
  */
 const PRODUCT_LINKS = {
-  decoration: 'https://qingzao.site',
+  decoration: 'https://decoration.qingzao.site',
   trimmer: 'https://image.qingzao.site'
 }
 

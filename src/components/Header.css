@@ -242,15 +242,16 @@
     box-shadow: var(--shadow-2);
     opacity: 0;
     pointer-events: none;
-    transform: translateX(-50%) translateY(-8px);
-    transition: all var(--transition-base);
+    /* 修复：移动端不再使用 -50% 居中位移，仅保留 Y 轴动画 */
+    transform: translateY(-8px);
+    transition: opacity var(--transition-base), transform var(--transition-base);
     align-items: flex-start;
   }
 
   .header-nav.open {
     opacity: 1;
     pointer-events: auto;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
 
   .header-nav a {

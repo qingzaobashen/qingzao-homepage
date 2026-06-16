@@ -8,7 +8,7 @@ import './Products.css'
  * 这里独立定义一份，避免循环依赖；如需调整请同步两边
  */
 const PRODUCT_LINKS = {
-  decoration: 'https://qingzao.site',
+  decoration: 'https://decoration.qingzao.site',
   trimmer: 'https://image.qingzao.site'
 }
 
