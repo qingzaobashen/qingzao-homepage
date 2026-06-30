@@ -346,13 +346,11 @@ function BlogPostPage() {
             <div className="post-meta-top">
               <span className="post-category-badge">{post.category}</span>
               <span className="post-date-badge">{formatDate(post.date)}</span>
-            </div>
-            <h1 className="post-title-main">{post.title}</h1>
-            <p className="post-excerpt-main">{post.excerpt}</p>
-            <div className="post-tags-top">
-              {post.tags.map((tag, index) => (
-                <span key={index} className="post-tag-badge">#{tag}</span>
-              ))}
+              <div className="post-tags-top">
+                {post.tags.map((tag, index) => (
+                  <span key={index} className="post-tag-badge">#{tag}</span>
+                ))}
+              </div>
             </div>
           </div>
         </section>

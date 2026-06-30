@@ -1,129 +1,231 @@
-# Decoration Budget Guide: How to Plan and Control Your Renovation Costs
+# 🧾 The Ultimate Decoration Budget Playbook
 
-A decoration budget is key to a successful renovation. This 5-step guide teaches you how to scientifically plan your budget and avoid overspending.
+### — Stop making "estimated budgets." Make "executable budgets."
 
-## 1. Determine Decoration Grade
 
-Before making a budget, first determine the decoration grade, as budgets vary greatly by grade.
+### 🧠 1. First things first: budget blowouts aren't about bad math, they're about bad breakdowns
 
-### 1. Economy Grade (800-1200 RMB/㎡)
-- Basic water and electrical renovations
-- Simple wall and floor treatments
-- Budget-friendly materials
-- Basic functionality
+Most people go over budget not because they calculated wrong, but because:
 
-### 2. Comfort Grade (1200-2000 RMB/㎡)
-- Complete water and electrical renovations
-- Mid-range materials
-- Moderate design elements
-- Balance of quality and value
+* They didn't break down the items (only know the total)
+* They didn't control unit prices (no idea where the cost is)
+* They didn't control changes (endless additions later)
+* They didn't build a mechanism (no contingency fund)
 
-### 3. Quality Grade (2000-3500 RMB/㎡)
-- High-quality water and electrical materials
-- Brand-name materials
-- Detailed design
-- Attention to detail and quality
+👉 So the essence of a budget isn't "counting money" — it's:
 
-### 4. Luxury Grade (3500+ RMB/㎡)
-- Premium materials
-- Custom design
-- Smart home integration
-- Ultimate living experience
+> **Locking down where the money flows in advance**
 
-## 2. Create a Budget Checklist
+---
 
-A decoration budget mainly consists of these parts:
+## 🏗️ 2. The correct budget structure (you must break it down this way)
 
-### 1. Hard Decoration Costs (~50%)
-- Water & electrical: 10-15%
-- Masonry work: 15-20%
-- Woodwork: 10-15%
-- Paint work: 5-8%
+Don't budget by "feel." Break it into these 5 buckets:
 
-### 2. Material Costs (~30%)
-- Tiles/Flooring: 10-12%
-- Cabinetry: 5-8%
-- Bathroom fixtures: 5-8%
-- Doors & Windows: 5-8%
+### ① Hard Decoration (~25%) — The skeleton of your home
 
-### 3. Soft Decoration (~15%)
-- Furniture: sofas, beds, tables
-- Curtains
-- Lighting
-- Decorations
+Includes:
 
-### 4. Appliances (~10%)
-- Major appliances: TV, refrigerator, washing machine
-- Kitchen appliances: range hood, stove, oven
+* Plumbing & electrical (core concealed work)
+* Masonry (waterproofing + tiling + leveling)
+* Woodwork (ceilings + cabinets)
+* Paint work (wall preparation)
 
-### 5. Other Costs (~5%)
-- Design fees
-- Supervision fees
-- Property management fees
-- Waste removal fees
+📌 Rule of thumb:
 
-## 3. Get Accurate Quotes
+> You can't cut quality here — only optimize the design
 
-### 1. Compare Multiple Bids
-- Get quotes from at least 3 decoration companies
-- Compare detail levels of quotes
-- Watch for omitted items
+---
 
-### 2. Verify Material Prices
-- Visit building material markets
-- Don't rely solely on contractor quotes
-- Pay attention to brands, models, and specifications
+### ② Main Materials (15%~20%) — What you can see
 
-### 3. Confirm Work Quantities
-- Measure your home yourself
-- Verify the number of electrical points
-- Confirm the scope of work
+* Tiles / Flooring
+* Cabinetry
+* Doors & Windows
+* Bathroom fixtures
+* Hardware
 
-## 4. Reserve Flexibility
+📌 Beginner mistakes:
+❌ Only looking at the brand
+❌ Ignoring the model
+❌ Not comparing specifications
 
-### 1. Contingency Fund (10-20%)
-Always reserve 10-20% of your total budget for unexpected expenses.
+👉 Correct approach:
+Different series from the same brand can vary 2–3x in price
 
-### 2. Common Add-ons
-- Additional electrical points
-- Wall issues discovered during work
-- Increased waterproofing area
-- Design changes
+---
 
-### 3. Avoid Deduction Traps
-Some contractors quote high but offer little refund for reductions. Specify deduction terms in the contract.
+### ③ Furniture & Soft Furnishing (10%~15%) — Where comfort comes from
 
-## 5. Control Budget Execution
+* Sofas / Beds / Dining tables
+* Curtains
+* Lighting
+* Decor
 
-### 1. Stick to the Budget
-- Compare against budget before every purchase
-- Re-evaluate over-budget items
-- Avoid impulse purchases
+📌 Core principle:
 
-### 2. Track Every Expense
-- Use a spreadsheet or app
-- Categorize all expenses
-- Regularly check against budget
+> You can buy later, but you can't buy carelessly
 
-### 3. Adjust Flexibly
-- If one item goes over, find savings elsewhere
-- Non-core items can be downgraded
-- But never cut corners on core items (water, electrical, waterproofing)
+---
 
-## Common Budget Mistakes
+### ④ Appliances (15%~25%) — Your daily efficiency system
 
-### Mistake 1: Only Looking at the Total
-A low total doesn't mean good value. Look at the itemized quote.
+* Refrigerator / Washer / AC
+* Range hood / Stove
+* Dishwasher / Robot vacuum
 
-### Mistake 2: Ignoring Auxiliary Materials
-Auxiliary materials (cement, sand, adhesive) are cheap per unit but used in large quantities.
+📌 Critical sequence:
+Confirm dimensions → Design cabinets → Buy appliances
 
-### Mistake 3: Over-Pursuing Low Prices
-Low prices often mean poor materials and workmanship.
+(Wrong order = rework risk)
 
-### Mistake 4: No Contingency Fund
-Without a contingency fund, unexpected issues force you to either overspend or cut quality.
+---
 
-## Conclusion
+### ⑤ Contingency Fund (10%~20%) — Your safety net
 
-A good budget isn't about spending less—it's about allocating wisely and executing strictly. Spend where it matters, save where you can.
+Must reserve for:
+
+* Electrical/plumbing additions
+* Wall issues
+* Extra waterproofing
+* Design changes
+
+📌 Core principle:
+
+> No contingency fund = guaranteed overrun
+
+---
+
+## 📊 3. Budget formula for beginners (plug and play)
+
+### ✔️ Total budget formula
+
+> Area × unit price range = total budget
+
+#### Reference:
+
+| Decoration Grade | Unit Price |
+|-----------------|------------|
+| Basic | 800–1200 RMB/m² |
+| Comfort | 1200–2000 RMB/m² |
+| Quality | 2000–3500 RMB/m² |
+
+---
+
+### ✔️ Example (important)
+
+90 m² apartment:
+
+* Basic: 100k–150k RMB
+* Comfort: 150k–250k RMB
+* Quality: 250k–500k+ RMB
+
+📌 Note:
+
+> Appliances + furniture are NOT included in the contractor's quote (many people miss this)
+
+---
+
+## ⚠️ 4. 6 budget traps beginners fall into
+
+### ① Only looking at the total, ignoring the breakdown
+
+👉 You will get hit with add-ons later
+
+### ② Winning with the lowest bid
+
+👉 They make money on add-ons
+
+### ③ Ignoring auxiliary materials
+
+👉 Cement and glue are the hidden costs
+
+### ④ Not counting the outlets and switches
+
+👉 Electrical budget will blow up
+
+### ⑤ Not comparing quotes
+
+👉 Compare at least 3 companies
+
+### ⑥ Not signing a change-order rule
+
+👉 No price control later
+
+---
+
+## 🧾 5. Standard budget breakdown template (copy this)
+
+Build your Excel with this structure:
+
+### 🧱 1. Hard Decoration
+
+* Plumbing & electrical:
+* Waterproofing:
+* Tiling:
+* Woodwork:
+* Paint:
+
+### 🪵 2. Main Materials
+
+* Tiles:
+* Flooring:
+* Doors:
+* Cabinetry:
+* Bathroom fixtures:
+
+### 🛋️ 3. Furniture
+
+* Sofa:
+* Bed:
+* Dining table:
+
+### ⚡ 4. Appliances
+
+* Refrigerator:
+* AC:
+* Washer:
+* Kitchen appliances:
+
+### 💰 5. Contingency Fund
+
+* Reserve ratio: 10–20%
+
+---
+
+## 🧩 6. Core methods to control your budget (more important than saving)
+
+### ✔️ Method 1: Three-layer control
+
+* Layer 1: Total budget is the hard ceiling
+* Layer 2: Each line item has its own ceiling
+* Layer 3: Every purchase must be checked against the table
+
+---
+
+### ✔️ Method 2: Lock in "the non-negotiables" first
+
+Priority:
+
+1. Plumbing & electrical
+2. Waterproofing
+3. Kitchen system
+4. Storage system
+
+👉 Don't cut quality here — only optimize the design
+
+---
+
+### ✔️ Method 3: Save with "substitution thinking"
+
+Not "spend less" but:
+
+* Downgrade the brand without downgrading the function
+* Reduce the decoration without reducing usability
+* Cut the decor without cutting the structure
+
+---
+
+## 🧭 7. The bottom line (crucial)
+
+> The core of a decoration budget isn't "controlling spending" — it's "controlling chaos."
