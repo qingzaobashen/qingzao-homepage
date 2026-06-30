@@ -13,9 +13,9 @@ We evaluate tools on these dimensions:
 
 ## 2. Tool Comparison
 
-### 1. Qingzao Background Removal
+### 1. Qingzao Background Removal （free + online）
 
-**Overview**: Online tool designed for e-commerce white background images
+**Overview**: Online tool designed for e-commerce white background images(image.qingzao.site)
 
 | Dimension | Score | Notes |
 |-----------|-------|-------|
