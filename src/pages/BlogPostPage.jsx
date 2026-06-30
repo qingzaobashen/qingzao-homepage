@@ -12,6 +12,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import postsZh from '../data/posts/posts-zh.json'
 import postsEn from '../data/posts/posts-en.json'
+import { getPostContent } from '../data/posts/postContentLoader'
 import './BlogPostPage.css'
 
 /**
@@ -22,6 +23,7 @@ function BlogPostPage() {
   const { slug } = useParams()
   const { t, language } = useLanguage()
   const [post, setPost] = useState(null)
+  const [content, setContent] = useState('')
   const [relatedPosts, setRelatedPosts] = useState([])
 
   /**
@@ -32,12 +34,19 @@ function BlogPostPage() {
     const foundPost = postsData.find(p => p.slug === slug)
     setPost(foundPost || null)
 
-    // 查找相关文章（同分类的其他文章）
+    // 从 .md 文件加载正文内容
     if (foundPost) {
+      const loadedContent = getPostContent(foundPost.slug, language, foundPost.content || '')
+      setContent(loadedContent)
+
+      // 查找相关文章（同分类的其他文章）
       const related = postsData
         .filter(p => p.category === foundPost.category && p.slug !== slug)
         .slice(0, 3)
       setRelatedPosts(related)
+    } else {
+      setContent('')
+      setRelatedPosts([])
     }
   }, [slug, language])
 
@@ -63,18 +72,32 @@ function BlogPostPage() {
   }
 
   /**
-   * 将 Markdown 格式的内容转换为 HTML
-   * @param {string} content - Markdown 内容
-   * @returns {JSX.Element} 转换后的 HTML 内容
+   * 处理行内格式：粗体、链接、行内代码、删除线
    */
+  const renderInline = (text) => {
+    let result = text
+    result = result.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    result = result.replace(/~~(.*?)~~/g, '<del>$1</del>')
+    result = result.replace(/`([^`]+)`/g, '<code>$1</code>')
+    result = result.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+    return result
+  }
+
+  /**
+ * 将 Markdown 格式的内容转换为 HTML
+ * @param {string} content - Markdown 内容
+ * @returns {JSX.Element} 转换后的 HTML 内容
+ */
   const renderContent = (content) => {
     if (!content) return null
 
-    // 简单的 Markdown 渲染
     const lines = content.split('\n')
     const elements = []
     let inList = false
     let listItems = []
+    let inTable = false
+    let tableRows = []
+    let tableHeaders = []
 
     const flushList = () => {
       if (listItems.length > 0) {
@@ -90,76 +113,128 @@ function BlogPostPage() {
       }
     }
 
+    const flushTable = () => {
+      if (tableRows.length === 0) return
+      const bodyRows = tableHeaders.length > 0 ? tableRows.slice(1) : tableRows
+      const headers = tableHeaders.length > 0 ? tableHeaders : tableRows[0]
+
+      elements.push(
+        <table key={`table-${elements.length}`} className="content-table">
+          {tableHeaders.length > 0 && (
+            <thead>
+              <tr>
+                {headers.map((cell, i) => (
+                  <th key={i} dangerouslySetInnerHTML={{ __html: renderInline(cell.trim()) }} />
+                ))}
+              </tr>
+            </thead>
+          )}
+          <tbody>
+            {bodyRows.map((row, ri) => (
+              <tr key={ri}>
+                {row.map((cell, ci) => (
+                  <td key={ci} dangerouslySetInnerHTML={{ __html: renderInline(cell.trim()) }} />
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )
+      tableRows = []
+      tableHeaders = []
+      inTable = false
+    }
+
+    const isTableSeparator = (line) => /^\|[\s:-]+\|[\s:-]*\|/.test(line)
+
     lines.forEach((line, index) => {
+      const trimmed = line.trim()
+
       // 空行
-      if (line.trim() === '') {
+      if (trimmed === '') {
         flushList()
+        flushTable()
         return
       }
 
-      // 标题 H1
-      if (line.startsWith('# ')) {
+      // 分割线
+      if (/^(-{3,}|\*{3,}|_{3,})$/.test(trimmed)) {
         flushList()
-        elements.push(
-          <h1 key={index} className="content-h1">
-            {line.substring(2)}
-          </h1>
-        )
+        flushTable()
+        elements.push(<hr key={`hr-${index}`} className="content-hr" />)
+        return
       }
-      // 标题 H2
-      else if (line.startsWith('## ')) {
-        flushList()
-        elements.push(
-          <h2 key={index} className="content-h2">
-            {line.substring(3)}
-          </h2>
-        )
-      }
-      // 标题 H3
-      else if (line.startsWith('### ')) {
-        flushList()
-        elements.push(
-          <h3 key={index} className="content-h3">
-            {line.substring(4)}
-          </h3>
-        )
-      }
-      // 无序列表
-      else if (line.match(/^[\d]+\.\s/) || line.match(/^[-*]\s/)) {
-        const content = line.replace(/^[\d]+\.\s/, '').replace(/^[-*]\s/, '')
-        listItems.push(content)
-        inList = true
-      }
-      // 代码块（简单处理）
-      else if (line.startsWith('```')) {
-        flushList()
-        // 简化处理，跳过代码块标记
-      }
-      // 表格行
-      else if (line.includes('|')) {
-        flushList()
-        // 表格简化处理
-        elements.push(
-          <p key={index} className="content-table-row">
-            {line}
-          </p>
-        )
-      }
-      // 普通段落
-      else {
-        flushList()
-        // 处理加粗 **text**
-        let processedLine = line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-        // 处理链接 [text](url)
-        processedLine = processedLine.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
 
+      // 标题 H1-H6
+      const headingMatch = trimmed.match(/^(#{1,6})\s+(.+)$/)
+      if (headingMatch) {
+        flushList()
+        flushTable()
+        const level = headingMatch[1].length
+        const text = headingMatch[2]
+        const Tag = `h${level}`
         elements.push(
-          <p key={index} className="content-paragraph" dangerouslySetInnerHTML={{ __html: processedLine }} />
+          <Tag key={index} className={`content-h${level}`}>
+            {text}
+          </Tag>
         )
+        return
       }
+
+      // 表格行
+      if (line.includes('|')) {
+        flushList()
+        if (isTableSeparator(line)) return
+        const cells = line.split('|').filter(c => c !== '')
+        if (!inTable) {
+          inTable = true
+          tableRows = []
+          tableHeaders = []
+        }
+        if (tableRows.length === 0) {
+          tableHeaders = cells
+        }
+        tableRows.push(cells)
+        return
+      }
+
+      // 有序列表
+      if (trimmed.match(/^\d+\.\s/)) {
+        flushTable()
+        const liContent = renderInline(trimmed.replace(/^\d+\.\s/, ''))
+        listItems.push(liContent)
+        inList = true
+        return
+      }
+
+      // 无序列表
+      if (trimmed.match(/^[-*]\s/)) {
+        flushTable()
+        const liContent = renderInline(trimmed.replace(/^[-*]\s/, ''))
+        listItems.push(liContent)
+        inList = true
+        return
+      }
+
+      // 代码块标记
+      if (trimmed.startsWith('```')) {
+        flushList()
+        flushTable()
+        return
+      }
+
+      // 普通段落
+      flushList()
+      flushTable()
+
+      const processedLine = renderInline(line)
+      elements.push(
+        <p key={index} className="content-paragraph" dangerouslySetInnerHTML={{ __html: processedLine }} />
+      )
     })
 
     flushList()
+    flushTable()
     return elements
   }
 
@@ -286,7 +361,7 @@ function BlogPostPage() {
         <section className="post-body">
           <div className="container">
             <div className="post-content">
-              {renderContent(post.content)}
+              {renderContent(content)}
             </div>
           </div>
         </section>
