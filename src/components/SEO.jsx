@@ -17,18 +17,19 @@ function SEO({ title, description, canonical, type = 'website', image }) {
   const siteName = '青枣工作室'
   const fullTitle = title ? `${title} - ${siteName}` : siteName
   const baseUrl = 'https://qingzao.site'
+  const safeDescription = description || '青枣工作室提供装修流程指南、白底抠图工具与实用内容，帮助用户更高效地完成装修与图片处理任务。'
   const canonicalUrl = canonical ? `${baseUrl}${canonical}` : baseUrl
   const ogImage = image || `${baseUrl}/og-image.png`
 
   return (
     <Helmet>
       <title>{fullTitle}</title>
-      <meta name="description" content={description} />
+      <meta name="description" content={safeDescription} />
       <link rel="canonical" href={canonicalUrl} />
 
       {/* Open Graph */}
       <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
+      <meta property="og:description" content={safeDescription} />
       <meta property="og:type" content={type} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:site_name" content={siteName} />
@@ -38,7 +39,7 @@ function SEO({ title, description, canonical, type = 'website', image }) {
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:description" content={safeDescription} />
       <meta name="twitter:image" content={ogImage} />
     </Helmet>
   )

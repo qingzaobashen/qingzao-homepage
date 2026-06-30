@@ -116,6 +116,13 @@
       }
     }
   },
+  "highlights": {
+    "label": "Useful Content",
+    "title": "Practical guides for renovation and productivity",
+    "subtitle": "We do more than showcase products—we publish tutorials, practical tips, and tool recommendations that help users make better decisions.",
+    "readMore": "Read article",
+    "cta": "Browse all articles"
+  },
   "about": {
     "label": "Our Philosophy",
     "title": "Technology Should Make Life Simpler, Not More Complex",

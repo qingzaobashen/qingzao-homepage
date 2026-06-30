@@ -6,6 +6,7 @@ import Header from './components/Header'
 import AnnouncementBanner from './components/AnnouncementBanner'
 import Hero from './components/Hero'
 import Products from './components/Products'
+import ContentHighlights from './components/ContentHighlights'
 import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -37,6 +38,7 @@ function HomePage() {
       <main>
         <Hero />
         <Products />
+        <ContentHighlights />
         <About />
         <Contact />
       </main>
