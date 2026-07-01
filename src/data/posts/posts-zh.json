@@ -1,7 +1,7 @@
 [
   {
     "slug": "smart-home-system",
-    "title": "全屋智能装修指南：从布线到场景，避开这5个坑",
+    "title": "全屋智能架构指南：从布线到场景，一步到位",
     "date": "2026-06-14",
     "category": "智能家居",
     "tags": [
@@ -13,7 +13,7 @@
   },
   {
     "slug": "decoration-guide-beginners",
-    "title": "2026一文从\u201c装修小白\u201d到\u201c装修老鸟\u201d：毛坯到入住全流程指南",
+    "title": "2026从\u201c装修小白\u201d到\u201c装修老鸟\u201d，看这一篇就够了：毛坯到入住全流程指南",
     "date": "2026-06-13",
     "category": "装修指南",
     "tags": [
@@ -37,7 +37,7 @@
   },
   {
     "slug": "choose-right-tools",
-    "title": "如何选择适合的工具：从需求出发的工具选型指南",
+    "title": "用完一堆提效率软件，我悟了：根本不需要这些“身外之器”",
     "date": "2026-06-11",
     "category": "工具评测",
     "tags": [
@@ -49,7 +49,7 @@
   },
   {
     "slug": "time-management-tips",
-    "title": "时间管理技巧：提升工作效率的10个实用方法",
+    "title": "时间管理大师：你80%的时间都是\u201c虚妄\u201d",
     "date": "2026-06-10",
     "category": "效率提升",
     "tags": [
@@ -61,7 +61,7 @@
   },
   {
     "slug": "web-design-basics",
-    "title": "网页设计基础：从零开始学习网页布局",
+    "title": "CSS入门：除了盒模型，再学个Flexbox就够了",
     "date": "2026-06-09",
     "category": "设计教程",
     "tags": [
@@ -73,7 +73,7 @@
   },
   {
     "slug": "react-hooks-introduction",
-    "title": "React Hooks 入门：现代React开发的核心概念",
+    "title": "React进阶：React Hooks的使命是分离规整，不是杂糅",
     "date": "2026-06-08",
     "category": "前端开发",
     "tags": [
@@ -85,7 +85,7 @@
   },
   {
     "slug": "seo-optimization-guide",
-    "title": "SEO优化指南：提升网站在搜索引擎中的排名",
+    "title": "SEO优化指南：踩在搜索引擎的“心巴”上",
     "date": "2026-06-07",
     "category": "网络营销",
     "tags": [

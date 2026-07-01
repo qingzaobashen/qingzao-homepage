@@ -98,6 +98,9 @@ function BlogPostPage() {
     let inTable = false
     let tableRows = []
     let tableHeaders = []
+    let inCodeBlock = false
+    let codeLines = []
+    let codeLanguage = ''
 
     const flushList = () => {
       if (listItems.length > 0) {
@@ -145,10 +148,43 @@ function BlogPostPage() {
       inTable = false
     }
 
+    const flushCodeBlock = () => {
+      if (codeLines.length > 0) {
+        const codeContent = codeLines.join('\n')
+        elements.push(
+          <pre key={`code-${elements.length}`} className="content-pre">
+            <code className={`content-code language-${codeLanguage}`}>{codeContent}</code>
+          </pre>
+        )
+        codeLines = []
+        codeLanguage = ''
+        inCodeBlock = false
+      }
+    }
+
     const isTableSeparator = (line) => /^\|[\s:-]+\|[\s:-]*\|/.test(line)
 
     lines.forEach((line, index) => {
       const trimmed = line.trim()
+
+      // 代码块标记
+      if (trimmed.startsWith('```')) {
+        if (inCodeBlock) {
+          flushCodeBlock()
+        } else {
+          flushList()
+          flushTable()
+          inCodeBlock = true
+          codeLanguage = trimmed.slice(3).trim()
+        }
+        return
+      }
+
+      // 代码块内部内容
+      if (inCodeBlock) {
+        codeLines.push(line)
+        return
+      }
 
       // 空行
       if (trimmed === '') {
@@ -216,13 +252,6 @@ function BlogPostPage() {
         return
       }
 
-      // 代码块标记
-      if (trimmed.startsWith('```')) {
-        flushList()
-        flushTable()
-        return
-      }
-
       // 普通段落
       flushList()
       flushTable()
@@ -235,6 +264,7 @@ function BlogPostPage() {
 
     flushList()
     flushTable()
+    flushCodeBlock()
     return elements
   }
 

@@ -1,12 +1,12 @@
-# React Hooks：别再学"用法"，学"思路"
+# React进阶：React Hooks的使命是分离规整，不是杂糅
 
-如果你刚接触React Hooks，你可能会觉得学了很多API但还是写不出好代码。
+如果你刚接触React Hooks，你可能会觉得学了很多useXxx() API但还是写不出好代码。
 
 原因很简单：网上大多数教程都在教你怎么调用一个Hook，而不是教你在真实场景中应该用哪个、为什么用它。
 
 本文直接用真实场景说话。
 
----
+***
 
 ## 一、useState vs useReducer：不是复杂度的区别
 
@@ -52,7 +52,7 @@ function formReducer(state, action) {
 
 判断标准很简单：**如果更新一个状态时需要同时知道其他状态的值，就用useReducer。**
 
----
+***
 
 ## 二、useEffect：80%的人用错了依赖数组
 
@@ -108,7 +108,7 @@ useEffect(() => {
 }, [userId])
 ```
 
----
+***
 
 ## 三、自定义Hook：把逻辑从组件中抽出来
 
@@ -221,7 +221,7 @@ function useLocalStorage(key, initialValue) {
 }
 ```
 
----
+***
 
 ## 四、useMemo和useCallback：不要过早优化
 
@@ -241,7 +241,7 @@ const sortedUsers = useMemo(() => {
 
 **黄金法则**：先不用useMemo和useCallback，等真的出现性能问题（在React DevTools Profiler里能测出来）再添加。
 
----
+***
 
 ## 五、常见模式和反模式
 
@@ -279,7 +279,7 @@ const [fullName, setFullName] = useState('')
 const fullName = firstName + ' ' + lastName
 ```
 
----
+***
 
 ## 六、迁移建议：从Class到Hooks
 
@@ -289,7 +289,7 @@ const fullName = firstName + ' ' + lastName
 2. 旧组件不急着改，遇到bug或新需求时再改
 3. 优先把"逻辑密集型"的Class组件改成Hooks（因为自定义Hook可以显著降低复杂度）
 
----
+***
 
 ## 结语
 
