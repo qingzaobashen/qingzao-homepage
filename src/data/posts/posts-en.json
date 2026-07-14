@@ -48,78 +48,6 @@
     "excerpt": "Faced with a wide variety of tools on the market, how do you choose the best one for yourself? This article provides a systematic tool selection methodology based on actual needs."
   },
   {
-    "slug": "time-management-tips",
-    "title": "Time Management Tips: 10 Practical Ways to Boost Productivity",
-    "date": "2026-06-10",
-    "category": "Productivity",
-    "tags": [
-      "time management",
-      "efficiency",
-      "work methods"
-    ],
-    "excerpt": "Time is the most precious resource. This article shares 10 proven time management techniques to help you work more efficiently."
-  },
-  {
-    "slug": "web-design-basics",
-    "title": "Web Design Basics: Learn Web Layout from Scratch",
-    "date": "2026-06-09",
-    "category": "Design Tutorial",
-    "tags": [
-      "web design",
-      "layout",
-      "CSS"
-    ],
-    "excerpt": "Web design is the foundation of frontend development. This article introduces the basic principles and common techniques of web layout from scratch."
-  },
-  {
-    "slug": "react-hooks-introduction",
-    "title": "React Hooks Introduction: Core Concepts of Modern React Development",
-    "date": "2026-06-08",
-    "category": "Frontend Development",
-    "tags": [
-      "React",
-      "Hooks",
-      "JavaScript"
-    ],
-    "excerpt": "React Hooks have completely changed the way React components are written. This article introduces the core concepts and common APIs of Hooks."
-  },
-  {
-    "slug": "seo-optimization-guide",
-    "title": "SEO Optimization Guide: Improve Your Website Ranking in Search Engines",
-    "date": "2026-06-07",
-    "category": "Online Marketing",
-    "tags": [
-      "SEO",
-      "search engine",
-      "website optimization"
-    ],
-    "excerpt": "SEO is an important way to increase website traffic. This article introduces the basic principles and practical optimization techniques of SEO."
-  },
-  {
-    "slug": "healthy-diet-habits",
-    "title": "Healthy Eating Habits: Scientifically Plan Your Three Daily Meals",
-    "date": "2026-06-06",
-    "category": "Healthy Living",
-    "tags": [
-      "health",
-      "diet",
-      "lifestyle"
-    ],
-    "excerpt": "Healthy eating habits are the foundation of good health. This article introduces how to scientifically plan your three daily meals."
-  },
-  {
-    "slug": "python-data-analysis",
-    "title": "Python Data Analysis: From Excel to Pandas",
-    "date": "2026-06-05",
-    "category": "Programming",
-    "tags": [
-      "Python",
-      "data analysis",
-      "Pandas"
-    ],
-    "excerpt": "Python has become the preferred language for data analysis. This article introduces how to use Pandas for data analysis."
-  },
-  {
     "slug": "home-storage-solutions",
     "title": "Home Storage Solutions: Space-Saving Tips for Small Apartments",
     "date": "2026-06-04",
@@ -130,42 +58,6 @@
       "space saving"
     ],
     "excerpt": "How to effectively use space in small apartments? This article shares practical home storage solutions and tips."
-  },
-  {
-    "slug": "startup-marketing-strategies",
-    "title": "Startup Marketing Strategies: Low-Cost Ways to Acquire Users",
-    "date": "2026-06-03",
-    "category": "Entrepreneurship",
-    "tags": [
-      "startup",
-      "marketing",
-      "user growth"
-    ],
-    "excerpt": "Startups have limited resources, how can they acquire users at low cost? This article shares practical marketing strategies."
-  },
-  {
-    "slug": "mindfulness-meditation",
-    "title": "Mindfulness Meditation: An Effective Way to Relieve Stress",
-    "date": "2026-06-02",
-    "category": "Mental Health",
-    "tags": [
-      "mindfulness",
-      "meditation",
-      "stress management"
-    ],
-    "excerpt": "Modern life is stressful. Mindfulness meditation is an effective way to relieve stress. This article introduces basic meditation techniques."
-  },
-  {
-    "slug": "electric-vehicle-trends",
-    "title": "Electric Vehicle Trends: The Future of Transportation",
-    "date": "2026-06-01",
-    "category": "Tech News",
-    "tags": [
-      "electric vehicle",
-      "new energy",
-      "tech trends"
-    ],
-    "excerpt": "Electric vehicles are becoming the mainstream choice for future transportation. This article analyzes the development trends of electric vehicles."
   },
   {
     "slug": "decoration-budget-guide",

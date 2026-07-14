@@ -36,6 +36,12 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://qingzao.site/blog/smart-home-system</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-06-14</lastmod>
+  </url>
+  <url>
     <loc>https://qingzao.site/blog/decoration-guide-beginners</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -54,64 +60,10 @@
     <lastmod>2026-06-11</lastmod>
   </url>
   <url>
-    <loc>https://qingzao.site/blog/time-management-tips</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <lastmod>2026-06-10</lastmod>
-  </url>
-  <url>
-    <loc>https://qingzao.site/blog/web-design-basics</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <lastmod>2026-06-09</lastmod>
-  </url>
-  <url>
-    <loc>https://qingzao.site/blog/react-hooks-introduction</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <lastmod>2026-06-08</lastmod>
-  </url>
-  <url>
-    <loc>https://qingzao.site/blog/seo-optimization-guide</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <lastmod>2026-06-07</lastmod>
-  </url>
-  <url>
-    <loc>https://qingzao.site/blog/healthy-diet-habits</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <lastmod>2026-06-06</lastmod>
-  </url>
-  <url>
-    <loc>https://qingzao.site/blog/python-data-analysis</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <lastmod>2026-06-05</lastmod>
-  </url>
-  <url>
     <loc>https://qingzao.site/blog/home-storage-solutions</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <lastmod>2026-06-04</lastmod>
-  </url>
-  <url>
-    <loc>https://qingzao.site/blog/startup-marketing-strategies</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <lastmod>2026-06-03</lastmod>
-  </url>
-  <url>
-    <loc>https://qingzao.site/blog/mindfulness-meditation</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <lastmod>2026-06-02</lastmod>
-  </url>
-  <url>
-    <loc>https://qingzao.site/blog/electric-vehicle-trends</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <lastmod>2026-06-01</lastmod>
   </url>
   <url>
     <loc>https://qingzao.site/blog/decoration-budget-guide</loc>
