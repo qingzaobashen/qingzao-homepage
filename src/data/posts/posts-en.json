@@ -1,5 +1,200 @@
 [
   {
+    "slug": "house-acceptance-inspection",
+    "title": "Home Acceptance & Inspection: Inspect Before You Accept — A Beginner's Pitfall Checklist",
+    "date": "2026-07-15",
+    "category": "Decoration Guide",
+    "tags": [
+      "renovation",
+      "home inspection",
+      "acceptance",
+      "pitfalls"
+    ],
+    "excerpt": "Inspect before you pay — bring a hollow-spot hammer and phone, check the entry door, walls, and floor zone by zone, and resolve issues before move-in."
+  },
+  {
+    "slug": "planning-stage",
+    "title": "The Planning Stage: A Roadmap from Preparation to Move-in",
+    "date": "2026-07-14",
+    "category": "Decoration Guide",
+    "tags": [
+      "renovation",
+      "planning",
+      "process"
+    ],
+    "excerpt": "Renovation has three stages — preparation, hard renovation, soft furnishing. Learn the five hard-renovation steps, main vs. auxiliary materials, and full/half-package before you start."
+  },
+  {
+    "slug": "renovation-method-choice",
+    "title": "How to Choose Among 5 Renovation Models — The Most Important Decision Before You Start",
+    "date": "2026-07-13",
+    "category": "Decoration Guide",
+    "tags": [
+      "renovation",
+      "renovation methods",
+      "selection"
+    ],
+    "excerpt": "Renovation company, design studio, independent designer, independent foreman, or self-managed? Know your budget, time, and control before deciding."
+  },
+  {
+    "slug": "budget-planning",
+    "title": "Renovation Budget Planning: Where the Money Goes and How to Split It",
+    "date": "2026-07-12",
+    "category": "Decoration Guide",
+    "tags": [
+      "renovation",
+      "budget",
+      "planning"
+    ],
+    "excerpt": "Spend on high-frequency and hard-to-replace things. The 6:2:2 split of hard renovation, soft furnishing, and appliances puts your budget where it matters."
+  },
+  {
+    "slug": "decoration-company-checklist",
+    "title": "How to Choose a Renovation Company: Prevent Extra Charges, Avoid Schedule Traps, Ensure Quality",
+    "date": "2026-07-11",
+    "category": "Decoration Guide",
+    "tags": [
+      "renovation",
+      "renovation company",
+      "evaluation"
+    ],
+    "excerpt": "Choose a renovation company with extreme care. Go armed with a needs list and question checklist to prevent extras, avoid schedule delays, and ensure quality."
+  },
+  {
+    "slug": "studio-checklist",
+    "title": "How to Choose a Design Studio — A 4-Step Evaluation",
+    "date": "2026-07-10",
+    "category": "Decoration Guide",
+    "tags": [
+      "renovation",
+      "design studio",
+      "evaluation"
+    ],
+    "excerpt": "A design studio wins on unique creative ideas and executable plans — most of all, aesthetics that match yours. Four steps to find a studio in tune with you."
+  },
+  {
+    "slug": "individual-foreman-checklist",
+    "title": "Hiring an Independent Foreman? This Checklist Saves You Pitfalls",
+    "date": "2026-07-09",
+    "category": "Decoration Guide",
+    "tags": [
+      "renovation",
+      "foreman",
+      "evaluation"
+    ],
+    "excerpt": "Find an independent foreman through referrals first. Check the site, scrutinize the quote for omissions, and lock payment, schedule, and warranty in the contract."
+  },
+  {
+    "slug": "individual-designer-checklist",
+    "title": "Hiring an Independent Designer? Lock It In With 4 Steps",
+    "date": "2026-07-08",
+    "category": "Decoration Guide",
+    "tags": [
+      "renovation",
+      "designer",
+      "evaluation"
+    ],
+    "excerpt": "An independent designer is a long-term advisor. Check background and portfolio, probe ability, verify execution, and put everything in the contract."
+  },
+  {
+    "slug": "design-style-selection",
+    "title": "How to Choose a Renovation Style: Lifestyle First, Then Decoration Style",
+    "date": "2026-07-07",
+    "category": "Decoration Guide",
+    "tags": [
+      "renovation",
+      "style",
+      "design"
+    ],
+    "excerpt": "Choose style by asking about your lifestyle first: household structure, cooking frequency, kids or pets. Modern minimalist or new Chinese — let life lead."
+  },
+  {
+    "slug": "design-details-reference",
+    "title": "6 Spaces, 100+ Design Details from Those Who've Been There",
+    "date": "2026-07-06",
+    "category": "Decoration Guide",
+    "tags": [
+      "renovation",
+      "design details",
+      "kitchen",
+      "bathroom"
+    ],
+    "excerpt": "The golden kitchen, silver bathroom — multi-height countertops, wall-drain basins, drawer vanities. 100+ practical details across 6 spaces to copy and avoid pitfalls."
+  },
+  {
+    "slug": "design-drawings-render-final",
+    "title": "From Imagination to Blueprint: Step by Step to Lock Your Design Drawings and Renderings",
+    "date": "2026-07-05",
+    "category": "Decoration Guide",
+    "tags": [
+      "renovation",
+      "design drawings",
+      "renderings"
+    ],
+    "excerpt": "A rendering is the home's trailer; a construction drawing is its recipe. Bring your needs, advance phase by phase, and avoid the 'free design' trap."
+  },
+  {
+    "slug": "main-auxiliary-materials-selection",
+    "title": "Complete Guide to Selecting Main & Auxiliary Materials in a Full-Package Renovation",
+    "date": "2026-07-04",
+    "category": "Decoration Guide",
+    "tags": [
+      "renovation",
+      "main materials",
+      "auxiliary materials",
+      "material selection"
+    ],
+    "excerpt": "Full-package standard materials are basic; upgrades are how they profit. Bring the list, lock auxiliary materials first, and put every brand/model in the contract."
+  },
+  {
+    "slug": "hard-decoration-knowledge",
+    "title": "Hard Renovation Knowledge: Steps, HVAC, Doors/Windows, and Construction Points",
+    "date": "2026-07-03",
+    "category": "Decoration Guide",
+    "tags": [
+      "renovation",
+      "hard renovation",
+      "construction"
+    ],
+    "excerpt": "Hard renovation is the home's foundation: steps, HVAC, doors/windows, pre-ordered custom. Master the knowledge and acceptance standards so you're not fooled."
+  },
+  {
+    "slug": "soft-decoration-knowledge",
+    "title": "Soft Furnishing Knowledge: Whole-House Cabinetry, Furniture, and Lighting",
+    "date": "2026-07-02",
+    "category": "Decoration Guide",
+    "tags": [
+      "renovation",
+      "soft furnishing",
+      "matching"
+    ],
+    "excerpt": "Soft furnishing turns your imagination into daily life. Whole-house cabinetry, furniture, and lighting — the decision logic of the soft stage, explained."
+  },
+  {
+    "slug": "contract-signing-notes",
+    "title": "Renovation Contract Signing Notes: Sign the Umbrella That Protects You",
+    "date": "2026-07-01",
+    "category": "Decoration Guide",
+    "tags": [
+      "renovation",
+      "contract",
+      "pitfalls"
+    ],
+    "excerpt": "The contract is renovation's key protection. Drawings, quote, schedule, extras, and warranty — write each clearly; steady your hand before signing."
+  },
+  {
+    "slug": "self-renovation-pitfalls",
+    "title": "Self-Managed Renovation Pitfall Handbook: From Start to Acceptance",
+    "date": "2026-06-30",
+    "category": "Decoration Guide",
+    "tags": [
+      "renovation",
+      "self-managed renovation",
+      "pitfalls"
+    ],
+    "excerpt": "Self-renovation means being your own project manager: manage info, process, people. A full guide from start to acceptance to hit fewer pitfalls."
+  },
+  {
     "slug": "smart-home-system",
     "title": "Smart Home Renovation Guide: Wiring, Systems, and Automation Scenes",
     "date": "2026-06-14",

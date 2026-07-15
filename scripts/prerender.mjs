@@ -14,7 +14,7 @@
  */
 
 import { execSync } from 'child_process'
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs'
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 'fs'
 import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
@@ -79,16 +79,24 @@ function getPostsData() {
  * @returns {string} Markdown 正文
  */
 function getMarkdown(slug) {
-  const candidates = [
-    `${slug}-zh.md`,
-    `${slug}.md`,
-  ]
-  for (const name of candidates) {
-    const filePath = resolve(ARTICLES_DIR, name)
-    if (existsSync(filePath)) {
-      const content = readFileSync(filePath, 'utf8')
-      if (content.trim()) return content
+  const candidates = [`${slug}-zh.md`, `${slug}.md`]
+  // 递归查找：支持 articles 子目录（如 Decoration_articles/）
+  function walk(dir) {
+    for (const entry of readdirSync(dir, { withFileTypes: true })) {
+      const full = resolve(dir, entry.name)
+      if (entry.isDirectory()) {
+        const found = walk(full)
+        if (found) return found
+      } else if (candidates.includes(entry.name)) {
+        return full
+      }
     }
+    return null
+  }
+  const filePath = walk(ARTICLES_DIR)
+  if (filePath && existsSync(filePath)) {
+    const content = readFileSync(filePath, 'utf8')
+    if (content.trim()) return content
   }
   return ''
 }
