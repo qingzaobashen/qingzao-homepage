@@ -13,6 +13,7 @@ import Footer from '../components/Footer'
 import postsZh from '../data/posts/posts-zh.json'
 import postsEn from '../data/posts/posts-en.json'
 import { getPostContent } from '../data/posts/postContentLoader'
+import { markdownToHtml } from '../data/posts/markdownToHtml'
 import './BlogPostPage.css'
 
 /**
@@ -69,203 +70,6 @@ function BlogPostPage() {
       month: 'long',
       day: 'numeric'
     })
-  }
-
-  /**
-   * 处理行内格式：粗体、链接、行内代码、删除线
-   */
-  const renderInline = (text) => {
-    let result = text
-    result = result.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    result = result.replace(/~~(.*?)~~/g, '<del>$1</del>')
-    result = result.replace(/`([^`]+)`/g, '<code>$1</code>')
-    result = result.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
-    return result
-  }
-
-  /**
- * 将 Markdown 格式的内容转换为 HTML
- * @param {string} content - Markdown 内容
- * @returns {JSX.Element} 转换后的 HTML 内容
- */
-  const renderContent = (content) => {
-    if (!content) return null
-
-    const lines = content.split('\n')
-    const elements = []
-    let inList = false
-    let listItems = []
-    let inTable = false
-    let tableRows = []
-    let tableHeaders = []
-    let inCodeBlock = false
-    let codeLines = []
-    let codeLanguage = ''
-
-    const flushList = () => {
-      if (listItems.length > 0) {
-        elements.push(
-          <ul key={`list-${elements.length}`} className="content-list">
-            {listItems.map((item, i) => (
-              <li key={i} dangerouslySetInnerHTML={{ __html: item }} />
-            ))}
-          </ul>
-        )
-        listItems = []
-        inList = false
-      }
-    }
-
-    const flushTable = () => {
-      if (tableRows.length === 0) return
-      const bodyRows = tableHeaders.length > 0 ? tableRows.slice(1) : tableRows
-      const headers = tableHeaders.length > 0 ? tableHeaders : tableRows[0]
-
-      elements.push(
-        <table key={`table-${elements.length}`} className="content-table">
-          {tableHeaders.length > 0 && (
-            <thead>
-              <tr>
-                {headers.map((cell, i) => (
-                  <th key={i} dangerouslySetInnerHTML={{ __html: renderInline(cell.trim()) }} />
-                ))}
-              </tr>
-            </thead>
-          )}
-          <tbody>
-            {bodyRows.map((row, ri) => (
-              <tr key={ri}>
-                {row.map((cell, ci) => (
-                  <td key={ci} dangerouslySetInnerHTML={{ __html: renderInline(cell.trim()) }} />
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )
-      tableRows = []
-      tableHeaders = []
-      inTable = false
-    }
-
-    const flushCodeBlock = () => {
-      if (codeLines.length > 0) {
-        const codeContent = codeLines.join('\n')
-        elements.push(
-          <pre key={`code-${elements.length}`} className="content-pre">
-            <code className={`content-code language-${codeLanguage}`}>{codeContent}</code>
-          </pre>
-        )
-        codeLines = []
-        codeLanguage = ''
-        inCodeBlock = false
-      }
-    }
-
-    const isTableSeparator = (line) => /^\|[\s:-]+\|[\s:-]*\|/.test(line)
-
-    lines.forEach((line, index) => {
-      const trimmed = line.trim()
-
-      // 代码块标记
-      if (trimmed.startsWith('```')) {
-        if (inCodeBlock) {
-          flushCodeBlock()
-        } else {
-          flushList()
-          flushTable()
-          inCodeBlock = true
-          codeLanguage = trimmed.slice(3).trim()
-        }
-        return
-      }
-
-      // 代码块内部内容
-      if (inCodeBlock) {
-        codeLines.push(line)
-        return
-      }
-
-      // 空行
-      if (trimmed === '') {
-        flushList()
-        flushTable()
-        return
-      }
-
-      // 分割线
-      if (/^(-{3,}|\*{3,}|_{3,})$/.test(trimmed)) {
-        flushList()
-        flushTable()
-        elements.push(<hr key={`hr-${index}`} className="content-hr" />)
-        return
-      }
-
-      // 标题 H1-H6
-      const headingMatch = trimmed.match(/^(#{1,6})\s+(.+)$/)
-      if (headingMatch) {
-        flushList()
-        flushTable()
-        const level = headingMatch[1].length
-        const text = headingMatch[2]
-        const Tag = `h${level}`
-        elements.push(
-          <Tag key={index} className={`content-h${level}`}>
-            {text}
-          </Tag>
-        )
-        return
-      }
-
-      // 表格行
-      if (line.includes('|')) {
-        flushList()
-        if (isTableSeparator(line)) return
-        const cells = line.split('|').filter(c => c !== '')
-        if (!inTable) {
-          inTable = true
-          tableRows = []
-          tableHeaders = []
-        }
-        if (tableRows.length === 0) {
-          tableHeaders = cells
-        }
-        tableRows.push(cells)
-        return
-      }
-
-      // 有序列表
-      if (trimmed.match(/^\d+\.\s/)) {
-        flushTable()
-        const liContent = renderInline(trimmed.replace(/^\d+\.\s/, ''))
-        listItems.push(liContent)
-        inList = true
-        return
-      }
-
-      // 无序列表
-      if (trimmed.match(/^[-*]\s/)) {
-        flushTable()
-        const liContent = renderInline(trimmed.replace(/^[-*]\s/, ''))
-        listItems.push(liContent)
-        inList = true
-        return
-      }
-
-      // 普通段落
-      flushList()
-      flushTable()
-
-      const processedLine = renderInline(line)
-      elements.push(
-        <p key={index} className="content-paragraph" dangerouslySetInnerHTML={{ __html: processedLine }} />
-      )
-    })
-
-    flushList()
-    flushTable()
-    flushCodeBlock()
-    return elements
   }
 
   // 文章未找到
@@ -389,7 +193,7 @@ function BlogPostPage() {
         <section className="post-body">
           <div className="container">
             <div className="post-content">
-              {renderContent(content)}
+              <div dangerouslySetInnerHTML={{ __html: markdownToHtml(content) }} />
             </div>
           </div>
         </section>
