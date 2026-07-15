@@ -249,10 +249,17 @@ function writeRoute(template, route, { meta, bodyHtml = '', jsonLd = '' }) {
     html = html.replace('<div id="root"></div>', `<div id="root">${bodyHtml}</div>`)
   }
 
+  // 关键：生成扁平 .html 文件（如 dist/blog/smart-home-system.html），
+  // 而非 dist/blog/smart-home-system/index.html（目录式）。
+  // 原因：Vercel 对目录 index.html 会把「无斜杠」URL 308 重定向到「带斜杠」版本，
+  // 导致 (1) GSC 报「网页会自动重定向」、(2) 重定向后页面的 canonical 仍是无斜杠，
+  // 与 Google 实际收录的带斜杠 URL 不一致，报「重复网页/规范冲突」。
+  // 扁平 .html 让「无斜杠」URL 直接命中真实静态文件（200、无重定向），
+  // 与现有 sitemap / canonical（均为无斜杠）完全一致。
   const filePath =
     route === '/'
       ? resolve(DIST_DIR, 'index.html')
-      : resolve(DIST_DIR, route.slice(1), 'index.html')
+      : resolve(DIST_DIR, `${route.slice(1)}.html`)
 
   const dir = dirname(filePath)
   if (!existsSync(dir)) mkdirSync(dir, { recursive: true })
