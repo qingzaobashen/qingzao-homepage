@@ -18,7 +18,7 @@ import './AboutPage.css'
  * @returns {JSX.Element} 关于我们页面
  */
 function AboutPage() {
-  const { t } = useLanguage()
+  const { t, localePath } = useLanguage()
 
   /** 页面加载时滚动到顶部 */
   useEffect(() => {
@@ -30,7 +30,12 @@ function AboutPage() {
       <SEO
         title={t('aboutPage.title')}
         description={t('aboutPage.subtitle')}
-        canonical="/about"
+        canonical={localePath('/about')}
+        alternates={{
+          'zh-CN': '/about',
+          'en-US': '/en/about',
+          'x-default': '/about',
+        }}
       />
       <Header />
       <main className="about-page">
@@ -69,7 +74,7 @@ function AboutPage() {
           {/* CTA */}
           <div className="about-page-cta">
             <p>{t('aboutPage.cta.text')}</p>
-            <Link to="/blog" className="about-page-cta-btn">{t('aboutPage.cta.btn')}</Link>
+            <Link to={localePath('/blog')} className="about-page-cta-btn">{t('aboutPage.cta.btn')}</Link>
           </div>
         </div>
       </main>

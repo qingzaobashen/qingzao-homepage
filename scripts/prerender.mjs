@@ -5,9 +5,12 @@
  * （见 docs/Ads/googleAds政策/低价值内容改进计划0714.md 的 问题4）。
  *
  * 做法：在 `vite build` 之后，为每个博客文章生成一份「首屏即含全文」的静态
- * HTML（dist/blog/<slug>/index.html），并把正确的 <title> / description /
- * canonical / JSON-LD 注入 <head>。这样 AdSense 爬虫拿到的初始 HTML 就包含
- * 文章正文，无需等待 JS 加载。
+ * HTML（dist/blog/<slug>.html 与 dist/en/blog/<slug>.html），并把正确的
+ * <title> / description / canonical / hreflang / JSON-LD 注入 <head>。
+ *
+ * 国际化（方案 A）：中英文拥有各自独立 URL（中文 /blog/<slug>，英文 /en/blog/<slug>），
+ * 因此预渲染会分别为两种语言各产出一份静态 HTML，并通过 hreflang 互相声明，
+ * 让 Google 能分别索引中英文版本。
  *
  * 复用 `src/data/posts/markdownToHtml.js`（与客户端 BlogPostPage 同一套转换逻辑），
  * 保证预渲染结果与运行时渲染完全一致，避免内容漂移。
@@ -48,19 +51,78 @@ function escAttr(str = '') {
 }
 
 /**
- * 静态路由及其 SEO 元信息
- * 这些页面首屏为 SPA 外壳，这里仅为静态 HTML 补全正确的标题与描述。
+ * 静态路由及其 SEO 元信息（中英文两套）
+ * canonical 已按语言写好 /en 前缀；alternates 声明中英文互指。
  */
 const staticRoutes = [
-  { route: '/', title: '青枣工作室 - 创新装修与图片处理工具', description: '青枣工作室提供装修流程导图、白底抠图等实用工具，让装修和图片处理更简单高效。', canonical: '/' },
-  { route: '/products', title: '产品', description: '青枣工作室的产品：装修流程导图与 AI 白底抠图工具。', canonical: '/products' },
-  { route: '/about', title: '关于我们', description: '了解青枣工作室的理念、团队与所提供的工具。', canonical: '/about' },
-  { route: '/contact', title: '联系我们', description: '通过邮箱或社交媒体联系青枣工作室。', canonical: '/contact' },
-  { route: '/blog', title: '博客', description: '装修指南、图片处理技巧和产品更新。', canonical: '/blog' },
-  { route: '/privacy', title: '隐私政策', description: '青枣工作室隐私政策，说明数据收集与使用方式。', canonical: '/privacy' },
-  { route: '/terms', title: '服务条款', description: '青枣工作室服务条款。', canonical: '/terms' },
-  { route: '/disclaimer', title: '免责声明', description: '青枣工作室免责声明。', canonical: '/disclaimer' },
-  { route: '/404', title: '页面未找到', description: '抱歉，您访问的页面不存在。', canonical: '/404' },
+  {
+    route: '/',
+    zh: {
+      title: '青枣工作室 - 创新装修与图片处理工具',
+      description: '青枣工作室提供装修流程导图、白底抠图等实用工具，让装修和图片处理更简单高效。',
+      canonical: '/',
+    },
+    en: {
+      title: 'Qingzao Studio - Innovative Renovation & Image Tools',
+      description:
+        'Qingzao Studio offers renovation flow maps and white-background image trimming tools, making renovation and image processing simpler and more efficient.',
+      canonical: '/en',
+    },
+    alternates: { 'zh-CN': '/', 'en-US': '/en', 'x-default': '/' },
+  },
+  {
+    route: '/products',
+    zh: { title: '产品', description: '青枣工作室的产品：装修流程导图与 AI 白底抠图工具。', canonical: '/products' },
+    en: {
+      title: 'Products',
+      description:
+        'Qingzao Studio provides renovation flowchart and white-background image trimming tools, making renovation and image processing simpler and more efficient.',
+      canonical: '/en/products',
+    },
+    alternates: { 'zh-CN': '/products', 'en-US': '/en/products', 'x-default': '/products' },
+  },
+  {
+    route: '/about',
+    zh: { title: '关于我们', description: '了解青枣工作室的理念、团队与所提供的工具。', canonical: '/about' },
+    en: { title: 'About Us', description: 'Learn about Qingzao Studio’s philosophy, team, and tools.', canonical: '/en/about' },
+    alternates: { 'zh-CN': '/about', 'en-US': '/en/about', 'x-default': '/about' },
+  },
+  {
+    route: '/contact',
+    zh: { title: '联系我们', description: '通过邮箱或社交媒体联系青枣工作室。', canonical: '/contact' },
+    en: { title: 'Contact Us', description: 'Reach Qingzao Studio via email or social media.', canonical: '/en/contact' },
+    alternates: { 'zh-CN': '/contact', 'en-US': '/en/contact', 'x-default': '/contact' },
+  },
+  {
+    route: '/blog',
+    zh: { title: '博客', description: '装修指南、图片处理技巧和产品更新。', canonical: '/blog' },
+    en: { title: 'Blog', description: 'Decoration guides, image processing tips, and product updates.', canonical: '/en/blog' },
+    alternates: { 'zh-CN': '/blog', 'en-US': '/en/blog', 'x-default': '/blog' },
+  },
+  {
+    route: '/privacy',
+    zh: { title: '隐私政策', description: '青枣工作室隐私政策，说明数据收集与使用方式。', canonical: '/privacy' },
+    en: { title: 'Privacy Policy', description: 'Qingzao Studio Privacy Policy — how we collect and use your data.', canonical: '/en/privacy' },
+    alternates: { 'zh-CN': '/privacy', 'en-US': '/en/privacy', 'x-default': '/privacy' },
+  },
+  {
+    route: '/terms',
+    zh: { title: '服务条款', description: '青枣工作室服务条款。', canonical: '/terms' },
+    en: { title: 'Terms of Service', description: 'Qingzao Studio Terms of Service.', canonical: '/en/terms' },
+    alternates: { 'zh-CN': '/terms', 'en-US': '/en/terms', 'x-default': '/terms' },
+  },
+  {
+    route: '/disclaimer',
+    zh: { title: '免责声明', description: '青枣工作室免责声明。', canonical: '/disclaimer' },
+    en: { title: 'Disclaimer', description: 'Qingzao Studio Disclaimer.', canonical: '/en/disclaimer' },
+    alternates: { 'zh-CN': '/disclaimer', 'en-US': '/en/disclaimer', 'x-default': '/disclaimer' },
+  },
+  {
+    route: '/404',
+    zh: { title: '页面未找到', description: '抱歉，您访问的页面不存在。', canonical: '/404' },
+    en: { title: 'Page Not Found', description: 'Sorry, the page you are looking for does not exist.', canonical: '/en/404' },
+    alternates: { 'zh-CN': '/404', 'en-US': '/en/404', 'x-default': '/404' },
+  },
 ]
 
 /**
@@ -73,41 +135,55 @@ function getPostsData() {
 }
 
 /**
- * 读取某篇文章的 Markdown 正文（复刻 postContentLoader 的候选逻辑）
- * 默认读取中文版本（站点默认语言）。
+ * 在 articles 目录树中按文件名精确查找一个 Markdown 文件
+ * @param {string} dir - 起始目录
+ * @param {string} name - 目标文件名，如 "house-acceptance-inspection-en.md"
+ * @returns {string|null} 文件绝对路径
+ */
+function findByName(dir, name) {
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const full = resolve(dir, entry.name)
+    if (entry.isDirectory()) {
+      const found = findByName(full, name)
+      if (found) return found
+    } else if (entry.name === name) {
+      return full
+    }
+  }
+  return null
+}
+
+/**
+ * 读取某篇文章的 Markdown 正文
+ * 优先读取对应语言版本（${slug}-zh.md / ${slug}-en.md），回退到 ${slug}.md。
  * @param {string} slug - 文章 slug
+ * @param {'zh'|'en'} locale - 目标语言
  * @returns {string} Markdown 正文
  */
-function getMarkdown(slug) {
-  const candidates = [`${slug}-zh.md`, `${slug}.md`]
-  // 递归查找：支持 articles 子目录（如 Decoration_articles/）
-  function walk(dir) {
-    for (const entry of readdirSync(dir, { withFileTypes: true })) {
-      const full = resolve(dir, entry.name)
-      if (entry.isDirectory()) {
-        const found = walk(full)
-        if (found) return found
-      } else if (candidates.includes(entry.name)) {
-        return full
-      }
+function getMarkdown(slug, locale = 'zh') {
+  const candidates =
+    locale === 'en' ? [`${slug}-en.md`, `${slug}.md`] : [`${slug}-zh.md`, `${slug}.md`]
+  for (const name of candidates) {
+    const filePath = findByName(ARTICLES_DIR, name)
+    if (filePath && existsSync(filePath)) {
+      const content = readFileSync(filePath, 'utf8')
+      if (content.trim()) return content
     }
-    return null
-  }
-  const filePath = walk(ARTICLES_DIR)
-  if (filePath && existsSync(filePath)) {
-    const content = readFileSync(filePath, 'utf8')
-    if (content.trim()) return content
   }
   return ''
 }
 
 /**
- * 格式化日期为中文展示
+ * 根据语言格式化日期
  * @param {string} dateStr - ISO 日期
+ * @param {'zh'|'en'} locale - 目标语言
  * @returns {string} 格式化日期
  */
-function formatDate(dateStr) {
+function formatDate(dateStr, locale = 'zh') {
   const d = new Date(dateStr)
+  if (locale === 'en') {
+    return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+  }
   return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`
 }
 
@@ -115,11 +191,17 @@ function formatDate(dateStr) {
  * 生成单篇博客文章的静态 HTML 片段（含头部、正文、相关文章）
  * 使用与 BlogPostPage 一致的 class 命名，保证静态版本也能正确套用样式。
  * @param {object} post - 文章元数据
- * @param {object[]} related - 相关文章元数据
+ * @param {object[]} related - 同语言的相关文章元数据
+ * @param {'zh'|'en'} locale - 目标语言
  * @returns {string} 文章区域 HTML
  */
-function buildPostHtml(post, related) {
-  const body = markdownToHtml(getMarkdown(post.slug))
+function buildPostHtml(post, related, locale = 'zh') {
+  const body = markdownToHtml(getMarkdown(post.slug, locale))
+
+  const labels =
+    locale === 'en'
+      ? { home: 'Home', blog: 'Blog', related: 'Related Posts', back: '← Back to Blog', sep: '/' }
+      : { home: '首页', blog: '博客', related: '相关文章', back: '← 返回博客列表', sep: '/' }
 
   const tagsHtml = (post.tags || [])
     .map((tag) => `<span class="post-tag-badge">#${esc(tag)}</span>`)
@@ -129,18 +211,18 @@ function buildPostHtml(post, related) {
     related.length > 0
       ? `<section class="related-posts">
       <div class="container">
-        <h2 class="related-title">相关文章</h2>
+        <h2 class="related-title">${labels.related}</h2>
         <div class="related-grid">
 ${related
   .map(
     (r) => `          <article class="related-card">
             <div class="related-meta">
               <span class="related-category">${esc(r.category)}</span>
-              <span class="related-date">${formatDate(r.date)}</span>
+              <span class="related-date">${formatDate(r.date, locale)}</span>
             </div>
             <h3 class="related-title-link"><a href="/blog/${esc(r.slug)}">${esc(r.title)}</a></h3>
             <p class="related-excerpt">${esc(r.excerpt)}</p>
-          </article>`
+          </article>`,
   )
   .join('\n')}
         </div>
@@ -152,13 +234,13 @@ ${related
       <section class="post-header">
         <div class="container">
           <div class="post-breadcrumb">
-            <a href="/">首页</a><span class="breadcrumb-separator">/</span>
-            <a href="/blog">博客</a><span class="breadcrumb-separator">/</span>
+            <a href="/">${labels.home}</a><span class="breadcrumb-separator">${labels.sep}</span>
+            <a href="/blog">${labels.blog}</a><span class="breadcrumb-separator">${labels.sep}</span>
             <span class="breadcrumb-current">${esc(post.title)}</span>
           </div>
           <div class="post-meta-top">
             <span class="post-category-badge">${esc(post.category)}</span>
-            <span class="post-date-badge">${formatDate(post.date)}</span>
+            <span class="post-date-badge">${formatDate(post.date, locale)}</span>
             <div class="post-tags-top">${tagsHtml}</div>
           </div>
         </div>
@@ -175,18 +257,24 @@ ${body}
 ${relatedHtml}
       <section class="post-footer">
         <div class="container">
-          <a href="/blog" class="back-to-blog">← 返回博客列表</a>
+          <a href="/blog" class="back-to-blog">${labels.back}</a>
         </div>
       </section>
     </div>`
 }
 
 /**
- * 生成 JSON-LD 结构化数据字符串
+ * 生成 JSON-LD 结构化数据字符串（URL 随语言前缀变化）
  * @param {object} post - 文章元数据
+ * @param {'zh'|'en'} locale - 目标语言
  * @returns {string} <script> 标签内容
  */
-function buildJsonLd(post) {
+function buildJsonLd(post, locale = 'zh') {
+  const postPath = locale === 'en' ? `/en/blog/${post.slug}` : `/blog/${post.slug}`
+  const homePath = locale === 'en' ? '/en' : '/'
+  const blogPath = locale === 'en' ? '/en/blog' : '/blog'
+  const names = locale === 'en' ? { home: 'Home', blog: 'Blog' } : { home: '首页', blog: '博客' }
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -197,14 +285,14 @@ function buildJsonLd(post) {
         datePublished: post.date,
         author: { '@type': 'Organization', name: '青枣工作室', url: SITE_URL },
         publisher: { '@type': 'Organization', name: '青枣工作室', url: SITE_URL },
-        mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/blog/${post.slug}` },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}${postPath}` },
       },
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: '首页', item: `${SITE_URL}/` },
-          { '@type': 'ListItem', position: 2, name: '博客', item: `${SITE_URL}/blog` },
-          { '@type': 'ListItem', position: 3, name: post.title, item: `${SITE_URL}/blog/${post.slug}` },
+          { '@type': 'ListItem', position: 1, name: names.home, item: `${SITE_URL}${homePath}` },
+          { '@type': 'ListItem', position: 2, name: names.blog, item: `${SITE_URL}${blogPath}` },
+          { '@type': 'ListItem', position: 3, name: post.title, item: `${SITE_URL}${postPath}` },
         ],
       },
     ],
@@ -216,14 +304,20 @@ function buildJsonLd(post) {
  * 把 SEO 元信息注入到 HTML <head>
  * @param {string} html - 原始模板 HTML
  * @param {object} meta - { title, description, canonical }
+ * @param {object} [opts] - { locale, alternates }
  * @returns {string} 注入后的 HTML
  */
-function injectHead(html, meta) {
+function injectHead(html, meta, { locale = 'zh-CN', alternates } = {}) {
   let out = html
   out = out.replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(meta.title)}</title>`)
   out = out.replace(/<meta name="description"[^>]*>/, `<meta name="description" content="${escAttr(meta.description)}">`)
 
   const canonicalUrl = `${SITE_URL}${meta.canonical}`
+
+  // 注意：hreflang 备用链接只在客户端由 SEO 组件（react-helmet-async）输出，
+  // 这里不再注入，避免与 Helmet 重复生成导致页面中出现两份 <link rel="alternate">。
+  // canonical / og / description 仍注入静态 HTML，以满足「无 JS 爬虫」也能读到正确元信息
+  // （AdSense 低价值内容整改的关键点）。Google 会执行 JS 渲染，因此同样能拿到 hreflang。
   const headExtra = [
     `<link rel="canonical" href="${canonicalUrl}">`,
     `<meta property="og:title" content="${escAttr(meta.title)}">`,
@@ -231,23 +325,26 @@ function injectHead(html, meta) {
     `<meta property="og:type" content="article">`,
     `<meta property="og:url" content="${canonicalUrl}">`,
     `<meta property="og:site_name" content="青枣工作室">`,
+    `<meta property="og:locale" content="${locale === 'en' ? 'en_US' : 'zh_CN'}">`,
     `<meta name="twitter:card" content="summary_large_image">`,
     `<meta name="twitter:title" content="${escAttr(meta.title)}">`,
     `<meta name="twitter:description" content="${escAttr(meta.description)}">`,
   ].join('\n    ')
 
   out = out.replace('</head>', `    ${headExtra}\n  </head>`)
+  // 同步 <html lang> 属性
+  out = out.replace(/<html lang="[^"]*">/, `<html lang="${locale === 'en' ? 'en' : 'zh-CN'}">`)
   return out
 }
 
 /**
  * 写入一个预渲染的 HTML 文件
  * @param {string} template - 未经修改的 dist/index.html 模板内容
- * @param {string} route - 路由路径
- * @param {object} options - { meta, bodyHtml?, jsonLd? }
+ * @param {string} route - 路由路径（如 /en/blog/<slug>）
+ * @param {object} options - { meta, bodyHtml?, jsonLd?, alternates?, locale? }
  */
-function writeRoute(template, route, { meta, bodyHtml = '', jsonLd = '' }) {
-  let html = injectHead(template, meta)
+function writeRoute(template, route, { meta, bodyHtml = '', jsonLd = '', alternates, locale = 'zh-CN' }) {
+  let html = injectHead(template, meta, { locale, alternates })
 
   if (jsonLd) {
     html = html.replace('</head>', `    ${jsonLd}\n  </head>`)
@@ -257,13 +354,10 @@ function writeRoute(template, route, { meta, bodyHtml = '', jsonLd = '' }) {
     html = html.replace('<div id="root"></div>', `<div id="root">${bodyHtml}</div>`)
   }
 
-  // 关键：生成扁平 .html 文件（如 dist/blog/smart-home-system.html），
-  // 而非 dist/blog/smart-home-system/index.html（目录式）。
-  // 原因：Vercel 对目录 index.html 会把「无斜杠」URL 308 重定向到「带斜杠」版本，
-  // 导致 (1) GSC 报「网页会自动重定向」、(2) 重定向后页面的 canonical 仍是无斜杠，
-  // 与 Google 实际收录的带斜杠 URL 不一致，报「重复网页/规范冲突」。
-  // 扁平 .html 让「无斜杠」URL 直接命中真实静态文件（200、无重定向），
-  // 与现有 sitemap / canonical（均为无斜杠）完全一致。
+  // 关键：生成扁平 .html 文件（如 dist/blog/smart-home-system.html 或 dist/en/blog/<slug>.html），
+  // 而非目录式 index.html。原因：Vercel 对目录 index.html 会把「无斜杠」URL 308 重定向到「带斜杠」版本，
+  // 导致 (1) GSC 报「网页会自动重定向」、(2) 重定向后 canonical 与收录 URL 不一致报「重复网页/规范冲突」。
+  // 扁平 .html 让「无斜杠」URL 直接命中真实静态文件（200、无重定向），与 sitemap / canonical（均为无斜杠）一致。
   const filePath =
     route === '/'
       ? resolve(DIST_DIR, 'index.html')
@@ -290,39 +384,52 @@ function main() {
   // 读取「纯净」模板（不可被任何路由的写入污染，所有路由都基于它生成）
   const baseTemplate = readFileSync(resolve(DIST_DIR, 'index.html'), 'utf8')
 
-  // 1. 静态路由：补全标题与描述
-  console.log('📄 生成静态路由 HTML...')
+  // 1. 静态路由：中文 + 英文各一份
+  console.log('📄 生成静态路由 HTML（中 / 英）...')
   for (const r of staticRoutes) {
-    writeRoute(baseTemplate, r.route, { meta: r })
+    writeRoute(baseTemplate, r.route, { meta: r.zh, alternates: r.alternates, locale: 'zh-CN' })
+    const enRoute = r.route === '/' ? '/en' : `/en${r.route}`
+    writeRoute(baseTemplate, enRoute, { meta: r.en, alternates: r.alternates, locale: 'en' })
   }
 
-  // 2. 博客文章：注入全文 + JSON-LD
-  // 注意：中英文文章共用同一 slug，静态文件只能代表一种语言。
-  // 这里预渲染默认语言（中文）版本，英文由 SPA 在客户端切换。
-  console.log('\n📝 生成博客文章静态 HTML（含全文，默认中文）...')
-  const { zh: postsZh } = getPostsData()
-  let count = 0
+  // 2. 博客文章：中文 /blog/<slug> 与英文 /en/blog/<slug> 各一份（含全文 + JSON-LD + hreflang）
+  const { zh: postsZh, en: postsEn } = getPostsData()
+  console.log('\n📝 生成博客文章静态 HTML（含全文，中 / 英）...')
 
   for (const post of postsZh) {
-    // 同分类的其他文章作为「相关文章」
-    const related = postsZh
-      .filter((p) => p.category === post.category && p.slug !== post.slug)
-      .slice(0, 3)
-
-    const meta = {
-      title: `${post.title} - 青枣工作室`,
-      description: post.excerpt,
-      canonical: `/blog/${post.slug}`,
+    const related = postsZh.filter((p) => p.category === post.category && p.slug !== post.slug).slice(0, 3)
+    const alternates = {
+      'zh-CN': `/blog/${post.slug}`,
+      'en-US': `/en/blog/${post.slug}`,
+      'x-default': `/blog/${post.slug}`,
     }
     writeRoute(baseTemplate, `/blog/${post.slug}`, {
-      meta,
-      bodyHtml: buildPostHtml(post, related),
-      jsonLd: buildJsonLd(post),
+      meta: { title: `${post.title} - 青枣工作室`, description: post.excerpt, canonical: `/blog/${post.slug}` },
+      bodyHtml: buildPostHtml(post, related, 'zh'),
+      jsonLd: buildJsonLd(post, 'zh'),
+      alternates,
+      locale: 'zh-CN',
     })
-    count++
   }
 
-  console.log(`\n🎉 预渲染完成！共生成 ${staticRoutes.length + count} 个路由文件，其中博客文章 ${count} 篇。\n`)
+  for (const post of postsEn) {
+    const related = postsEn.filter((p) => p.category === post.category && p.slug !== post.slug).slice(0, 3)
+    const alternates = {
+      'zh-CN': `/blog/${post.slug}`,
+      'en-US': `/en/blog/${post.slug}`,
+      'x-default': `/blog/${post.slug}`,
+    }
+    writeRoute(baseTemplate, `/en/blog/${post.slug}`, {
+      meta: { title: `${post.title} - Qingzao Studio`, description: post.excerpt, canonical: `/en/blog/${post.slug}` },
+      bodyHtml: buildPostHtml(post, related, 'en'),
+      jsonLd: buildJsonLd(post, 'en'),
+      alternates,
+      locale: 'en',
+    })
+  }
+
+  const total = staticRoutes.length * 2 + postsZh.length + postsEn.length
+  console.log(`\n🎉 预渲染完成！共生成 ${total} 个路由文件（静态 ${staticRoutes.length * 2} + 博客 ${postsZh.length + postsEn.length}）。\n`)
 }
 
 main()

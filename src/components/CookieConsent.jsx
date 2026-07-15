@@ -14,7 +14,7 @@ const STORAGE_KEY = 'qingzao_cookie_consent'
  * @returns {JSX.Element|null} Cookie 同意横幅或 null
  */
 function CookieConsent() {
-  const { t } = useLanguage()
+  const { t, localePath } = useLanguage()
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -43,7 +43,7 @@ function CookieConsent() {
           {t('cookieConsent.text') || '本网站使用 Cookie 以提升用户体验。继续使用本网站即表示您同意我们的 Cookie 使用。'}
         </p>
         <div className="cookie-consent-actions">
-          <Link to="/privacy" className="cookie-consent-learn-more">
+          <Link to={localePath('/privacy')} className="cookie-consent-learn-more">
             {t('cookieConsent.learnMore') || '了解更多'}
           </Link>
           <button className="cookie-consent-accept" onClick={handleAccept}>

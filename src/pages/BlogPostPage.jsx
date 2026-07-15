@@ -22,7 +22,7 @@ import './BlogPostPage.css'
  */
 function BlogPostPage() {
   const { slug } = useParams()
-  const { t, language } = useLanguage()
+  const { t, language, localePath } = useLanguage()
   const [post, setPost] = useState(null)
   const [content, setContent] = useState('')
   const [relatedPosts, setRelatedPosts] = useState([])
@@ -76,7 +76,7 @@ function BlogPostPage() {
   if (!post) {
     return (
       <>
-        <SEO title="文章未找到" description="抱歉，您访问的文章不存在。" canonical="/blog" />
+        <SEO title="文章未找到" description="抱歉，您访问的文章不存在。" canonical={localePath('/blog')} />
         <Header />
         <div className="blog-post-page">
           <div className="container">
@@ -88,7 +88,7 @@ function BlogPostPage() {
                   : 'Sorry, the post you are looking for does not exist.'
                 }
               </p>
-              <Link to="/blog" className="back-to-blog">
+              <Link to={localePath('/blog')} className="back-to-blog">
                 {language === 'zh-CN' ? '← 返回博客列表' : '← Back to Blog'}
               </Link>
             </div>
@@ -100,8 +100,17 @@ function BlogPostPage() {
   }
 
   /**
-   * 生成 JSON-LD 结构化数据
-   * @returns {string} JSON-LD script 标签
+   * 中英文备用链接映射（hreflang），用于 SEO 互相关联
+   */
+  const alternates = {
+    'zh-CN': `/blog/${post.slug}`,
+    'en-US': `/en/blog/${post.slug}`,
+    'x-default': `/blog/${post.slug}`,
+  }
+
+  /**
+   * 生成 JSON-LD 结构化数据（URL 随语言前缀变化）
+   * @returns {Object} JSON-LD 对象
    */
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -123,7 +132,7 @@ function BlogPostPage() {
         },
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': `https://qingzao.site/blog/${post.slug}`,
+          '@id': `https://qingzao.site${localePath(`/blog/${post.slug}`)}`,
         },
       },
       {
@@ -133,19 +142,19 @@ function BlogPostPage() {
             '@type': 'ListItem',
             position: 1,
             name: language === 'zh-CN' ? '首页' : 'Home',
-            item: 'https://qingzao.site/',
+            item: `https://qingzao.site${localePath('/')}`,
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: language === 'zh-CN' ? '博客' : 'Blog',
-            item: 'https://qingzao.site/blog',
+            item: `https://qingzao.site${localePath('/blog')}`,
           },
           {
             '@type': 'ListItem',
             position: 3,
             name: post.title,
-            item: `https://qingzao.site/blog/${post.slug}`,
+            item: `https://qingzao.site${localePath(`/blog/${post.slug}`)}`,
           },
         ],
       },
@@ -157,8 +166,9 @@ function BlogPostPage() {
       <SEO
         title={post.title}
         description={post.excerpt}
-        canonical={`/blog/${post.slug}`}
+        canonical={localePath(`/blog/${post.slug}`)}
         type="article"
+        alternates={alternates}
       />
       <Header />
       {/* JSON-LD 结构化数据 */}
@@ -171,9 +181,9 @@ function BlogPostPage() {
         <section className="post-header">
           <div className="container">
             <div className="post-breadcrumb">
-              <Link to="/">{language === 'zh-CN' ? '首页' : 'Home'}</Link>
+              <Link to={localePath('/')}>{language === 'zh-CN' ? '首页' : 'Home'}</Link>
               <span className="breadcrumb-separator">/</span>
-              <Link to="/blog">{language === 'zh-CN' ? '博客' : 'Blog'}</Link>
+              <Link to={localePath('/blog')}>{language === 'zh-CN' ? '博客' : 'Blog'}</Link>
               <span className="breadcrumb-separator">/</span>
               <span className="breadcrumb-current">{post.title}</span>
             </div>
@@ -213,7 +223,7 @@ function BlogPostPage() {
                       <span className="related-date">{formatDate(relatedPost.date)}</span>
                     </div>
                     <h3 className="related-title-link">
-                      <Link to={`/blog/${relatedPost.slug}`}>{relatedPost.title}</Link>
+                      <Link to={localePath(`/blog/${relatedPost.slug}`)}>{relatedPost.title}</Link>
                     </h3>
                     <p className="related-excerpt">{relatedPost.excerpt}</p>
                   </article>
@@ -226,7 +236,7 @@ function BlogPostPage() {
         {/* 返回链接 */}
         <section className="post-footer">
           <div className="container">
-            <Link to="/blog" className="back-to-blog">
+            <Link to={localePath('/blog')} className="back-to-blog">
               {language === 'zh-CN' ? '← 返回博客列表' : '← Back to Blog'}
             </Link>
           </div>

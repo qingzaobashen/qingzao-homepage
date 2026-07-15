@@ -10,7 +10,7 @@ import './NotFoundPage.css'
  * 包含提示文字、返回首页链接和搜索建议
  */
 function NotFoundPage() {
-  const { t } = useLanguage()
+  const { t, localePath } = useLanguage()
 
   return (
     <>
@@ -27,10 +27,10 @@ function NotFoundPage() {
             {t('notFound.desc') || '抱歉，您访问的页面不存在或已被移动。'}
           </p>
           <div className="not-found-actions">
-            <Link to="/" className="not-found-btn-primary">
+            <Link to={localePath('/')} className="not-found-btn-primary">
               {t('notFound.goHome') || '返回首页'}
             </Link>
-            <Link to="/blog" className="not-found-btn-secondary">
+            <Link to={localePath('/blog')} className="not-found-btn-secondary">
               {t('notFound.goBlog') || '浏览博客'}
             </Link>
           </div>

@@ -17,7 +17,7 @@ import './ProductsPage.css'
  * @returns {JSX.Element} 产品页面
  */
 function ProductsPage() {
-  const { t } = useLanguage()
+  const { t, localePath } = useLanguage()
 
   /** 页面加载时滚动到顶部 */
   useEffect(() => {
@@ -29,7 +29,12 @@ function ProductsPage() {
       <SEO
         title={t('productsPage.title')}
         description={t('productsPage.description')}
-        canonical="/products"
+        canonical={localePath('/products')}
+        alternates={{
+          'zh-CN': '/products',
+          'en-US': '/en/products',
+          'x-default': '/products',
+        }}
       />
       <Header />
       <main className="products-page">

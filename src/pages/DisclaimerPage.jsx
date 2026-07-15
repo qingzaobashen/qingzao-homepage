@@ -7,12 +7,15 @@
 import React, { useEffect } from 'react'
 import SEO from '../components/SEO'
 import LegalPage from './LegalPage'
+import { useLanguage } from '../hooks/useLanguage'
 
 /**
  * 免责声明页面
  * @returns {JSX.Element} 免责声明独立页面
  */
 function DisclaimerPage() {
+  const { localePath } = useLanguage()
+
   /** 页面加载时滚动到顶部 */
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -23,7 +26,12 @@ function DisclaimerPage() {
       <SEO
         title="免责声明"
         description="青枣工作室免责声明，了解网站内容的使用范围和责任限制。"
-        canonical="/disclaimer"
+        canonical={localePath('/disclaimer')}
+        alternates={{
+          'zh-CN': '/disclaimer',
+          'en-US': '/en/disclaimer',
+          'x-default': '/disclaimer',
+        }}
       />
       <LegalPage
         titleKey="legal.disclaimer.title"

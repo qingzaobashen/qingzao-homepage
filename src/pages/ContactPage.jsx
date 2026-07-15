@@ -17,7 +17,7 @@ import './ContactPage.css'
  * @returns {JSX.Element} 联系我们页面
  */
 function ContactPage() {
-  const { t } = useLanguage()
+  const { t, localePath } = useLanguage()
 
   /** 页面加载时滚动到顶部 */
   useEffect(() => {
@@ -29,7 +29,12 @@ function ContactPage() {
       <SEO
         title={t('contactPage.title')}
         description={t('contactPage.subtitle')}
-        canonical="/contact"
+        canonical={localePath('/contact')}
+        alternates={{
+          'zh-CN': '/contact',
+          'en-US': '/en/contact',
+          'x-default': '/contact',
+        }}
       />
       <Header />
       <main className="contact-page">

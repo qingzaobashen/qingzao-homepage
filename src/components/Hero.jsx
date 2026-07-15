@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useLanguage } from '../hooks/useLanguage'
 import Carousel from './Carousel'
 import './Hero.css'
@@ -20,7 +21,7 @@ const PRODUCT_LINKS = {
  * 多处入口（mid 标签 / 聊天助手名 / 介绍面板标题）均会跳转到对应产品站
  */
 function Hero() {
-  const { t } = useLanguage()
+  const { t, localePath } = useLanguage()
 
   /**
    * 当前底部产品窗激活的侧边栏 Tab 下标
@@ -194,9 +195,9 @@ function Hero() {
           <a href="#products" className="hero-btn hero-btn-primary">
             {t('hero.actions.explore')}
           </a>
-          <a href="/about" className="hero-btn hero-btn-secondary">
+          <Link to={localePath('/about')} className="hero-btn hero-btn-secondary">
             {t('hero.actions.learnMore')}
-          </a>
+          </Link>
         </div>
       </div>
 

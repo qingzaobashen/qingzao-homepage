@@ -7,12 +7,15 @@
 import React, { useEffect } from 'react'
 import SEO from '../components/SEO'
 import LegalPage from './LegalPage'
+import { useLanguage } from '../hooks/useLanguage'
 
 /**
  * 隐私政策页面
  * @returns {JSX.Element} 隐私政策独立页面
  */
 function PrivacyPage() {
+  const { localePath } = useLanguage()
+
   /** 页面加载时滚动到顶部 */
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -23,7 +26,12 @@ function PrivacyPage() {
       <SEO
         title="隐私政策"
         description="青枣工作室隐私政策，了解我们如何保护您的个人信息。"
-        canonical="/privacy"
+        canonical={localePath('/privacy')}
+        alternates={{
+          'zh-CN': '/privacy',
+          'en-US': '/en/privacy',
+          'x-default': '/privacy',
+        }}
       />
       <LegalPage
         titleKey="legal.privacy.title"

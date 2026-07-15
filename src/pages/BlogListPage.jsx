@@ -19,7 +19,7 @@ import './BlogListPage.css'
  * @returns {JSX.Element} 博客列表页
  */
 function BlogListPage() {
-  const { t, language } = useLanguage()
+  const { t, language, localePath } = useLanguage()
   const [posts, setPosts] = useState([])
   const [filteredPosts, setFilteredPosts] = useState([])
   const [activeCategory, setActiveCategory] = useState('all')
@@ -84,7 +84,12 @@ function BlogListPage() {
           ? '装修指南、图片处理技巧和产品更新'
           : 'Decoration guides, image processing tips, and product updates'
         }
-        canonical="/blog"
+        canonical={localePath('/blog')}
+        alternates={{
+          'zh-CN': '/blog',
+          'en-US': '/en/blog',
+          'x-default': '/blog',
+        }}
       />
       <Header />
       <div className="blog-list-page">
@@ -138,7 +143,7 @@ function BlogListPage() {
                       <span className="post-date">{formatDate(post.date)}</span>
                     </div>
                     <h2 className="post-title">
-                      <Link to={`/blog/${post.slug}`}>{post.title}</Link>
+                      <Link to={localePath(`/blog/${post.slug}`)}>{post.title}</Link>
                     </h2>
                     <p className="post-excerpt">{post.excerpt}</p>
                     <div className="post-tags">
@@ -146,7 +151,7 @@ function BlogListPage() {
                         <span key={tagIndex} className="post-tag">#{tag}</span>
                       ))}
                     </div>
-                    <Link to={`/blog/${post.slug}`} className="post-read-more">
+                    <Link to={localePath(`/blog/${post.slug}`)} className="post-read-more">
                       {language === 'zh-CN' ? '阅读全文 →' : 'Read More →'}
                     </Link>
                   </article>

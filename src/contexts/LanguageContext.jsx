@@ -1,10 +1,16 @@
 /**
  * 语言上下文模块
  * 提供多语言支持的 React Context
- * 支持语言切换、语言偏好记忆等功能
+ *
+ * 国际化策略（方案 A）：以 URL 路径前缀为语言「真源」。
+ *   - 以 /en 开头的路径 → 英文（en-US）
+ *   - 其余路径 → 默认中文（zh-CN）
+ * 切换语言 = 在同一内容的「带/不带 /en 前缀」路径间导航，
+ * 从而让中英文拥有各自独立、可被 Google 索引的 URL，并通过 hreflang 互相关联。
  */
 
 import React, { createContext, useState, useEffect, useCallback } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import zhCN from '../locales/zh-CN.json'
 import enUS from '../locales/en-US.json'
 
@@ -13,7 +19,7 @@ import enUS from '../locales/en-US.json'
  */
 const languageResources = {
   'zh-CN': zhCN,
-  'en-US': enUS
+  'en-US': enUS,
 }
 
 /**
@@ -27,38 +33,15 @@ export const LanguageContext = createContext(undefined)
 const LANGUAGE_STORAGE_KEY = 'qingzao-language-preference'
 
 /**
- * 获取浏览器默认语言
- * @returns {string} 浏览器语言对应的语言代码
+ * 根据 URL 路径推断语言：以 /en 开头 → 英文，否则默认中文
+ * @param {string} pathname - 当前路径（含前导 /）
+ * @returns {'zh-CN' | 'en-US'} 推断出的语言代码
  */
-const getBrowserLanguage = () => {
-  const browserLang = navigator.language || navigator.userLanguage
-
-  // 根据浏览器语言返回对应的支持语言
-  if (browserLang && browserLang.startsWith('zh')) {
-    return 'zh-CN'
-  }
-  return 'en-US'
-}
+const detectLangFromPath = (pathname) => (pathname.startsWith('/en') ? 'en-US' : 'zh-CN')
 
 /**
- * 获取存储的语言偏好
- * @returns {string|null} 存储的语言代码或 null
- */
-const getStoredLanguage = () => {
-  try {
-    const stored = localStorage.getItem(LANGUAGE_STORAGE_KEY)
-    if (stored && (stored === 'zh-CN' || stored === 'en-US')) {
-      return stored
-    }
-  } catch (error) {
-    console.warn('Failed to read language preference from localStorage:', error)
-  }
-  return null
-}
-
-/**
- * 存储语言偏好
- * @param {string} language 语言代码
+ * 持久化语言偏好（仅用于记忆，不作为 URL 语言的真源）
+ * @param {string} language - 语言代码
  */
 const storeLanguage = (language) => {
   try {
@@ -77,82 +60,116 @@ const storeLanguage = (language) => {
  * @returns {React.ReactElement} 语言提供者组件
  */
 export const LanguageProvider = ({ children }) => {
-  // 初始化语言状态：优先使用存储的偏好，其次使用浏览器语言
-  const [language, setLanguageState] = useState(() => {
-    const storedLang = getStoredLanguage()
-    return storedLang || getBrowserLanguage()
-  })
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  // 初始语言：以 URL 前缀为准（URL 是语言真源，保证 SEO canonical 一致）
+  const [language, setLanguageState] = useState(() => detectLangFromPath(window.location.pathname))
 
   /**
-   * 切换语言
-   * @param {string} lang - 目标语言代码
+   * URL 前缀变化（前进 / 后退 / 直接访问）时同步语言状态
    */
-  const setLanguage = useCallback((lang) => {
-    setLanguageState(lang)
-    storeLanguage(lang)
-    // 更新 HTML lang 属性
-    document.documentElement.lang = lang === 'zh-CN' ? 'zh-CN' : 'en'
-  }, [])
+  useEffect(() => {
+    const fromPath = detectLangFromPath(location.pathname)
+    if (fromPath !== language) setLanguageState(fromPath)
+    // 仅依赖路径前缀；language 用于对比，避免重复触发
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.pathname])
+
+  /**
+   * 切换语言：导航到「带 / 不带 /en 前缀」的等价路径
+   * @param {string} lang - 目标语言代码（'zh-CN' | 'en-US'）
+   */
+  const setLanguage = useCallback(
+    (lang) => {
+      const isEn = lang === 'en-US'
+      const cur = location.pathname
+      let newPath
+      if (isEn) {
+        // 当前无 /en 前缀则加上；首页 / 映射到 /en
+        newPath = cur.startsWith('/en') ? cur : cur === '/' ? '/en' : `/en${cur}`
+      } else {
+        // 去掉 /en 前缀；根 /en 还原为 /
+        newPath = cur.startsWith('/en') ? cur.replace(/^\/en/, '') || '/' : cur
+      }
+      storeLanguage(lang)
+      setLanguageState(lang)
+      navigate(newPath + location.search, { replace: false })
+    },
+    [location.pathname, location.search, navigate],
+  )
+
+  /**
+   * 根据当前语言为路径加 /en 前缀（用于站内链接与 canonical）
+   * @param {string} path - 默认（中文）路径，如 /blog/foo 或 /
+   * @returns {string} 当前语言对应的路径
+   */
+  const localePath = useCallback(
+    (path) => {
+      if (!path) return path
+      if (language === 'en-US') {
+        return path === '/' ? '/en' : `/en${path.startsWith('/') ? path : `/${path}`}`
+      }
+      return path
+    },
+    [language],
+  )
 
   /**
    * 获取翻译文本
    * 支持嵌套键名、参数替换、数组 / 对象直返
    *
    * @param {string} key - 翻译键名（支持点分隔的嵌套键，如 'header.nav.products'）
-   * @param {Object} [params] - 可选参数：
-   *   - 普通占位符：`{ name: '青枣' }` 替换 `你好 {name}`
-   *   - 数组 / 对象直返：`{ returnObjects: true }` 让函数返回原始数组或对象，
-   *     用于面板功能列表、标签列表等需要遍历的场景
+   * @param {Object} [params] - 可选参数
    * @returns {string|Array|Object} 翻译后的文本 / 数组 / 对象
    */
-  const t = useCallback((key, params) => {
-    const keys = key.split('.')
-    let value = languageResources[language]
+  const t = useCallback(
+    (key, params) => {
+      const keys = key.split('.')
+      let value = languageResources[language]
 
-    // 遍历键名获取对应的值
-    for (const k of keys) {
-      if (value && typeof value === 'object' && k in value) {
-        value = value[k]
-      } else {
-        console.warn(`Translation key not found: ${key}`)
+      for (const k of keys) {
+        if (value && typeof value === 'object' && k in value) {
+          value = value[k]
+        } else {
+          console.warn(`Translation key not found: ${key}`)
+          return key
+        }
+      }
+
+      if (params && params.returnObjects) {
+        return value
+      }
+
+      if (typeof value !== 'string') {
+        console.warn(`Translation value is not a string for key: ${key}`)
         return key
       }
-    }
 
-    // 调用方显式声明需要原始对象（数组 / 对象）时，原样返回
-    if (params && params.returnObjects) {
+      if (params) {
+        return value.replace(/\{(\w+)\}/g, (match, paramKey) =>
+          params[paramKey] !== undefined ? String(params[paramKey]) : match,
+        )
+      }
+
       return value
-    }
-
-    // 如果值不是字符串（且没声明 returnObjects），按 fallback 返回键名
-    if (typeof value !== 'string') {
-      console.warn(`Translation value is not a string for key: ${key}`)
-      return key
-    }
-
-    // 如果有参数，进行替换
-    if (params) {
-      return value.replace(/\{(\w+)\}/g, (match, paramKey) => {
-        return params[paramKey] !== undefined ? String(params[paramKey]) : match
-      })
-    }
-
-    return value
-  }, [language])
+    },
+    [language],
+  )
 
   // 可用语言列表
   const availableLanguages = [
     { code: 'zh-CN', name: '中文' },
-    { code: 'en-US', name: 'English' }
+    { code: 'en-US', name: 'English' },
   ]
 
-  // 初始化时设置 HTML lang 属性
+  // 同步 HTML lang 属性
   useEffect(() => {
     document.documentElement.lang = language === 'zh-CN' ? 'zh-CN' : 'en'
   }, [language])
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t, availableLanguages }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, availableLanguages, localePath }}>
       {children}
     </LanguageContext.Provider>
   )

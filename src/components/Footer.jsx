@@ -9,7 +9,7 @@ import './Footer.css'
  * 支持多语言显示，隐私政策和服务条款使用路由跳转
  */
 function Footer() {
-  const { t } = useLanguage()
+  const { t, localePath } = useLanguage()
   const currentYear = new Date().getFullYear()
 
   const footerLinks = [
@@ -44,7 +44,7 @@ function Footer() {
         <div className="footer-top">
           {/* 品牌区 */}
           <div className="footer-brand">
-            <a href="/" className="footer-logo">
+            <a href={localePath('/')} className="footer-logo">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10"/>
                 <path d="M8 12h8M12 8v8"/>
@@ -65,7 +65,7 @@ function Footer() {
                   {group.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
                       {link.isRoute ? (
-                        <Link to={link.href}>{link.label}</Link>
+                        <Link to={localePath(link.href)}>{link.label}</Link>
                       ) : (
                         <a
                           href={link.href}
@@ -89,9 +89,9 @@ function Footer() {
             {t('footer.copyright', { year: currentYear })}
           </p>
           <div className="footer-legal">
-            <Link to="/privacy">{t('footer.legal.privacy')}</Link>
-            <Link to="/terms">{t('footer.legal.terms')}</Link>
-            <Link to="/disclaimer">{t('footer.legal.disclaimer')}</Link>
+            <Link to={localePath('/privacy')}>{t('footer.legal.privacy')}</Link>
+            <Link to={localePath('/terms')}>{t('footer.legal.terms')}</Link>
+            <Link to={localePath('/disclaimer')}>{t('footer.legal.disclaimer')}</Link>
           </div>
         </div>
       </div>

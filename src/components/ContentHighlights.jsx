@@ -6,7 +6,7 @@ import postsEn from '../data/posts/posts-en.json'
 import './ContentHighlights.css'
 
 function ContentHighlights() {
-  const { t, language } = useLanguage()
+  const { t, language, localePath } = useLanguage()
 
   const posts = useMemo(() => {
     const sourcePosts = language === 'zh-CN' ? postsZh : postsEn
@@ -50,7 +50,7 @@ function ContentHighlights() {
         </div>
 
         <div className="highlights-cta">
-          <Link to="/blog" className="btn-nav btn-nav-primary">
+          <Link to={localePath('/blog')} className="btn-nav btn-nav-primary">
             {t('highlights.cta')}
           </Link>
         </div>

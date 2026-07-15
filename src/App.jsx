@@ -1,6 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { LanguageProvider } from './contexts/LanguageContext'
+import { useLanguage } from './hooks/useLanguage'
 import SEO from './components/SEO'
 import Header from './components/Header'
 import AnnouncementBanner from './components/AnnouncementBanner'
@@ -27,12 +28,18 @@ import './App.css'
  * 包含 Header、公告横幅、主要内容区、Footer
  */
 function HomePage() {
+  const { language, localePath } = useLanguage()
+  const isEn = language === 'en-US'
   return (
     <>
       <SEO
-        title="青枣工作室 - 创新装修与图片处理工具"
-        description="青枣工作室提供装修流程导图、白底抠图等实用工具，让装修和图片处理更简单高效。"
-        canonical="/"
+        title={isEn ? 'Qingzao Studio - Innovative Renovation & Image Tools' : '青枣工作室 - 创新装修与图片处理工具'}
+        description={
+          isEn
+            ? 'Qingzao Studio offers renovation flow maps and white-background image trimming tools, making renovation and image processing simpler and more efficient.'
+            : '青枣工作室提供装修流程导图、白底抠图等实用工具，让装修和图片处理更简单高效。'
+        }
+        canonical={localePath('/')}
       />
       <Header />
       <main>
@@ -68,6 +75,17 @@ function App() {
           <Route path="/blog" element={<BlogListPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="*" element={<NotFoundPage />} />
+
+          {/* 英文镜像：/en 前缀，内容与中文版一一对应，便于独立索引 */}
+          <Route path="/en" element={<HomePage />} />
+          <Route path="/en/products" element={<ProductsPage />} />
+          <Route path="/en/privacy" element={<PrivacyPage />} />
+          <Route path="/en/terms" element={<TermsPage />} />
+          <Route path="/en/disclaimer" element={<DisclaimerPage />} />
+          <Route path="/en/about" element={<AboutPage />} />
+          <Route path="/en/contact" element={<ContactPage />} />
+          <Route path="/en/blog" element={<BlogListPage />} />
+          <Route path="/en/blog/:slug" element={<BlogPostPage />} />
         </Routes>
         <CookieConsent />
       </div>
