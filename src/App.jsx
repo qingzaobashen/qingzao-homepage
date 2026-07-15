@@ -16,6 +16,7 @@ import TermsPage from './pages/TermsPage'
 import BlogListPage from './pages/BlogListPage'
 import BlogPostPage from './pages/BlogPostPage'
 import DisclaimerPage from './pages/DisclaimerPage'
+import EditorialPage from './pages/EditorialPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import ProductsPage from './pages/ProductsPage'
@@ -70,6 +71,7 @@ function App() {
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/disclaimer" element={<DisclaimerPage />} />
+          <Route path="/editorial" element={<EditorialPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/blog" element={<BlogListPage />} />
@@ -82,6 +84,7 @@ function App() {
           <Route path="/en/privacy" element={<PrivacyPage />} />
           <Route path="/en/terms" element={<TermsPage />} />
           <Route path="/en/disclaimer" element={<DisclaimerPage />} />
+          <Route path="/en/editorial" element={<EditorialPage />} />
           <Route path="/en/about" element={<AboutPage />} />
           <Route path="/en/contact" element={<ContactPage />} />
           <Route path="/en/blog" element={<BlogListPage />} />

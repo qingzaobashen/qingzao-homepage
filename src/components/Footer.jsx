@@ -23,11 +23,12 @@ function Footer() {
     },
     {
       title: t('footer.nav.company.title'),
-      links: [
-        { label: t('footer.nav.company.links.about'), href: '/about', isRoute: true },
-        { label: t('footer.nav.company.links.contact'), href: '/contact', isRoute: true },
-      ]
-    },
+        links: [
+          { label: t('footer.nav.company.links.about'), href: '/about', isRoute: true },
+          { label: t('footer.nav.company.links.editorial'), href: '/editorial', isRoute: true },
+          { label: t('footer.nav.company.links.contact'), href: '/contact', isRoute: true },
+        ]
+      },
     {
       title: t('footer.nav.resources.title'),
       links: [

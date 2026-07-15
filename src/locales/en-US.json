@@ -177,6 +177,7 @@
         "links": {
           "about": "About Us",
           "contact": "Contact",
+          "editorial": "Editorial Guidelines",
           "join": "Join Us"
         }
       },
@@ -429,6 +430,53 @@
             "If you have any questions or suggestions about this disclaimer, please contact us at:",
             "Email: xiayiye580@gmail.com",
             "Last Updated: January 2025"
+          ]
+        }
+      ]
+    },
+    "editorial": {
+      "title": "Editorial Guidelines",
+      "intro": "Every article on Qingzao Studio is written by our team members based on real product experience and hands-on renovation work. These editorial guidelines explain how we choose topics, create, and maintain our content so that it stays genuinely useful to readers.",
+      "sections": [
+        {
+          "title": "1. Content Sources",
+          "content": [
+            "All articles are originally written by members of the Qingzao Studio team, based on our real experience building the decoration mind map and white-background image trimming tools, as well as our own renovation journeys.",
+            "We do not use automated tools to mass-generate content, nor do we copy, stitch together, or rewrite others' articles."
+          ]
+        },
+        {
+          "title": "2. Topic Selection",
+          "content": [
+            "We only write about content tightly related to our product lines: renovation workflows and pitfalls, and white-background image trimming and processing.",
+            "Topics come from real user questions, common search intent, and the actual pitfalls we hit while using our own products."
+          ]
+        },
+        {
+          "title": "3. Writing Principles",
+          "content": [
+            "Each article aims to answer one concrete, real question and provides actionable methods or checklists.",
+            "We add our own experience and judgment rather than vague generalities, and avoid clickbait or exaggerated claims."
+          ]
+        },
+        {
+          "title": "4. Facts and Updates",
+          "content": [
+            "Content involving prices, regulations, or tool features is updated as the real situation changes.",
+            "We keep a publish date visible on every article, and revise materially changed content so readers see up-to-date information."
+          ]
+        },
+        {
+          "title": "5. Advertising and Independence",
+          "content": [
+            "When our own products are mentioned, we clearly state that they are made by Qingzao Studio.",
+            "We will not write misleading recommendations paid for by any third party."
+          ]
+        },
+        {
+          "title": "6. Corrections and Feedback",
+          "content": [
+            "If you find an error or want to add something, please reach out via the email on our Contact page. We will verify and fix it promptly."
           ]
         }
       ]

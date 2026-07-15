@@ -14,6 +14,7 @@ import postsZh from '../data/posts/posts-zh.json'
 import postsEn from '../data/posts/posts-en.json'
 import { getPostContent } from '../data/posts/postContentLoader'
 import { markdownToHtml } from '../data/posts/markdownToHtml'
+import { getClusterPosts } from '../data/posts/clusters'
 import './BlogPostPage.css'
 
 /**
@@ -40,10 +41,8 @@ function BlogPostPage() {
       const loadedContent = getPostContent(foundPost.slug, language, foundPost.content || '')
       setContent(loadedContent)
 
-      // 查找相关文章（同分类的其他文章）
-      const related = postsData
-        .filter(p => p.category === foundPost.category && p.slug !== slug)
-        .slice(0, 3)
+      // 查找相关主题文章（同一主题簇内的其它文章，形成内链簇）
+      const related = getClusterPosts(foundPost.slug, postsData, 4)
       setRelatedPosts(related)
     } else {
       setContent('')
@@ -188,6 +187,9 @@ function BlogPostPage() {
               <span className="breadcrumb-current">{post.title}</span>
             </div>
             <div className="post-meta-top">
+              <span className="post-author-badge">
+                {language === 'zh-CN' ? '青枣工作室' : 'Qingzao Studio'}
+              </span>
               <span className="post-category-badge">{post.category}</span>
               <span className="post-date-badge">{formatDate(post.date)}</span>
               <div className="post-tags-top">

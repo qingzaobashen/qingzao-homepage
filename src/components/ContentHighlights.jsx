@@ -42,7 +42,7 @@ function ContentHighlights() {
               </div>
               <h3 className="highlight-title">{post.title}</h3>
               <p className="highlight-excerpt">{post.excerpt}</p>
-              <Link to={`/blog/${post.slug}`} className="highlight-link">
+              <Link to={localePath(`/blog/${post.slug}`)} className="highlight-link">
                 {t('highlights.readMore')}
               </Link>
             </article>

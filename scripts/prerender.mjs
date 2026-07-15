@@ -22,6 +22,7 @@ import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
 import { markdownToHtml } from '../src/data/posts/markdownToHtml.js'
+import { getClusterPosts } from '../src/data/posts/clusters.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = resolve(__dirname, '..')
@@ -118,6 +119,12 @@ const staticRoutes = [
     alternates: { 'zh-CN': '/disclaimer', 'en-US': '/en/disclaimer', 'x-default': '/disclaimer' },
   },
   {
+    route: '/editorial',
+    zh: { title: '编辑方针', description: '了解青枣工作室如何选题、创作与维护博客内容：全部原创、基于真实经验、与产品主线强相关。', canonical: '/editorial' },
+    en: { title: 'Editorial Guidelines', description: 'How Qingzao Studio chooses topics, creates, and maintains blog content: original, experience-based, and tightly tied to our product lines.', canonical: '/en/editorial' },
+    alternates: { 'zh-CN': '/editorial', 'en-US': '/en/editorial', 'x-default': '/editorial' },
+  },
+  {
     route: '/404',
     zh: { title: '页面未找到', description: '抱歉，您访问的页面不存在。', canonical: '/404' },
     en: { title: 'Page Not Found', description: 'Sorry, the page you are looking for does not exist.', canonical: '/en/404' },
@@ -200,8 +207,8 @@ function buildPostHtml(post, related, locale = 'zh') {
 
   const labels =
     locale === 'en'
-      ? { home: 'Home', blog: 'Blog', related: 'Related Posts', back: '← Back to Blog', sep: '/' }
-      : { home: '首页', blog: '博客', related: '相关文章', back: '← 返回博客列表', sep: '/' }
+      ? { home: 'Home', blog: 'Blog', related: 'Related Posts', back: '← Back to Blog', sep: '/', author: 'Qingzao Studio' }
+      : { home: '首页', blog: '博客', related: '相关文章', back: '← 返回博客列表', sep: '/', author: '青枣工作室' }
 
   const tagsHtml = (post.tags || [])
     .map((tag) => `<span class="post-tag-badge">#${esc(tag)}</span>`)
@@ -239,6 +246,7 @@ ${related
             <span class="breadcrumb-current">${esc(post.title)}</span>
           </div>
           <div class="post-meta-top">
+            <span class="post-author-badge">${esc(labels.author)}</span>
             <span class="post-category-badge">${esc(post.category)}</span>
             <span class="post-date-badge">${formatDate(post.date, locale)}</span>
             <div class="post-tags-top">${tagsHtml}</div>
@@ -397,7 +405,7 @@ function main() {
   console.log('\n📝 生成博客文章静态 HTML（含全文，中 / 英）...')
 
   for (const post of postsZh) {
-    const related = postsZh.filter((p) => p.category === post.category && p.slug !== post.slug).slice(0, 3)
+    const related = getClusterPosts(post.slug, postsZh, 4)
     const alternates = {
       'zh-CN': `/blog/${post.slug}`,
       'en-US': `/en/blog/${post.slug}`,
@@ -413,7 +421,7 @@ function main() {
   }
 
   for (const post of postsEn) {
-    const related = postsEn.filter((p) => p.category === post.category && p.slug !== post.slug).slice(0, 3)
+    const related = getClusterPosts(post.slug, postsEn, 4)
     const alternates = {
       'zh-CN': `/blog/${post.slug}`,
       'en-US': `/en/blog/${post.slug}`,
