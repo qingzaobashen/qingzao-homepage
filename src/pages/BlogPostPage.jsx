@@ -10,6 +10,7 @@ import { useLanguage } from '../hooks/useLanguage'
 import SEO from '../components/SEO'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import CommentSection from '../components/comments/CommentSection'
 import postsZh from '../data/posts/posts-zh.json'
 import postsEn from '../data/posts/posts-en.json'
 import { getPostContent } from '../data/posts/postContentLoader'
@@ -242,6 +243,11 @@ function BlogPostPage() {
               {language === 'zh-CN' ? '← 返回博客列表' : '← Back to Blog'}
             </Link>
           </div>
+        </section>
+
+        {/* 评论区 */}
+        <section className="container">
+          <CommentSection slug={post.slug} />
         </section>
       </div>
       <Footer />

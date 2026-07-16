@@ -539,5 +539,29 @@
     "text": "This website uses cookies to enhance your experience. By continuing to use this site, you consent to our use of cookies.",
     "learnMore": "Learn More",
     "accept": "Accept"
+  },
+  "comments": {
+    "title": "Comments",
+    "count": "{count} comments",
+    "loading": "Loading comments…",
+    "empty": "No comments yet. Be the first to share your thoughts!",
+    "loadError": "Failed to load comments. Please try again later.",
+    "submitError": "Failed to submit your comment. Please try again later.",
+    "retry": "Retry",
+    "form": {
+      "nickname": "Nickname",
+      "nicknamePlaceholder": "Enter your nickname",
+      "content": "Comment",
+      "contentPlaceholder": "Write your comment…",
+      "replyPlaceholder": "Reply to {name}…",
+      "submit": "Post Comment",
+      "submitting": "Submitting…",
+      "reply": "Reply",
+      "cancel": "Cancel",
+      "nicknameRequired": "Please enter a nickname",
+      "contentRequired": "Comment cannot be empty",
+      "nicknameTooLong": "Nickname cannot exceed {max} characters",
+      "contentTooLong": "Comment cannot exceed {max} characters"
+    }
   }
 }

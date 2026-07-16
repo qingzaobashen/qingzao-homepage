@@ -539,5 +539,29 @@
     "text": "本网站使用 Cookie 以提升用户体验。继续使用本网站即表示您同意我们的 Cookie 使用。",
     "learnMore": "了解更多",
     "accept": "接受"
+  },
+  "comments": {
+    "title": "评论",
+    "count": "{count} 条评论",
+    "loading": "评论加载中…",
+    "empty": "还没有评论，来抢沙发吧！",
+    "loadError": "评论加载失败，请稍后重试",
+    "submitError": "评论提交失败，请稍后重试",
+    "retry": "重试",
+    "form": {
+      "nickname": "昵称",
+      "nicknamePlaceholder": "请输入你的昵称",
+      "content": "评论内容",
+      "contentPlaceholder": "写下你的评论……",
+      "replyPlaceholder": "回复 {name}……",
+      "submit": "发表评论",
+      "submitting": "提交中…",
+      "reply": "回复",
+      "cancel": "取消",
+      "nicknameRequired": "请填写昵称",
+      "contentRequired": "评论内容不能为空",
+      "nicknameTooLong": "昵称不能超过 {max} 个字符",
+      "contentTooLong": "评论内容不能超过 {max} 个字符"
+    }
   }
 }
