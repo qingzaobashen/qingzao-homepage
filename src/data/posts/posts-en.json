@@ -349,5 +349,226 @@
       "tutorial"
     ],
     "excerpt": "Learn how to create a decoration flowchart to visualize and manage your renovation process from start to finish."
+  },
+  {
+    "slug": "wall-demolition-new-wall",
+    "title": "Wall Demolition and New Wall Construction",
+    "date": "2026-07-16",
+    "category": "Decoration Guide",
+    "tags": [
+      "demolition",
+      "new wall",
+      "construction",
+      "acceptance"
+    ],
+    "excerpt": "Demolition is the first step of renovation. This guide covers pre-demolition protection, pipe safeguarding, new-wall techniques and acceptance criteria."
+  },
+  {
+    "slug": "bed-mattress-selection",
+    "title": "Bed and Mattress Selection Guide",
+    "date": "2026-07-16",
+    "category": "Decoration Guide",
+    "tags": [
+      "bed",
+      "mattress",
+      "soft furnishing",
+      "selection"
+    ],
+    "excerpt": "Your bed and mattress directly affect sleep. This guide compares bed types and explains how to choose a mattress that fits you."
+  },
+  {
+    "slug": "tile-installation-acceptance",
+    "title": "Tile Installation and Acceptance",
+    "date": "2026-07-16",
+    "category": "Decoration Guide",
+    "tags": [
+      "tile",
+      "tiling",
+      "construction",
+      "acceptance"
+    ],
+    "excerpt": "Tile results depend on workmanship. This article covers layout planning, mold-release cleaning and acceptance standards for tile work."
+  },
+  {
+    "slug": "floor-heating-online-selection",
+    "title": "Underfloor Heating: Basics and Online Selection",
+    "date": "2026-07-16",
+    "category": "Decoration Guide",
+    "tags": [
+      "underfloor heating",
+      "heating",
+      "selection",
+      "online"
+    ],
+    "excerpt": "Underfloor heating combines a boiler, pipes and manifolds. Learn the core components and how to vet suppliers online."
+  },
+  {
+    "slug": "ducted-ac-selection-install",
+    "title": "Ducted AC Selection and Installation Guide",
+    "date": "2026-07-16",
+    "category": "Decoration Guide",
+    "tags": [
+      "ducted AC",
+      "air conditioner",
+      "installation",
+      "selection"
+    ],
+    "excerpt": "Ducted AC balances looks and value. Get capacity and efficiency guidance plus installation pitfalls to avoid."
+  },
+  {
+    "slug": "window-sealing-online-checklist",
+    "title": "Window Sealing: Basics and Online Checklist",
+    "date": "2026-07-16",
+    "category": "Decoration Guide",
+    "tags": [
+      "window",
+      "broken-bridge aluminum",
+      "doors and windows",
+      "selection"
+    ],
+    "excerpt": "Windows affect soundproofing and safety. This guide breaks down frames, glass and hardware, with an online question checklist."
+  },
+  {
+    "slug": "cabinet-formaldehyde-removal",
+    "title": "How to Remove Formaldehyde from Cabinets Scientifically",
+    "date": "2026-07-16",
+    "category": "Decoration Guide",
+    "tags": [
+      "formaldehyde",
+      "cabinet",
+      "removal",
+      "eco-friendly"
+    ],
+    "excerpt": "Formaldehyde can off-gas for years. Learn science-based removal—from board choice to ventilation—and avoid useless tricks."
+  },
+  {
+    "slug": "water-purifier-selection",
+    "title": "Water Purifier Knowledge and Selection Guide",
+    "date": "2026-07-16",
+    "category": "Decoration Guide",
+    "tags": [
+      "water purifier",
+      "whole-house filtration",
+      "selection",
+      "water quality"
+    ],
+    "excerpt": "Whole-house water filtration works in stages. Understand pre-filters, central and point-of-use units, then how to choose."
+  },
+  {
+    "slug": "carpentry-acceptance",
+    "title": "Carpentry and Ceiling Construction and Acceptance",
+    "date": "2026-07-16",
+    "category": "Decoration Guide",
+    "tags": [
+      "carpentry",
+      "ceiling",
+      "construction",
+      "acceptance"
+    ],
+    "excerpt": "Carpentry ceilings hide crack risks. This guide covers framing, drywall detailing and acceptance standards."
+  },
+  {
+    "slug": "whole-house-customization",
+    "title": "Whole-House Customization Knowledge",
+    "date": "2026-07-16",
+    "category": "Decoration Guide",
+    "tags": [
+      "whole-house customization",
+      "custom cabinet",
+      "board",
+      "selection"
+    ],
+    "excerpt": "Custom cabinetry meets personalized storage. Compare brands, factories and on-site carpentry, plus board and contract tips."
+  },
+  {
+    "slug": "robot-vacuum-selection",
+    "title": "Robot Vacuum Cleaner Selection Guide",
+    "date": "2026-07-16",
+    "category": "Decoration Guide",
+    "tags": [
+      "robot vacuum",
+      "cleaning",
+      "smart home",
+      "selection"
+    ],
+    "excerpt": "Robot vacuums live or die by cleaning power. Compare tangle-free brushes, suction and edge cleaning to choose wisely."
+  },
+  {
+    "slug": "sofa-selection",
+    "title": "Sofa Selection Guide",
+    "date": "2026-07-16",
+    "category": "Decoration Guide",
+    "tags": [
+      "sofa",
+      "soft furnishing",
+      "fabric",
+      "selection"
+    ],
+    "excerpt": "The sofa anchors your living room. Compare leather, fabric and frame options, with tips on comfort and durability."
+  },
+  {
+    "slug": "plumbing-electrical-acceptance",
+    "title": "Plumbing and Electrical Construction and Acceptance",
+    "date": "2026-07-16",
+    "category": "Decoration Guide",
+    "tags": [
+      "plumbing and electrical",
+      "construction",
+      "acceptance",
+      "hidden work"
+    ],
+    "excerpt": "Plumbing and electrical are critical hidden work. Review material checks, routing rules and acceptance key points."
+  },
+  {
+    "slug": "bathroom-backfill-waterproofing",
+    "title": "Bathroom Waterproofing and Backfill Process Guide",
+    "date": "2026-07-16",
+    "category": "Decoration Guide",
+    "tags": [
+      "bathroom",
+      "waterproofing",
+      "backfill",
+      "construction"
+    ],
+    "excerpt": "Bathrooms are the costliest to redo. Compare backfill methods and follow the waterproofing and acceptance workflow."
+  },
+  {
+    "slug": "washing-machine-selection",
+    "title": "Washing Machine and Dryer Selection Guide",
+    "date": "2026-07-16",
+    "category": "Decoration Guide",
+    "tags": [
+      "washing machine",
+      "dryer",
+      "washer-dryer",
+      "selection"
+    ],
+    "excerpt": "Washer-dryer set or combo? This comparison explains the trade-offs and how to choose washer and dryer."
+  },
+  {
+    "slug": "painter-acceptance-putty-paint",
+    "title": "Painter Work Acceptance Guide",
+    "date": "2026-07-16",
+    "category": "Decoration Guide",
+    "tags": [
+      "painter",
+      "putty",
+      "latex paint",
+      "acceptance"
+    ],
+    "excerpt": "Painter work needs staged acceptance. Get the flatness and finish standards for putty sanding and paint coats."
+  },
+  {
+    "slug": "central-ac-selection-install",
+    "title": "Central AC Selection and Installation Guide",
+    "date": "2026-07-16",
+    "category": "Decoration Guide",
+    "tags": [
+      "central AC",
+      "air conditioner",
+      "installation",
+      "selection"
+    ],
+    "excerpt": "Central AC is 30% equipment, 70% installation. Get brand guidance and installation pitfalls to avoid."
   }
 ]

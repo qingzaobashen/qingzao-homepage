@@ -34,6 +34,23 @@ const renovationCluster = [
   'smart-home-system',
   'decoration-flowchart-tutorial',
   'home-storage-solutions',
+  'wall-demolition-new-wall',
+  'bed-mattress-selection',
+  'tile-installation-acceptance',
+  'floor-heating-online-selection',
+  'ducted-ac-selection-install',
+  'window-sealing-online-checklist',
+  'cabinet-formaldehyde-removal',
+  'water-purifier-selection',
+  'carpentry-acceptance',
+  'whole-house-customization',
+  'robot-vacuum-selection',
+  'sofa-selection',
+  'plumbing-electrical-acceptance',
+  'bathroom-backfill-waterproofing',
+  'washing-machine-selection',
+  'painter-acceptance-putty-paint',
+  'central-ac-selection-install',
 ]
 
 // 图片处理簇：抠图 / 白底图 / 图片格式相关
