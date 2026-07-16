@@ -1,6 +1,7 @@
 # Floor Heating Knowledge and Online Screening
 
 ## 01 Composition of Floor Heating
+![Floor heating system structure](/images/articles/floor-heating-online-selection/1-地暖系统结构.jpg)
 
 ### Core Components at a Glance
 Think of floor heating as a human body:
@@ -19,16 +20,22 @@ Think of floor heating as a human body:
      * **Minimum heat output**: The smaller the better — low-power heating, the boiler won't start/stop frequently; a good one can reach 3KW.
      * **Domestic hot water volume**: How many liters of water it can raise by 25℃ per minute. The larger the better; **recommend ≥ 12L** to ensure ample and stable shower water.
    * **Brands**: Recommended German Vaillant, Viessmann, Japanese Rinnai, domestic Little Squirrel, Wolf.
+![Condensing boiler](/images/articles/floor-heating-online-selection/2-冷凝炉.jpg)
 2. **Pipes**:
    * **Material**: **PERT pipe** offers high cost-performance for home use; three/five-layer oxygen barrier is best, reducing bacterial growth; main pipes use **PE-X series**; for ultimate, use all PE-X.
    * **Diameter**: Conventionally 16mm or 20mm pipes. For a two-in-one system (floor heating + AC), 20mm pipes are recommended to reduce water flow resistance.
    * **Key requirement**: Must choose **"three/five-layer oxygen barrier"** pipe. It prevents oxygen from penetrating the pipe, breeding bacteria and forming bio-slime, avoiding scaling and clogging of floor heating, affecting heat dissipation.
    * **Brands**: Domestic: Weixing, Poly, Rifeng; joint: Kerno, Waps, Rehau, George.
+![PERT floor heating pipe](/images/articles/floor-heating-online-selection/3-pert地暖管.jpg)
+![Floor heating pipe laying](/images/articles/floor-heating-online-selection/9-地暖盘管.jpg)
 3. **Insulation material (top priority!)**:
    * **Insulation board**: Recommend **white crystal board (XPS extruded board)**, eco-friendly and odorless, at least 2cm thick, preferably 3cm. Be sure to recognize it; don't let them use ordinary white board. Mushroom board is no good — affects heat dissipation and tends to crack later.
    * **Reflective film**: Must be **pure aluminum mirror reflective film**; its role: balances heat conduction (the thickness of the real aluminum layer determines the effect), the thicker the better, prevents concrete from corroding the insulation board; inferior non-woven reflective film corrodes and fails within months. Where reflective film pieces join, overlap by more than 5 cm and fix with tape.
    * **Boundary insulation strip**: Laid along the wall to prevent heat loss to the wall.
+![Insulation board](/images/articles/floor-heating-online-selection/4-保温板.jpg)
+![Boundary insulation strip](/images/articles/floor-heating-online-selection/7-边界保温条.jpg)
 4. **Manifold + temperature control**
+![Manifold](/images/articles/floor-heating-online-selection/5-分集水器.jpg)
    * **Manifold**: Responsible for distributing hot water to each room's loop and collecting return water. Material: prefer integral forged brass, sufficient wall thickness (≥ 4mm), choose high-position or mid-position valve core, less likely to clog. Installation location: prioritize under kitchen sink, under bathroom vanity, etc. near drainage for easy later maintenance.
    * **Temperature control system**: Enables independent per-room temperature control. Install a thermostat panel in each main room, set different temperatures as needed, energy-saving and comfortable.
 
@@ -98,3 +105,5 @@ After receiving several replies, compare and analyze horizontally, focusing on d
    * How smooth is communication? This affects later cooperation.
 
 After completing the online table research and initial communication, our goal is not to place an order online, but to **screen out 2–3 most reliable merchants and enter the offline inspection phase**.
+
+

@@ -21,6 +21,9 @@ No matter which you choose, cabinets consist of design, boards, processing (cutt
 ---
 
 ## 2. Design: Plan Storage Needs First
+![Custom design](/images/articles/whole-house-customization/1-定制设计.jpg)
+![Cabinet design](/images/articles/whole-house-customization/4-柜子设计01.jpg)
+![Cabinet design](/images/articles/whole-house-customization/5柜子设计02.jpg)
 
 The purpose of design is threefold:
 - Size suitable, no wasted space;
@@ -36,6 +39,7 @@ Focus on communication ability and actual cases, ensure they understand your nee
 ---
 
 ## 3. Boards: Balancing Eco-friendliness and Performance
+![Custom boards](/images/articles/whole-house-customization/2-定制板材.jpg)
 
 A board is "substrate + surface"; the substrate is the "filling" inside, the surface is the "skin" outside; performance depends on the material and craft of these two.
 
@@ -112,6 +116,7 @@ A board is "substrate + surface"; the substrate is the "filling" inside, the sur
 ---
 
 ## 4. Processing: Good Edge Banding Makes Durable Cabinets
+![Board edge banding](/images/articles/whole-house-customization/3-板材封边.jpg)
 
 Processing is cutting, drilling, edge banding; edge banding directly affects beauty and eco-friendliness:
 - **EVA hot melt**: more glue, easily cracks, obvious glue line;
@@ -217,3 +222,5 @@ Understand the reasonable price of add-ons so you won't be tricked in negotiatio
 ---
 
 Whole-house customization is a system project, from design to installation interlocking. Understand some material and craft knowledge, clarify your needs and budget, to make cabinets that are both good-looking and useful.
+
+

@@ -9,6 +9,9 @@
 - **Pipe protection**: Use cloth or plugs to block the drainage pipes and prevent debris from falling in. Check that they are clear during acceptance.
 
 ### 1.2 Demolition Work: Three Scrapes and One Repair
+![Line marking and positioning](/images/articles/wall-demolition-new-wall/1-弹线定位.jpg)
+![Double-side cutting](/images/articles/wall-demolition-new-wall/2-双面切割.jpg)
+![Scrape off the whitewash layer](/images/articles/wall-demolition-new-wall/3-铲除白灰层.jpg)
 - **Positioning and cutting**: First mark the cutting line on the wall with a chalk line or laser, cut both sides, then knock along the line to ensure a clean cut that does not affect surrounding walls.
 - **Scrape off the whitewash layer**: Scrape off the white coating (whitewash layer) on the wall to expose the cement layer, so that subsequent tiling or painting will adhere firmly. After scraping, rinse the wall with water.
 - **Scrape off the insulation layer**: Thoroughly scrape off the insulation layer on all exterior walls, including the mortar at the base. Level the exposed rebar. If you install floor heating, it is recommended **not to scrape the floor insulation layer** — better insulation, but you lose some ceiling height.
@@ -27,6 +30,9 @@
   - **Cement**: Production date within 3 months, no clumping. Choose grade 32.5R or 42.5R (higher number = higher strength).
 
 ### 2.2 Bricklaying: Five Steps Done Right
+![Meshing at old-new wall joint](/images/articles/wall-demolition-new-wall/4-新旧墙连接处挂网.jpg)
+![Waterproof beam](/images/articles/wall-demolition-new-wall/5-防水地梁.jpg)
+![Centipede-angle top course](/images/articles/wall-demolition-new-wall/6-顶部蜈蚣角.jpg)
 - **Positioning and pre-treatment**: Use a laser level to position the wall and ensure it is vertical. Soak red bricks in water one day in advance to prevent them from drawing moisture from the mortar.
 - **Base connection**:
   1. At the joints of old and new walls, drive rebar (bar reinforcement) every 50–60 cm. Rebar diameter at least 1 cm, inserted into the old wall more than 10 cm, so the new wall will not collapse.
@@ -57,3 +63,5 @@
 2. **Build walls steadily**: Lay bricks staggered like building blocks, do the base connection well, and slant the top course to prevent cracks.
 3. **Accept strictly**: Use tools to check verticality, brick joints, lintels, waterproof beams, and pipes — ensure every step passes.
 4. **Mind the details**: Reasonable brick combination, controlled laying height, and correct flue-wrapping method.
+
+

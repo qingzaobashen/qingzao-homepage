@@ -8,14 +8,17 @@
 ---
 
 ## 2. Supervision Points During Construction
+![Tile construction (laying)](/images/articles/tile-installation-acceptance/4-瓷砖施工01.jpg)
 
 1. Clean the tile release agent: Before laying, check the back of the tiles. If there is a white powdery release agent, clean it thoroughly with a wire brush to ensure a firm bond.
 2. Use professional tools for openings: All openings for water pipes and sockets should use a dedicated hole saw to ensure smooth and precise holes, avoiding tile cracking from violent knocking.
 3. Clean and groove promptly: Require the worker to wipe off cement residue on the tile surface at any time during laying, and groove the joints before the grout dries, laying a good foundation for later beauty-sealing (epoxy grout).
+![Tile construction (cutting & cleaning)](/images/articles/tile-installation-acceptance/5-瓷砖施工02.jpg)
 4. Full-house continuous laying, use threshold stones with caution:
    - Full-house continuous tile laying makes the space look larger and more coherent. Except for wet zones, try to eliminate threshold stones. At doorways, use whole tiles or large tiles cut after calculation, avoiding narrow "small strip tiles."
 5. Bevel (hai tang) corners on wall tile external corners:
    - All wall tile corners (external corners) are recommended to be made into "hai tang corners" (leave a 2mm chamfer), not the fragile 45° sharp corners. The gap left by the hai tang corner, after beauty-sealing, looks good and is not prone to chipping.
+![Tile construction (continuous laying & corners)](/images/articles/tile-installation-acceptance/6-瓷砖施工03.jpg)
 6. Bathroom construction points:
    - Slope: Use a laser level to assist construction, ensure the floor drain is the lowest point of the whole area, and a water-pour test shows rapid drainage with no pooling.
    - Wall-floor alignment: The joints of wall tiles and floor tiles should be aligned as much as possible to enhance visual integrity.
@@ -45,6 +48,9 @@ Golden timing for acceptance: before the tiler completes floor protection!
 | 6. Appearance and damage | Visual inspection, strong flashlight side light. | No chipping, cracking, obvious color difference, scratches. Joints uniform, no cement residue. |
 | 7. Functional holes | Visual. | Floor drain, water pipe interfaces have smooth round holes, proper size, no large gaps after installation. |
 
+![Tile acceptance](/images/articles/tile-installation-acceptance/3-瓷砖验收02.jpg)
+![Overall tile acceptance](/images/articles/tile-installation-acceptance/7-瓷砖验收.jpg)
+
 > Special tip: Bring small tools like a coin and ping-pong ball for quick tests during acceptance.
 
 ---
@@ -53,3 +59,5 @@ Golden timing for acceptance: before the tiler completes floor protection!
 
 1. Finished product protection: After passing acceptance, urge the contractor to cover the floor with professional thickened protective film and seal the edges with tape to prevent scratches and contamination from later construction.
 2. Photo documentation: Photograph the whole-house tile laying effect, especially the tile areas with water/electric line routing, for archive, to facilitate avoiding pipes when installing cabinets and sanitary ware later.
+
+

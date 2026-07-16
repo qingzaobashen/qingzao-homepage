@@ -21,6 +21,9 @@
 ---
 
 ## 二、设计：先想好储物需求
+![定制设计](/images/articles/whole-house-customization/1-定制设计.jpg)
+![柜子设计](/images/articles/whole-house-customization/4-柜子设计01.jpg)
+![柜子设计](/images/articles/whole-house-customization/5柜子设计02.jpg)
 
 设计的目的就三个：
 - 尺寸合适，不浪费空间；
@@ -36,6 +39,7 @@
 ---
 
 ## 三、板材：环保和性能怎么平衡
+![定制板材](/images/articles/whole-house-customization/2-定制板材.jpg)
 
 板材就是“基材+饰面”，基材是里面的“馅儿”，饰面是外面的“皮”，性能好坏看这俩的用料和工艺。
 
@@ -117,6 +121,7 @@ xxx实木板、实木xx板（诸如实木颗粒板、多层实木板、生态实
 ---
 
 ## 四、加工：封边做得好，柜子才耐用
+![板材封边](/images/articles/whole-house-customization/3-板材封边.jpg)
 
 加工就是裁切、打孔、封边，封边直接影响美观和环保：
 
@@ -224,3 +229,5 @@ xxx实木板、实木xx板（诸如实木颗粒板、多层实木板、生态实
 ---
 
 全屋定制是个系统工程，从设计到安装环环相扣。了解点材料和工艺知识，明确自己的需求和预算，才能做出既好看又好用的柜子。
+
+

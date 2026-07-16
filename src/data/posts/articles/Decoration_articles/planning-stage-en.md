@@ -1,11 +1,13 @@
 ## The Planning Stage: A Roadmap from Preparation to Move-in
 
 ### 1. Introduction
+![Three major renovation stages](/images/articles/planning-stage/three-renovation-stages.jpg)
 1. Divide into stages: 1) Preparation; 2) Hard renovation; 3) Soft furnishing.
 2. Characteristics of renovation: non-standard, low-frequency, complex.
 3. Three core needs: safety, functionality, aesthetics.
 
 ### 2. Basic concepts
+![Five major hard-decoration steps](/images/articles/planning-stage/hard-decoration-5-steps.jpg)
 1. The five major steps of hard renovation: plumbing, electrical, tiling, carpentry, painting. A body analogy: blood = water, nerves = electricity, bones = tiling & carpentry, skin = painting.
 2. Hard vs. soft: turn the house upside down — what falls is soft furnishing, what stays is hard renovation.
 3. Main vs. auxiliary materials: invisible materials are auxiliary (pipes, wires, cement, mortar, putty, etc.); visible ones are main materials (tiles, flooring, sanitary ware, paint, etc.).
@@ -13,6 +15,8 @@
 5. Full-package vs. half-package: full-package = construction + materials (auxiliary and main); half-package = construction + auxiliary materials; labor-only = construction only.
 
 ### 3. Home acceptance & inspection
+![Three documents, one certificate and one form](/images/articles/planning-stage/three-documents.jpg)
+![Essential house-inspection tools](/images/articles/planning-stage/inspection-tools.jpg)
 1. Tools: tape measure + hollow-spot hammer.
 2. "Three certificates, one license, one form": the developer must present the Residential Quality Guarantee, Residential Usage Manual, Construction Quality Certificate, the Comprehensive Completion Acceptance Certificate, and the Completion Acceptance Filing Form.
 3. Inspect first: demand to inspect before signing and paying; a rainy day is best to spot seepage.
@@ -24,6 +28,7 @@
 9. Dimensions: measure each space and imagine/plan your future living layout.
 
 ### 4. Design planning
+![Self-design approach](/images/articles/planning-stage/self-design.jpg)
 1. Design planning covers both design and budget.
 2. It's recommended to design yourself first — no one knows your living needs better than you.
 3. A house is for living, and only secondly for looking at.
@@ -32,6 +37,7 @@
 6. Design software: Kujiale, 3DHome, etc. (good for owners); professional designers usually use CAD, 3ds Max, etc.
 
 ### 5. Mastering the budget
+![Mastering the renovation budget](/images/articles/planning-stage/budget-control.jpg)
 1. Design fee: a designer's professional service should be paid; years of learning and experience make it valuable.
 2. Base construction fee: labor + auxiliary materials.
 3. HVAC: floor heating, central AC, etc. — you must source these merchants yourself during hard renovation.
@@ -51,3 +57,5 @@
 13. Buying advice: products with technical barriers (e.g., appliances) → choose big brands; mature, low-barrier products → small factories are more cost-effective.
 14. Channels: highly personalized services (floor heating, doors/windows, whole-house cabinetry) suit offline purchase (room to bargain and meet customization); standard goods (main/auxiliary materials, finished furniture) can be bought online.
 15. Smart home: divided into smart devices and smart ecosystems. Smart devices are mature (smart locks, robot vacuums, smart toilets); smart ecosystems already cover daily needs (remote on/off control, etc.).
+
+

@@ -1,6 +1,7 @@
 ## 6 Spaces, 100+ Design Details from Those Who've Been There
 
 ### 1. Kitchen
+![Kitchen details](/images/articles/design-details-reference/1-厨房细节.jpg)
 "The golden kitchen, silver bathroom" — the kitchen is where money goes but effect shows fastest:
 1. **Dishwasher (built-in)**: if only one happiness-boosting appliance, a 13+ place-setting large-capacity dishwasher. It mainly solves marital harmony.
 2. **Multi-height countertops**: sink/prep raised (~85–90cm), cooktop lowered (~75–80cm). This 5–10cm drop saves your back and shoulders — ergonomics at its best.
@@ -32,6 +33,7 @@
 ---
 
 ### 2. Bathroom
+![Bathroom details](/images/articles/design-details-reference/2-卫浴细节.jpg)
 Core: easy care, no mold, minimalist.
 1. **Wall-drain hand basin**: hide the drain in the wall; no floor dead corner, robot vacuum roams free.
 2. **Smart toilet**: semi-smart is enough, but no auto-open; full-smart is said to flush when you pass by.
@@ -55,6 +57,7 @@ Core: easy care, no mold, minimalist.
 ---
 
 ### 3. Living & dining room
+![Living & dining room details](/images/articles/design-details-reference/3客餐厅细节.jpg)
 Defines the home's look and the owner's taste.
 1. **Linear sensor light strip**: sideboard, corridor. Light on arrival — safe and premium.
 2. **"Redundant" outlet layout**:
@@ -77,6 +80,7 @@ Defines the home's look and the owner's taste.
 17. **Projector**: poor quality, unwatchable by day; just get a TV.
 
 ### 4. Bedroom
+![Bedroom details](/images/articles/design-details-reference/4-卧室细节.jpg)
 Sleep and clothes habits decide the design.
 1. **Curtain box + track**: blackout ≥90%, sleep till natural wake; no Roman rod (morning light through gaps hurts sleep).
 2. **Head not by window**: head cold → headaches.
@@ -88,6 +92,7 @@ Sleep and clothes habits decide the design.
 8. **Good mattress**: huge sleep impact; ~3000 RMB budget enough; beyond that, diminishing returns.
 
 ### 5. Entryway
+![Entryway details](/images/articles/design-details-reference/5-玄关细节.jpg)
 1. **Smart lock**: face recognition, no hands, camera — max security.
 2. **Two open layers in shoe cabinet**: one for slippers, one for outdoor shoes.
 3. **Shoe-changing bench + hanging zone**: two drawers below, open hanging above (bags, shoe-changing).
@@ -97,6 +102,7 @@ Sleep and clothes habits decide the design.
 7. **Ultra-thin shoe cabinet**: tiny capacity, only small shoes; basketball shoes won't fit.
 
 ### 6. Balcony
+![Balcony details](/images/articles/design-details-reference/6-阳台细节.jpg)
 1. **Dryer**: absolute necessity in the south, especially where "returning humidity" hits; pair with wool balls.
 2. **Multiple washers**: my wife bought 5 — one for shoes/socks, two for underwear, one for outerwear, one for kids' clothes — satisfied daily.
 3. **800-deep utility cabinet**: if possible, plan one. Super-deep cabinet = small storage room; no bottom board, height >1.3m for floor items.
@@ -116,3 +122,5 @@ Sleep and clothes habits decide the design.
 8. **Rounded corners**: whole-house external corners rounded — cabinets, wall corners — prevent kids' bumps.
 
 > **Pitfall lesson**: in renovation, **"reducing hygiene dead corners"** matters far more than **"adding fancy shapes."** Any design requiring you to bend down to wipe or climb to reach will become a dusty regret.
+
+

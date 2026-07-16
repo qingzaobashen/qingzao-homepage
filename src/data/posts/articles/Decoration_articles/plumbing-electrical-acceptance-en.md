@@ -1,6 +1,7 @@
 # Plumbing and Electrical Construction and Acceptance Guide
 
 ## 1. Plumbing/Electrical Construction Process
+![Plumbing/electrical construction standard](/images/articles/plumbing-electrical-acceptance/1-水电施工标准.jpg)
 
 ### 1. Material Use Supervision
 - **Wire**: Confirm use of national standard flame-retardant BV wire (e.g. ZC-BV), flame-retardant grade meets requirements (ZA > ZB > ZC), production date within 3 years.
@@ -69,3 +70,5 @@ After plumbing/electrical completion, systematic acceptance must be done; recomm
 - **Don't lower standards**
 - **Don't leave problems overnight**
 - **Eliminate safety hazards**
+
+

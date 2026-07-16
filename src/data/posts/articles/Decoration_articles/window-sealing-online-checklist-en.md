@@ -3,6 +3,8 @@
 Window sealing is a major item in renovation, with a high price, involving sound insulation, safety, and energy saving, used for over a decade. Spend 20 minutes learning the basics so you have confidence when communicating with merchants.
 
 ## Step 1: Understand the Structure First
+![Glass structure diagram](/images/articles/window-sealing-online-checklist/glass-structure.jpg)
+![Window structure diagram](/images/articles/window-sealing-online-checklist/window-structure.jpg)
 - Window structure: mainly screen window, window sash (casement/push-pull), French glass, and window frame.
 - Classification: divided into PVC-steel windows, aluminum alloy windows, and broken-bridge aluminum. PVC-steel insulates but has low strength; aluminum alloy is sturdy but not soundproof; broken-bridge aluminum is the current mainstream, insulating and sturdy.
 
@@ -52,3 +54,5 @@ Communicate with customer service, use these specific questions to test professi
 - Those who answer patiently, invite you to see the factory or site, and don't rush to close the deal have stronger service awareness.
 
 Renovation is a protracted war, and window sealing is a key link. Do more homework, ask more details, and you will always find the right one.
+
+

@@ -5,6 +5,7 @@ The bathroom is the place with the highest water hazard risk and the largest rew
 ## 1. Backfill Methods and Waterproof Materials
 
 ### 1.1 Backfill Materials and Pros/Cons
+![Backfill materials](/images/articles/bathroom-backfill-waterproofing/1-回填材料.jpg)
 The sunken bathroom (sump) has pipes under the floor slab, usually needs backfill to level the ground and protect pipes.
 
 **1. Construction Waste Backfill**
@@ -34,6 +35,7 @@ Currently widely regarded as a backward and not recommended practice.
 - Cons: highest material and labor cost; once cured, extremely difficult to repair, need whole chiseling.
 
 ### 1.2 Waterproof Materials and Pros/Cons
+![Waterproof materials](/images/articles/bathroom-backfill-waterproofing/2-防水材料.jpg)
 Waterproofing usually needs two layers: once at the bottom of the sump before backfill, once on the surface after backfill leveling.
 1. Flexible waterproof coating (common)
 - Practice: brush polyurethane, acrylic or polymer cement (K11) and other flexible waterproof materials on the leveled base, generally brush 2–3 times, focus on corners, pipe roots and other joints.
@@ -46,6 +48,8 @@ Waterproofing usually needs two layers: once at the bottom of the sump before ba
 - Cons: at complex parts such as pipes, corners need cutting and splicing, improper handling easily becomes leakage points; high requirement for construction tech.
 
 ## 2. Standard Construction Steps
+![Waterproof construction](/images/articles/bathroom-backfill-waterproofing/3-防水施工01.jpg)
+![Waterproof construction](/images/articles/bathroom-backfill-waterproofing/4-防水施工02.jpg)
 
 **Step 1: Base Treatment**
 Base inspection and repair: after plumbing/electrical renovation, clean sump to solid base. Check wall-floor junction, around pipe roots for voids, cracks, carefully brush all internal corners with leak-sealing king.
@@ -98,3 +102,5 @@ Waterproof layer surface too smooth, direct tiling easily hollow and fall off. M
 1. Keep evidence in process: ask contractor to photo or video key processes (especially water retention test), send to you for archive, as basis for supervision and rights protection.
 2. Don't save time and material: bathroom waterproofing backfill is "hidden project within hidden project", being cheap or rushing to simplify steps, future repair cost may be tens of times the saved, and affects neighbor relations.
 3. Choose professional team: propose these craft standards to contractor, write into contract attachment. Professional team will proactively comply with these specs.
+
+
