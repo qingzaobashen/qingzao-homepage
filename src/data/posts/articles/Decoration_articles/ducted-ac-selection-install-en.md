@@ -2,6 +2,7 @@
 
 ## Selection Phase: Clarify Your Needs
 
+![Ducted AC selection](/images/articles/central-ac-selection-install/3-风管机挑选.jpg)
 ### 1. Determine Core Parameters: Capacity and Efficiency
 * **Cooling capacity (tonnage)**: Choose based on room area, lean larger rather than smaller. Refer to the table below; for west-facing, large glass windows, or high ceilings, choose slightly larger.
 * **Energy efficiency grade**: Prefer the new APF Grade 1 (top tier). A bit more expensive, but more power-saving in the long run.
@@ -47,6 +48,7 @@ When talking to the merchant, write these costs into the quote to avoid later ad
 
 ## Installation Process: Core Craft Supervision
 
+![Ducted AC installation](/images/articles/central-ac-selection-install/4-风管机安装.jpg)
 ### 6. Pipe Construction
 * **Neat and straight**: Refrigerant pipes and condensate pipes should be laid neat and straight. Use a dedicated bender for copper pipe bends, not by hand, which easily crushes them.
 * **Nitrogen brazing**: When brazing copper pipes, purge with nitrogen to prevent internal oxidation, otherwise welding slag will damage the compressor.

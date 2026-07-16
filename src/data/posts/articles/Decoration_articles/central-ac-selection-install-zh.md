@@ -2,7 +2,6 @@
 
 ## 品牌与安装决策
 ![中央空调挑选](/images/articles/central-ac-selection-install/1-中央空调挑选.jpg)
-![风管机挑选](/images/articles/central-ac-selection-install/3-风管机挑选.jpg)
 
 1.  **品牌选择**
     *   不要只看价格！报价太低的，很可能是劣质材料，后期维修成本高到离谱。
@@ -58,7 +57,6 @@
 
 ## 安装与验收要点
 ![中央空调安装](/images/articles/central-ac-selection-install/2-中央空调安装.jpg)
-![风管机安装](/images/articles/central-ac-selection-install/4-风管机安装.jpg)
 
 1.  **内机安装：防尘和减震**
     *   防尘：内机要有防尘保护，用原厂保护膜或防尘罩包好，避免装修灰堵住滤网。

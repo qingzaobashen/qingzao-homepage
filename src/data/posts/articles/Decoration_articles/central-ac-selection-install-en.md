@@ -2,7 +2,6 @@
 
 ## Brand and Installation Decisions
 ![Central AC selection](/images/articles/central-ac-selection-install/1-中央空调挑选.jpg)
-![Ducted AC selection](/images/articles/central-ac-selection-install/3-风管机挑选.jpg)
 
 1. **Brand choice**
    * Don't just look at price! Too low quote likely inferior materials, later repair cost absurdly high.
@@ -58,7 +57,6 @@ Write contract clearly, less quarrel later.
 
 ## Installation and Acceptance Points
 ![Central AC installation](/images/articles/central-ac-selection-install/2-中央空调安装.jpg)
-![Ducted AC installation](/images/articles/central-ac-selection-install/4-风管机安装.jpg)
 
 1. **Indoor unit install: dust and vibration proof**
    * Dust: indoor unit must have dust protection, wrap with original film or dust cover, avoid renovation dust blocking filter.
