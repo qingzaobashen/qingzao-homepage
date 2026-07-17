@@ -18,6 +18,14 @@
   - `sitemap.xml` 每个 `<url>` 带 `xhtml:link` hreflang（zh-CN/en-US/x-default），x-default 指向中文 URL。
 - 关键决策：中英文拥有各自独立 URL 后，Google 可分别索引；这是把英文翻译真正转化为 SEO 流量的前提。
 
+## AdSense 自动广告（Auto Ads，2026-07-17）
+- 全站自动广告脚本（client `ca-pub-3359350154774191`）必须出现在**每一个**页面的 `<head>`，Google 才会在所有最佳位置自动投放。
+- 两个注入点，缺一不可：
+  1. `index.html` 的 `<head>`（源文件已含，SPA 首屏 + 作为预渲染模板）。
+  2. `scripts/prerender.mjs`：新增 `ADSENSE_SCRIPT` 常量 + `ensureAdSenseScript(html)`（幂等，已存在则跳过），在 `writeRoute` 写入前对最终 HTML 强制注入。覆盖所有构建期生成的静态/博客 HTML（中文 + 英文）。
+- 注意：`public/google<id>.html` 是 AdSense **站点验证文件**，只含验证 meta，**不应**注入广告脚本（已确认不注入）。
+- `npm run build:full` 链：`generate-sitemap` → `vite build` → `prerender`。任一步失败会导致 dist 残留旧文件；如改动 prerender 后验证，建议单独跑 `node scripts/prerender.mjs` 再 grep 确认。
+
 ## 验证方式
 - 本地预览：`Start-Process npx vite preview --port 4173`，用 `curl.exe -s -o NUL -w "%{http_code} REDIRECT=%{redirect_url}"` 检查状态码/重定向；`Select-String` 查 prerendered HTML 的 body 与 canonical。
 - 网页类改动用 Chrome DevTools MCP 验证渲染与 console。

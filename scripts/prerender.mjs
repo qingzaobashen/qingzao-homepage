@@ -31,6 +31,26 @@ const ARTICLES_DIR = resolve(ROOT, 'src/data/posts/articles')
 const SITE_URL = 'https://qingzao.site'
 
 /**
+ * Google AdSense 自动广告（Auto Ads）脚本。
+ * 必须出现在「每一个」页面的 <head> 中，Google 才会在所有最佳位置自动投放广告。
+ * 由于大量博客/静态 HTML 是在构建期由本脚本生成，这里强制注入，
+ * 避免仅依赖 dist/index.html 模板（模板一旦缺失即会静默丢失脚本）。
+ * @type {string}
+ */
+const ADSENSE_SCRIPT =
+  '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3359350154774191"\n     crossorigin="anonymous"></script>'
+
+/**
+ * 确保 HTML 的 <head> 中包含 AdSense 自动广告脚本（幂等，不会重复注入）。
+ * @param {string} html - 待处理的 HTML
+ * @returns {string} 保证含 AdSense 脚本的 HTML
+ */
+function ensureAdSenseScript(html) {
+  if (html.includes('adsbygoogle.js?client=ca-pub-3359350154774191')) return html
+  return html.replace('</head>', `    ${ADSENSE_SCRIPT}\n  </head>`)
+}
+
+/**
  * HTML 文本转义（用于元素文本节点）
  * @param {string} str - 原始文本
  * @returns {string} 转义后的文本
@@ -361,6 +381,10 @@ function writeRoute(template, route, { meta, bodyHtml = '', jsonLd = '', alterna
   if (bodyHtml) {
     html = html.replace('<div id="root"></div>', `<div id="root">${bodyHtml}</div>`)
   }
+
+  // 强制注入 AdSense 自动广告脚本：保证「每一个」页面（含构建期生成的博客/静态 HTML）的
+  // <head> 都包含它，从而让 Google 自动在所有最佳位置投放广告。幂等，不会重复。
+  html = ensureAdSenseScript(html)
 
   // 关键：生成扁平 .html 文件（如 dist/blog/smart-home-system.html 或 dist/en/blog/<slug>.html），
   // 而非目录式 index.html。原因：Vercel 对目录 index.html 会把「无斜杠」URL 308 重定向到「带斜杠」版本，
