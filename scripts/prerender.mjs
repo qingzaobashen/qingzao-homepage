@@ -31,6 +31,16 @@ const ARTICLES_DIR = resolve(ROOT, 'src/data/posts/articles')
 const SITE_URL = 'https://qingzao.site'
 
 /**
+ * 站点多语言文案（与运行时 React 使用同一份 locales 数据源）。
+ * 用于为静态路由（首页 / 关于 / 联系 / 产品 / 法律页等）预渲染「首屏即含正文」的 HTML，
+ * 解决 AdSense「低价值内容 / SPA 空壳不可抓取」问题——此前仅博客文章注入了正文，
+ * 其余静态页的 #root 为空，爬虫无法读到实质内容。
+ * @type {object}
+ */
+const zhLocale = JSON.parse(readFileSync(resolve(ROOT, 'src/locales/zh-CN.json'), 'utf8'))
+const enLocale = JSON.parse(readFileSync(resolve(ROOT, 'src/locales/en-US.json'), 'utf8'))
+
+/**
  * Google AdSense 自动广告（Auto Ads）脚本。
  * 必须出现在「每一个」页面的 <head> 中，Google 才会在所有最佳位置自动投放广告。
  * 由于大量博客/静态 HTML 是在构建期由本脚本生成，这里强制注入，
@@ -329,6 +339,123 @@ function buildJsonLd(post, locale = 'zh') {
 }
 
 /**
+ * 为静态路由生成「首屏即含正文」的 HTML 片段（注入到 #root）。
+ *
+ * 内容全部取自与运行时一致的 locales 数据源，避免与 React 渲染结果漂移；
+ * 客户端 hydration 时 React 会接管 #root 重新渲染，因此该片段主要服务于
+ * 无 JS / 首屏抓取的爬虫（AdSense 可抓取性、SEO 收录的关键）。
+ *
+ * @param {string} route - 中文基准路由（如 '/', '/about', '/privacy'）
+ * @param {'zh'|'en'} locale - 目标语言
+ * @returns {string} 首屏正文 HTML（无匹配路由时返回空串）
+ */
+function buildStaticBodyHtml(route, locale = 'zh') {
+  const L = locale === 'en' ? enLocale : zhLocale
+  /** 给站内路径按语言加 /en 前缀 */
+  const p = (path) => (locale === 'en' ? (path === '/' ? '/en' : `/en${path}`) : path)
+  /** 统一外层容器，套用与页面一致的 container 类 */
+  const wrap = (inner) => `<div class="static-prerender"><div class="container">${inner}</div></div>`
+
+  /**
+   * 渲染法律类页面（隐私 / 条款 / 免责 / 编辑方针），结构与 LegalPage 组件一致。
+   * @param {string} key - legal 下的键名
+   * @returns {string} HTML
+   */
+  const legalHtml = (key) => {
+    const d = L.legal && L.legal[key]
+    if (!d) return ''
+    const secs = (d.sections || [])
+      .map((s) => {
+        const paras = (Array.isArray(s.content) ? s.content : [s.content])
+          .map((c) => `<p class="legal-section-text">${esc(c)}</p>`)
+          .join('')
+        return `<section class="legal-section"><h2 class="legal-section-title">${esc(s.title)}</h2>${paras}</section>`
+      })
+      .join('')
+    return wrap(`<h1 class="legal-page-title">${esc(d.title)}</h1><p class="legal-page-intro">${esc(d.intro)}</p>${secs}`)
+  }
+
+  switch (route) {
+    case '/':
+      return wrap(
+        `<h1>${esc(L.hero.title)} ${esc(L.hero.titleLine2)}</h1>` +
+          `<p>${esc(L.hero.subtitle)}</p>` +
+          `<p>${esc(L.hero.midText)} ${esc(L.hero.midTextLine2)}</p>` +
+          `<h2>${esc(L.products.title)}</h2><p>${esc(L.products.subtitle)}</p>` +
+          `<h3>${esc(L.products.items.decoration.title)}</h3><p>${esc(L.products.items.decoration.description)}</p>` +
+          `<h3>${esc(L.products.items.trimmer.title)}</h3><p>${esc(L.products.items.trimmer.description)}</p>` +
+          `<h2>${esc(L.about.title)}</h2>` +
+          `<p>${esc(L.about.paragraphs.p1)}</p><p>${esc(L.about.paragraphs.p2)}</p><p>${esc(L.about.paragraphs.p3)}</p>` +
+          `<h2>${esc(L.contact.title)}</h2><p>${esc(L.contact.description)}</p>` +
+          `<p><a href="${p('/blog')}">${esc(L.header.nav.blog)}</a></p>`,
+      )
+
+    case '/products':
+      return wrap(
+        `<h1>${esc(L.productsPage.title)}</h1><p>${esc(L.productsPage.subtitle)}</p>` +
+          `<h2>${esc(L.products.items.decoration.title)}</h2><p>${esc(L.products.items.decoration.description)}</p>` +
+          `<h2>${esc(L.products.items.trimmer.title)}</h2><p>${esc(L.products.items.trimmer.description)}</p>`,
+      )
+
+    case '/about':
+      return wrap(
+        `<h1>${esc(L.aboutPage.title)}</h1><p>${esc(L.aboutPage.subtitle)}</p>` +
+          `<p>${esc(L.about.paragraphs.p1)}</p><p>${esc(L.about.paragraphs.p2)}</p><p>${esc(L.about.paragraphs.p3)}</p>` +
+          `<h2>${esc(L.aboutPage.values.title)}</h2>` +
+          `<h3>${esc(L.aboutPage.values.userFirst.title)}</h3><p>${esc(L.aboutPage.values.userFirst.desc)}</p>` +
+          `<h3>${esc(L.aboutPage.values.simpleDesign.title)}</h3><p>${esc(L.aboutPage.values.simpleDesign.desc)}</p>` +
+          `<h3>${esc(L.aboutPage.values.continuousIteration.title)}</h3><p>${esc(L.aboutPage.values.continuousIteration.desc)}</p>`,
+      )
+
+    case '/contact':
+      return wrap(
+        `<h1>${esc(L.contactPage.title)}</h1><p>${esc(L.contactPage.subtitle)}</p>` +
+          `<p>${esc(L.contact.items.email.label)}: ${esc(L.contact.items.email.value)}</p>` +
+          `<h2>${esc(L.contactPage.faq.title)}</h2>` +
+          `<h3>${esc(L.contactPage.faq.q1.title)}</h3><p>${esc(L.contactPage.faq.q1.answer)}</p>` +
+          `<h3>${esc(L.contactPage.faq.q2.title)}</h3><p>${esc(L.contactPage.faq.q2.answer)}</p>` +
+          `<h3>${esc(L.contactPage.faq.q3.title)}</h3><p>${esc(L.contactPage.faq.q3.answer)}</p>`,
+      )
+
+    case '/blog': {
+      const { zh: postsZh, en: postsEn } = getPostsData()
+      const posts = (locale === 'en' ? postsEn : postsZh)
+        .slice()
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
+      const heading = locale === 'en' ? 'Blog' : '博客'
+      const items = posts
+        .map(
+          (post) =>
+            `<article class="blog-list-item">` +
+            `<h2><a href="${p(`/blog/${esc(post.slug)}`)}">${esc(post.title)}</a></h2>` +
+            `<div class="blog-list-meta"><span>${esc(post.category)}</span><span>${formatDate(post.date, locale)}</span></div>` +
+            `<p>${esc(post.excerpt)}</p></article>`,
+        )
+        .join('')
+      return wrap(`<h1>${esc(heading)}</h1>${items}`)
+    }
+
+    case '/privacy':
+      return legalHtml('privacy')
+    case '/terms':
+      return legalHtml('terms')
+    case '/disclaimer':
+      return legalHtml('disclaimer')
+    case '/editorial':
+      return legalHtml('editorial')
+
+    case '/404':
+      return wrap(
+        `<h1>${esc(L.notFound.title)}</h1><p>${esc(L.notFound.desc)}</p>` +
+          `<p><a href="${p('/')}">${esc(L.notFound.goHome)}</a> · <a href="${p('/blog')}">${esc(L.notFound.goBlog)}</a></p>`,
+      )
+
+    default:
+      return ''
+  }
+}
+
+/**
  * 把 SEO 元信息注入到 HTML <head>
  * @param {string} html - 原始模板 HTML
  * @param {object} meta - { title, description, canonical }
@@ -419,9 +546,19 @@ function main() {
   // 1. 静态路由：中文 + 英文各一份
   console.log('📄 生成静态路由 HTML（中 / 英）...')
   for (const r of staticRoutes) {
-    writeRoute(baseTemplate, r.route, { meta: r.zh, alternates: r.alternates, locale: 'zh-CN' })
+    writeRoute(baseTemplate, r.route, {
+      meta: r.zh,
+      alternates: r.alternates,
+      locale: 'zh-CN',
+      bodyHtml: buildStaticBodyHtml(r.route, 'zh'),
+    })
     const enRoute = r.route === '/' ? '/en' : `/en${r.route}`
-    writeRoute(baseTemplate, enRoute, { meta: r.en, alternates: r.alternates, locale: 'en' })
+    writeRoute(baseTemplate, enRoute, {
+      meta: r.en,
+      alternates: r.alternates,
+      locale: 'en',
+      bodyHtml: buildStaticBodyHtml(r.route, 'en'),
+    })
   }
 
   // 2. 博客文章：中文 /blog/<slug> 与英文 /en/blog/<slug> 各一份（含全文 + JSON-LD + hreflang）
