@@ -135,28 +135,76 @@ function BlogListPage() {
         <section className="blog-content">
           <div className="container">
             {filteredPosts.length > 0 ? (
-              <div className="posts-grid">
-                {filteredPosts.map((post, index) => (
-                  <article key={index} className="post-card">
-                    <div className="post-meta">
-                      <span className="post-category">{post.category}</span>
-                      <span className="post-date">{formatDate(post.date)}</span>
+              <>
+                {/* 首篇文章作为 Featured 特色文章 */}
+                {filteredPosts[0].coverImage && (
+                  <article className="post-card post-card--featured">
+                    <div className="post-cover-wrapper post-cover-wrapper--featured">
+                      <img
+                        src={filteredPosts[0].coverImage}
+                        alt={filteredPosts[0].title}
+                        className="post-cover"
+                        onError={(e) => { e.target.style.display = 'none' }}
+                      />
                     </div>
-                    <h2 className="post-title">
-                      <Link to={localePath(`/blog/${post.slug}`)}>{post.title}</Link>
-                    </h2>
-                    <p className="post-excerpt">{post.excerpt}</p>
-                    <div className="post-tags">
-                      {post.tags.map((tag, tagIndex) => (
-                        <span key={tagIndex} className="post-tag">#{tag}</span>
-                      ))}
+                    <div className="post-body post-body--featured">
+                      <div className="post-meta">
+                        <span className="post-category">{filteredPosts[0].category}</span>
+                        <span className="post-date">{formatDate(filteredPosts[0].date)}</span>
+                      </div>
+                      <h2 className="post-title post-title--featured">
+                        <Link to={localePath(`/blog/${filteredPosts[0].slug}`)}>{filteredPosts[0].title}</Link>
+                      </h2>
+                      <p className="post-excerpt post-excerpt--featured">{filteredPosts[0].excerpt}</p>
+                      <div className="post-tags">
+                        {filteredPosts[0].tags.map((tag, tagIndex) => (
+                          <span key={tagIndex} className="post-tag">#{tag}</span>
+                        ))}
+                      </div>
+                      <Link to={localePath(`/blog/${filteredPosts[0].slug}`)} className="post-read-more">
+                        {language === 'zh-CN' ? '阅读全文 →' : 'Read More →'}
+                      </Link>
                     </div>
-                    <Link to={localePath(`/blog/${post.slug}`)} className="post-read-more">
-                      {language === 'zh-CN' ? '阅读全文 →' : 'Read More →'}
-                    </Link>
                   </article>
-                ))}
-              </div>
+                )}
+
+                {/* 其余文章：3列网格 */}
+                {filteredPosts.length > 1 && (
+                  <div className="posts-grid">
+                    {filteredPosts.slice(1).map((post, index) => (
+                      <article key={index} className="post-card">
+                        {post.coverImage && (
+                          <div className="post-cover-wrapper">
+                            <img
+                              src={post.coverImage}
+                              alt={post.title}
+                              className="post-cover"
+                              loading="lazy"
+                              onError={(e) => { e.target.style.display = 'none' }}
+                            />
+                          </div>
+                        )}
+                        <div className="post-meta">
+                          <span className="post-category">{post.category}</span>
+                          <span className="post-date">{formatDate(post.date)}</span>
+                        </div>
+                        <h2 className="post-title">
+                          <Link to={localePath(`/blog/${post.slug}`)}>{post.title}</Link>
+                        </h2>
+                        <p className="post-excerpt">{post.excerpt}</p>
+                        <div className="post-tags">
+                          {post.tags.map((tag, tagIndex) => (
+                            <span key={tagIndex} className="post-tag">#{tag}</span>
+                          ))}
+                        </div>
+                        <Link to={localePath(`/blog/${post.slug}`)} className="post-read-more">
+                          {language === 'zh-CN' ? '阅读全文 →' : 'Read More →'}
+                        </Link>
+                      </article>
+                    ))}
+                  </div>
+                )}
+              </>
             ) : (
               <div className="no-posts">
                 <p>{language === 'zh-CN' ? '暂无文章' : 'No posts yet.'}</p>

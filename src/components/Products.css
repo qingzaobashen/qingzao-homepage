@@ -4,7 +4,7 @@
  */
 
 .products {
-  padding: 180px 24px 96px;
+  padding: 120px 24px 96px;
   background: var(--color-canvas);
 }
 
@@ -121,7 +121,7 @@
   font-weight: 500;
   color: #ffffff;
   background: var(--color-primary);
-  border-radius: var(--rounded-full);
+  border-radius: var(--rounded-md);
   text-decoration: none;
   cursor: pointer;
   transition: all var(--transition-base);

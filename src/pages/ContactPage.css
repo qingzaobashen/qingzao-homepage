@@ -1,10 +1,11 @@
 /**
  * 联系我们页面样式
+ * 东方风格：使用 CSS 变量，宣纸白底
  */
 
 .contact-page {
   min-height: 100vh;
-  background-color: #f9fafb;
+  background-color: var(--color-bg);
   padding-top: 72px;
 }
 
@@ -16,14 +17,14 @@
 .contact-page-title {
   font-size: 48px;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--color-ink);
   margin-bottom: 16px;
   letter-spacing: -0.5px;
 }
 
 .contact-page-subtitle {
   font-size: 20px;
-  color: #6b7280;
+  color: var(--color-muted);
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
@@ -45,7 +46,7 @@
 .contact-section-title {
   font-size: 32px;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--color-ink);
   text-align: center;
   margin-bottom: 40px;
 }
@@ -57,22 +58,22 @@
 }
 
 .faq-item {
-  background: white;
-  border-radius: 12px;
+  background: var(--color-canvas);
+  border-radius: var(--rounded-lg);
   padding: 24px 30px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-2);
 }
 
 .faq-item h3 {
   font-size: 16px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--color-ink);
   margin-bottom: 8px;
 }
 
 .faq-item p {
   font-size: 14px;
-  color: #6b7280;
+  color: var(--color-muted);
   line-height: 1.7;
 }
 

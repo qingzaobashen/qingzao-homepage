@@ -59,10 +59,10 @@
 
 .hero-title {
   font-family: var(--font-family);
-  font-size: clamp(36px, 5vw, 64px);
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
+  font-size: clamp(36px, 5vw, 68px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: normal;
   color: #ffffff;
   margin-bottom: 20px;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
@@ -98,7 +98,7 @@
   font-weight: 500;
   line-height: 1;
   padding: 12px 28px;
-  border-radius: var(--rounded-sm);
+  border-radius: var(--rounded-md);
   text-decoration: none;
   transition: all var(--transition-base);
   cursor: pointer;
@@ -156,13 +156,13 @@
 .mid-tag {
   display: inline-flex;
   align-items: center;
-  padding: 6px 14px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: var(--rounded-full);
-  font-size: 13px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   transition: all var(--transition-base);

@@ -1,17 +1,52 @@
 /**
  * 博客首页 Hero 区样式
  * 东方风格：大量留白，思源宋体
+ * 装饰元素：顶部渐变线、背景水墨圆点、标题底部朱砂下划线
  */
 
 .blog-hero {
   padding: 120px 0 80px;
   background: var(--color-bg);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 顶部装饰渐变线 */
+.blog-hero::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-primary) 50%,
+    transparent
+  );
+}
+
+/* 右上角淡水墨装饰圆 */
+.blog-hero::after {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(91, 124, 109, 0.04), transparent 70%);
+  pointer-events: none;
 }
 
 .blog-hero-content {
   max-width: 720px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .blog-hero-title {
@@ -22,6 +57,22 @@
   line-height: 1.2;
   margin-bottom: 20px;
   letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+}
+
+/* 标题底部朱砂色装饰下划线 */
+.blog-hero-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: var(--color-accent);
+  opacity: 0.5;
+  border-radius: 1px;
 }
 
 .blog-hero-subtitle {
@@ -30,7 +81,19 @@
   color: var(--color-muted);
   line-height: 1.7;
   max-width: 560px;
-  margin: 0 auto;
+  margin: 24px auto 0;
+}
+
+/* 左下角淡水墨装饰圆 */
+.blog-hero-deco {
+  position: absolute;
+  bottom: -60px;
+  left: -60px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 58, 58, 0.03), transparent 70%);
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
@@ -40,5 +103,24 @@
 
   .blog-hero-title {
     letter-spacing: 1px;
+  }
+
+  .blog-hero::before {
+    width: 120px;
+    top: 30px;
+  }
+
+  .blog-hero::after {
+    width: 180px;
+    height: 180px;
+    top: -50px;
+    right: -50px;
+  }
+
+  .blog-hero-deco {
+    width: 120px;
+    height: 120px;
+    bottom: -40px;
+    left: -40px;
   }
 }

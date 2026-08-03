@@ -112,7 +112,7 @@
   font-weight: 500;
   line-height: 1;
   padding: 8px 18px;
-  border-radius: var(--rounded-sm);
+  border-radius: var(--rounded-md);
   text-decoration: none;
   transition: all var(--transition-base);
   cursor: pointer;

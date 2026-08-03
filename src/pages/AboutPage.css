@@ -115,7 +115,7 @@
   background: var(--color-primary);
   color: #ffffff;
   text-decoration: none;
-  border-radius: var(--rounded-sm);
+  border-radius: var(--rounded-md);
   font-family: var(--font-body);
   font-size: 15px;
   font-weight: 500;

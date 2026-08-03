@@ -46,6 +46,10 @@ function HomePage() {
       <main>
         <BlogHero />
         <FeaturedSeries />
+        {/* 装饰分割线 */}
+        <div className="section-divider">
+          <span className="section-divider-dot" />
+        </div>
         <LatestPosts />
       </main>
       <Footer />

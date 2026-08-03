@@ -1,6 +1,6 @@
 /**
  * 最新文章列表组件样式
- * 青绿竖线装饰卡片
+ * 3列网格布局，大封面卡片
  */
 
 .latest-posts {
@@ -12,44 +12,59 @@
   text-align: center;
   margin-bottom: 48px;
   font-family: var(--font-heading);
-  font-size: clamp(28px, 3vw, 36px);
-  font-weight: 600;
+  font-size: clamp(26px, 2.5vw, 30px);
+  font-weight: 500;
   color: var(--color-ink);
 }
 
-.posts-list {
+.posts-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  max-width: 960px;
-  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
 }
 
 .home-post-card {
-  display: flex;
   background: var(--color-canvas);
   border: 1px solid var(--color-border);
-  border-radius: var(--rounded-sm);
+  border-radius: var(--rounded-md);
   overflow: hidden;
-  transition: box-shadow var(--transition-base);
+  box-shadow: var(--shadow-1);
+  transition: box-shadow var(--transition-base),
+              transform var(--transition-base),
+              border-color var(--transition-base);
+  display: flex;
+  flex-direction: column;
 }
 
 .home-post-card:hover {
   box-shadow: var(--shadow-2);
+  transform: translateY(-4px);
+  border-color: var(--color-hairline-strong);
 }
 
-.home-post-card-line {
-  width: 3px;
-  min-height: 100%;
-  background: var(--color-primary);
+.home-post-cover-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
   flex-shrink: 0;
 }
 
+.home-post-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.home-post-card:hover .home-post-cover {
+  transform: scale(1.05);
+}
+
 .home-post-card-body {
-  padding: 20px 20px 20px 18px;
+  padding: 20px 24px 24px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   flex: 1;
 }
 
@@ -61,13 +76,16 @@
 }
 
 .home-post-category {
-  color: var(--color-accent);
-  font-weight: 500;
-  border: 1px solid var(--color-accent);
-  padding: 1px 10px;
-  border-radius: 2px;
-  font-size: 11px;
-  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-accent-orange);
+  background: var(--color-tag-bg);
+  border-radius: 8px;
+  padding: 4px 10px;
+  line-height: 1;
+  text-decoration: none;
 }
 
 .home-post-date {
@@ -76,9 +94,9 @@
 
 .home-post-title {
   font-family: var(--font-heading);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .home-post-title a {
@@ -94,18 +112,23 @@
 .home-post-excerpt {
   font-size: 14px;
   color: var(--color-muted);
-  line-height: 1.6;
+  line-height: 1.7;
   font-family: var(--font-body);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .home-post-tags {
   display: flex;
   gap: 6px;
   flex-wrap: wrap;
+  margin-top: auto;
 }
 
 .home-post-tag {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--color-muted);
   font-family: var(--font-body);
 }
@@ -124,7 +147,7 @@
   font-weight: 500;
   padding: 8px 24px;
   border: 1px solid var(--color-primary);
-  border-radius: var(--rounded-sm);
+  border-radius: var(--rounded-md);
   transition: all var(--transition-base);
 }
 
@@ -133,13 +156,29 @@
   color: #ffffff;
 }
 
+/* 响应式 */
+@media (max-width: 1024px) {
+  .posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
-  .posts-list {
+  .posts-grid {
     grid-template-columns: 1fr;
     padding: 0 16px;
+    gap: 20px;
   }
 
   .latest-posts {
     padding: 40px 0 60px;
+  }
+
+  .home-post-card-body {
+    padding: 16px 20px 20px;
+  }
+
+  .home-post-title {
+    font-size: 17px;
   }
 }

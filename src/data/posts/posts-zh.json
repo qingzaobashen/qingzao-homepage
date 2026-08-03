@@ -4,128 +4,211 @@
     "title": "收房验房注意事项：先验房再收房，新手避坑清单",
     "date": "2026-07-15",
     "category": "装修指南",
-    "tags": ["装修", "验房", "收房", "避坑"],
-    "excerpt": "收房先验房再交钱，带好空鼓锤、手机等小工具，按入户门、墙面、地面分区检查，把问题在入住前解决。"
+    "tags": [
+      "装修",
+      "验房",
+      "收房",
+      "避坑"
+    ],
+    "excerpt": "收房先验房再交钱，带好空鼓锤、手机等小工具，按入户门、墙面、地面分区检查，把问题在入住前解决。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "planning-stage",
     "title": "装修规划阶段：从准备到入住的整体路线图",
     "date": "2026-07-14",
     "category": "装修指南",
-    "tags": ["装修", "规划", "流程"],
-    "excerpt": "装修分准备、硬装、软装三大阶段。先搞懂硬装5大工序、主材辅材、全包半包等基本概念，才能少走弯路。"
+    "tags": [
+      "装修",
+      "规划",
+      "流程"
+    ],
+    "excerpt": "装修分准备、硬装、软装三大阶段。先搞懂硬装5大工序、主材辅材、全包半包等基本概念，才能少走弯路。",
+    "coverImage": "/images/articles/planning-stage/budget-control.jpg"
   },
   {
     "slug": "renovation-method-choice",
     "title": "5种装修方式怎么选：装修公司/工作室/工长/设计师/自装",
     "date": "2026-07-13",
     "category": "装修指南",
-    "tags": ["装修", "装修方式", "选型"],
-    "excerpt": "装修公司、设计工作室、个人设计师、个人工长、自装——5种方式怎么选？先想清预算、时间与把控力再决定。"
+    "tags": [
+      "装修",
+      "装修方式",
+      "选型"
+    ],
+    "excerpt": "装修公司、设计工作室、个人设计师、个人工长、自装——5种方式怎么选？先想清预算、时间与把控力再决定。",
+    "coverImage": "/images/articles/renovation-method-choice/1-装修方式概览.jpg"
   },
   {
     "slug": "budget-planning",
     "title": "装修预算规划：钱该花在哪，比例怎么分",
     "date": "2026-07-12",
     "category": "装修指南",
-    "tags": ["装修", "预算", "规划"],
-    "excerpt": "钱要花在高频使用和难更换的地方。6:2:2的硬装软装家电分配比例，帮你把预算花在刀刃上。"
+    "tags": [
+      "装修",
+      "预算",
+      "规划"
+    ],
+    "excerpt": "钱要花在高频使用和难更换的地方。6:2:2的硬装软装家电分配比例，帮你把预算花在刀刃上。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "decoration-company-checklist",
     "title": "装修公司怎么挑：防增项、避工期坑、保质量",
     "date": "2026-07-11",
     "category": "装修指南",
-    "tags": ["装修", "装修公司", "考察"],
-    "excerpt": "选装修公司慎重再慎重。掌握自身需求、带着问题清单去考察，防增项、避工期坑、保施工质量。"
+    "tags": [
+      "装修",
+      "装修公司",
+      "考察"
+    ],
+    "excerpt": "选装修公司慎重再慎重。掌握自身需求、带着问题清单去考察，防增项、避工期坑、保施工质量。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "studio-checklist",
     "title": "装修设计工作室考察：4步找到审美对味的工作室",
     "date": "2026-07-10",
     "category": "装修指南",
-    "tags": ["装修", "设计工作室", "考察"],
-    "excerpt": "设计工作室胜在独特创意和落地方案。4步线上初筛加看作品集，找到审美和你对味的工作室。"
+    "tags": [
+      "装修",
+      "设计工作室",
+      "考察"
+    ],
+    "excerpt": "设计工作室胜在独特创意和落地方案。4步线上初筛加看作品集，找到审美和你对味的工作室。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "individual-foreman-checklist",
     "title": "个人工长考察清单：去哪找、怎么看工地",
     "date": "2026-07-09",
     "category": "装修指南",
-    "tags": ["装修", "个人工长", "考察"],
-    "excerpt": "找个人工长优先问身边人，重点看他在干的小区工地。固定工人、报价透明、售后负责才是好工长。"
+    "tags": [
+      "装修",
+      "个人工长",
+      "考察"
+    ],
+    "excerpt": "找个人工长优先问身边人，重点看他在干的小区工地。固定工人、报价透明、售后负责才是好工长。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "individual-designer-checklist",
     "title": "个人设计师考察：4步锁定合适的设计师",
     "date": "2026-07-08",
     "category": "装修指南",
-    "tags": ["装修", "设计师", "考察"],
-    "excerpt": "找个人设计师看近2年完整实景案例，别只看大户型。4步锁定审美在线、能落地的设计师。"
+    "tags": [
+      "装修",
+      "设计师",
+      "考察"
+    ],
+    "excerpt": "找个人设计师看近2年完整实景案例，别只看大户型。4步锁定审美在线、能落地的设计师。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "design-style-selection",
     "title": "装修设计风格挑选：先定生活风格再选装修风格",
     "date": "2026-07-07",
     "category": "装修指南",
-    "tags": ["装修", "风格", "设计"],
-    "excerpt": "选风格先问生活风格：家庭成员结构、做饭频率、有无小孩宠物，都决定你该选现代简约还是新中式。"
+    "tags": [
+      "装修",
+      "风格",
+      "设计"
+    ],
+    "excerpt": "选风格先问生活风格：家庭成员结构、做饭频率、有无小孩宠物，都决定你该选现代简约还是新中式。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "design-details-reference",
     "title": "6大空间100+装修设计细节：过来人的实用清单",
     "date": "2026-07-06",
     "category": "装修指南",
-    "tags": ["装修", "设计细节", "厨房", "卫生间"],
-    "excerpt": "金厨银卫，厨房高低台面、卫生间干湿分离……6大空间100+设计细节，照着抄就能少踩坑。"
+    "tags": [
+      "装修",
+      "设计细节",
+      "厨房",
+      "卫生间"
+    ],
+    "excerpt": "金厨银卫，厨房高低台面、卫生间干湿分离……6大空间100+设计细节，照着抄就能少踩坑。",
+    "coverImage": "/images/articles/design-details-reference/1-厨房细节.jpg"
   },
   {
     "slug": "design-drawings-render-final",
     "title": "从想象到蓝图：设计图与效果图怎么确定",
     "date": "2026-07-05",
     "category": "装修指南",
-    "tags": ["装修", "设计图", "效果图"],
-    "excerpt": "效果图是家的预告片，施工图是菜谱。带着需求去见设计师，把想象一步步变成可落地的图纸。"
+    "tags": [
+      "装修",
+      "设计图",
+      "效果图"
+    ],
+    "excerpt": "效果图是家的预告片，施工图是菜谱。带着需求去见设计师，把想象一步步变成可落地的图纸。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "main-auxiliary-materials-selection",
     "title": "全包装修主材与辅材挑选完全指南",
     "date": "2026-07-04",
     "category": "装修指南",
-    "tags": ["装修", "主材", "辅材", "选材"],
-    "excerpt": "全包套餐都是标准款，升级是公司赚钱的主要方式。带着清单去选材，合同写清品牌型号不踩坑。"
+    "tags": [
+      "装修",
+      "主材",
+      "辅材",
+      "选材"
+    ],
+    "excerpt": "全包套餐都是标准款，升级是公司赚钱的主要方式。带着清单去选材，合同写清品牌型号不踩坑。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "hard-decoration-knowledge",
     "title": "硬装阶段知识：工序、暖通、门窗与施工要点",
     "date": "2026-07-03",
     "category": "装修指南",
-    "tags": ["装修", "硬装", "施工"],
-    "excerpt": "硬装决定家的底子：工序、暖通、门窗、定制提前定。掌握知识和验收标准，才不会被忽悠。"
+    "tags": [
+      "装修",
+      "硬装",
+      "施工"
+    ],
+    "excerpt": "硬装决定家的底子：工序、暖通、门窗、定制提前定。掌握知识和验收标准，才不会被忽悠。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "soft-decoration-knowledge",
     "title": "软装阶段知识：全屋定制、家具与灯光搭配",
     "date": "2026-07-02",
     "category": "装修指南",
-    "tags": ["装修", "软装", "搭配"],
-    "excerpt": "软装是把对家的想象变成日常。全屋定制、家具、灯光怎么搭配，这篇讲清软装阶段的决策逻辑。"
+    "tags": [
+      "装修",
+      "软装",
+      "搭配"
+    ],
+    "excerpt": "软装是把对家的想象变成日常。全屋定制、家具、灯光怎么搭配，这篇讲清软装阶段的决策逻辑。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "contract-signing-notes",
     "title": "装修合同签订注意事项：签好合同这把保护伞",
     "date": "2026-07-01",
     "category": "装修指南",
-    "tags": ["装修", "合同", "避坑"],
-    "excerpt": "合同是装修最重要的保护伞。图纸、报价、工期、增项、售后一条条写清，签前稳住别急着下笔。"
+    "tags": [
+      "装修",
+      "合同",
+      "避坑"
+    ],
+    "excerpt": "合同是装修最重要的保护伞。图纸、报价、工期、增项、售后一条条写清，签前稳住别急着下笔。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "self-renovation-pitfalls",
     "title": "自装避坑手册：从启动到验收的全攻略",
     "date": "2026-06-30",
     "category": "装修指南",
-    "tags": ["装修", "自装", "避坑"],
-    "excerpt": "自装当好自己的项目经理：管信息、管流程、管人。从启动到验收的全攻略，帮你少踩坑。"
+    "tags": [
+      "装修",
+      "自装",
+      "避坑"
+    ],
+    "excerpt": "自装当好自己的项目经理：管信息、管流程、管人。从启动到验收的全攻略，帮你少踩坑。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "smart-home-system",
@@ -137,11 +220,12 @@
       "装修",
       "自动化"
     ],
-    "excerpt": "装修想做全屋智能？别先买设备。本文从系统选择、布线规划到场景设计，告诉你如何一次性做好，不返工。"
+    "excerpt": "装修想做全屋智能？别先买设备。本文从系统选择、布线规划到场景设计，告诉你如何一次性做好，不返工。",
+    "coverImage": "/images/covers/smart-home.jpg"
   },
   {
     "slug": "decoration-guide-beginners",
-    "title": "2026从\u201c装修小白\u201d到\u201c装修老鸟\u201d，看这一篇就够了：毛坯到入住全流程指南",
+    "title": "2026从“装修小白”到“装修老鸟”，看这一篇就够了：毛坯到入住全流程指南",
     "date": "2026-06-13",
     "category": "装修指南",
     "tags": [
@@ -149,7 +233,8 @@
       "新手",
       "流程图"
     ],
-    "excerpt": "装修对于新手来说是一个复杂的过程。本文提供一份从毛坯房到入住的全流程指南，帮助你系统化地规划装修的每一个阶段。"
+    "excerpt": "装修对于新手来说是一个复杂的过程。本文提供一份从毛坯房到入住的全流程指南，帮助你系统化地规划装修的每一个阶段。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "batch-background-removal",
@@ -161,7 +246,8 @@
       "批量处理",
       "白底图"
     ],
-    "excerpt": "在电商和设计中，经常需要处理大量图片的白底抠图。本文介绍几种高效的批量抠图方法，帮助你快速完成工作任务。"
+    "excerpt": "在电商和设计中，经常需要处理大量图片的白底抠图。本文介绍几种高效的批量抠图方法，帮助你快速完成工作任务。",
+    "coverImage": "/images/covers/image-processing.jpg"
   },
   {
     "slug": "choose-right-tools",
@@ -173,7 +259,8 @@
       "选型",
       "效率"
     ],
-    "excerpt": "面对市场上琳琅满目的工具，如何选择最适合自己的？本文从实际需求出发，提供一套系统的工具选型方法论。"
+    "excerpt": "面对市场上琳琅满目的工具，如何选择最适合自己的？本文从实际需求出发，提供一套系统的工具选型方法论。",
+    "coverImage": "/images/covers/tool-review.jpg"
   },
   {
     "slug": "home-storage-solutions",
@@ -185,7 +272,8 @@
       "小户型",
       "空间利用"
     ],
-    "excerpt": "小户型如何有效利用空间？本文分享实用的家居收纳方案和技巧。"
+    "excerpt": "小户型如何有效利用空间？本文分享实用的家居收纳方案和技巧。",
+    "coverImage": "/images/covers/home-living.jpg"
   },
   {
     "slug": "decoration-budget-guide",
@@ -197,7 +285,8 @@
       "预算",
       "规划"
     ],
-    "excerpt": "装修预算是装修成功的关键。本文通过5个步骤，教你如何科学制定装修预算，避免超支和浪费。"
+    "excerpt": "装修预算是装修成功的关键。本文通过5个步骤，教你如何科学制定装修预算，避免超支和浪费。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "decoration-style-comparison",
@@ -209,7 +298,8 @@
       "风格",
       "设计"
     ],
-    "excerpt": "面对众多装修风格，如何选择最适合自己的？本文对比现代简约、北欧和日式三种热门风格，帮你做出选择。"
+    "excerpt": "面对众多装修风格，如何选择最适合自己的？本文对比现代简约、北欧和日式三种热门风格，帮你做出选择。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "decoration-mistakes",
@@ -221,7 +311,8 @@
       "避坑",
       "经验"
     ],
-    "excerpt": "装修中容易犯的错误很多，本文总结了10个最常见的装修错误，帮你避免踩坑，省时省钱。"
+    "excerpt": "装修中容易犯的错误很多，本文总结了10个最常见的装修错误，帮你避免踩坑，省时省钱。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "small-apartment-decoration",
@@ -233,7 +324,8 @@
       "小户型",
       "空间利用"
     ],
-    "excerpt": "小户型装修的关键在于空间利用。本文分享实用的技巧，让小空间也能住得舒适。"
+    "excerpt": "小户型装修的关键在于空间利用。本文分享实用的技巧，让小空间也能住得舒适。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "online-background-removal-tools",
@@ -245,7 +337,8 @@
       "工具",
       "对比"
     ],
-    "excerpt": "市面上的在线抠图工具越来越多，哪款最适合你？本文对比5款主流抠图工具，帮你做出选择。"
+    "excerpt": "市面上的在线抠图工具越来越多，哪款最适合你？本文对比5款主流抠图工具，帮你做出选择。",
+    "coverImage": "/images/covers/image-processing.jpg"
   },
   {
     "slug": "product-photo-guide",
@@ -257,7 +350,8 @@
       "白底图",
       "拍摄"
     ],
-    "excerpt": "白底商品图是电商的刚需。本文从拍摄到后期，完整介绍白底商品图的制作流程。"
+    "excerpt": "白底商品图是电商的刚需。本文从拍摄到后期，完整介绍白底商品图的制作流程。",
+    "coverImage": "/images/covers/image-processing.jpg"
   },
   {
     "slug": "image-format-guide",
@@ -269,7 +363,8 @@
       "WebP",
       "优化"
     ],
-    "excerpt": "不同图片格式各有优劣，选择合适的格式能兼顾质量和性能。本文详细对比PNG、JPG和WebP。"
+    "excerpt": "不同图片格式各有优劣，选择合适的格式能兼顾质量和性能。本文详细对比PNG、JPG和WebP。",
+    "coverImage": "/images/covers/image-processing.jpg"
   },
   {
     "slug": "decoration-flowchart-tutorial",
@@ -281,7 +376,8 @@
       "导图",
       "教程"
     ],
-    "excerpt": "青枣装修流程导图是一款帮助新手系统化规划装修的工具。本文教你3步上手使用。"
+    "excerpt": "青枣装修流程导图是一款帮助新手系统化规划装修的工具。本文教你3步上手使用。",
+    "coverImage": "/images/covers/product-tutorial.jpg"
   },
   {
     "slug": "wall-demolition-new-wall",
@@ -294,7 +390,8 @@
       "施工",
       "验收"
     ],
-    "excerpt": "拆改是装修第一步。本文讲透拆除前的保护与管道防护、新建墙体的工艺要点和验收标准。"
+    "excerpt": "拆改是装修第一步。本文讲透拆除前的保护与管道防护、新建墙体的工艺要点和验收标准。",
+    "coverImage": "/images/articles/wall-demolition-new-wall/1-弹线定位.jpg"
   },
   {
     "slug": "bed-mattress-selection",
@@ -307,7 +404,8 @@
       "软装",
       "挑选"
     ],
-    "excerpt": "床和床垫直接影响睡眠。本文对比齐边/内陷床、储物床的取舍，并给出床垫选购要点。"
+    "excerpt": "床和床垫直接影响睡眠。本文对比齐边/内陷床、储物床的取舍，并给出床垫选购要点。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "tile-installation-acceptance",
@@ -320,7 +418,8 @@
       "施工",
       "验收"
     ],
-    "excerpt": "瓷砖铺贴效果七分看施工。本文梳理排版图确认、脱模剂清理等监工要点与验收标准。"
+    "excerpt": "瓷砖铺贴效果七分看施工。本文梳理排版图确认、脱模剂清理等监工要点与验收标准。",
+    "coverImage": "/images/articles/tile-installation-acceptance/1-瓷砖分类.jpg"
   },
   {
     "slug": "floor-heating-online-selection",
@@ -333,7 +432,8 @@
       "选购",
       "线上"
     ],
-    "excerpt": "地暖由锅炉、管道、分集水器等组成。本文讲清核心组件，并给出线上筛选商家的要点。"
+    "excerpt": "地暖由锅炉、管道、分集水器等组成。本文讲清核心组件，并给出线上筛选商家的要点。",
+    "coverImage": "/images/articles/floor-heating-online-selection/1-地暖系统结构.jpg"
   },
   {
     "slug": "ducted-ac-selection-install",
@@ -346,7 +446,8 @@
       "安装",
       "选购"
     ],
-    "excerpt": "风管机兼顾美观与性价比。本文给出匹数、能效的选型参考，以及安装避坑要点。"
+    "excerpt": "风管机兼顾美观与性价比。本文给出匹数、能效的选型参考，以及安装避坑要点。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "window-sealing-online-checklist",
@@ -359,7 +460,8 @@
       "门窗",
       "选购"
     ],
-    "excerpt": "封窗关系隔音与安全。本文拆解型材、玻璃、五金三要素，并附线上必问清单。"
+    "excerpt": "封窗关系隔音与安全。本文拆解型材、玻璃、五金三要素，并附线上必问清单。",
+    "coverImage": "/images/articles/window-sealing-online-checklist/glass-structure.jpg"
   },
   {
     "slug": "cabinet-formaldehyde-removal",
@@ -372,7 +474,8 @@
       "柜子",
       "环保"
     ],
-    "excerpt": "甲醛释放可达数年。本文教你从源头选板到通风治理的科学除醛方法，避开无效套路。"
+    "excerpt": "甲醛释放可达数年。本文教你从源头选板到通风治理的科学除醛方法，避开无效套路。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "water-purifier-selection",
@@ -385,7 +488,8 @@
       "选购",
       "水质"
     ],
-    "excerpt": "全屋净水层层过滤。本文讲清前置、中央、末端净水区别，并给出选购要点。"
+    "excerpt": "全屋净水层层过滤。本文讲清前置、中央、末端净水区别，并给出选购要点。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "carpentry-acceptance",
@@ -398,7 +502,8 @@
       "施工",
       "验收"
     ],
-    "excerpt": "木工吊顶藏着开裂隐患。本文讲透龙骨框架、石膏板安装细节与验收标准。"
+    "excerpt": "木工吊顶藏着开裂隐患。本文讲透龙骨框架、石膏板安装细节与验收标准。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "whole-house-customization",
@@ -411,7 +516,8 @@
       "板材",
       "选购"
     ],
-    "excerpt": "全屋定制满足个性化收纳。本文对比品牌、工厂、木工三种方式，并给出板材与合同要点。"
+    "excerpt": "全屋定制满足个性化收纳。本文对比品牌、工厂、木工三种方式，并给出板材与合同要点。",
+    "coverImage": "/images/articles/whole-house-customization/1-定制设计.jpg"
   },
   {
     "slug": "robot-vacuum-selection",
@@ -424,7 +530,8 @@
       "智能家居",
       "选购"
     ],
-    "excerpt": "扫地机器人先看清洁力。本文用维度对比防缠绕、吸力、边角清洁等核心选购点。"
+    "excerpt": "扫地机器人先看清洁力。本文用维度对比防缠绕、吸力、边角清洁等核心选购点。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "sofa-selection",
@@ -437,7 +544,8 @@
       "面料",
       "选购"
     ],
-    "excerpt": "沙发是客厅主角。本文对比真皮、布艺、实木等面料，并给出框架与舒适度选购建议。"
+    "excerpt": "沙发是客厅主角。本文对比真皮、布艺、实木等面料，并给出框架与舒适度选购建议。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "plumbing-electrical-acceptance",
@@ -450,7 +558,8 @@
       "验收",
       "隐蔽工程"
     ],
-    "excerpt": "水电是隐蔽工程重头戏。本文列出材料监督、管线布局规范与验收关键点。"
+    "excerpt": "水电是隐蔽工程重头戏。本文列出材料监督、管线布局规范与验收关键点。",
+    "coverImage": "/images/articles/plumbing-electrical-acceptance/1-水电施工标准.jpg"
   },
   {
     "slug": "bathroom-backfill-waterproofing",
@@ -463,7 +572,8 @@
       "回填",
       "施工"
     ],
-    "excerpt": "卫生间返工成本最高。本文对比回填方式，并梳理防水材料与施工验收流程。"
+    "excerpt": "卫生间返工成本最高。本文对比回填方式，并梳理防水材料与施工验收流程。",
+    "coverImage": "/images/articles/bathroom-backfill-waterproofing/1-回填材料.jpg"
   },
   {
     "slug": "washing-machine-selection",
@@ -476,7 +586,8 @@
       "洗烘",
       "选购"
     ],
-    "excerpt": "洗烘套装还是一体机？本文用对比表讲清优劣，并给出洗衣机、烘干机选购建议。"
+    "excerpt": "洗烘套装还是一体机？本文用对比表讲清优劣，并给出洗衣机、烘干机选购建议。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "painter-acceptance-putty-paint",
@@ -489,7 +600,8 @@
       "乳胶漆",
       "验收"
     ],
-    "excerpt": "油工验收要分阶段。本文给出腻子打磨与乳胶漆两道节点的平整度、饰面验收标准。"
+    "excerpt": "油工验收要分阶段。本文给出腻子打磨与乳胶漆两道节点的平整度、饰面验收标准。",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "central-ac-selection-install",
@@ -502,6 +614,7 @@
       "安装",
       "选购"
     ],
-    "excerpt": "中央空调三分设备七分安装。本文给出品牌选择与安装避坑要点。"
+    "excerpt": "中央空调三分设备七分安装。本文给出品牌选择与安装避坑要点。",
+    "coverImage": "/images/articles/central-ac-selection-install/1-中央空调挑选.jpg"
   }
 ]

@@ -6,19 +6,23 @@
 /* CSS 变量定义 - 东方风格色彩系统 */
 :root {
   /* === 东方风格设计 Token（新） === */
-  --color-bg: #F7F4EE;            /* 宣纸白，页面背景 */
+  --color-bg: #FBF7EF;            /* 暖米色，页面背景 */
   --color-ink: #1F1F1F;            /* 墨色，正文 */
   --color-primary: #5B7C6D;        /* 青绿，主色调 */
   --color-accent: #8B3A3A;         /* 枣红，强调色 */
+  --color-accent-orange: #E85D3F;  /* 橙红，辅助强调色 */
   --color-border: #D9D2C3;         /* 淡灰褐，边框/分割线 */
   --color-muted: #8C8C8C;          /* 灰色，辅助文字 */
+  --color-text-secondary: #756F66; /* 次要文本色 */
   --color-canvas: #FFFFFF;         /* 纯白，卡片背景 */
   --color-hover-bg: #EDE8DE;       /* 极淡宣纸，hover 态 */
+  --color-tag-bg: #F4EDE2;        /* 标签背景色 */
+  --color-dark-card: #252321;      /* 深色卡片背景 */
 
   /* 字体家族 */
   --font-logo: "LXGW WenKai", "FZXiaoZhuanTi-S13S", "Source Han Serif SC", serif;
   --font-heading: "Source Han Serif SC", "Noto Serif SC", serif;
-  --font-body: "Source Han Serif SC", "Noto Serif SC", serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Source Han Serif SC", "Noto Serif SC", serif;
   --font-en: "IBM Plex Sans", sans-serif;
   --font-code: "JetBrains Mono", monospace;
 
@@ -39,9 +43,9 @@
 
   /* 阴影层级 */
   --shadow-0: none;
-  --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.04);
-  --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.06);
-  --shadow-3: 0 8px 24px rgba(0, 0, 0, 0.10);
+  --shadow-1: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-2: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-3: 0 12px 32px rgba(0, 0, 0, 0.12);
 
   /* 圆角 */
   --rounded-xs: 2px;
@@ -70,11 +74,29 @@ body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.8;
+  line-height: 1.6;
+  font-size: 16px;
   color: var(--color-ink);
   background: var(--color-bg);
   overflow-x: hidden;
   font-weight: 400;
+  position: relative;
+}
+
+/* 宣纸微纹理背景 - 极淡噪点模拟宣纸纤维质感 */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
 }
 
 /* 滚动条样式 */
@@ -117,31 +139,50 @@ a {
 /* 通用区块标题样式 */
 .section-header {
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 48px;
+}
+
+/* 分类标签（Category Chip）样式 */
+.category-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-accent-orange);
+  background: var(--color-tag-bg);
+  border-radius: 8px;
+  padding: 8px 12px;
+  line-height: 1;
+  text-decoration: none;
+  transition: opacity var(--transition-base);
+}
+
+.category-tag:hover {
+  opacity: 0.8;
 }
 
 .section-title {
   font-family: var(--font-heading);
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 600;
-  line-height: 1.15;
+  font-size: clamp(26px, 2.5vw, 30px);
+  font-weight: 500;
+  line-height: 1.2;
   color: var(--color-ink);
-  margin-bottom: 16px;
-  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+  letter-spacing: normal;
 }
 
 .section-subtitle {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
-  color: var(--color-ink-mute);
+  color: var(--color-text-secondary);
   line-height: 1.5;
 }
 
 /* 通用容器 */
 .container {
-  max-width: 1200px;
+  max-width: 1216px;
   margin: 0 auto;
-  padding: 0 3px;
+  padding: 0 24px;
 }
 
 /* 动画关键帧 */
@@ -183,14 +224,60 @@ a {
   100% { transform: translateX(100%); }
 }
 
+/* 装饰分割线 - 东方风格 */
+.section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto;
+  width: 120px;
+  padding: 24px 0;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.section-divider-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+
+/* 区块间装饰分割线（全宽） */
+.section-divider-full {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 auto;
+  max-width: 300px;
+  padding: 16px 0;
+}
+
+.section-divider-full::before,
+.section-divider-full::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border) 50%, transparent);
+}
+
 /* 响应式字体调整 */
 @media (max-width: 768px) {
   .section-header {
-    margin-bottom: 40px;
+    margin-bottom: 32px;
   }
 
   .section-subtitle {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .container {

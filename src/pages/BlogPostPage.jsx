@@ -189,6 +189,17 @@ function BlogPostPage() {
               <span className="breadcrumb-separator">/</span>
               <span className="breadcrumb-current">{post.title}</span>
             </div>
+            {/* 封面图 */}
+            {post.coverImage && (
+              <div className="post-header-cover-wrapper">
+                <img
+                  src={post.coverImage}
+                  alt={post.title}
+                  className="post-header-cover"
+                  onError={(e) => { e.target.style.display = 'none' }}
+                />
+              </div>
+            )}
             <div className="post-meta-top">
               <span className="post-author-badge">
                 {language === 'zh-CN' ? '青枣工作室' : 'Qingzao Studio'}
@@ -223,6 +234,17 @@ function BlogPostPage() {
               <div className="related-grid">
                 {relatedPosts.map((relatedPost, index) => (
                   <article key={index} className="related-card">
+                    {relatedPost.coverImage && (
+                      <div className="related-cover-wrapper">
+                        <img
+                          src={relatedPost.coverImage}
+                          alt={relatedPost.title}
+                          className="related-cover"
+                          loading="lazy"
+                          onError={(e) => { e.target.style.display = 'none' }}
+                        />
+                      </div>
+                    )}
                     <div className="related-meta">
                       <span className="related-category">{relatedPost.category}</span>
                       <span className="related-date">{formatDate(relatedPost.date)}</span>

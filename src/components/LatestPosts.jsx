@@ -7,7 +7,7 @@ import './LatestPosts.css'
 
 /**
  * 首页最新文章列表组件
- * 展示最新的 6 篇文章
+ * 展示最新的 6 篇文章，3列网格布局
  */
 function LatestPosts() {
   const { t, language, localePath } = useLanguage()
@@ -32,10 +32,20 @@ function LatestPosts() {
     <section className="latest-posts">
       <div className="container">
         <h2 className="section-title">{t('home.latestPostsTitle')}</h2>
-        <div className="posts-list">
+        <div className="posts-grid">
           {posts.map((post, index) => (
             <article key={index} className="home-post-card">
-              <div className="home-post-card-line" />
+              {post.coverImage && (
+                <div className="home-post-cover-wrapper">
+                  <img
+                    src={post.coverImage}
+                    alt={post.title}
+                    className="home-post-cover"
+                    loading="lazy"
+                    onError={(e) => { e.target.style.display = 'none' }}
+                  />
+                </div>
+              )}
               <div className="home-post-card-body">
                 <div className="home-post-meta">
                   <span className="home-post-category">{post.category}</span>
@@ -47,7 +57,7 @@ function LatestPosts() {
                 <p className="home-post-excerpt">{post.excerpt}</p>
                 <div className="home-post-tags">
                   {post.tags.slice(0, 3).map((tag, tagIndex) => (
-                    <span key={tagIndex} className="home-post-tag">{tag}</span>
+                    <span key={tagIndex} className="home-post-tag">#{tag}</span>
                   ))}
                 </div>
               </div>

@@ -1,6 +1,7 @@
 /**
  * Cookie 同意横幅样式
  * 底部固定定位，毛玻璃背景
+ * 东方风格：深色背景，青绿按钮
  */
 
 .cookie-consent {
@@ -65,19 +66,19 @@
 }
 
 .cookie-consent-accept {
-  background: var(--color-primary, #1f8ded);
+  background: var(--color-primary);
   color: #ffffff;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--rounded-md);
   padding: 10px 24px;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background var(--transition-base);
 }
 
 .cookie-consent-accept:hover {
-  background: var(--color-primary-deep, #0068c9);
+  background: var(--color-primary-deep);
 }
 
 @media (max-width: 640px) {

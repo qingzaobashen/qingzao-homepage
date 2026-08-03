@@ -10,7 +10,8 @@
       "acceptance",
       "pitfalls"
     ],
-    "excerpt": "Inspect before you pay — bring a hollow-spot hammer and phone, check the entry door, walls, and floor zone by zone, and resolve issues before move-in."
+    "excerpt": "Inspect before you pay — bring a hollow-spot hammer and phone, check the entry door, walls, and floor zone by zone, and resolve issues before move-in.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "planning-stage",
@@ -22,7 +23,8 @@
       "planning",
       "process"
     ],
-    "excerpt": "Renovation has three stages — preparation, hard renovation, soft furnishing. Learn the five hard-renovation steps, main vs. auxiliary materials, and full/half-package before you start."
+    "excerpt": "Renovation has three stages — preparation, hard renovation, soft furnishing. Learn the five hard-renovation steps, main vs. auxiliary materials, and full/half-package before you start.",
+    "coverImage": "/images/articles/planning-stage/budget-control.jpg"
   },
   {
     "slug": "renovation-method-choice",
@@ -34,7 +36,8 @@
       "renovation methods",
       "selection"
     ],
-    "excerpt": "Renovation company, design studio, independent designer, independent foreman, or self-managed? Know your budget, time, and control before deciding."
+    "excerpt": "Renovation company, design studio, independent designer, independent foreman, or self-managed? Know your budget, time, and control before deciding.",
+    "coverImage": "/images/articles/renovation-method-choice/1-装修方式概览.jpg"
   },
   {
     "slug": "budget-planning",
@@ -46,7 +49,8 @@
       "budget",
       "planning"
     ],
-    "excerpt": "Spend on high-frequency and hard-to-replace things. The 6:2:2 split of hard renovation, soft furnishing, and appliances puts your budget where it matters."
+    "excerpt": "Spend on high-frequency and hard-to-replace things. The 6:2:2 split of hard renovation, soft furnishing, and appliances puts your budget where it matters.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "decoration-company-checklist",
@@ -58,7 +62,8 @@
       "renovation company",
       "evaluation"
     ],
-    "excerpt": "Choose a renovation company with extreme care. Go armed with a needs list and question checklist to prevent extras, avoid schedule delays, and ensure quality."
+    "excerpt": "Choose a renovation company with extreme care. Go armed with a needs list and question checklist to prevent extras, avoid schedule delays, and ensure quality.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "studio-checklist",
@@ -70,7 +75,8 @@
       "design studio",
       "evaluation"
     ],
-    "excerpt": "A design studio wins on unique creative ideas and executable plans — most of all, aesthetics that match yours. Four steps to find a studio in tune with you."
+    "excerpt": "A design studio wins on unique creative ideas and executable plans — most of all, aesthetics that match yours. Four steps to find a studio in tune with you.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "individual-foreman-checklist",
@@ -82,7 +88,8 @@
       "foreman",
       "evaluation"
     ],
-    "excerpt": "Find an independent foreman through referrals first. Check the site, scrutinize the quote for omissions, and lock payment, schedule, and warranty in the contract."
+    "excerpt": "Find an independent foreman through referrals first. Check the site, scrutinize the quote for omissions, and lock payment, schedule, and warranty in the contract.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "individual-designer-checklist",
@@ -94,7 +101,8 @@
       "designer",
       "evaluation"
     ],
-    "excerpt": "An independent designer is a long-term advisor. Check background and portfolio, probe ability, verify execution, and put everything in the contract."
+    "excerpt": "An independent designer is a long-term advisor. Check background and portfolio, probe ability, verify execution, and put everything in the contract.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "design-style-selection",
@@ -106,7 +114,8 @@
       "style",
       "design"
     ],
-    "excerpt": "Choose style by asking about your lifestyle first: household structure, cooking frequency, kids or pets. Modern minimalist or new Chinese — let life lead."
+    "excerpt": "Choose style by asking about your lifestyle first: household structure, cooking frequency, kids or pets. Modern minimalist or new Chinese — let life lead.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "design-details-reference",
@@ -119,7 +128,8 @@
       "kitchen",
       "bathroom"
     ],
-    "excerpt": "The golden kitchen, silver bathroom — multi-height countertops, wall-drain basins, drawer vanities. 100+ practical details across 6 spaces to copy and avoid pitfalls."
+    "excerpt": "The golden kitchen, silver bathroom — multi-height countertops, wall-drain basins, drawer vanities. 100+ practical details across 6 spaces to copy and avoid pitfalls.",
+    "coverImage": "/images/articles/design-details-reference/1-厨房细节.jpg"
   },
   {
     "slug": "design-drawings-render-final",
@@ -131,7 +141,8 @@
       "design drawings",
       "renderings"
     ],
-    "excerpt": "A rendering is the home's trailer; a construction drawing is its recipe. Bring your needs, advance phase by phase, and avoid the 'free design' trap."
+    "excerpt": "A rendering is the home's trailer; a construction drawing is its recipe. Bring your needs, advance phase by phase, and avoid the 'free design' trap.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "main-auxiliary-materials-selection",
@@ -144,7 +155,8 @@
       "auxiliary materials",
       "material selection"
     ],
-    "excerpt": "Full-package standard materials are basic; upgrades are how they profit. Bring the list, lock auxiliary materials first, and put every brand/model in the contract."
+    "excerpt": "Full-package standard materials are basic; upgrades are how they profit. Bring the list, lock auxiliary materials first, and put every brand/model in the contract.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "hard-decoration-knowledge",
@@ -156,7 +168,8 @@
       "hard renovation",
       "construction"
     ],
-    "excerpt": "Hard renovation is the home's foundation: steps, HVAC, doors/windows, pre-ordered custom. Master the knowledge and acceptance standards so you're not fooled."
+    "excerpt": "Hard renovation is the home's foundation: steps, HVAC, doors/windows, pre-ordered custom. Master the knowledge and acceptance standards so you're not fooled.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "soft-decoration-knowledge",
@@ -168,7 +181,8 @@
       "soft furnishing",
       "matching"
     ],
-    "excerpt": "Soft furnishing turns your imagination into daily life. Whole-house cabinetry, furniture, and lighting — the decision logic of the soft stage, explained."
+    "excerpt": "Soft furnishing turns your imagination into daily life. Whole-house cabinetry, furniture, and lighting — the decision logic of the soft stage, explained.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "contract-signing-notes",
@@ -180,7 +194,8 @@
       "contract",
       "pitfalls"
     ],
-    "excerpt": "The contract is renovation's key protection. Drawings, quote, schedule, extras, and warranty — write each clearly; steady your hand before signing."
+    "excerpt": "The contract is renovation's key protection. Drawings, quote, schedule, extras, and warranty — write each clearly; steady your hand before signing.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "self-renovation-pitfalls",
@@ -192,7 +207,8 @@
       "self-managed renovation",
       "pitfalls"
     ],
-    "excerpt": "Self-renovation means being your own project manager: manage info, process, people. A full guide from start to acceptance to hit fewer pitfalls."
+    "excerpt": "Self-renovation means being your own project manager: manage info, process, people. A full guide from start to acceptance to hit fewer pitfalls.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "smart-home-system",
@@ -204,7 +220,8 @@
       "renovation",
       "automation"
     ],
-    "excerpt": "Don't start by buying devices. This guide covers system selection, wiring planning, and scene design — get your smart home right the first time, no rework needed."
+    "excerpt": "Don't start by buying devices. This guide covers system selection, wiring planning, and scene design — get your smart home right the first time, no rework needed.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "decoration-guide-beginners",
@@ -216,7 +233,8 @@
       "beginner",
       "flowchart"
     ],
-    "excerpt": "Decoration can be a complex process for beginners. This article provides a complete guide from rough house to move-in, helping you systematically plan every stage of decoration."
+    "excerpt": "Decoration can be a complex process for beginners. This article provides a complete guide from rough house to move-in, helping you systematically plan every stage of decoration.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "batch-background-removal",
@@ -228,7 +246,8 @@
       "batch processing",
       "white background"
     ],
-    "excerpt": "In e-commerce and design, you often need to process large numbers of images with white background removal. This article introduces several efficient batch background removal methods to help you complete tasks quickly."
+    "excerpt": "In e-commerce and design, you often need to process large numbers of images with white background removal. This article introduces several efficient batch background removal methods to help you complete tasks quickly.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "choose-right-tools",
@@ -240,7 +259,8 @@
       "selection",
       "efficiency"
     ],
-    "excerpt": "Faced with a wide variety of tools on the market, how do you choose the best one for yourself? This article provides a systematic tool selection methodology based on actual needs."
+    "excerpt": "Faced with a wide variety of tools on the market, how do you choose the best one for yourself? This article provides a systematic tool selection methodology based on actual needs.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "home-storage-solutions",
@@ -252,7 +272,8 @@
       "small apartment",
       "space saving"
     ],
-    "excerpt": "How to effectively use space in small apartments? This article shares practical home storage solutions and tips."
+    "excerpt": "How to effectively use space in small apartments? This article shares practical home storage solutions and tips.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "decoration-budget-guide",
@@ -264,7 +285,8 @@
       "budget",
       "planning"
     ],
-    "excerpt": "Budget overrun is a pain point for many families. This detailed guide teaches you how to plan, allocate, and control your decoration budget effectively."
+    "excerpt": "Budget overrun is a pain point for many families. This detailed guide teaches you how to plan, allocate, and control your decoration budget effectively.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "decoration-style-comparison",
@@ -276,7 +298,8 @@
       "style",
       "design"
     ],
-    "excerpt": "Choosing the right decoration style is crucial. This article compares Modern Minimalist, Nordic, and Japanese styles to help you make the best choice."
+    "excerpt": "Choosing the right decoration style is crucial. This article compares Modern Minimalist, Nordic, and Japanese styles to help you make the best choice.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "decoration-mistakes",
@@ -288,7 +311,8 @@
       "mistakes",
       "experience"
     ],
-    "excerpt": "Learn from others mistakes. This article summarizes 10 common decoration errors and provides practical solutions to avoid them."
+    "excerpt": "Learn from others mistakes. This article summarizes 10 common decoration errors and provides practical solutions to avoid them.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "small-apartment-decoration",
@@ -300,7 +324,8 @@
       "small apartment",
       "space saving"
     ],
-    "excerpt": "Small apartments require smart design. Discover clever decoration ideas and space-saving techniques for compact living spaces."
+    "excerpt": "Small apartments require smart design. Discover clever decoration ideas and space-saving techniques for compact living spaces.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "online-background-removal-tools",
@@ -312,7 +337,8 @@
       "tools",
       "comparison"
     ],
-    "excerpt": "Compare the best online background removal tools. Find out which free and paid options work best for your image processing needs."
+    "excerpt": "Compare the best online background removal tools. Find out which free and paid options work best for your image processing needs.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "product-photo-guide",
@@ -324,7 +350,8 @@
       "white background",
       "photography"
     ],
-    "excerpt": "Take professional-quality product photos without a studio. This guide covers lighting, composition, and editing tips for stunning product images."
+    "excerpt": "Take professional-quality product photos without a studio. This guide covers lighting, composition, and editing tips for stunning product images.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "image-format-guide",
@@ -336,7 +363,8 @@
       "WebP",
       "optimization"
     ],
-    "excerpt": "Understand different image formats and choose the right one for every situation. A comprehensive guide to JPEG, PNG, WebP, SVG and more."
+    "excerpt": "Understand different image formats and choose the right one for every situation. A comprehensive guide to JPEG, PNG, WebP, SVG and more.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "decoration-flowchart-tutorial",
@@ -348,7 +376,8 @@
       "flowchart",
       "tutorial"
     ],
-    "excerpt": "Learn how to create a decoration flowchart to visualize and manage your renovation process from start to finish."
+    "excerpt": "Learn how to create a decoration flowchart to visualize and manage your renovation process from start to finish.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "wall-demolition-new-wall",
@@ -361,7 +390,8 @@
       "construction",
       "acceptance"
     ],
-    "excerpt": "Demolition is the first step of renovation. This guide covers pre-demolition protection, pipe safeguarding, new-wall techniques and acceptance criteria."
+    "excerpt": "Demolition is the first step of renovation. This guide covers pre-demolition protection, pipe safeguarding, new-wall techniques and acceptance criteria.",
+    "coverImage": "/images/articles/wall-demolition-new-wall/1-弹线定位.jpg"
   },
   {
     "slug": "bed-mattress-selection",
@@ -374,7 +404,8 @@
       "soft furnishing",
       "selection"
     ],
-    "excerpt": "Your bed and mattress directly affect sleep. This guide compares bed types and explains how to choose a mattress that fits you."
+    "excerpt": "Your bed and mattress directly affect sleep. This guide compares bed types and explains how to choose a mattress that fits you.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "tile-installation-acceptance",
@@ -387,7 +418,8 @@
       "construction",
       "acceptance"
     ],
-    "excerpt": "Tile results depend on workmanship. This article covers layout planning, mold-release cleaning and acceptance standards for tile work."
+    "excerpt": "Tile results depend on workmanship. This article covers layout planning, mold-release cleaning and acceptance standards for tile work.",
+    "coverImage": "/images/articles/tile-installation-acceptance/1-瓷砖分类.jpg"
   },
   {
     "slug": "floor-heating-online-selection",
@@ -400,7 +432,8 @@
       "selection",
       "online"
     ],
-    "excerpt": "Underfloor heating combines a boiler, pipes and manifolds. Learn the core components and how to vet suppliers online."
+    "excerpt": "Underfloor heating combines a boiler, pipes and manifolds. Learn the core components and how to vet suppliers online.",
+    "coverImage": "/images/articles/floor-heating-online-selection/1-地暖系统结构.jpg"
   },
   {
     "slug": "ducted-ac-selection-install",
@@ -413,7 +446,8 @@
       "installation",
       "selection"
     ],
-    "excerpt": "Ducted AC balances looks and value. Get capacity and efficiency guidance plus installation pitfalls to avoid."
+    "excerpt": "Ducted AC balances looks and value. Get capacity and efficiency guidance plus installation pitfalls to avoid.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "window-sealing-online-checklist",
@@ -426,7 +460,8 @@
       "doors and windows",
       "selection"
     ],
-    "excerpt": "Windows affect soundproofing and safety. This guide breaks down frames, glass and hardware, with an online question checklist."
+    "excerpt": "Windows affect soundproofing and safety. This guide breaks down frames, glass and hardware, with an online question checklist.",
+    "coverImage": "/images/articles/window-sealing-online-checklist/glass-structure.jpg"
   },
   {
     "slug": "cabinet-formaldehyde-removal",
@@ -439,7 +474,8 @@
       "removal",
       "eco-friendly"
     ],
-    "excerpt": "Formaldehyde can off-gas for years. Learn science-based removal—from board choice to ventilation—and avoid useless tricks."
+    "excerpt": "Formaldehyde can off-gas for years. Learn science-based removal—from board choice to ventilation—and avoid useless tricks.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "water-purifier-selection",
@@ -452,7 +488,8 @@
       "selection",
       "water quality"
     ],
-    "excerpt": "Whole-house water filtration works in stages. Understand pre-filters, central and point-of-use units, then how to choose."
+    "excerpt": "Whole-house water filtration works in stages. Understand pre-filters, central and point-of-use units, then how to choose.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "carpentry-acceptance",
@@ -465,7 +502,8 @@
       "construction",
       "acceptance"
     ],
-    "excerpt": "Carpentry ceilings hide crack risks. This guide covers framing, drywall detailing and acceptance standards."
+    "excerpt": "Carpentry ceilings hide crack risks. This guide covers framing, drywall detailing and acceptance standards.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "whole-house-customization",
@@ -478,7 +516,8 @@
       "board",
       "selection"
     ],
-    "excerpt": "Custom cabinetry meets personalized storage. Compare brands, factories and on-site carpentry, plus board and contract tips."
+    "excerpt": "Custom cabinetry meets personalized storage. Compare brands, factories and on-site carpentry, plus board and contract tips.",
+    "coverImage": "/images/articles/whole-house-customization/1-定制设计.jpg"
   },
   {
     "slug": "robot-vacuum-selection",
@@ -491,7 +530,8 @@
       "smart home",
       "selection"
     ],
-    "excerpt": "Robot vacuums live or die by cleaning power. Compare tangle-free brushes, suction and edge cleaning to choose wisely."
+    "excerpt": "Robot vacuums live or die by cleaning power. Compare tangle-free brushes, suction and edge cleaning to choose wisely.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "sofa-selection",
@@ -504,7 +544,8 @@
       "fabric",
       "selection"
     ],
-    "excerpt": "The sofa anchors your living room. Compare leather, fabric and frame options, with tips on comfort and durability."
+    "excerpt": "The sofa anchors your living room. Compare leather, fabric and frame options, with tips on comfort and durability.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "plumbing-electrical-acceptance",
@@ -517,7 +558,8 @@
       "acceptance",
       "hidden work"
     ],
-    "excerpt": "Plumbing and electrical are critical hidden work. Review material checks, routing rules and acceptance key points."
+    "excerpt": "Plumbing and electrical are critical hidden work. Review material checks, routing rules and acceptance key points.",
+    "coverImage": "/images/articles/plumbing-electrical-acceptance/1-水电施工标准.jpg"
   },
   {
     "slug": "bathroom-backfill-waterproofing",
@@ -530,7 +572,8 @@
       "backfill",
       "construction"
     ],
-    "excerpt": "Bathrooms are the costliest to redo. Compare backfill methods and follow the waterproofing and acceptance workflow."
+    "excerpt": "Bathrooms are the costliest to redo. Compare backfill methods and follow the waterproofing and acceptance workflow.",
+    "coverImage": "/images/articles/bathroom-backfill-waterproofing/1-回填材料.jpg"
   },
   {
     "slug": "washing-machine-selection",
@@ -543,7 +586,8 @@
       "washer-dryer",
       "selection"
     ],
-    "excerpt": "Washer-dryer set or combo? This comparison explains the trade-offs and how to choose washer and dryer."
+    "excerpt": "Washer-dryer set or combo? This comparison explains the trade-offs and how to choose washer and dryer.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "painter-acceptance-putty-paint",
@@ -556,7 +600,8 @@
       "latex paint",
       "acceptance"
     ],
-    "excerpt": "Painter work needs staged acceptance. Get the flatness and finish standards for putty sanding and paint coats."
+    "excerpt": "Painter work needs staged acceptance. Get the flatness and finish standards for putty sanding and paint coats.",
+    "coverImage": "/images/covers/renovation-guide.jpg"
   },
   {
     "slug": "central-ac-selection-install",
@@ -569,6 +614,7 @@
       "installation",
       "selection"
     ],
-    "excerpt": "Central AC is 30% equipment, 70% installation. Get brand guidance and installation pitfalls to avoid."
+    "excerpt": "Central AC is 30% equipment, 70% installation. Get brand guidance and installation pitfalls to avoid.",
+    "coverImage": "/images/articles/central-ac-selection-install/1-中央空调挑选.jpg"
   }
 ]

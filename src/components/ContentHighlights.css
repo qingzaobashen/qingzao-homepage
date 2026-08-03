@@ -1,6 +1,11 @@
+/**
+ * 内容精选组件样式
+ * 东方风格：宣纸白底，青绿卡片
+ */
+
 .content-highlights {
   padding: 96px 0;
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  background: linear-gradient(180deg, var(--color-canvas-warm) 0%, var(--color-canvas) 100%);
 }
 
 .content-highlights .section-header {
@@ -15,11 +20,11 @@
 }
 
 .highlight-card {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 20px;
+  background: var(--color-canvas);
+  border: 1px solid var(--color-border);
+  border-radius: var(--rounded-lg);
   padding: 24px;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
+  box-shadow: var(--shadow-1);
 }
 
 .highlight-meta {
@@ -28,28 +33,28 @@
   gap: 12px;
   margin-bottom: 14px;
   font-size: 0.9rem;
-  color: var(--text-secondary);
+  color: var(--color-muted);
 }
 
 .highlight-category {
   font-weight: 600;
-  color: var(--primary-color);
+  color: var(--color-primary);
 }
 
 .highlight-title {
   font-size: 1.2rem;
   margin-bottom: 12px;
-  color: var(--text-primary);
+  color: var(--color-ink);
 }
 
 .highlight-excerpt {
-  color: var(--text-secondary);
+  color: var(--color-muted);
   line-height: 1.7;
   margin-bottom: 18px;
 }
 
 .highlight-link {
-  color: var(--primary-color);
+  color: var(--color-primary);
   font-weight: 600;
   text-decoration: none;
 }
