@@ -10,6 +10,7 @@ import { useLanguage } from '../hooks/useLanguage'
 import SEO from '../components/SEO'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import ReadingProgress from '../components/ReadingProgress'
 import CommentSection from '../components/comments/CommentSection'
 import postsZh from '../data/posts/posts-zh.json'
 import postsEn from '../data/posts/posts-en.json'
@@ -171,6 +172,7 @@ function BlogPostPage() {
         alternates={alternates}
       />
       <Header />
+      <ReadingProgress />
       {/* JSON-LD 结构化数据 */}
       <script
         type="application/ld+json"

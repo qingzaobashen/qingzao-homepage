@@ -5,16 +5,16 @@ import { useLanguage } from './hooks/useLanguage'
 import SEO from './components/SEO'
 import Header from './components/Header'
 import AnnouncementBanner from './components/AnnouncementBanner'
-import Hero from './components/Hero'
-import Products from './components/Products'
-import ContentHighlights from './components/ContentHighlights'
-import About from './components/About'
-import Contact from './components/Contact'
+import BlogHero from './components/BlogHero'
+import FeaturedSeries from './components/FeaturedSeries'
+import LatestPosts from './components/LatestPosts'
 import Footer from './components/Footer'
 import PrivacyPage from './pages/PrivacyPage'
 import TermsPage from './pages/TermsPage'
 import BlogListPage from './pages/BlogListPage'
 import BlogPostPage from './pages/BlogPostPage'
+import SeriesListPage from './pages/SeriesListPage'
+import SeriesDetailPage from './pages/SeriesDetailPage'
 import DisclaimerPage from './pages/DisclaimerPage'
 import EditorialPage from './pages/EditorialPage'
 import AboutPage from './pages/AboutPage'
@@ -34,21 +34,19 @@ function HomePage() {
   return (
     <>
       <SEO
-        title={isEn ? 'Qingzao Studio - Innovative Renovation & Image Tools' : '青枣工作室 - 创新装修与图片处理工具'}
+        title={isEn ? 'Qingzao Notes - AI, Dev & Life' : '青枣笔记 — 装修经验、独立开发与生活思考'}
         description={
           isEn
-            ? 'Qingzao Studio offers renovation flow maps and white-background image trimming tools, making renovation and image processing simpler and more efficient.'
-            : '青枣工作室提供装修流程导图、白底抠图等实用工具，让装修和图片处理更简单高效。'
+            ? 'Qingzao Notes shares practical insights on home renovation, independent development, AI tools, and life tips.'
+            : '青枣笔记分享装修经验、独立开发心得、AI 工具评测和生活思考。'
         }
         canonical={localePath('/')}
       />
       <Header />
       <main>
-        <Hero />
-        <Products />
-        <ContentHighlights />
-        <About />
-        <Contact />
+        <BlogHero />
+        <FeaturedSeries />
+        <LatestPosts />
       </main>
       <Footer />
       <AnnouncementBanner />
@@ -76,6 +74,8 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/blog" element={<BlogListPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
+          <Route path="/series" element={<SeriesListPage />} />
+          <Route path="/series/:seriesSlug" element={<SeriesDetailPage />} />
           <Route path="*" element={<NotFoundPage />} />
 
           {/* 英文镜像：/en 前缀，内容与中文版一一对应，便于独立索引 */}
@@ -89,6 +89,8 @@ function App() {
           <Route path="/en/contact" element={<ContactPage />} />
           <Route path="/en/blog" element={<BlogListPage />} />
           <Route path="/en/blog/:slug" element={<BlogPostPage />} />
+          <Route path="/en/series" element={<SeriesListPage />} />
+          <Route path="/en/series/:seriesSlug" element={<SeriesDetailPage />} />
         </Routes>
         <CookieConsent />
       </div>

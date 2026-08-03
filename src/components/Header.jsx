@@ -40,42 +40,21 @@ function Header() {
 
         {/* 中间导航链接 */}
         <nav className={`header-nav ${isMobileMenuOpen ? 'open' : ''}`}>
-          {isHome ? (
-            <a href="#products" onClick={() => setIsMobileMenuOpen(false)}>{t('header.nav.products')}</a>
-          ) : (
-            <Link to={localePath('/products')} onClick={() => setIsMobileMenuOpen(false)}>{t('header.nav.products')}</Link>
-          )}
-          {isHome ? (
-            <a href="#about" onClick={() => setIsMobileMenuOpen(false)}>{t('header.nav.about')}</a>
-          ) : (
-            <Link to={localePath('/about')} onClick={() => setIsMobileMenuOpen(false)}>{t('header.nav.about')}</Link>
-          )}
-          {isHome ? (
-            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>{t('header.nav.contact')}</a>
-          ) : (
-            <Link to={localePath('/contact')} onClick={() => setIsMobileMenuOpen(false)}>{t('header.nav.contact')}</Link>
-          )}
           <Link to={localePath('/blog')} onClick={() => setIsMobileMenuOpen(false)}>{t('header.nav.blog')}</Link>
+          <Link to={localePath('/series')} onClick={() => setIsMobileMenuOpen(false)}>{t('header.nav.series')}</Link>
+          <Link to={localePath('/about')} onClick={() => setIsMobileMenuOpen(false)}>{t('header.nav.about')}</Link>
 
-          {/* 移动端展开面板专属：语言切换 + CTA 按钮，桌面端隐藏 */}
+          {/* 移动端展开面板专属：语言切换 + 浏览博客按钮，桌面端隐藏 */}
           <div className="header-nav-extra">
             <LanguageSwitcher />
-            {isHome ? (
-              <a href="#products" className="btn-nav btn-nav-primary" onClick={() => setIsMobileMenuOpen(false)}>{t('header.cta')}</a>
-            ) : (
-              <Link to={localePath('/products')} className="btn-nav btn-nav-primary" onClick={() => setIsMobileMenuOpen(false)}>{t('header.cta')}</Link>
-            )}
+            <Link to={localePath('/blog')} className="btn-nav btn-nav-primary" onClick={() => setIsMobileMenuOpen(false)}>{t('header.cta')}</Link>
           </div>
         </nav>
 
         {/* 右侧按钮（桌面端使用，移动端隐藏） */}
         <div className={`header-right ${isMobileMenuOpen ? 'open' : ''}`}>
           <LanguageSwitcher />
-          {isHome ? (
-            <a href="#products" className="btn-nav btn-nav-primary">{t('header.cta')}</a>
-          ) : (
-            <Link to={localePath('/products')} className="btn-nav btn-nav-primary">{t('header.cta')}</Link>
-          )}
+          <Link to={localePath('/blog')} className="btn-nav btn-nav-primary">{t('header.cta')}</Link>
         </div>
 
         {/* 移动端菜单按钮 */}

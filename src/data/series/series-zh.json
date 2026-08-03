@@ -1,0 +1,94 @@
+[
+  {
+    "slug": "decoration-full-process",
+    "title": "装修全流程系列",
+    "description": "从收房验房到软装搭配，覆盖装修每个环节的系统指南。",
+    "category": "生活笔记",
+    "coverImage": "",
+    "order": [
+      "house-acceptance-inspection",
+      "planning-stage",
+      "renovation-method-choice",
+      "budget-planning",
+      "decoration-company-checklist",
+      "studio-checklist",
+      "individual-foreman-checklist",
+      "individual-designer-checklist",
+      "design-style-selection",
+      "design-details-reference",
+      "design-drawings-render-final",
+      "contract-signing-notes",
+      "main-auxiliary-materials-selection",
+      "hard-decoration-knowledge",
+      "wall-demolition-new-wall",
+      "plumbing-electrical-acceptance",
+      "bathroom-backfill-waterproofing",
+      "tile-installation-acceptance",
+      "carpentry-acceptance",
+      "painter-acceptance-putty-paint",
+      "soft-decoration-knowledge",
+      "whole-house-customization",
+      "bed-mattress-selection",
+      "sofa-selection",
+      "self-renovation-pitfalls"
+    ]
+  },
+  {
+    "slug": "renovation-acceptance",
+    "title": "验收标准大全",
+    "description": "水电、防水、瓷砖、木工、油工等各工序的验收标准与要点。",
+    "category": "生活笔记",
+    "coverImage": "",
+    "order": [
+      "plumbing-electrical-acceptance",
+      "bathroom-backfill-waterproofing",
+      "tile-installation-acceptance",
+      "carpentry-acceptance",
+      "painter-acceptance-putty-paint",
+      "wall-demolition-new-wall"
+    ]
+  },
+  {
+    "slug": "main-materials-guide",
+    "title": "主材选购指南",
+    "description": "空调、地暖、门窗、净水器等主材的选购攻略与避坑要点。",
+    "category": "生活笔记",
+    "coverImage": "",
+    "order": [
+      "central-ac-selection-install",
+      "ducted-ac-selection-install",
+      "floor-heating-online-selection",
+      "window-sealing-online-checklist",
+      "water-purifier-selection",
+      "washing-machine-selection",
+      "robot-vacuum-selection",
+      "cabinet-formaldehyde-removal",
+      "whole-house-customization",
+      "main-auxiliary-materials-selection"
+    ]
+  },
+  {
+    "slug": "smart-home",
+    "title": "智能家居指南",
+    "description": "全屋智能架构、扫地机器人等智能家居设备的选购与配置。",
+    "category": "生活笔记",
+    "coverImage": "",
+    "order": [
+      "smart-home-system",
+      "robot-vacuum-selection"
+    ]
+  },
+  {
+    "slug": "image-processing",
+    "title": "图片处理技巧",
+    "description": "抠图、图片格式、白底商品图等图片处理实用技巧。",
+    "category": "工具评测",
+    "coverImage": "",
+    "order": [
+      "batch-background-removal",
+      "online-background-removal-tools",
+      "product-photo-guide",
+      "image-format-guide"
+    ]
+  }
+]

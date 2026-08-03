@@ -14,27 +14,24 @@ function Footer() {
 
   const footerLinks = [
     {
-      title: t('footer.nav.products.title'),
+      title: t('footer.nav.blog.title'),
       links: [
-        { label: t('footer.nav.products.links.decoration'), href: 'https://decoration.qingzao.site' },
-        { label: t('footer.nav.products.links.features'), href: '#products' },
-        { label: t('footer.nav.products.links.guide'), href: '#' },
+        { label: t('footer.nav.blog.links.latest'), href: '/blog', isRoute: true },
+        { label: t('footer.nav.blog.links.series'), href: '/series', isRoute: true },
       ]
     },
     {
       title: t('footer.nav.company.title'),
         links: [
           { label: t('footer.nav.company.links.about'), href: '/about', isRoute: true },
-          { label: t('footer.nav.company.links.editorial'), href: '/editorial', isRoute: true },
           { label: t('footer.nav.company.links.contact'), href: '/contact', isRoute: true },
         ]
       },
     {
-      title: t('footer.nav.resources.title'),
+      title: t('footer.nav.products.title'),
       links: [
-        { label: t('footer.nav.resources.links.blog'), href: '/blog', isRoute: true },
-        { label: t('footer.nav.resources.links.Twitter'), href: 'https://Twitter.com' },
-        { label: t('footer.nav.resources.links.changelog'), href: '#' },
+        { label: t('footer.nav.products.links.decoration'), href: 'https://decoration.qingzao.site' },
+        { label: t('footer.nav.products.links.trimmer'), href: 'https://image.qingzao.site' },
       ]
     }
   ]

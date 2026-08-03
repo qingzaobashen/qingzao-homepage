@@ -1,50 +1,58 @@
 /**
  * 全局样式文件
- * Intercom 风格 - 浅色主题，白色画布，清晰排版
+ * 东方风格 - 宣纸白底，青绿主色，思源宋体排版
  */
 
-/* CSS 变量定义 - 色彩系统 */
+/* CSS 变量定义 - 东方风格色彩系统 */
 :root {
-  /* 品牌色 - 深蓝色 */
-  --color-primary: #1f8ded;
-  --color-primary-deep: #0068c9;
-  --color-primary-soft: #e8f4fd;
+  /* === 东方风格设计 Token（新） === */
+  --color-bg: #F7F4EE;            /* 宣纸白，页面背景 */
+  --color-ink: #1F1F1F;            /* 墨色，正文 */
+  --color-primary: #5B7C6D;        /* 青绿，主色调 */
+  --color-accent: #8B3A3A;         /* 枣红，强调色 */
+  --color-border: #D9D2C3;         /* 淡灰褐，边框/分割线 */
+  --color-muted: #8C8C8C;          /* 灰色，辅助文字 */
+  --color-canvas: #FFFFFF;         /* 纯白，卡片背景 */
+  --color-hover-bg: #EDE8DE;       /* 极淡宣纸，hover 态 */
 
-  /* 文字色 */
-  --color-ink: #1c1c1c;
+  /* 字体家族 */
+  --font-logo: "LXGW WenKai", "FZXiaoZhuanTi-S13S", "Source Han Serif SC", serif;
+  --font-heading: "Source Han Serif SC", "Noto Serif SC", serif;
+  --font-body: "Source Han Serif SC", "Noto Serif SC", serif;
+  --font-en: "IBM Plex Sans", sans-serif;
+  --font-code: "JetBrains Mono", monospace;
+
+  /* === 向下兼容变量（旧名称映射到新值） === */
+  --color-primary-deep: #4A6B5E;   /* 青绿加深版 */
+  --color-primary-soft: #E8F0EC;   /* 青绿极淡版 */
   --color-ink-secondary: #333333;
-  --color-ink-mute: #5c5c5c;
+  --color-ink-mute: #5C5C5C;
   --color-ink-mute-2: #777777;
   --color-ink-faint: #999999;
-
-  /* 背景色 */
-  --color-canvas: #ffffff;
-  --color-canvas-soft: #f7f7f7;
-  --color-canvas-warm: #faf9f7;
-  --color-canvas-night: #1c1c1c;
-  --color-canvas-night-soft: #2a2a2a;
-
-  /* 边框 */
-  --color-hairline: #e5e5e5;
-  --color-hairline-strong: #d0d0d0;
-  --color-hairline-cool: #eeeeee;
+  --color-canvas-soft: #EDE8DE;
+  --color-canvas-warm: #F7F4EE;
+  --color-canvas-night: #1C1C1C;
+  --color-canvas-night-soft: #2A2A2A;
+  --color-hairline: #D9D2C3;
+  --color-hairline-strong: #C8C0AE;
+  --color-hairline-cool: #E5E0D6;
 
   /* 阴影层级 */
   --shadow-0: none;
-  --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.06);
-  --shadow-2: 0 8px 24px rgba(0, 0, 0, 0.08);
-  --shadow-3: 0 16px 48px rgba(0, 0, 0, 0.12);
+  --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 8px 24px rgba(0, 0, 0, 0.10);
 
   /* 圆角 */
-  --rounded-xs: 4px;
-  --rounded-sm: 6px;
-  --rounded-md: 8px;
-  --rounded-lg: 12px;
-  --rounded-xl: 16px;
+  --rounded-xs: 2px;
+  --rounded-sm: 4px;
+  --rounded-md: 6px;
+  --rounded-lg: 8px;
+  --rounded-xl: 12px;
   --rounded-full: 9999px;
 
-  /* 字体 */
-  --font-family: "Inter", "Noto Sans SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* 字体（兼容旧引用） */
+  --font-family: var(--font-body);
 
   /* 过渡动画 */
   --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
@@ -59,12 +67,12 @@
 }
 
 body {
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.5;
+  line-height: 1.8;
   color: var(--color-ink);
-  background: var(--color-canvas);
+  background: var(--color-bg);
   overflow-x: hidden;
   font-weight: 400;
 }
@@ -94,6 +102,11 @@ body {
   color: var(--color-ink);
 }
 
+/* 代码字体 */
+code, pre, kbd, samp {
+  font-family: var(--font-code), monospace;
+}
+
 /* 链接样式 */
 a {
   color: var(--color-ink);
@@ -108,13 +121,13 @@ a {
 }
 
 .section-title {
-  font-family: var(--font-family);
+  font-family: var(--font-heading);
   font-size: clamp(32px, 4vw, 48px);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.15;
   color: var(--color-ink);
   margin-bottom: 16px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .section-subtitle {

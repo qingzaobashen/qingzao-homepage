@@ -11,12 +11,15 @@
       "products": "Products",
       "about": "About",
       "contact": "Contact",
-      "blog": "Blog"
+      "blog": "Notes",
+      "series": "Series"
     },
-    "cta": "Get Started",
+    "cta": "Browse Notes",
     "menuAriaLabel": "Toggle menu"
   },
   "hero": {
+    "blogTitle": "Qingzao Notes",
+    "blogSubtitle": "Renovation, Independent Development & Life Thoughts",
     "title": "Creating Practical Tools",
     "titleLine2": "Making Work and Life Simpler",
     "subtitle": "Qingzao Studio focuses on building simple and efficient digital products that help users solve real problems",
@@ -116,6 +119,32 @@
       }
     }
   },
+  "home": {
+    "featuredSeriesTitle": "Featured Series",
+    "latestPostsTitle": "Latest Posts",
+    "viewAllPosts": "View All",
+    "startFromFirst": "Start from the first",
+    "featuredSeries": [
+      {
+        "slug": "decoration-full-process",
+        "title": "Full Decoration Process",
+        "count": "25 posts",
+        "description": "From home inspection to soft furnishing, covering every step of renovation."
+      },
+      {
+        "slug": "renovation-acceptance",
+        "title": "Acceptance Standards",
+        "count": "10 posts",
+        "description": "Standards and key points for plumbing, waterproofing, tiling, carpentry, and painting."
+      },
+      {
+        "slug": "main-materials-guide",
+        "title": "Materials Selection Guide",
+        "count": "15 posts",
+        "description": "Purchasing guides for AC, floor heating, windows, water purifiers, and more."
+      }
+    ]
+  },
   "highlights": {
     "label": "Useful Content",
     "title": "Practical guides for renovation and productivity",
@@ -161,13 +190,21 @@
   "footer": {
     "brand": {
       "logo": "Qingzao",
-      "desc": "Creating practical tools, making work simpler"
+      "desc": "Renovation, Independent Development & Life Thoughts"
     },
     "nav": {
+      "blog": {
+        "title": "Notes",
+        "links": {
+          "latest": "Latest Posts",
+          "series": "Series"
+        }
+      },
       "products": {
         "title": "Products",
         "links": {
           "decoration": "Decoration Map",
+          "trimmer": "Image Trimmer",
           "features": "Features",
           "guide": "User Guide"
         }

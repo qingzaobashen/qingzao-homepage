@@ -1,0 +1,94 @@
+[
+  {
+    "slug": "decoration-full-process",
+    "title": "Full Decoration Process",
+    "description": "A systematic guide covering every step of renovation, from home inspection to soft furnishing.",
+    "category": "Life Notes",
+    "coverImage": "",
+    "order": [
+      "house-acceptance-inspection",
+      "planning-stage",
+      "renovation-method-choice",
+      "budget-planning",
+      "decoration-company-checklist",
+      "studio-checklist",
+      "individual-foreman-checklist",
+      "individual-designer-checklist",
+      "design-style-selection",
+      "design-details-reference",
+      "design-drawings-render-final",
+      "contract-signing-notes",
+      "main-auxiliary-materials-selection",
+      "hard-decoration-knowledge",
+      "wall-demolition-new-wall",
+      "plumbing-electrical-acceptance",
+      "bathroom-backfill-waterproofing",
+      "tile-installation-acceptance",
+      "carpentry-acceptance",
+      "painter-acceptance-putty-paint",
+      "soft-decoration-knowledge",
+      "whole-house-customization",
+      "bed-mattress-selection",
+      "sofa-selection",
+      "self-renovation-pitfalls"
+    ]
+  },
+  {
+    "slug": "renovation-acceptance",
+    "title": "Acceptance Standards",
+    "description": "Standards and key points for plumbing, waterproofing, tiling, carpentry, and painting acceptance.",
+    "category": "Life Notes",
+    "coverImage": "",
+    "order": [
+      "plumbing-electrical-acceptance",
+      "bathroom-backfill-waterproofing",
+      "tile-installation-acceptance",
+      "carpentry-acceptance",
+      "painter-acceptance-putty-paint",
+      "wall-demolition-new-wall"
+    ]
+  },
+  {
+    "slug": "main-materials-guide",
+    "title": "Materials Selection Guide",
+    "description": "Purchasing guides and tips for AC, floor heating, windows, water purifiers, and more.",
+    "category": "Life Notes",
+    "coverImage": "",
+    "order": [
+      "central-ac-selection-install",
+      "ducted-ac-selection-install",
+      "floor-heating-online-selection",
+      "window-sealing-online-checklist",
+      "water-purifier-selection",
+      "washing-machine-selection",
+      "robot-vacuum-selection",
+      "cabinet-formaldehyde-removal",
+      "whole-house-customization",
+      "main-auxiliary-materials-selection"
+    ]
+  },
+  {
+    "slug": "smart-home",
+    "title": "Smart Home Guide",
+    "description": "Selection and configuration of smart home devices like whole-house automation and robot vacuums.",
+    "category": "Life Notes",
+    "coverImage": "",
+    "order": [
+      "smart-home-system",
+      "robot-vacuum-selection"
+    ]
+  },
+  {
+    "slug": "image-processing",
+    "title": "Image Processing Tips",
+    "description": "Practical tips for background removal, image formats, and product photography.",
+    "category": "Tool Reviews",
+    "coverImage": "",
+    "order": [
+      "batch-background-removal",
+      "online-background-removal-tools",
+      "product-photo-guide",
+      "image-format-guide"
+    ]
+  }
+]
