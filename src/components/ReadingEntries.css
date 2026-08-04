@@ -1,0 +1,99 @@
+/**
+ * 阅读入口组件样式
+ * Easton 风格：三列卡片，图标 + 标题 + 描述 + CTA
+ */
+
+.reading-entries {
+  padding: 24px 0 72px;
+}
+
+.reading-entries .ed-section-header {
+  margin-bottom: 28px;
+}
+
+.reading-entries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.reading-entry-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 28px 28px 24px;
+  background: var(--color-canvas);
+  border: 1px solid var(--color-border);
+  border-radius: var(--ed-radius-panel);
+  text-decoration: none;
+  transition: box-shadow var(--transition-base), transform var(--transition-base),
+              border-color var(--transition-base);
+}
+
+.reading-entry-card:hover {
+  box-shadow: var(--ed-shadow-soft);
+  transform: translateY(-4px);
+  border-color: var(--color-hairline-strong);
+}
+
+.reading-entry-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--ed-radius-control);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+
+.reading-entry-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.reading-entry-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.reading-entry-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-top: 4px;
+}
+
+.reading-entry-cta .arrow {
+  transition: transform var(--transition-base);
+}
+
+.reading-entry-card:hover .reading-entry-cta .arrow {
+  transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+  .reading-entries {
+    padding: 16px 0 48px;
+  }
+
+  .reading-entries-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .reading-entry-card {
+    padding: 22px 20px;
+  }
+}

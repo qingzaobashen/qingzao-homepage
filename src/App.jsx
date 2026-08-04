@@ -1,14 +1,18 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { LanguageProvider } from './contexts/LanguageContext'
+import { ThemeProvider } from './contexts/ThemeContext'
 import { useLanguage } from './hooks/useLanguage'
 import SEO from './components/SEO'
 import Header from './components/Header'
 import AnnouncementBanner from './components/AnnouncementBanner'
 import BlogHero from './components/BlogHero'
+import ReadingEntries from './components/ReadingEntries'
 import FeaturedSeries from './components/FeaturedSeries'
+import CategoryBrowse from './components/CategoryBrowse'
 import LatestPosts from './components/LatestPosts'
 import Footer from './components/Footer'
+import CategoryPage from './pages/CategoryPage'
 import PrivacyPage from './pages/PrivacyPage'
 import TermsPage from './pages/TermsPage'
 import BlogListPage from './pages/BlogListPage'
@@ -45,11 +49,9 @@ function HomePage() {
       <Header />
       <main>
         <BlogHero />
+        <ReadingEntries />
         <FeaturedSeries />
-        {/* 装饰分割线 */}
-        <div className="section-divider">
-          <span className="section-divider-dot" />
-        </div>
+        <CategoryBrowse />
         <LatestPosts />
       </main>
       <Footer />
@@ -66,8 +68,9 @@ function HomePage() {
 function App() {
   return (
     <LanguageProvider>
-      <div className="app">
-        <Routes>
+      <ThemeProvider>
+        <div className="app">
+          <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
@@ -80,6 +83,7 @@ function App() {
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/series" element={<SeriesListPage />} />
           <Route path="/series/:seriesSlug" element={<SeriesDetailPage />} />
+          <Route path="/category" element={<CategoryPage />} />
           <Route path="*" element={<NotFoundPage />} />
 
           {/* 英文镜像：/en 前缀，内容与中文版一一对应，便于独立索引 */}
@@ -95,9 +99,11 @@ function App() {
           <Route path="/en/blog/:slug" element={<BlogPostPage />} />
           <Route path="/en/series" element={<SeriesListPage />} />
           <Route path="/en/series/:seriesSlug" element={<SeriesDetailPage />} />
+          <Route path="/en/category" element={<CategoryPage />} />
         </Routes>
         <CookieConsent />
-      </div>
+        </div>
+      </ThemeProvider>
     </LanguageProvider>
   )
 }

@@ -37,15 +37,18 @@
 
 /* 分类筛选 */
 .blog-filter {
-  background: var(--color-bg);
+  background: rgba(251, 247, 239, 0.85);
   border-bottom: 1px solid var(--color-border);
   padding: 16px 0;
   position: sticky;
-  top: 0;
-  z-index: 10;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  background: rgba(247, 244, 238, 0.95);
+  top: var(--ed-header-height);
+  z-index: 100;
+  backdrop-filter: blur(12px) saturate(1.1);
+  -webkit-backdrop-filter: blur(12px) saturate(1.1);
+}
+
+html[data-theme="dark"] .blog-filter {
+  background: rgba(19, 17, 15, 0.85);
 }
 
 .filter-buttons {

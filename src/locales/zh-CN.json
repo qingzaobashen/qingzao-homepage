@@ -8,14 +8,24 @@
   "header": {
     "logo": "青枣",
     "nav": {
+      "home": "首页",
       "products": "产品",
       "about": "关于",
       "contact": "联系",
       "blog": "笔记",
-      "series": "系列"
+      "series": "系列",
+      "category": "分类"
     },
     "cta": "浏览笔记",
-    "menuAriaLabel": "切换菜单"
+    "menuAriaLabel": "切换菜单",
+    "searchAriaLabel": "搜索文章",
+    "themeAriaLabel": "切换主题",
+    "searchPlaceholder": "搜索青枣笔记...",
+    "theme": {
+      "light": "浅色",
+      "dark": "深色",
+      "system": "跟随系统"
+    }
   },
   "hero": {
     "blogTitle": "青枣笔记",
@@ -120,30 +130,113 @@
     }
   },
   "home": {
-    "featuredSeriesTitle": "精选系列",
-    "latestPostsTitle": "最新文章",
-    "viewAllPosts": "查看全部",
-    "startFromFirst": "从第一篇开始",
+    "heroEyebrow": "装修 · 工具 · 生活",
+    "blogTitle": "青枣笔记",
+    "blogSubtitle": "装修经验、独立开发与生活思考",
+    "heroActions": {
+      "search": "搜索文章",
+      "series": "浏览系列",
+      "categories": "分类浏览"
+    },
+    "readingEntriesTitle": "阅读入口",
+    "readingEntriesDesc": "从最新文章、系列专题或分类目录开始浏览。",
+    "readingEntries": [
+      {
+        "key": "latest",
+        "title": "最新文章",
+        "desc": "查看最新发布、精选内容和更新笔记。",
+        "cta": "查看最新",
+        "href": "/blog"
+      },
+      {
+        "key": "series",
+        "title": "系列",
+        "desc": "按长期主题系统阅读完整内容。",
+        "cta": "浏览系列",
+        "href": "/series"
+      },
+      {
+        "key": "category",
+        "title": "分类",
+        "desc": "按装修、智能家居、图片处理等主题浏览。",
+        "cta": "查看分类",
+        "href": "/category"
+      }
+    ],
+    "featuredSeriesTitle": "精选系列专题",
+    "featuredSeriesDesc": "每个专题都有完整的系列文章，从第一篇系统读起。",
+    "viewAllSeries": "浏览系列",
+    "startFromFirst": "从第 1 篇开始",
     "featuredSeries": [
       {
         "slug": "decoration-full-process",
         "title": "装修全流程系列",
         "count": "共 25 篇",
-        "description": "从收房验房到软装搭配，覆盖装修每个环节。"
+        "description": "从收房验房到软装搭配，覆盖装修每个环节的系统指南。",
+        "tags": ["装修全流程", "避坑", "选材"],
+        "image": "/images/covers/renovation-guide.jpg"
       },
       {
         "slug": "renovation-acceptance",
         "title": "验收标准大全",
         "count": "共 10 篇",
-        "description": "水电、防水、瓷砖、木工、油工验收标准与要点。"
+        "description": "水电、防水、瓷砖、木工、油工验收标准与要点。",
+        "tags": ["验收", "水电", "防水"],
+        "image": "/images/covers/home-living.jpg"
       },
       {
         "slug": "main-materials-guide",
         "title": "主材选购指南",
         "count": "共 15 篇",
-        "description": "空调、地暖、门窗、净水器等主材选购攻略。"
+        "description": "空调、地暖、门窗、净水器等主材选购攻略。",
+        "tags": ["主材", "选购", "空调"],
+        "image": "/images/covers/smart-home.jpg"
       }
-    ]
+    ],
+    "categoriesTitle": "按分类浏览",
+    "categoriesDesc": "从装修、智能家居与图片处理三个方向进入内容。",
+    "viewCategory": "进入分类",
+    "categories": [
+      {
+        "key": "renovation",
+        "title": "装修指南",
+        "desc": "围绕装修全流程、验收标准与主材选购的实战内容。",
+        "postCategories": ["装修指南", "家居生活"],
+        "image": "/images/covers/renovation-guide.jpg",
+        "subs": [
+          { "label": "装修全流程", "href": "/series/decoration-full-process" },
+          { "label": "验收标准", "href": "/series/renovation-acceptance" },
+          { "label": "主材选购", "href": "/series/main-materials-guide" }
+        ]
+      },
+      {
+        "key": "smart-home",
+        "title": "智能家居",
+        "desc": "全屋智能架构、扫地机器人等智能家居设备的选购与配置。",
+        "postCategories": ["智能家居"],
+        "image": "/images/covers/smart-home.jpg",
+        "subs": [
+          { "label": "智能家居指南", "href": "/series/smart-home" },
+          { "label": "智能设备", "href": "/blog" }
+        ]
+      },
+      {
+        "key": "image-tools",
+        "title": "图片处理与工具",
+        "desc": "抠图、白底商品图、图片格式等实用技巧与工具评测。",
+        "postCategories": ["图片处理", "工具评测", "产品教程"],
+        "image": "/images/covers/image-processing.jpg",
+        "subs": [
+          { "label": "图片处理技巧", "href": "/series/image-processing" },
+          { "label": "工具评测", "href": "/blog" }
+        ]
+      }
+    ],
+    "toolsTitle": "青枣工具",
+    "toolsDesc": "为装修与图片处理打造的免费在线工具。",
+    "latestPostsTitle": "最新文章",
+    "latestPostsDesc": "最近发布的装修、工具与生活笔记。",
+    "viewAllPosts": "查看更多文章"
   },
   "highlights": {
     "label": "内容资源",
@@ -190,49 +283,49 @@
   "footer": {
     "brand": {
       "logo": "青枣",
-      "desc": "装修经验、独立开发与生活思考"
+      "desc": "装修、开发与独立产品构建笔记。"
+    },
+    "social": {
+      "github": "GitHub",
+      "twitter": "Twitter",
+      "rss": "RSS"
     },
     "nav": {
-      "blog": {
-        "title": "笔记",
-        "links": {
-          "latest": "最新文章",
-          "series": "系列专题"
-        }
-      },
-      "products": {
-        "title": "产品",
-        "links": {
-          "decoration": "装修思维导图工具",
-          "trimmer": "白底抠图工具",
-          "features": "功能介绍",
-          "guide": "使用指南"
-        }
-      },
-      "company": {
-        "title": "公司",
-        "links": {
-          "about": "关于我们",
-          "contact": "联系方式",
-          "editorial": "编辑方针",
-          "join": "加入我们"
-        }
+      "navigation": {
+        "title": "导航",
+        "links": [
+          { "label": "首页", "href": "/" },
+          { "label": "笔记", "href": "/blog" },
+          { "label": "系列", "href": "/series" },
+          { "label": "分类", "href": "/category" },
+          { "label": "关于", "href": "/about" }
+        ]
       },
       "resources": {
         "title": "资源",
-        "links": {
-          "blog": "博客",
-          "Twitter": "Twitter",
-          "changelog": "更新日志"
-        }
+        "links": [
+          { "label": "产品", "href": "/products" },
+          { "label": "装修思维导图", "href": "https://decoration.qingzao.site" },
+          { "label": "白底抠图工具", "href": "https://image.qingzao.site" },
+          { "label": "联系我们", "href": "/contact" }
+        ]
+      },
+      "legal": {
+        "title": "法律",
+        "links": [
+          { "label": "隐私政策", "href": "/privacy" },
+          { "label": "服务条款", "href": "/terms" },
+          { "label": "免责声明", "href": "/disclaimer" },
+          { "label": "编辑方针", "href": "/editorial" }
+        ]
       }
     },
-    "copyright": "© {year} 青枣. 保留所有权利.",
-    "legal": {
-      "privacy": "隐私政策",
-      "terms": "服务条款",
-      "disclaimer": "免责声明"
-    }
+    "toolsPromo": {
+      "title": "青枣工具",
+      "desc": "免费在线工具，用于装修规划与图片处理。",
+      "cta": "探索工具"
+    },
+    "copyright": "© {year} 青枣. 保留所有权利."
   },
   "legal": {
     "close": "关闭",

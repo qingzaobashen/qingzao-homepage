@@ -1,73 +1,150 @@
 /**
  * 全局样式文件
- * 东方风格 - 宣纸白底，青绿主色，思源宋体排版
+ * 复刻 Easton Blog 设计系统：
+ *  - 暖色编辑风画布（宣纸米底 #fbf7ef / 炭黑墨字）
+ *  - 橙红主强调色 #e85d3f + 橄榄绿辅助 #6f8c73
+ *  - 宋体标题（serif） + 无衬线正文（sans）
+ *  - 支持浅色 / 深色 / 跟随系统 三态主题（html[data-theme]）
  */
 
-/* CSS 变量定义 - 东方风格色彩系统 */
+/* ============ 浅色主题设计令牌 ============ */
 :root {
-  /* === 东方风格设计 Token（新） === */
-  --color-bg: #FBF7EF;            /* 暖米色，页面背景 */
-  --color-ink: #1F1F1F;            /* 墨色，正文 */
-  --color-primary: #5B7C6D;        /* 青绿，主色调 */
-  --color-accent: #8B3A3A;         /* 枣红，强调色 */
-  --color-accent-orange: #E85D3F;  /* 橙红，辅助强调色 */
-  --color-border: #D9D2C3;         /* 淡灰褐，边框/分割线 */
-  --color-muted: #8C8C8C;          /* 灰色，辅助文字 */
-  --color-text-secondary: #756F66; /* 次要文本色 */
-  --color-canvas: #FFFFFF;         /* 纯白，卡片背景 */
-  --color-hover-bg: #EDE8DE;       /* 极淡宣纸，hover 态 */
-  --color-tag-bg: #F4EDE2;        /* 标签背景色 */
-  --color-dark-card: #252321;      /* 深色卡片背景 */
+  /* 画布与表面 */
+  --color-bg: #fbf7ef;            /* 页面画布 */
+  --color-canvas: #fffaf2;        /* 卡片表面 */
+  --color-canvas-soft: #f4ede2;   /* 柔和表面 / hover */
+  --color-canvas-raised: #fffdf8; /* 浮起表面 */
+  --color-canvas-warm: #fbf7ef;
+  --color-canvas-night: #13110f;  /* 深色底（页脚等） */
+  --color-canvas-night-soft: #1c1916;
 
-  /* 字体家族 */
-  --font-logo: "LXGW WenKai", "FZXiaoZhuanTi-S13S", "Source Han Serif SC", serif;
-  --font-heading: "Source Han Serif SC", "Noto Serif SC", serif;
-  --font-body: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Source Han Serif SC", "Noto Serif SC", serif;
-  --font-en: "IBM Plex Sans", sans-serif;
-  --font-code: "JetBrains Mono", monospace;
+  /* 文字 */
+  --color-ink: #15120f;           /* 标题 / 正文 */
+  --color-ink-secondary: #403a34; /* 次级正文（body） */
+  --color-body: #403a34;
+  --color-ink-mute: #756f66;      /* 弱化文字 */
+  --color-ink-mute-2: #9b9489;    /* 更弱 */
+  --color-ink-faint: #9b9489;
+  --color-text-secondary: #756f66;
+  --color-muted: #756f66;         /* 旧版弱化文字别名 */
+  --color-on-primary: #fff;
 
-  /* === 向下兼容变量（旧名称映射到新值） === */
-  --color-primary-deep: #4A6B5E;   /* 青绿加深版 */
-  --color-primary-soft: #E8F0EC;   /* 青绿极淡版 */
-  --color-ink-secondary: #333333;
-  --color-ink-mute: #5C5C5C;
-  --color-ink-mute-2: #777777;
-  --color-ink-faint: #999999;
-  --color-canvas-soft: #EDE8DE;
-  --color-canvas-warm: #F7F4EE;
-  --color-canvas-night: #1C1C1C;
-  --color-canvas-night-soft: #2A2A2A;
-  --color-hairline: #D9D2C3;
-  --color-hairline-strong: #C8C0AE;
-  --color-hairline-cool: #E5E0D6;
+  /* 强调 */
+  --color-primary: #e85d3f;       /* 橙红主色 */
+  --color-primary-deep: #c9452c;  /* hover 加深 */
+  --color-primary-soft: #f8d9cc;  /* 浅橙底 */
+  --color-accent: #e85d3f;
+  --color-accent-orange: #e85d3f;
+  --color-accent-green: #6f8c73;
+  --color-accent-amber: #e7a552;
 
-  /* 阴影层级 */
+  /* 边框 */
+  --color-border: #eadfce;
+  --color-hairline: #eadfce;
+  --color-hairline-strong: #dfcdb8;
+  --color-hairline-cool: #eadfce;
+  --color-hover-bg: #f4ede2;
+  --color-tag-bg: #f4ede2;
+  --color-dark-card: #26211c;
+
+  /* 阴影 */
   --shadow-0: none;
-  --shadow-1: 0 2px 8px rgba(0, 0, 0, 0.05);
-  --shadow-2: 0 8px 24px rgba(0, 0, 0, 0.08);
-  --shadow-3: 0 12px 32px rgba(0, 0, 0, 0.12);
+  --shadow-1: 0 1px 3px rgba(89, 61, 34, 0.06), 0 1px 2px rgba(89, 61, 34, 0.04);
+  --shadow-2: 0 12px 32px rgba(89, 61, 34, 0.1);
+  --shadow-3: 0 18px 42px rgba(89, 61, 34, 0.14);
+  --ed-shadow-soft: 0 12px 32px rgba(89, 61, 34, 0.08);
 
   /* 圆角 */
-  --rounded-xs: 2px;
-  --rounded-sm: 4px;
-  --rounded-md: 6px;
-  --rounded-lg: 8px;
-  --rounded-xl: 12px;
+  --rounded-xs: 4px;
+  --rounded-sm: 6px;
+  --rounded-md: 8px;
+  --rounded-lg: 10px;
+  --rounded-xl: 14px;
   --rounded-full: 9999px;
+  --ed-radius-control: 8px;
+  --ed-radius-card: 8px;
+  --ed-radius-panel: 14px;
 
-  /* 字体（兼容旧引用） */
+  /* 字体 */
+  --font-logo: "Geist", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  --font-heading: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong", Georgia, serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Inter", "Geist", sans-serif;
+  --font-en: "Geist", "Inter", sans-serif;
+  --font-code: "JetBrains Mono", "SFMono-Regular", "Cascadia Code", "Menlo", "Consolas", monospace;
+  --font-serif: var(--font-heading);
+
+  /* 布局 */
+  --ed-container: 1216px;
+  --ed-header-height: 72px;
+
+  /* 兼容旧引用 */
   --font-family: var(--font-body);
 
-  /* 过渡动画 */
+  /* 过渡 */
   --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-base: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  color-scheme: light;
 }
 
-/* 全局重置 */
+/* ============ 深色主题设计令牌 ============ */
+html[data-theme="dark"] {
+  --color-bg: #13110f;
+  --color-canvas: #1c1916;
+  --color-canvas-soft: #26211c;
+  --color-canvas-raised: #2e2822;
+  --color-canvas-warm: #1c1916;
+  --color-canvas-night: #0e0c0b;
+  --color-canvas-night-soft: #1c1916;
+
+  --color-ink: #f7efe5;
+  --color-ink-secondary: #d8cfc3;
+  --color-body: #d8cfc3;
+  --color-ink-mute: #a79d8f;
+  --color-ink-mute-2: #81786d;
+  --color-ink-faint: #81786d;
+  --color-text-secondary: #a79d8f;
+  --color-muted: #a79d8f;
+  --color-on-primary: #fff;
+
+  --color-primary: #f07552;
+  --color-primary-deep: #ff8b68;
+  --color-primary-soft: #5a2d22;
+  --color-accent: #f07552;
+  --color-accent-orange: #f07552;
+  --color-accent-green: #8fb383;
+  --color-accent-amber: #eeb15f;
+
+  --color-border: rgba(167, 157, 143, 0.15);
+  --color-hairline: rgba(167, 157, 143, 0.15);
+  --color-hairline-strong: rgba(167, 157, 143, 0.3);
+  --color-hairline-cool: rgba(167, 157, 143, 0.12);
+  --color-hover-bg: #26211c;
+  --color-tag-bg: #2e2822;
+  --color-dark-card: #26211c;
+
+  --shadow-0: none;
+  --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-2: 0 12px 32px rgba(0, 0, 0, 0.42);
+  --shadow-3: 0 18px 42px rgba(0, 0, 0, 0.5);
+  --ed-shadow-soft: 0 18px 42px rgba(0, 0, 0, 0.42);
+
+  color-scheme: dark;
+}
+
+/* ============ 全局重置 ============ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 body {
@@ -81,9 +158,10 @@ body {
   overflow-x: hidden;
   font-weight: 400;
   position: relative;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-/* 宣纸微纹理背景 - 极淡噪点模拟宣纸纤维质感 */
+/* 页面背景：暖色径向光晕（复刻 Easton 的 .ed-page） */
 body::before {
   content: '';
   position: fixed;
@@ -92,17 +170,22 @@ body::before {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: -1;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 256px 256px;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 15% 8%, rgba(232, 93, 63, 0.08), transparent 34rem),
+    radial-gradient(circle at 82% 16%, rgba(111, 140, 115, 0.12), transparent 32rem);
+}
+
+html[data-theme="dark"] body::before {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(240, 117, 82, 0.1), transparent 36rem),
+    radial-gradient(circle at 82% 10%, rgba(143, 179, 131, 0.08), transparent 34rem);
 }
 
 /* 滚动条样式 */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -136,95 +219,187 @@ a {
   transition: color var(--transition-base);
 }
 
-/* 通用区块标题样式 */
-.section-header {
-  text-align: center;
-  margin-bottom: 48px;
+/* 通用容器 */
+.container,
+.ed-container {
+  width: min(100% - 2rem, var(--ed-container));
+  margin-inline: auto;
 }
 
-/* 分类标签（Category Chip）样式 */
-.category-tag {
+@media (min-width: 640px) {
+  .container,
+  .ed-container {
+    width: min(100% - 3rem, var(--ed-container));
+  }
+}
+
+/* 页面根 */
+.ed-page {
+  min-height: 100dvh;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+/* ============ 复刻 Easton 的通用区块样式 ============ */
+
+/* 小节眉（eyebrow badge） */
+.ed-eyebrow {
   display: inline-flex;
   align-items: center;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--color-accent-orange);
-  background: var(--color-tag-bg);
-  border-radius: 8px;
-  padding: 8px 12px;
+  gap: 6px;
+  padding: 0.35rem 0.7rem;
+  border-radius: var(--rounded-full);
+  background: var(--color-primary-soft);
+  color: var(--color-primary-deep);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   line-height: 1;
-  text-decoration: none;
-  transition: opacity var(--transition-base);
 }
 
-.category-tag:hover {
-  opacity: 0.8;
-}
-
-.section-title {
+/* 区块标题 */
+.ed-section-title {
   font-family: var(--font-heading);
-  font-size: clamp(26px, 2.5vw, 30px);
-  font-weight: 500;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0;
+  color: var(--color-ink);
+}
+
+.ed-section-subtitle {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* 区块头部（居中，Easton 风格：标题 + 引导语 + 查看更多链接） */
+.ed-section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.ed-section-header--center {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ed-section-header-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 400;
   line-height: 1.2;
   color: var(--color-ink);
-  margin-bottom: 12px;
-  letter-spacing: normal;
 }
 
-.section-subtitle {
-  font-size: 16px;
-  font-weight: 400;
+.ed-section-header-desc {
   color: var(--color-text-secondary);
-  line-height: 1.5;
+  font-size: 0.9375rem;
+  margin-top: 6px;
+  max-width: 60ch;
 }
 
-/* 通用容器 */
-.container {
-  max-width: 1216px;
-  margin: 0 auto;
-  padding: 0 24px;
+.ed-section-header-desc--center {
+  margin-inline: auto;
 }
 
-/* 动画关键帧 */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* 查看更多链接 */
+.ed-link-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-primary);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ed-link-more:hover {
+  color: var(--color-primary-deep);
+}
+
+.ed-link-more .arrow {
+  transition: transform var(--transition-base);
+}
+
+.ed-link-more:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* 通用按钮 */
+.ed-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--ed-radius-control);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background var(--transition-base), border-color var(--transition-base),
+              color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.ed-button--primary {
+  background: var(--color-primary);
+  color: var(--color-on-primary, #fff);
+}
+
+.ed-button--primary:hover {
+  background: var(--color-primary-deep);
+  color: #fff;
+}
+
+.ed-button--outline {
+  background: transparent;
+  border-color: var(--color-hairline-strong);
+  color: var(--color-ink);
+}
+
+.ed-button--outline:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* 通用卡片 */
+.ed-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--ed-radius-card);
+  background: var(--color-canvas);
+}
+
+.ed-panel {
+  border: 1px solid var(--color-border);
+  border-radius: var(--ed-radius-panel);
+  background: var(--color-canvas);
+  box-shadow: var(--ed-shadow-soft);
+}
+
+/* 弱化文字 */
+.ed-muted {
+  color: var(--color-muted);
+}
+
+/* 区块间距 */
+.ed-section {
+  padding: 72px 0;
+}
+
+@media (max-width: 768px) {
+  .ed-section {
+    padding: 48px 0;
   }
 }
 
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-/* 装饰分割线 - 东方风格 */
+/* 装饰分割线（向下兼容旧首页） */
 .section-divider {
   display: flex;
   align-items: center;
@@ -252,35 +427,55 @@ a {
   flex-shrink: 0;
 }
 
-/* 区块间装饰分割线（全宽） */
-.section-divider-full {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin: 0 auto;
-  max-width: 300px;
-  padding: 16px 0;
+/* 动画关键帧 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.section-divider-full::before,
-.section-divider-full::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-border) 50%, transparent);
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 通用区块标题（旧类名，向下兼容） */
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-ink);
+  margin-bottom: 12px;
+  letter-spacing: 0;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
 }
 
 /* 响应式字体调整 */
 @media (max-width: 768px) {
   .section-header {
     margin-bottom: 32px;
-  }
-
-  .section-subtitle {
-    font-size: 15px;
-  }
-
-  .container {
-    padding: 0 16px;
   }
 }

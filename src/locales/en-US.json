@@ -8,14 +8,24 @@
   "header": {
     "logo": "Qingzao",
     "nav": {
+      "home": "Home",
       "products": "Products",
       "about": "About",
       "contact": "Contact",
       "blog": "Notes",
-      "series": "Series"
+      "series": "Series",
+      "category": "Categories"
     },
     "cta": "Browse Notes",
-    "menuAriaLabel": "Toggle menu"
+    "menuAriaLabel": "Toggle menu",
+    "searchAriaLabel": "Search posts",
+    "themeAriaLabel": "Toggle theme",
+    "searchPlaceholder": "Search Qingzao Notes...",
+    "theme": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    }
   },
   "hero": {
     "blogTitle": "Qingzao Notes",
@@ -120,30 +130,113 @@
     }
   },
   "home": {
+    "heroEyebrow": "RENOVATION · TOOLS · LIFE",
+    "blogTitle": "Qingzao Notes",
+    "blogSubtitle": "Renovation experience, indie development and life thoughts.",
+    "heroActions": {
+      "search": "Search posts",
+      "series": "Browse series",
+      "categories": "Browse categories"
+    },
+    "readingEntriesTitle": "Reading Entries",
+    "readingEntriesDesc": "Start browsing from the latest posts, series, or categories.",
+    "readingEntries": [
+      {
+        "key": "latest",
+        "title": "Latest Posts",
+        "desc": "See newly published posts, curated picks, and update notes.",
+        "cta": "View latest",
+        "href": "/blog"
+      },
+      {
+        "key": "series",
+        "title": "Series",
+        "desc": "Read complete content systematically by long-term topics.",
+        "cta": "Browse series",
+        "href": "/series"
+      },
+      {
+        "key": "category",
+        "title": "Categories",
+        "desc": "Browse by renovation, smart home, image processing, and more.",
+        "cta": "View categories",
+        "href": "/category"
+      }
+    ],
     "featuredSeriesTitle": "Featured Series",
-    "latestPostsTitle": "Latest Posts",
-    "viewAllPosts": "View All",
-    "startFromFirst": "Start from the first",
+    "featuredSeriesDesc": "Each topic has a full series of articles. Start from the first, or jump to the one you need.",
+    "viewAllSeries": "Browse series",
+    "startFromFirst": "Start from #1",
     "featuredSeries": [
       {
         "slug": "decoration-full-process",
         "title": "Full Decoration Process",
         "count": "25 posts",
-        "description": "From home inspection to soft furnishing, covering every step of renovation."
+        "description": "A systematic guide from home inspection to soft furnishing, covering every step.",
+        "tags": ["Process", "Avoid pitfalls", "Materials"],
+        "image": "/images/covers/renovation-guide.jpg"
       },
       {
         "slug": "renovation-acceptance",
         "title": "Acceptance Standards",
         "count": "10 posts",
-        "description": "Standards and key points for plumbing, waterproofing, tiling, carpentry, and painting."
+        "description": "Standards and key points for plumbing, waterproofing, tiling, carpentry, and painting.",
+        "tags": ["Acceptance", "Plumbing", "Waterproof"],
+        "image": "/images/covers/home-living.jpg"
       },
       {
         "slug": "main-materials-guide",
         "title": "Materials Selection Guide",
         "count": "15 posts",
-        "description": "Purchasing guides for AC, floor heating, windows, water purifiers, and more."
+        "description": "Purchasing guides for AC, floor heating, windows, water purifiers, and more.",
+        "tags": ["Materials", "Selection", "AC"],
+        "image": "/images/covers/smart-home.jpg"
       }
-    ]
+    ],
+    "categoriesTitle": "Browse by Category",
+    "categoriesDesc": "Enter content from renovation, smart home, or image processing.",
+    "viewCategory": "Enter category",
+    "categories": [
+      {
+        "key": "renovation",
+        "title": "Renovation",
+        "desc": "Practical content on the full renovation process, acceptance standards, and materials selection.",
+        "postCategories": ["Renovation", "Home & Living"],
+        "image": "/images/covers/renovation-guide.jpg",
+        "subs": [
+          { "label": "Full Process", "href": "/series/decoration-full-process" },
+          { "label": "Acceptance", "href": "/series/renovation-acceptance" },
+          { "label": "Materials", "href": "/series/main-materials-guide" }
+        ]
+      },
+      {
+        "key": "smart-home",
+        "title": "Smart Home",
+        "desc": "Whole-home intelligence architecture, robot vacuums, and smart device selection.",
+        "postCategories": ["Smart Home"],
+        "image": "/images/covers/smart-home.jpg",
+        "subs": [
+          { "label": "Smart Home Guide", "href": "/series/smart-home" },
+          { "label": "Smart Devices", "href": "/blog" }
+        ]
+      },
+      {
+        "key": "image-tools",
+        "title": "Image Processing & Tools",
+        "desc": "Practical tips on background removal, white-background product photos, and image formats.",
+        "postCategories": ["Image Processing", "Tool Reviews", "Product Tutorials"],
+        "image": "/images/covers/image-processing.jpg",
+        "subs": [
+          { "label": "Image Processing", "href": "/series/image-processing" },
+          { "label": "Tool Reviews", "href": "/blog" }
+        ]
+      }
+    ],
+    "toolsTitle": "Qingzao Tools",
+    "toolsDesc": "Free online tools for renovation planning and image processing.",
+    "latestPostsTitle": "Latest Posts",
+    "latestPostsDesc": "Recently published renovation, tools, and life notes.",
+    "viewAllPosts": "View all posts"
   },
   "highlights": {
     "label": "Useful Content",
@@ -190,49 +283,49 @@
   "footer": {
     "brand": {
       "logo": "Qingzao",
-      "desc": "Renovation, Independent Development & Life Thoughts"
+      "desc": "Renovation, indie development & indie product building notes."
+    },
+    "social": {
+      "github": "GitHub",
+      "twitter": "Twitter",
+      "rss": "RSS"
     },
     "nav": {
-      "blog": {
-        "title": "Notes",
-        "links": {
-          "latest": "Latest Posts",
-          "series": "Series"
-        }
-      },
-      "products": {
-        "title": "Products",
-        "links": {
-          "decoration": "Decoration Map",
-          "trimmer": "Image Trimmer",
-          "features": "Features",
-          "guide": "User Guide"
-        }
-      },
-      "company": {
-        "title": "Company",
-        "links": {
-          "about": "About Us",
-          "contact": "Contact",
-          "editorial": "Editorial Guidelines",
-          "join": "Join Us"
-        }
+      "navigation": {
+        "title": "Navigation",
+        "links": [
+          { "label": "Home", "href": "/" },
+          { "label": "Notes", "href": "/blog" },
+          { "label": "Series", "href": "/series" },
+          { "label": "Categories", "href": "/category" },
+          { "label": "About", "href": "/about" }
+        ]
       },
       "resources": {
         "title": "Resources",
-        "links": {
-          "blog": "Blog",
-          "Twitter": "Twitter",
-          "changelog": "Changelog"
-        }
+        "links": [
+          { "label": "Products", "href": "/products" },
+          { "label": "Decoration Map", "href": "https://decoration.qingzao.site" },
+          { "label": "Image Trimmer", "href": "https://image.qingzao.site" },
+          { "label": "Contact", "href": "/contact" }
+        ]
+      },
+      "legal": {
+        "title": "Legal",
+        "links": [
+          { "label": "Privacy Policy", "href": "/privacy" },
+          { "label": "Terms of Service", "href": "/terms" },
+          { "label": "Disclaimer", "href": "/disclaimer" },
+          { "label": "Editorial Guidelines", "href": "/editorial" }
+        ]
       }
     },
-    "copyright": "© {year} Qingzao. All rights reserved.",
-    "legal": {
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "disclaimer": "Disclaimer"
-    }
+    "toolsPromo": {
+      "title": "Qingzao Tools",
+      "desc": "Free online tools for renovation planning and image processing.",
+      "cta": "Explore tools"
+    },
+    "copyright": "© {year} Qingzao. All rights reserved."
   },
   "legal": {
     "close": "Close",

@@ -7,7 +7,7 @@ import './LatestPosts.css'
 
 /**
  * 首页最新文章列表组件
- * 展示最新的 6 篇文章，3列网格布局
+ * Easton 风格：封面卡片网格 + 查看更多
  */
 function LatestPosts() {
   const { t, language, localePath } = useLanguage()
@@ -31,12 +31,22 @@ function LatestPosts() {
   return (
     <section className="latest-posts">
       <div className="container">
-        <h2 className="section-title">{t('home.latestPostsTitle')}</h2>
+        <div className="ed-section-header">
+          <div>
+            <span className="ed-eyebrow">Notes</span>
+            <h2 className="ed-section-header-title">{t('home.latestPostsTitle')}</h2>
+            <p className="ed-section-header-desc">{t('home.latestPostsDesc')}</p>
+          </div>
+          <Link to={localePath('/blog')} className="ed-link-more">
+            {t('home.viewAllPosts')}
+            <span className="arrow">→</span>
+          </Link>
+        </div>
         <div className="posts-grid">
           {posts.map((post, index) => (
             <article key={index} className="home-post-card">
-              {post.coverImage && (
-                <div className="home-post-cover-wrapper">
+              <Link to={localePath(`/blog/${post.slug}`)} className="home-post-cover-wrapper">
+                {post.coverImage && (
                   <img
                     src={post.coverImage}
                     alt={post.title}
@@ -44,8 +54,8 @@ function LatestPosts() {
                     loading="lazy"
                     onError={(e) => { e.target.style.display = 'none' }}
                   />
-                </div>
-              )}
+                )}
+              </Link>
               <div className="home-post-card-body">
                 <div className="home-post-meta">
                   <span className="home-post-category">{post.category}</span>
@@ -55,19 +65,9 @@ function LatestPosts() {
                   <Link to={localePath(`/blog/${post.slug}`)}>{post.title}</Link>
                 </h3>
                 <p className="home-post-excerpt">{post.excerpt}</p>
-                <div className="home-post-tags">
-                  {post.tags.slice(0, 3).map((tag, tagIndex) => (
-                    <span key={tagIndex} className="home-post-tag">#{tag}</span>
-                  ))}
-                </div>
               </div>
             </article>
           ))}
-        </div>
-        <div className="home-posts-cta">
-          <Link to={localePath('/blog')} className="home-view-all">
-            {t('home.viewAllPosts')} →
-          </Link>
         </div>
       </div>
     </section>
