@@ -6,7 +6,7 @@ on:
   # Runs on pushes targeting the default branch
   # 仅在推送到默认分支时运行。
   push:
-    branches: ["main"]
+    branches: ["develop"]
 
   # Allows you to run this workflow manually from the Actions tab
   # 这个选项可以使你手动在 Action tab 页面触发工作流
