@@ -41,6 +41,12 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://qingzao.site/blog/living-body-and-soul</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-08-05</lastmod>
+  </url>
+  <url>
     <loc>https://qingzao.site/blog/house-acceptance-inspection</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
