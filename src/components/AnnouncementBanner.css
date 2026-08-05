@@ -27,6 +27,12 @@
   animation: bannerSlideDown 0.4s ease-out;
 }
 
+html[data-style="ink"] .announcement-banner {
+  background: rgba(236, 232, 222, 0.95);
+  border: 1px solid #d8d1bf;
+  color: #4c4840;
+}
+
 @keyframes bannerSlideDown {
   from {
     opacity: 0;

@@ -25,6 +25,11 @@
       "light": "浅色",
       "dark": "深色",
       "system": "跟随系统"
+    },
+    "styleAriaLabel": "切换风格",
+    "style": {
+      "warm": "温暖风格",
+      "ink": "山水墨画"
     }
   },
   "hero": {

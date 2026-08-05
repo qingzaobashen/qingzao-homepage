@@ -21,6 +21,15 @@ html[data-theme="dark"] .header {
   background: rgba(19, 17, 15, 0.78);
 }
 
+html[data-style="ink"] .header {
+  background: rgba(242, 239, 231, 0.72);
+  border-bottom-color: var(--color-border);
+}
+
+html[data-theme="dark"][data-style="ink"] .header {
+  background: rgba(26, 26, 24, 0.72);
+}
+
 .header-inner {
   display: flex;
   align-items: center;
@@ -269,6 +278,18 @@ html[data-theme="dark"] .header {
 .btn-nav-primary:hover {
   background: var(--color-primary-deep);
   border-color: var(--color-primary-deep);
+}
+
+html[data-style="ink"] .btn-nav-primary {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-bg);
+}
+
+html[data-style="ink"] .btn-nav-primary:hover {
+  background: var(--color-ink-secondary);
+  border-color: var(--color-ink-secondary);
+  color: var(--color-bg);
 }
 
 /* 主题切换下拉 */

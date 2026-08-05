@@ -132,6 +132,106 @@ html[data-theme="dark"] {
   color-scheme: dark;
 }
 
+/* ============ 山水墨画风格：浅色令牌 ============ */
+html[data-style="ink"] {
+  /* 画布与表面：冷宣纸 + 淡墨 */
+  --color-bg: #f0f1ec;            /* 冷宣纸底（偏灰，略冷） */
+  --color-canvas: #e9ebe3;        /* 淡墨卡片面 */
+  --color-canvas-soft: #e1e3d9;   /* 柔和表面 / hover */
+  --color-canvas-raised: #f4f5f0; /* 浮起表面 */
+  --color-canvas-warm: #f0f1ec;
+  --color-canvas-night: #1a1a18;  /* 深色底（页脚等） */
+  --color-canvas-night-soft: #232220;
+
+  /* 文字 */
+  --color-ink: #26241f;           /* 墨黑标题 / 正文 */
+  --color-ink-secondary: #4c4840; /* 次级墨灰 */
+  --color-body: #4c4840;
+  --color-ink-mute: #7a7567;      /* 淡墨弱化文字 */
+  --color-ink-mute-2: #a29c8c;    /* 更弱 */
+  --color-ink-faint: #a29c8c;
+  --color-text-secondary: #7a7567;
+  --color-muted: #7a7567;
+  --color-on-primary: #fff;
+
+  /* 强调：朱砂印章红（仅点缀）+ 黛青 */
+  --color-primary: #a43c28;       /* 朱砂印章红（降饱和） */
+  --color-primary-deep: #86301f;  /* 朱砂深 */
+  --color-primary-soft: #ecdbcc;  /* 朱砂浅底 */
+  --color-accent: #a43c28;
+  --color-accent-orange: #a43c28;
+  --color-accent-green: #5d6b5e;  /* 黛青辅助 */
+  --color-accent-amber: #b08a50;
+
+  /* 边框：淡墨 */
+  --color-border: #d4d8cb;
+  --color-hairline: #d4d8cb;
+  --color-hairline-strong: #bfc5b4;
+  --color-hairline-cool: #d4d8cb;
+  --color-hover-bg: #e1e3d9;
+  --color-tag-bg: #e1e3d9;
+  --color-dark-card: #232220;
+
+  /* 阴影（淡墨灰调） */
+  --shadow-0: none;
+  --shadow-1: 0 1px 3px rgba(38, 36, 31, 0.05), 0 1px 2px rgba(38, 36, 31, 0.03);
+  --shadow-2: 0 12px 32px rgba(38, 36, 31, 0.08);
+  --shadow-3: 0 18px 42px rgba(38, 36, 31, 0.12);
+  --ed-shadow-soft: 0 12px 32px rgba(38, 36, 31, 0.07);
+
+  /* 页面背景：青灰淡墨光晕 */
+  --ed-page-bg-1: radial-gradient(circle at 15% 6%, rgba(164, 60, 40, 0.04), transparent 32rem);
+  --ed-page-bg-2: radial-gradient(circle at 82% 12%, rgba(93, 107, 94, 0.06), transparent 30rem);
+  --ed-page-bg-3: radial-gradient(circle at 50% 110%, rgba(93, 107, 94, 0.07), transparent 40rem);
+}
+
+/* ============ 山水墨画风格：深色令牌 ============ */
+html[data-theme="dark"][data-style="ink"] {
+  --color-bg: #1a1a18;
+  --color-canvas: #232220;
+  --color-canvas-soft: #2c2a27;
+  --color-canvas-raised: #35322e;
+  --color-canvas-warm: #232220;
+  --color-canvas-night: #121210;
+  --color-canvas-night-soft: #232220;
+
+  --color-ink: #e6e2d8;
+  --color-ink-secondary: #c6c2b6;
+  --color-body: #c6c2b6;
+  --color-ink-mute: #9a9488;
+  --color-ink-mute-2: #767165;
+  --color-ink-faint: #767165;
+  --color-text-secondary: #9a9488;
+  --color-muted: #9a9488;
+  --color-on-primary: #fff;
+
+  --color-primary: #cf5b42;
+  --color-primary-deep: #e07a5f;
+  --color-primary-soft: #4a2a22;
+  --color-accent: #cf5b42;
+  --color-accent-orange: #cf5b42;
+  --color-accent-green: #7d8f74;
+  --color-accent-amber: #cfa86a;
+
+  --color-border: rgba(214, 208, 195, 0.16);
+  --color-hairline: rgba(214, 208, 195, 0.16);
+  --color-hairline-strong: rgba(214, 208, 195, 0.3);
+  --color-hairline-cool: rgba(214, 208, 195, 0.12);
+  --color-hover-bg: #2c2a27;
+  --color-tag-bg: #35322e;
+  --color-dark-card: #2c2a27;
+
+  --shadow-0: none;
+  --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-2: 0 12px 32px rgba(0, 0, 0, 0.42);
+  --shadow-3: 0 18px 42px rgba(0, 0, 0, 0.5);
+  --ed-shadow-soft: 0 18px 42px rgba(0, 0, 0, 0.42);
+
+  --ed-page-bg-1: radial-gradient(circle at 18% 10%, rgba(207, 91, 66, 0.06), transparent 34rem);
+  --ed-page-bg-2: radial-gradient(circle at 82% 8%, rgba(125, 143, 116, 0.05), transparent 32rem);
+  --ed-page-bg-3: radial-gradient(circle at 50% 110%, rgba(125, 143, 116, 0.06), transparent 40rem);
+}
+
 /* ============ 全局重置 ============ */
 * {
   margin: 0;
@@ -180,6 +280,47 @@ html[data-theme="dark"] body::before {
   background:
     radial-gradient(circle at 18% 12%, rgba(240, 117, 82, 0.1), transparent 36rem),
     radial-gradient(circle at 82% 10%, rgba(143, 179, 131, 0.08), transparent 34rem);
+}
+
+/* 山水墨画风格：淡墨光晕 */
+html[data-style="ink"] body::before {
+  background: var(--ed-page-bg-1, transparent), var(--ed-page-bg-2, transparent), var(--ed-page-bg-3, none);
+}
+
+/* 山水墨画风格：宣纸纸纹（细微噪点） */
+html[data-style="ink"] body {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.045'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 120px 120px;
+  background-attachment: fixed;
+  background-position: 0 0;
+}
+
+html[data-theme="dark"][data-style="ink"] body {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 120px 120px;
+  background-attachment: fixed;
+  background-position: 0 0;
+}
+
+/* 山水墨画风格：全站淡墨山影剪影（固定背景层，营造萧瑟静谧氛围） */
+html[data-style="ink"] body::after {
+  content: '';
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 560' preserveAspectRatio='xMidYMax slice'%3E%3Cpath fill='%2326241f' fill-opacity='0.07' d='M0 560 V430 C120 400 220 418 340 402 C470 385 560 415 680 400 C800 385 940 410 1060 392 C1180 374 1320 400 1440 380 V560 Z'/%3E%3Cpath fill='%2326241f' fill-opacity='0.1' d='M0 560 V462 C140 432 260 450 400 434 C540 418 660 448 800 432 C940 416 1100 444 1240 428 C1320 420 1380 432 1440 428 V560 Z'/%3E%3Cpath fill='%2326241f' fill-opacity='0.15' d='M0 560 V492 C160 464 300 482 460 466 C620 450 760 480 920 464 C1080 448 1240 478 1440 462 V560 Z'/%3E%3Cpath fill='%2326241f' fill-opacity='0.2' d='M0 560 V526 C180 500 340 520 520 504 C700 488 860 520 1060 504 C1200 492 1330 508 1440 500 V560 Z'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  opacity: 1;
+}
+
+html[data-theme="dark"][data-style="ink"] body::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 560' preserveAspectRatio='xMidYMax slice'%3E%3Cpath fill='%23e6e2d8' fill-opacity='0.05' d='M0 560 V430 C120 400 220 418 340 402 C470 385 560 415 680 400 C800 385 940 410 1060 392 C1180 374 1320 400 1440 380 V560 Z'/%3E%3Cpath fill='%23e6e2d8' fill-opacity='0.08' d='M0 560 V462 C140 432 260 450 400 434 C540 418 660 448 800 432 C940 416 1100 444 1240 428 C1320 420 1380 432 1440 428 V560 Z'/%3E%3Cpath fill='%23e6e2d8' fill-opacity='0.11' d='M0 560 V492 C160 464 300 482 460 466 C620 450 760 480 920 464 C1080 448 1240 478 1440 462 V560 Z'/%3E%3Cpath fill='%23e6e2d8' fill-opacity='0.15' d='M0 560 V526 C180 500 340 520 520 504 C700 488 860 520 1060 504 C1200 492 1330 508 1440 500 V560 Z'/%3E%3C/svg%3E");
 }
 
 /* 滚动条样式 */
@@ -356,6 +497,24 @@ a {
 .ed-button--primary:hover {
   background: var(--color-primary-deep);
   color: #fff;
+}
+
+/* 水墨风格：主按钮用墨黑，朱砂只作印章点缀 */
+html[data-style="ink"] .ed-button--primary {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-bg);
+}
+
+html[data-style="ink"] .ed-button--primary:hover {
+  background: var(--color-ink-secondary);
+  border-color: var(--color-ink-secondary);
+  color: var(--color-bg);
+}
+
+html[data-style="ink"] .ed-button--outline:hover {
+  border-color: var(--color-ink);
+  color: var(--color-ink);
 }
 
 .ed-button--outline {

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../hooks/useLanguage'
+import InkScene from './InkScene'
 import './BlogHero.css'
 
 /**
@@ -13,6 +14,7 @@ function BlogHero() {
 
   return (
     <section className="blog-hero">
+      <InkScene />
       <div className="container">
         <div className="blog-hero-content">
           <span className="ed-eyebrow blog-hero-eyebrow">{t('home.heroEyebrow')}</span>

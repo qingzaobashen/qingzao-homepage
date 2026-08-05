@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { LanguageProvider } from './contexts/LanguageContext'
 import { ThemeProvider } from './contexts/ThemeContext'
+import { StyleProvider } from './contexts/StyleContext'
 import { useLanguage } from './hooks/useLanguage'
 import SEO from './components/SEO'
 import Header from './components/Header'
@@ -69,6 +70,7 @@ function App() {
   return (
     <LanguageProvider>
       <ThemeProvider>
+        <StyleProvider>
         <div className="app">
           <Routes>
           <Route path="/" element={<HomePage />} />
@@ -103,6 +105,7 @@ function App() {
         </Routes>
         <CookieConsent />
         </div>
+      </StyleProvider>
       </ThemeProvider>
     </LanguageProvider>
   )

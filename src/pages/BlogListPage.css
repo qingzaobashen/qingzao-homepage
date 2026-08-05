@@ -51,6 +51,14 @@ html[data-theme="dark"] .blog-filter {
   background: rgba(19, 17, 15, 0.85);
 }
 
+html[data-style="ink"] .blog-filter {
+  background: rgba(242, 239, 231, 0.82);
+}
+
+html[data-theme="dark"][data-style="ink"] .blog-filter {
+  background: rgba(26, 26, 24, 0.82);
+}
+
 .filter-buttons {
   display: flex;
   gap: 10px;

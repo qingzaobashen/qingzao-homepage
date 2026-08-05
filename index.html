@@ -23,6 +23,10 @@
       var root = document.documentElement;
       root.setAttribute('data-theme', resolved);
       if (resolved === 'dark') root.classList.add('dark');
+
+      try { stored = localStorage.getItem('qingzao-style'); } catch (e) { stored = null; }
+      var style = (stored === 'warm' || stored === 'ink') ? stored : 'warm';
+      if (style === 'ink') root.setAttribute('data-style', 'ink');
     })();
   </script>
 </head>

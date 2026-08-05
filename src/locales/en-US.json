@@ -25,6 +25,11 @@
       "light": "Light",
       "dark": "Dark",
       "system": "System"
+    },
+    "styleAriaLabel": "Toggle style",
+    "style": {
+      "warm": "Warm",
+      "ink": "Ink wash"
     }
   },
   "hero": {

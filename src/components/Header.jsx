@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { useLanguage } from '../hooks/useLanguage'
 import { useTheme } from '../hooks/useTheme'
 import LanguageSwitcher from './LanguageSwitcher'
+import StyleSwitcher from './StyleSwitcher'
 import './Header.css'
 
 /**
@@ -190,6 +191,7 @@ function Header() {
           {/* 移动端展开面板专属：搜索 + 主题 + 语言 + CTA，桌面端隐藏 */}
           <div className="header-nav-extra">
             <LanguageSwitcher />
+            <StyleSwitcher variant="inline" />
             <div className="header-theme-mobile">
               <span className="header-theme-mobile-label">{t('header.themeAriaLabel')}</span>
               <div className="header-theme-mobile-options">
@@ -226,6 +228,8 @@ function Header() {
           </Link>
 
           <LanguageSwitcher />
+
+          <StyleSwitcher />
 
           {/* 主题切换下拉 */}
           <div className="header-theme" ref={themeRef}>
