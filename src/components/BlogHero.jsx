@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../hooks/useLanguage'
 import InkScene from './InkScene'
+import WarmScene from './WarmScene'
 import './BlogHero.css'
 
 /**
@@ -14,6 +15,7 @@ function BlogHero() {
 
   return (
     <section className="blog-hero">
+      <WarmScene />
       <InkScene />
       <div className="container">
         <div className="blog-hero-content">

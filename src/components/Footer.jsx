@@ -40,7 +40,7 @@ function Footer() {
             <h3 className="footer-tools-title">{t('footer.toolsPromo.title')}</h3>
             <p className="footer-tools-desc">{t('footer.toolsPromo.desc')}</p>
           </div>
-          <a href="https://decoration.qingzao.site" target="_blank" rel="noopener noreferrer" className="ed-button ed-button--primary footer-tools-cta">
+          <a href="/products" target="_blank" rel="noopener noreferrer" className="ed-button ed-button--primary footer-tools-cta">
             {t('footer.toolsPromo.cta')}
           </a>
         </div>
