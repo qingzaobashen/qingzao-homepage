@@ -64,6 +64,7 @@ const imageCluster = [
 // 工具评测簇
 const toolsCluster = [
   'choose-right-tools',
+  'ai-coding-august-experience',
 ]
 
 // slug -> 簇名 的反查表，便于 O(1) 定位文章归属

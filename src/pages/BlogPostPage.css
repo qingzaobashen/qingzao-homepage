@@ -117,7 +117,7 @@
 }
 
 .post-content {
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
   background: var(--color-canvas);
   padding: 40px 48px;
@@ -302,7 +302,7 @@
 
 .content-image {
   display: block;
-  max-width: 50%;
+  max-width: 100%;
   height: auto;
   margin: 0 auto;
   border-radius: var(--rounded-sm);

@@ -1,5 +1,19 @@
 [
   {
+    "slug": "ai-coding-august-experience",
+    "title": "August AI Coding Tools Experience Summary (The Freeloader Edition)",
+    "date": "2026-08-17",
+    "category": "Tool Reviews",
+    "tags": [
+      "AI",
+      "Coding",
+      "Tool Reviews",
+      "Experience"
+    ],
+    "excerpt": "After half a year of 'AI coding artifact' marketing, it's time to talk honestly about daily use. A freeloader's log of the Trae + CodeBuddy + OpenCode trio, plus real-world notes on coding workflow, MCP, Memory, context, and base models.",
+    "coverImage": "/images/covers/tool-review.jpg"
+  },
+  {
     "slug": "living-body-and-soul",
     "title": "How Should Chinese Homes Be Built to Shelter the Body and Settle the Mind?",
     "date": "2026-08-05",

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 编程工具 Tier List — 可编辑版</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f5f5f5;
+    padding: 24px;
+    min-height: 100vh;
+  }
+  .container { max-width: 960px; margin: 0 auto; }
+  h1 { text-align: center; font-size: 22px; font-weight: 600; color: #1a1a1a; margin-bottom: 20px; }
+  .tier-row { display: flex; align-items: stretch; margin-bottom: 8px; border-radius: 10px; overflow: hidden; border: 1px solid #d0d0d0; background: #fff; }
+  .tier-label {
+    width: 110px; min-height: 72px; display: flex; align-items: center; justify-content: center;
+    font-size: 20px; font-weight: 600; color: #1a1a1a; flex-shrink: 0; position: relative;
+    user-select: none;
+  }
+  .tier-label input {
+    position: absolute; inset: 0; width: 100%; height: 100%; border: none; background: transparent;
+    text-align: center; font: inherit; color: inherit; outline: none; cursor: text;
+  }
+  .tier-label input:focus { background: rgba(0,0,0,0.06); }
+  .tier-items {
+    flex: 1; display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 12px;
+    background: #f0f0f0; min-height: 72px; align-content: flex-start;
+  }
+  .tier-item {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 72px; padding: 6px 4px; border-radius: 8px; background: #fff;
+    border: 1px solid #d0d0d0; cursor: grab; transition: transform 0.15s ease, box-shadow 0.15s ease;
+    position: relative;
+  }
+  .tier-item:active { cursor: grabbing; transform: scale(1.05); box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+  .tier-item.dragging { opacity: 0.4; }
+  .tier-item .icon-box {
+    width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 600; margin-bottom: 4px; background: #f8f8f8; color: #333;
+  }
+  .tier-item .name { font-size: 15px; color: #555; text-align: center; line-height: 1.1; word-break: break-all; }
+  .tier-item .remove {
+    position: absolute; top: 2px; right: 2px; width: 14px; height: 14px; border-radius: 50%;
+    background: #e74c3c; color: white; font-size: 10px; display: flex; align-items: center;
+    justify-content: center; cursor: pointer; opacity: 0; transition: opacity 0.15s; line-height: 1;
+  }
+  .tier-item:hover .remove { opacity: 1; }
+  .tier-row.drag-over .tier-items { background: #e8f4fd; }
+  .add-tool-btn {
+    width: 72px; height: 58px; border-radius: 8px; border: 1.5px dashed #c0c0c0;
+    display: flex; align-items: center; justify-content: center; color: #aaa;
+    font-size: 20px; cursor: pointer; background: transparent; transition: all 0.15s;
+  }
+  .add-tool-btn:hover { border-color: #888; color: #666; background: #fff; }
+  .add-tier-btn {
+    width: 100%; padding: 10px; border-radius: 10px; border: 1.5px dashed #c0c0c0;
+    background: transparent; color: #888; font-size: 14px; cursor: pointer; margin-top: 8px;
+    transition: all 0.15s;
+  }
+  .add-tier-btn:hover { border-color: #888; color: #555; background: #fff; }
+  .tier-actions { position: absolute; top: 2px; left: 2px; opacity: 0; transition: opacity 0.15s; }
+  .tier-label:hover .tier-actions { opacity: 1; }
+  .tier-actions button {
+    width: 18px; height: 18px; border-radius: 4px; border: none; background: rgba(0,0,0,0.15);
+    color: white; font-size: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  }
+  .tier-actions button:hover { background: rgba(0,0,0,0.3); }
+  .color-picker {
+    position: absolute; top: 22px; left: 2px; display: none; flex-direction: column; gap: 2px;
+    background: #fff; padding: 4px; border-radius: 6px; border: 1px solid #d0d0d0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); z-index: 10;
+  }
+  .color-picker.show { display: flex; }
+  .color-picker .swatch { width: 16px; height: 16px; border-radius: 4px; cursor: pointer; border: 1px solid rgba(0,0,0,0.1); }
+  .export-btn {
+    position: fixed; bottom: 16px; right: 16px; padding: 10px 20px; border-radius: 8px;
+    border: 1px solid #d0d0d0; background: #fff; color: #1a1a1a; font-size: 13px;
+    cursor: pointer; font-weight: 500; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: all 0.15s;
+  }
+  .export-btn:hover { background: #f8f8f8; }
+  .hint { text-align: center; font-size: 12px; color: #888; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>AI 编程工具 Tier List</h1>
+  <p class="hint">拖拽工具卡片即可重新分级 · 点击层级色块可改颜色 · 悬停卡片可删除</p>
+  <div id="tierlist">
+    <div class="tier-row" data-tier="0">
+      <div class="tier-label" style="background:#e74c3c;">
+        <input value="夯" />
+        <div class="tier-actions">
+          <button onclick="toggleColor(this)">●</button>
+          <div class="color-picker">
+            <div class="swatch" style="background:#e74c3c" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#f1c40f" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#f39c12" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#2ecc71" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#3498db" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#9b59b6" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#1abc9c" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#34495e" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#95a5a6" onclick="setColor(this)"></div>
+          </div>
+        </div>
+      </div>
+      <div class="tier-items" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)">
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">◆</div><div class="name">Cursor</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">☀</div><div class="name">Claude Code</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="add-tool-btn" onclick="addTool(this)">+</div>
+      </div>
+    </div>
+    <div class="tier-row" data-tier="1">
+      <div class="tier-label" style="background:#f1c40f;">
+        <input value="顶级" />
+        <div class="tier-actions">
+          <button onclick="toggleColor(this)">●</button>
+          <div class="color-picker">
+            <div class="swatch" style="background:#e74c3c" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#f1c40f" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#f39c12" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#2ecc71" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#3498db" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#9b59b6" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#1abc9c" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#34495e" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#95a5a6" onclick="setColor(this)"></div>
+          </div>
+        </div>
+      </div>
+      <div class="tier-items" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)">
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">◎</div><div class="name">Codex</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">T</div><div class="name">Trae</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">⌘</div><div class="name">OpenCode</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">H</div><div class="name">Manus</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="add-tool-btn" onclick="addTool(this)">+</div>
+      </div>
+    </div>
+    <div class="tier-row" data-tier="2">
+      <div class="tier-label" style="background:#f9e79f;">
+        <input value="人上人" />
+        <div class="tier-actions">
+          <button onclick="toggleColor(this)">●</button>
+          <div class="color-picker">
+            <div class="swatch" style="background:#e74c3c" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#f1c40f" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#f39c12" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#2ecc71" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#3498db" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#9b59b6" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#1abc9c" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#34495e" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#95a5a6" onclick="setColor(this)"></div>
+          </div>
+        </div>
+      </div>
+      <div class="tier-items" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)">
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">🐙</div><div class="name">GitHub Copilot</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">~</div><div class="name">Windsurf</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">K</div><div class="name">Kiro</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">Z</div><div class="name">Zed</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">●</div><div class="name">Antigravity</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">T</div><div class="name">Trae</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">Q</div><div class="name">Qoder</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">🤖</div><div class="name">CodeBuddy</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">C</div><div class="name">Cline</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">▲</div><div class="name">v0.dev</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">♥</div><div class="name">Lovable</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">●</div><div class="name">Replit</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="add-tool-btn" onclick="addTool(this)">+</div>
+      </div>
+    </div>
+    <div class="tier-row" data-tier="3">
+      <div class="tier-label" style="background:#fdf2e9;">
+        <input value="NPC" />
+        <div class="tier-actions">
+          <button onclick="toggleColor(this)">●</button>
+          <div class="color-picker">
+            <div class="swatch" style="background:#e74c3c" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#f1c40f" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#f39c12" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#2ecc71" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#3498db" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#9b59b6" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#1abc9c" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#34495e" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#95a5a6" onclick="setColor(this)"></div>
+          </div>
+        </div>
+      </div>
+      <div class="tier-items" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)">
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">🦆</div><div class="name">Goose</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">六</div><div class="name">通义灵码</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">AI</div><div class="name">Comate</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">◈</div><div class="name">CodeGeeX</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">◇</div><div class="name">Junie</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">K</div><div class="name">Kilo Code</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">▶</div><div class="name">Continue</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">A</div><div class="name">Augment Code</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">🦞</div><div class="name">OpenClaw</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">✉</div><div class="name">Hermes Agent</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="add-tool-btn" onclick="addTool(this)">+</div>
+      </div>
+    </div>
+    <div class="tier-row" data-tier="4">
+      <div class="tier-label" style="background:#ecf0f1;">
+        <input value="拉完了" />
+        <div class="tier-actions">
+          <button onclick="toggleColor(this)">●</button>
+          <div class="color-picker">
+            <div class="swatch" style="background:#e74c3c" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#f1c40f" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#f39c12" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#2ecc71" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#3498db" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#9b59b6" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#1abc9c" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#34495e" onclick="setColor(this)"></div>
+            <div class="swatch" style="background:#95a5a6" onclick="setColor(this)"></div>
+          </div>
+        </div>
+      </div>
+      <div class="tier-items" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)">
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">W</div><div class="name">Warp</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">A</div><div class="name">Aider</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">⬡</div><div class="name">Tabnine</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="tier-item" draggable="true" ondragstart="drag(event)" ondragend="dragEnd(event)"><div class="icon-box">⚡</div><div class="name">Bolt.new</div><div class="remove" onclick="removeItem(this)">×</div></div>
+        <div class="add-tool-btn" onclick="addTool(this)">+</div>
+      </div>
+    </div>
+    <button class="add-tier-btn" onclick="addTier()">+ 添加层级</button>
+  </div>
+</div>
+
+<script>
+let dragged = null;
+function drag(e) { dragged = e.target.closest('.tier-item'); dragged.classList.add('dragging'); e.dataTransfer.effectAllowed = 'move'; }
+function dragEnd(e) { if(dragged) dragged.classList.remove('dragging'); dragged = null; document.querySelectorAll('.tier-row').forEach(r=>r.classList.remove('drag-over')); }
+function allowDrop(e) { e.preventDefault(); e.currentTarget.closest('.tier-row').classList.add('drag-over'); }
+function dragLeave(e) { e.currentTarget.closest('.tier-row').classList.remove('drag-over'); }
+function drop(e) {
+  e.preventDefault();
+  const row = e.currentTarget.closest('.tier-row');
+  row.classList.remove('drag-over');
+  if(!dragged) return;
+  const items = row.querySelector('.tier-items');
+  const addBtn = items.querySelector('.add-tool-btn');
+  items.insertBefore(dragged, addBtn);
+}
+function removeItem(btn) { btn.closest('.tier-item').remove(); }
+function addTool(btn) {
+  const name = prompt('工具名称:'); if(!name) return;
+  const items = btn.parentElement;
+  const div = document.createElement('div'); div.className='tier-item'; div.draggable=true;
+  div.innerHTML = '<div class="icon-box">'+name.charAt(0).toUpperCase()+'</div><div class="name">'+name+'</div><div class="remove" onclick="removeItem(this)">×</div>';
+  div.ondragstart = drag; div.ondragend = dragEnd;
+  items.insertBefore(div, btn);
+}
+function addTier() {
+  const root = document.getElementById('tierlist');
+  const idx = root.querySelectorAll('.tier-row').length;
+  const colors = ['#e74c3c','#f1c40f','#f39c12','#2ecc71','#3498db','#9b59b6','#1abc9c','#34495e','#95a5a6'];
+  const row = document.createElement('div'); row.className='tier-row'; row.dataset.tier=idx;
+  row.innerHTML = '<div class="tier-label" style="background:'+colors[idx%colors.length]+';"><input value="新层级" /><div class="tier-actions"><button onclick="toggleColor(this)">●</button><div class="color-picker">'+document.querySelector('.color-picker').innerHTML+'</div></div></div><div class="tier-items" ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)"><div class="add-tool-btn" onclick="addTool(this)">+</div></div>';
+  root.insertBefore(row, root.querySelector('.add-tier-btn'));
+}
+function toggleColor(btn) { document.querySelectorAll('.color-picker').forEach(p=>{if(p!==btn.nextElementSibling)p.classList.remove('show');}); btn.nextElementSibling.classList.toggle('show'); }
+function setColor(swatch) { swatch.closest('.tier-label').style.background = swatch.style.background; swatch.closest('.color-picker').classList.remove('show'); }
+document.addEventListener('click', function(e){ if(!e.target.closest('.tier-actions')) document.querySelectorAll('.color-picker').forEach(p=>p.classList.remove('show')); });
+</script>
+</body>
+</html>

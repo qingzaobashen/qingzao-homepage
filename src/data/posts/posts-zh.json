@@ -1,5 +1,19 @@
 [
   {
+    "slug": "ai-coding-august-experience",
+    "title": "8月 AI Coding 工具使用经验总结（个人薅羊毛版）",
+    "date": "2026-08-17",
+    "category": "工具评测",
+    "tags": [
+      "AI",
+      "Coding",
+      "工具评测",
+      "经验总结"
+    ],
+    "excerpt": "被各种“AI 编程神器”营销轰炸了大半年，该掏心窝子聊聊日常用下来到底什么样。Trae、CodeBuddy、OpenCode 三件套的薅羊毛实录，附 Coding 流程、MCP、Memory、上下文与基座模型的真实体感。",
+    "coverImage": "/images/covers/tool-review.jpg"
+  },
+  {
     "slug": "living-body-and-soul",
     "title": "国人的装修到底该如何“存身”又“存心”？",
     "date": "2026-08-05",
