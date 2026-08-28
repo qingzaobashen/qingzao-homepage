@@ -14,10 +14,23 @@
     "coverImage": "/images/covers/tool-review.jpg"
   },
   {
+    "slug": "quiet-fortune-life-hacks",
+    "title": "有哪些「生活小技巧」，你知道后，会感觉像闷声发了笔大财？",
+    "date": "2026-08-28",
+    "category": "机制生活",
+    "tags": [
+      "生活技巧",
+      "省钱",
+      "信息差"
+    ],
+    "excerpt": "超市价签右下角的隐藏字母、空调除湿模式、手机电池 20%~80% 黄金区间、“不可退改”的改签再退玩法——四个让我产生“非法暴富感”的生活小技巧，以及它们背后共同的信息差逻辑。",
+    "coverImage": "/images/covers/home-living.jpg"
+  },
+  {
     "slug": "living-body-and-soul",
     "title": "国人的装修到底该如何“存身”又“存心”？",
     "date": "2026-08-05",
-    "category": "家居生活",
+    "category": "机制生活",
     "tags": [
       "装修",
       "生活方式",
@@ -242,9 +255,9 @@
     "slug": "smart-home-system",
     "title": "全屋智能架构指南：从布线到场景，一步到位",
     "date": "2026-06-14",
-    "category": "智能家居",
+    "category": "机制生活",
     "tags": [
-      "智能家居",
+      "机制生活",
       "装修",
       "自动化"
     ],
@@ -294,7 +307,7 @@
     "slug": "home-storage-solutions",
     "title": "家居收纳方案：小户型空间利用技巧",
     "date": "2026-06-04",
-    "category": "家居生活",
+    "category": "机制生活",
     "tags": [
       "收纳",
       "小户型",
@@ -398,7 +411,7 @@
     "slug": "decoration-flowchart-tutorial",
     "title": "装修流程导图使用教程：3步规划你的装修",
     "date": "2026-05-05",
-    "category": "产品教程",
+    "category": "装修指南",
     "tags": [
       "装修",
       "导图",
@@ -551,11 +564,11 @@
     "slug": "robot-vacuum-selection",
     "title": "扫地机器人挑选指南",
     "date": "2026-06-26",
-    "category": "装修指南",
+    "category": "机制生活",
     "tags": [
       "扫地机",
       "清洁",
-      "智能家居",
+      "机制生活",
       "选购"
     ],
     "excerpt": "扫地机器人先看清洁力。本文用维度对比防缠绕、吸力、边角清洁等核心选购点。",

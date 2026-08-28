@@ -23,7 +23,7 @@ image_dirs = {
 category_covers = {
     '装修指南': '/images/covers/renovation-guide.jpg',
     '图片处理': '/images/covers/image-processing.jpg',
-    '智能家居': '/images/covers/smart-home.jpg',
+    '机制生活': '/images/covers/smart-home.jpg',
     '工具评测': '/images/covers/tool-review.jpg',
     '家居生活': '/images/covers/home-living.jpg',
     '产品教程': '/images/covers/product-tutorial.jpg'

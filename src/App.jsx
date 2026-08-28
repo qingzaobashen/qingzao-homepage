@@ -13,7 +13,6 @@ import FeaturedSeries from './components/FeaturedSeries'
 import CategoryBrowse from './components/CategoryBrowse'
 import LatestPosts from './components/LatestPosts'
 import Footer from './components/Footer'
-import CategoryPage from './pages/CategoryPage'
 import PrivacyPage from './pages/PrivacyPage'
 import TermsPage from './pages/TermsPage'
 import BlogListPage from './pages/BlogListPage'
@@ -85,7 +84,6 @@ function App() {
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/series" element={<SeriesListPage />} />
           <Route path="/series/:seriesSlug" element={<SeriesDetailPage />} />
-          <Route path="/category" element={<CategoryPage />} />
           <Route path="*" element={<NotFoundPage />} />
 
           {/* 英文镜像：/en 前缀，内容与中文版一一对应，便于独立索引 */}
@@ -101,7 +99,6 @@ function App() {
           <Route path="/en/blog/:slug" element={<BlogPostPage />} />
           <Route path="/en/series" element={<SeriesListPage />} />
           <Route path="/en/series/:seriesSlug" element={<SeriesDetailPage />} />
-          <Route path="/en/category" element={<CategoryPage />} />
         </Routes>
         <CookieConsent />
         </div>

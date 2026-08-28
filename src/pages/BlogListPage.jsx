@@ -1,11 +1,11 @@
 /**
  * 博客列表页组件
- * 展示所有博客文章的列表，支持分类筛选
+ * 展示所有博客文章的列表，支持分类筛选（?category= 查询参数）
  * URL: /blog
  */
 
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect, useMemo } from 'react'
+import { Link, useSearchParams } from 'react-router-dom'
 import { useLanguage } from '../hooks/useLanguage'
 import SEO from '../components/SEO'
 import Header from '../components/Header'
@@ -19,11 +19,13 @@ import './BlogListPage.css'
  * @returns {JSX.Element} 博客列表页
  */
 function BlogListPage() {
-  const { t, language, localePath } = useLanguage()
+  const { language, localePath } = useLanguage()
+  const [searchParams, setSearchParams] = useSearchParams()
   const [posts, setPosts] = useState([])
-  const [filteredPosts, setFilteredPosts] = useState([])
-  const [activeCategory, setActiveCategory] = useState('all')
   const [categories, setCategories] = useState([])
+
+  // 分类状态以 URL 查询参数为唯一数据源，支持外链直达（如 /blog?category=机制生活）
+  const activeCategory = searchParams.get('category') || 'all'
 
   /**
    * 初始化文章数据和分类
@@ -35,7 +37,6 @@ function BlogListPage() {
     // 按日期降序排序
     const sortedPosts = [...postsData].sort((a, b) => new Date(b.date) - new Date(a.date))
     setPosts(sortedPosts)
-    setFilteredPosts(sortedPosts)
 
     // 提取所有分类
     const allCategories = [...new Set(sortedPosts.map(post => post.category))]
@@ -43,16 +44,22 @@ function BlogListPage() {
   }, [language])
 
   /**
-   * 处理分类筛选
+   * 派生筛选后的文章列表
+   * 若 URL 参数中的分类在当前语言数据中不存在（如切换语言后），回退到全部
+   */
+  const filteredPosts = useMemo(() => {
+    if (activeCategory !== 'all' && posts.some(post => post.category === activeCategory)) {
+      return posts.filter(post => post.category === activeCategory)
+    }
+    return posts
+  }, [posts, activeCategory])
+
+  /**
+   * 处理分类筛选：同步更新 URL，保持可分享、可回退
    * @param {string} category - 选中的分类
    */
   const handleCategoryFilter = (category) => {
-    setActiveCategory(category)
-    if (category === 'all') {
-      setFilteredPosts(posts)
-    } else {
-      setFilteredPosts(posts.filter(post => post.category === category))
-    }
+    setSearchParams(category === 'all' ? {} : { category }, { replace: true })
   }
 
   /**

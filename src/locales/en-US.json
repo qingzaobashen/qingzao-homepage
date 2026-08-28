@@ -140,11 +140,10 @@
     "blogSubtitle": "Renovation experience, indie development and life thoughts.",
     "heroActions": {
       "search": "Search posts",
-      "series": "Browse series",
-      "categories": "Browse categories"
+      "series": "Browse series"
     },
     "readingEntriesTitle": "Reading Entries",
-    "readingEntriesDesc": "Start browsing from the latest posts, series, or categories.",
+    "readingEntriesDesc": "Start browsing from the latest posts or series.",
     "readingEntries": [
       {
         "key": "latest",
@@ -159,13 +158,6 @@
         "desc": "Read complete content systematically by long-term topics.",
         "cta": "Browse series",
         "href": "/series"
-      },
-      {
-        "key": "category",
-        "title": "Categories",
-        "desc": "Browse by renovation, smart home, image processing, and more.",
-        "cta": "View categories",
-        "href": "/category"
       }
     ],
     "featuredSeriesTitle": "Featured Series",
@@ -200,13 +192,13 @@
     ],
     "categoriesTitle": "Browse by Category",
     "categoriesDesc": "Enter content from renovation, smart home, or image processing.",
-    "viewCategory": "Enter category",
+    "viewCategory": "View all posts",
     "categories": [
       {
         "key": "renovation",
         "title": "Renovation",
         "desc": "Practical content on the full renovation process, acceptance standards, and materials selection.",
-        "postCategories": ["Renovation", "Home & Living"],
+        "postCategories": ["Decoration Guide"],
         "image": "/images/covers/renovation-guide.jpg",
         "subs": [
           { "label": "Full Process", "href": "/series/decoration-full-process" },
@@ -215,25 +207,25 @@
         ]
       },
       {
-        "key": "smart-home",
-        "title": "Smart Home",
-        "desc": "Whole-home intelligence architecture, robot vacuums, and smart device selection.",
-        "postCategories": ["Smart Home"],
+        "key": "smart-life",
+        "title": "Smart Life",
+        "desc": "Smart home devices, home organization, and everyday life hacks.",
+        "postCategories": ["Smart Life"],
         "image": "/images/covers/smart-home.jpg",
         "subs": [
-          { "label": "Smart Home Guide", "href": "/series/smart-home" },
-          { "label": "Smart Devices", "href": "/blog" }
+          { "label": "Smart Life Guide", "href": "/series/smart-home" },
+          { "label": "Related posts", "href": "/blog?category=Smart Life" }
         ]
       },
       {
         "key": "image-tools",
         "title": "Image Processing & Tools",
         "desc": "Practical tips on background removal, white-background product photos, and image formats.",
-        "postCategories": ["Image Processing", "Tool Reviews", "Product Tutorials"],
+        "postCategories": ["Image Processing", "Tool Reviews"],
         "image": "/images/covers/image-processing.jpg",
         "subs": [
           { "label": "Image Processing", "href": "/series/image-processing" },
-          { "label": "Tool Reviews", "href": "/blog" }
+          { "label": "Tool Reviews", "href": "/blog?category=Tool Reviews" }
         ]
       }
     ],
@@ -302,7 +294,6 @@
           { "label": "Home", "href": "/" },
           { "label": "Notes", "href": "/blog" },
           { "label": "Series", "href": "/series" },
-          { "label": "Categories", "href": "/category" },
           { "label": "About", "href": "/about" }
         ]
       },

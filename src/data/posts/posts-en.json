@@ -14,10 +14,23 @@
     "coverImage": "/images/covers/tool-review.jpg"
   },
   {
+    "slug": "quiet-fortune-life-hacks",
+    "title": "Which Life Hacks Feel Like Secretly Striking It Rich Once You Learn Them?",
+    "date": "2026-08-28",
+    "category": "Smart Life",
+    "tags": [
+      "life hacks",
+      "saving money",
+      "information gap"
+    ],
+    "excerpt": "The hidden letters on supermarket price tags, the AC dehumidify mode, the 20%-80% battery sweet spot, and the change-then-cancel trick for non-refundable bookings — four life hacks that gave me the feeling of illicit wealth, and the information-gap logic behind them all.",
+    "coverImage": "/images/covers/home-living.jpg"
+  },
+  {
     "slug": "living-body-and-soul",
     "title": "How Should Chinese Homes Be Built to Shelter the Body and Settle the Mind?",
     "date": "2026-08-05",
-    "category": "Home Living",
+    "category": "Smart Life",
     "tags": [
       "renovation",
       "lifestyle",
@@ -242,7 +255,7 @@
     "slug": "smart-home-system",
     "title": "Smart Home Renovation Guide: Wiring, Systems, and Automation Scenes",
     "date": "2026-06-14",
-    "category": "Smart Home",
+    "category": "Smart Life",
     "tags": [
       "smart home",
       "renovation",
@@ -294,7 +307,7 @@
     "slug": "home-storage-solutions",
     "title": "Home Storage Solutions: Space-Saving Tips for Small Apartments",
     "date": "2026-06-04",
-    "category": "Home Living",
+    "category": "Smart Life",
     "tags": [
       "storage",
       "small apartment",
@@ -398,7 +411,7 @@
     "slug": "decoration-flowchart-tutorial",
     "title": "Decoration Flowchart Tutorial: Visualize Your Renovation Process",
     "date": "2026-05-05",
-    "category": "product tutorial",
+    "category": "Decoration Guide",
     "tags": [
       "decoration",
       "flowchart",
@@ -551,7 +564,7 @@
     "slug": "robot-vacuum-selection",
     "title": "Robot Vacuum Cleaner Selection Guide",
     "date": "2026-06-26",
-    "category": "Decoration Guide",
+    "category": "Smart Life",
     "tags": [
       "robot vacuum",
       "cleaning",

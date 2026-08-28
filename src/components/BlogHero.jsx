@@ -7,7 +7,7 @@ import './BlogHero.css'
 
 /**
  * 博客首页 Hero 区组件
- * Easton 风格：eyebrow + 大标题 + 副标题 + 动作按钮（搜索/系列/分类）
+ * Easton 风格：eyebrow + 大标题 + 副标题 + 动作按钮（搜索/系列）
  */
 function BlogHero() {
   const { t, localePath } = useLanguage()
@@ -32,9 +32,6 @@ function BlogHero() {
             </Link>
             <Link to={localePath('/series')} className="ed-button ed-button--outline">
               {heroActions.series}
-            </Link>
-            <Link to={localePath('/category')} className="ed-button ed-button--outline">
-              {heroActions.categories}
             </Link>
           </div>
         </div>

@@ -8,7 +8,7 @@
  * 新增/调整文章时，只需在此处更新对应簇的 slug 列表即可。
  */
 
-// 装修全流程簇：装修指南全部 + 智能家居 + 产品教程 + 家居收纳/小户型（均与装修强相关）
+// 装修全流程簇：装修指南全部 + 机制生活（智能家居/收纳/生活技巧）+ 产品教程类（均与家居装修强相关）
 const renovationCluster = [
   'house-acceptance-inspection',
   'planning-stage',

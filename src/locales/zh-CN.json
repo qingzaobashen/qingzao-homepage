@@ -140,11 +140,10 @@
     "blogSubtitle": "装修经验、独立开发与生活思考",
     "heroActions": {
       "search": "搜索文章",
-      "series": "浏览系列",
-      "categories": "分类浏览"
+      "series": "浏览系列"
     },
     "readingEntriesTitle": "阅读入口",
-    "readingEntriesDesc": "从最新文章、系列专题或分类目录开始浏览。",
+    "readingEntriesDesc": "从最新文章或系列专题开始浏览。",
     "readingEntries": [
       {
         "key": "latest",
@@ -159,13 +158,6 @@
         "desc": "按长期主题系统阅读完整内容。",
         "cta": "浏览系列",
         "href": "/series"
-      },
-      {
-        "key": "category",
-        "title": "分类",
-        "desc": "按装修、智能家居、图片处理等主题浏览。",
-        "cta": "查看分类",
-        "href": "/category"
       }
     ],
     "featuredSeriesTitle": "精选系列专题",
@@ -199,14 +191,14 @@
       }
     ],
     "categoriesTitle": "按分类浏览",
-    "categoriesDesc": "从装修、智能家居与图片处理三个方向进入内容。",
-    "viewCategory": "进入分类",
+    "categoriesDesc": "从装修、机制生活与图片处理三个方向进入内容。",
+    "viewCategory": "查看全部文章",
     "categories": [
       {
         "key": "renovation",
         "title": "装修指南",
         "desc": "围绕装修全流程、验收标准与主材选购的实战内容。",
-        "postCategories": ["装修指南", "家居生活"],
+        "postCategories": ["装修指南"],
         "image": "/images/covers/renovation-guide.jpg",
         "subs": [
           { "label": "装修全流程", "href": "/series/decoration-full-process" },
@@ -216,24 +208,24 @@
       },
       {
         "key": "smart-home",
-        "title": "智能家居",
-        "desc": "全屋智能架构、扫地机器人等智能家居设备的选购与配置。",
-        "postCategories": ["智能家居"],
+        "title": "机制生活",
+        "desc": "智能家居、机智生活、小妙招。",
+        "postCategories": ["机制生活"],
         "image": "/images/covers/smart-home.jpg",
         "subs": [
-          { "label": "智能家居指南", "href": "/series/smart-home" },
-          { "label": "智能设备", "href": "/blog" }
+          { "label": "机制生活指南", "href": "/series/smart-home" },
+          { "label": "相关文章", "href": "/blog?category=机制生活" }
         ]
       },
       {
         "key": "image-tools",
         "title": "图片处理与工具",
         "desc": "抠图、白底商品图、图片格式等实用技巧与工具评测。",
-        "postCategories": ["图片处理", "工具评测", "产品教程"],
+        "postCategories": ["图片处理", "工具评测"],
         "image": "/images/covers/image-processing.jpg",
         "subs": [
           { "label": "图片处理技巧", "href": "/series/image-processing" },
-          { "label": "工具评测", "href": "/blog" }
+          { "label": "工具评测", "href": "/blog?category=工具评测" }
         ]
       }
     ],
@@ -302,7 +294,6 @@
           { "label": "首页", "href": "/" },
           { "label": "笔记", "href": "/blog" },
           { "label": "系列", "href": "/series" },
-          { "label": "分类", "href": "/category" },
           { "label": "关于", "href": "/about" }
         ]
       },

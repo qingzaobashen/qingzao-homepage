@@ -8,19 +8,16 @@ import './Header.css'
 
 /**
  * 页面头部导航组件
- * Easton 风格：sticky 毛玻璃 + 分类下拉 + 搜索 + 三态主题切换 + 移动端抽屉
+ * Easton 风格：sticky 毛玻璃 + 搜索 + 三态主题切换 + 移动端抽屉
  */
 function Header() {
   const { t, localePath } = useLanguage()
   const { theme, setTheme, availableThemes, resolvedTheme } = useTheme()
   const location = useLocation()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isCategoryOpen, setIsCategoryOpen] = useState(false)
   const [isThemeOpen, setIsThemeOpen] = useState(false)
-  const categoryRef = useRef(null)
   const themeRef = useRef(null)
 
-  const categories = t('home.categories', { returnObjects: true }) || []
   const isActive = (path) => {
     if (path === '/') return location.pathname === '/' || location.pathname === '/en'
     return location.pathname === path || location.pathname === `/en${path}` || location.pathname.startsWith(`${path}/`) || location.pathname.startsWith(`/en${path}/`)
@@ -28,15 +25,11 @@ function Header() {
 
   useEffect(() => {
     setIsMobileMenuOpen(false)
-    setIsCategoryOpen(false)
     setIsThemeOpen(false)
   }, [location.pathname])
 
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (categoryRef.current && !categoryRef.current.contains(e.target)) {
-        setIsCategoryOpen(false)
-      }
       if (themeRef.current && !themeRef.current.contains(e.target)) {
         setIsThemeOpen(false)
       }
@@ -125,60 +118,6 @@ function Header() {
           >
             {t('header.nav.series')}
           </Link>
-
-          {/* 分类下拉（桌面端） */}
-          <div className="header-category" ref={categoryRef}>
-            <button
-              className={`header-category-btn ${isActive('/category') ? 'active' : ''}`}
-              onClick={() => setIsCategoryOpen(!isCategoryOpen)}
-              aria-expanded={isCategoryOpen}
-              aria-haspopup="true"
-            >
-              {t('header.nav.category')}
-              <svg
-                className={`header-category-arrow ${isCategoryOpen ? 'open' : ''}`}
-                width="12"
-                height="12"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </button>
-            {isCategoryOpen && (
-              <div className="header-mega-menu">
-                <div className="mega-menu-grid">
-                  {categories.map((cat) => (
-                    <div key={cat.key} className="mega-menu-col">
-                      <Link
-                        to={localePath('/blog')}
-                        className="mega-menu-title"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {cat.title}
-                      </Link>
-                      <ul className="mega-menu-subs">
-                        {(cat.subs || []).map((sub, subIndex) => (
-                          <li key={subIndex}>
-                            <Link
-                              to={localePath(sub.href)}
-                              onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                              {sub.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
 
           <Link
             to={localePath('/about')}

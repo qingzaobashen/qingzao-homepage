@@ -47,7 +47,7 @@ function CategoryBrowse() {
             <h2 className="ed-section-header-title">{t('home.categoriesTitle')}</h2>
             <p className="ed-section-header-desc">{t('home.categoriesDesc')}</p>
           </div>
-          <Link to={localePath('/category')} className="ed-link-more">
+          <Link to={localePath('/blog')} className="ed-link-more">
             {t('home.viewCategory')}
             <span className="arrow">→</span>
           </Link>
