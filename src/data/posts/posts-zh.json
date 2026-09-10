@@ -1,5 +1,20 @@
 [
   {
+    "slug": "why-chinese-homes-big-living-room-small-kitchen",
+    "title": "中国人为什么偏爱「大客厅、小厨卫」？",
+    "date": "2026-09-10",
+    "category": "机制生活",
+    "tags": [
+      "户型",
+      "装修",
+      "客厅",
+      "厨卫",
+      "买房"
+    ],
+    "excerpt": "两百平的大平层，客厅能打羽毛球，上厕所却膝盖顶墙。这不是「爱面子」四个字能解释的——户型图上的存在感、规范里的下限、样板间特制的小家具、酒店那本算得更狠的账，共同决定了空间从来不是按「你待多久」分配，而是按「它能不能被卖出去」分配。",
+    "coverImage": "/images/covers/home-living.jpg"
+  },
+  {
     "slug": "ai-coding-august-experience",
     "title": "8月 AI Coding 工具使用经验总结（个人薅羊毛版）",
     "date": "2026-08-17",

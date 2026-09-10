@@ -26,6 +26,12 @@
 - 注意：`public/google<id>.html` 是 AdSense **站点验证文件**，只含验证 meta，**不应**注入广告脚本（已确认不注入）。
 - `npm run build:full` 链：`generate-sitemap` → `vite build` → `prerender`。任一步失败会导致 dist 残留旧文件；如改动 prerender 后验证，建议单独跑 `node scripts/prerender.mjs` 再 grep 确认。
 
+## 博客文章写作规范（2026-09-10 核实）
+- **文章首标题必须用 `#`（H1）**：`BlogPostPage.jsx` 与 `prerender.mjs` 的 `buildPostHtml` 都只输出面包屑 + meta，**不渲染 h1**，页面唯一的 h1 来自 markdown 正文。用 `##` 开头会导致整页无 h1（现存 `living-body-and-soul`、`quiet-fortune` 有此问题）。
+- 分类只有四个：zh「装修指南 / 机制生活 / 图片处理 / 工具评测」，en「Decoration Guide / Smart Life / Image Processing / Tool Reviews」。新文章须归入其一。
+- `clusters.js` 只收装修/图片/工具三簇；「机制生活」类的随笔（living-body-and-soul、quiet-fortune 等）不入簇，新随笔默认也不加。
+- **sitemap 现状（与旧记载不符）**：`generate-sitemap.mjs` 只读 `posts-zh.json`，**不输出 `/en/...` URL，也不输出 hreflang**；英文站未进 sitemap，hreflang 仅由 Helmet 页面级输出、预渲染不注入。
+
 ## 验证方式
 - 本地预览：`Start-Process npx vite preview --port 4173`，用 `curl.exe -s -o NUL -w "%{http_code} REDIRECT=%{redirect_url}"` 检查状态码/重定向；`Select-String` 查 prerendered HTML 的 body 与 canonical。
 - 网页类改动用 Chrome DevTools MCP 验证渲染与 console。
