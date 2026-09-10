@@ -88,41 +88,73 @@ function escAttr(str = '') {
 const staticRoutes = [
   {
     route: '/',
+    // 与 App.jsx 中 HomePage 的 <SEO> 保持一致：静态 <title> 只服务无 JS 爬虫，
+    // 若与运行时 Helmet 输出不一致，会造成「抓取标题 ≠ 实际标题」的漂移。
     zh: {
-      title: '青枣工作室 - 创新装修与图片处理工具',
-      description: '青枣工作室提供装修流程导图、白底抠图等实用工具，让装修和图片处理更简单高效。',
+      title: '青枣笔记 — 装修经验、独立开发与生活思考',
+      description: '青枣笔记分享装修经验、独立开发心得、AI 工具评测和生活思考。',
       canonical: '/',
     },
     en: {
-      title: 'Qingzao Studio - Innovative Renovation & Image Tools',
+      title: 'Qingzao Notes - AI, Dev & Life',
       description:
-        'Qingzao Studio offers renovation flow maps and white-background image trimming tools, making renovation and image processing simpler and more efficient.',
+        'Qingzao Notes shares practical insights on home renovation, independent development, AI tools, and life tips.',
       canonical: '/en',
     },
     alternates: { 'zh-CN': '/', 'en-US': '/en', 'x-default': '/' },
   },
   {
     route: '/products',
-    zh: { title: '产品', description: '青枣工作室的产品：装修流程导图与 AI 白底抠图工具。', canonical: '/products' },
+    // 与 ProductsPage 的 t('productsPage.title' / 'productsPage.description') 对齐
+    zh: {
+      title: '我们的产品',
+      description: '青枣工作室提供装修流程导图和白底抠图工具，让装修和图片处理更简单高效。',
+      canonical: '/products',
+    },
     en: {
-      title: 'Products',
+      title: 'Our Products',
       description:
-        'Qingzao Studio provides renovation flowchart and white-background image trimming tools, making renovation and image processing simpler and more efficient.',
+        'Qingzao Studio provides renovation flowchart and white background image trimming tools, making renovation and image processing simpler and more efficient.',
       canonical: '/en/products',
     },
     alternates: { 'zh-CN': '/products', 'en-US': '/en/products', 'x-default': '/products' },
   },
   {
     route: '/about',
-    zh: { title: '关于我们', description: '了解青枣工作室的理念、团队与所提供的工具。', canonical: '/about' },
-    en: { title: 'About Us', description: 'Learn about Qingzao Studio’s philosophy, team, and tools.', canonical: '/en/about' },
+    // 与 AboutPage 的 t('aboutPage.title' / 'aboutPage.subtitle') 对齐
+    zh: { title: '关于青枣工作室', description: '了解我们的团队、理念和使命', canonical: '/about' },
+    en: {
+      title: 'About Qingzao Studio',
+      description: 'Learn about our team, philosophy, and mission',
+      canonical: '/en/about',
+    },
     alternates: { 'zh-CN': '/about', 'en-US': '/en/about', 'x-default': '/about' },
   },
   {
     route: '/contact',
-    zh: { title: '联系我们', description: '通过邮箱或社交媒体联系青枣工作室。', canonical: '/contact' },
-    en: { title: 'Contact Us', description: 'Reach Qingzao Studio via email or social media.', canonical: '/en/contact' },
+    // 与 ContactPage 的 t('contactPage.title' / 'contactPage.subtitle') 对齐
+    zh: { title: '联系我们', description: '我们随时欢迎您的反馈和建议', canonical: '/contact' },
+    en: {
+      title: 'Contact Us',
+      description: 'We always welcome your feedback and suggestions',
+      canonical: '/en/contact',
+    },
     alternates: { 'zh-CN': '/contact', 'en-US': '/en/contact', 'x-default': '/contact' },
+  },
+  {
+    route: '/series',
+    // 与 SeriesListPage.jsx 的 <SEO> 保持一致
+    zh: {
+      title: '系列专题',
+      description: '按主题系统阅读系列文章，从第一篇开始深入。',
+      canonical: '/series',
+    },
+    en: {
+      title: 'Series',
+      description: 'Read series of articles by topic, starting from the first.',
+      canonical: '/en/series',
+    },
+    alternates: { 'zh-CN': '/series', 'en-US': '/en/series', 'x-default': '/series' },
   },
   {
     route: '/blog',
@@ -132,20 +164,37 @@ const staticRoutes = [
   },
   {
     route: '/privacy',
-    zh: { title: '隐私政策', description: '青枣工作室隐私政策，说明数据收集与使用方式。', canonical: '/privacy' },
-    en: { title: 'Privacy Policy', description: 'Qingzao Studio Privacy Policy — how we collect and use your data.', canonical: '/en/privacy' },
+    // 与 PrivacyPage 的 t('legal.privacy.title' / 'legal.privacy.seoDescription') 对齐
+    zh: { title: '隐私政策', description: '青枣工作室隐私政策，了解我们如何保护您的个人信息。', canonical: '/privacy' },
+    en: {
+      title: 'Privacy Policy',
+      description: 'Qingzao Studio Privacy Policy — learn how we protect your personal information.',
+      canonical: '/en/privacy',
+    },
     alternates: { 'zh-CN': '/privacy', 'en-US': '/en/privacy', 'x-default': '/privacy' },
   },
   {
     route: '/terms',
-    zh: { title: '服务条款', description: '青枣工作室服务条款。', canonical: '/terms' },
-    en: { title: 'Terms of Service', description: 'Qingzao Studio Terms of Service.', canonical: '/en/terms' },
+    // 与 TermsPage 的 t('legal.terms.title' / 'legal.terms.seoDescription') 对齐
+    zh: { title: '服务条款', description: '青枣工作室服务条款，了解使用我们产品和服务的权利与义务。', canonical: '/terms' },
+    en: {
+      title: 'Terms of Service',
+      description:
+        'Qingzao Studio Terms of Service — understand your rights and obligations when using our products and services.',
+      canonical: '/en/terms',
+    },
     alternates: { 'zh-CN': '/terms', 'en-US': '/en/terms', 'x-default': '/terms' },
   },
   {
     route: '/disclaimer',
-    zh: { title: '免责声明', description: '青枣工作室免责声明。', canonical: '/disclaimer' },
-    en: { title: 'Disclaimer', description: 'Qingzao Studio Disclaimer.', canonical: '/en/disclaimer' },
+    // 与 DisclaimerPage 的 t('legal.disclaimer.title' / 'legal.disclaimer.seoDescription') 对齐
+    zh: { title: '免责声明', description: '青枣工作室免责声明，了解网站内容的使用范围和责任限制。', canonical: '/disclaimer' },
+    en: {
+      title: 'Disclaimer',
+      description:
+        'Qingzao Studio Disclaimer — understand the scope of use and limitation of liability for our site content.',
+      canonical: '/en/disclaimer',
+    },
     alternates: { 'zh-CN': '/disclaimer', 'en-US': '/en/disclaimer', 'x-default': '/disclaimer' },
   },
   {
@@ -156,8 +205,13 @@ const staticRoutes = [
   },
   {
     route: '/404',
-    zh: { title: '页面未找到', description: '抱歉，您访问的页面不存在。', canonical: '/404' },
-    en: { title: 'Page Not Found', description: 'Sorry, the page you are looking for does not exist.', canonical: '/en/404' },
+    // 与 NotFoundPage 的 t('notFound.title' / 'notFound.seoDescription') 对齐
+    zh: { title: '页面未找到', description: '您访问的页面不存在，请返回首页或浏览博客内容。', canonical: '/404' },
+    en: {
+      title: 'Page Not Found',
+      description: 'The page you visited does not exist. Return to the homepage or browse our blog.',
+      canonical: '/en/404',
+    },
     alternates: { 'zh-CN': '/404', 'en-US': '/en/404', 'x-default': '/404' },
   },
 ]
@@ -169,6 +223,15 @@ const staticRoutes = [
 function getPostsData() {
   const read = (file) => JSON.parse(readFileSync(resolve(ROOT, `src/data/posts/${file}`), 'utf8'))
   return { zh: read('posts-zh.json'), en: read('posts-en.json') }
+}
+
+/**
+ * 读取系列专题数据（中英文索引）
+ * @returns {{zh: object[], en: object[]}} 系列数组（含 slug / title / description / order）
+ */
+function getSeriesData() {
+  const read = (file) => JSON.parse(readFileSync(resolve(ROOT, `src/data/series/${file}`), 'utf8'))
+  return { zh: read('series-zh.json'), en: read('series-en.json') }
 }
 
 /**
@@ -469,6 +532,9 @@ function buildStaticBodyHtml(route, locale = 'zh') {
       return wrap(`<h1>${esc(heading)}</h1>${items}`)
     }
 
+    case '/series':
+      return buildSeriesListHtml(locale)
+
     case '/privacy':
       return legalHtml('privacy')
     case '/terms':
@@ -487,6 +553,77 @@ function buildStaticBodyHtml(route, locale = 'zh') {
     default:
       return ''
   }
+}
+
+/**
+ * 生成系列列表页静态 HTML（与 SeriesListPage.jsx 结构一致）
+ * @param {'zh'|'en'} locale - 目标语言
+ * @returns {string} 系列列表 HTML
+ */
+function buildSeriesListHtml(locale = 'zh') {
+  const { zh: seriesZh, en: seriesEn } = getSeriesData()
+  const list = locale === 'en' ? seriesEn : seriesZh
+  const p = (path) => (locale === 'en' ? (path === '/' ? '/en' : `/en${path}`) : path)
+
+  const labels =
+    locale === 'en'
+      ? { title: 'Series', subtitle: 'Read systematically by topic, starting from the first.', count: (n) => `${n} posts` }
+      : { title: '系列专题', subtitle: '按主题系统阅读，从第一篇开始深入。', count: (n) => `共 ${n} 篇` }
+
+  const cards = list
+    .map(
+      (s) =>
+        `<article class="series-list-card">` +
+        `<h2><a href="${p(`/series/${esc(s.slug)}`)}">${esc(s.title)}</a></h2>` +
+        `<p>${esc(s.category)} · ${esc(labels.count(s.order.length))}</p>` +
+        `<p>${esc(s.description)}</p>` +
+        `</article>`,
+    )
+    .join('')
+
+  return `<div class="static-prerender"><div class="container"><h1>${esc(labels.title)}</h1><p>${esc(labels.subtitle)}</p>${cards}</div></div>`
+}
+
+/**
+ * 生成系列详情页静态 HTML（与 SeriesDetailPage.jsx 结构一致）
+ * 除面包屑与系列导语外，还输出按 order 排序的完整文章清单（日期 + 标题 + 摘要 + 链接），
+ * 让聚合页本身具备实质内容，消除「门页 / 低价值页」判定风险。
+ * @param {object} series - 系列数据（含 slug / title / description / category / order）
+ * @param {object[]} posts - 同语言的文章元数据数组
+ * @param {'zh'|'en'} locale - 目标语言
+ * @returns {string} 系列详情 HTML
+ */
+function buildSeriesDetailHtml(series, posts, locale = 'zh') {
+  const p = (path) => (locale === 'en' ? (path === '/' ? '/en' : `/en${path}`) : path)
+
+  const labels =
+    locale === 'en'
+      ? { home: 'Home', series: 'Series', count: (n) => `${n} articles`, back: '← Back to Series' }
+      : { home: '首页', series: '系列', count: (n) => `共 ${n} 篇文章`, back: '← 返回系列列表' }
+
+  // 按 series.order 顺序取文章，缺失的 slug 直接跳过
+  const articles = series.order.map((slug) => posts.find((post) => post.slug === slug)).filter(Boolean)
+
+  const items = articles
+    .map(
+      (a, i) =>
+        `<article class="series-article-item">` +
+        `<h2>${String(i + 1).padStart(2, '0')} <a href="${p(`/blog/${esc(a.slug)}`)}">${esc(a.title)}</a></h2>` +
+        `<p>${esc(formatDate(a.date, locale))}</p><p>${esc(a.excerpt)}</p>` +
+        `</article>`,
+    )
+    .join('')
+
+  return (
+    `<div class="static-prerender"><div class="container">` +
+    `<nav class="series-detail-breadcrumb"><a href="${p('/')}">${esc(labels.home)}</a> / <a href="${p('/series')}">${esc(labels.series)}</a> / <span>${esc(series.title)}</span></nav>` +
+    `<h1>${esc(series.title)}</h1>` +
+    `<p>${esc(series.category)} · ${esc(labels.count(articles.length))}</p>` +
+    `<p>${esc(series.description)}</p>` +
+    items +
+    `<p><a href="${p('/series')}">${esc(labels.back)}</a></p>` +
+    `</div></div>`
+  )
 }
 
 /**
@@ -590,7 +727,11 @@ function withSiteChrome(bodyHtml, locale = 'zh') {
  */
 function injectHead(html, meta, { locale = 'zh-CN', alternates } = {}) {
   let out = html
-  out = out.replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(meta.title)}</title>`)
+  // 站点名后缀：与 SEO.jsx 的 `fullTitle = ${title} - ${siteName}` 完全一致。
+  // 统一在这里追加一次，调用方只需传「不含后缀」的标题（博客页此前自己拼后缀，属重复逻辑）。
+  const siteName = locale === 'en' ? 'Qingzao Studio' : '青枣工作室'
+  const fullTitle = meta.title ? `${meta.title} - ${siteName}` : siteName
+  out = out.replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(fullTitle)}</title>`)
   out = out.replace(/<meta name="description"[^>]*>/, `<meta name="description" content="${escAttr(meta.description)}">`)
 
   const canonicalUrl = `${SITE_URL}${meta.canonical}`
@@ -601,14 +742,14 @@ function injectHead(html, meta, { locale = 'zh-CN', alternates } = {}) {
   // （AdSense 低价值内容整改的关键点）。Google 会执行 JS 渲染，因此同样能拿到 hreflang。
   const headExtra = [
     `<link rel="canonical" href="${canonicalUrl}">`,
-    `<meta property="og:title" content="${escAttr(meta.title)}">`,
+    `<meta property="og:title" content="${escAttr(fullTitle)}">`,
     `<meta property="og:description" content="${escAttr(meta.description)}">`,
     `<meta property="og:type" content="article">`,
     `<meta property="og:url" content="${canonicalUrl}">`,
     `<meta property="og:site_name" content="青枣工作室">`,
     `<meta property="og:locale" content="${locale === 'en' ? 'en_US' : 'zh_CN'}">`,
     `<meta name="twitter:card" content="summary_large_image">`,
-    `<meta name="twitter:title" content="${escAttr(meta.title)}">`,
+    `<meta name="twitter:title" content="${escAttr(fullTitle)}">`,
     `<meta name="twitter:description" content="${escAttr(meta.description)}">`,
   ].join('\n    ')
 
@@ -701,7 +842,7 @@ function main() {
       'x-default': `/blog/${post.slug}`,
     }
     writeRoute(baseTemplate, `/blog/${post.slug}`, {
-      meta: { title: `${post.title} - 青枣工作室`, description: post.excerpt, canonical: `/blog/${post.slug}` },
+      meta: { title: post.title, description: post.excerpt, canonical: `/blog/${post.slug}` },
       bodyHtml: buildPostHtml(post, related, 'zh'),
       jsonLd: buildJsonLd(post, 'zh'),
       alternates,
@@ -717,7 +858,7 @@ function main() {
       'x-default': `/blog/${post.slug}`,
     }
     writeRoute(baseTemplate, `/en/blog/${post.slug}`, {
-      meta: { title: `${post.title} - Qingzao Studio`, description: post.excerpt, canonical: `/en/blog/${post.slug}` },
+      meta: { title: post.title, description: post.excerpt, canonical: `/en/blog/${post.slug}` },
       bodyHtml: buildPostHtml(post, related, 'en'),
       jsonLd: buildJsonLd(post, 'en'),
       alternates,
@@ -725,8 +866,41 @@ function main() {
     })
   }
 
-  const total = staticRoutes.length * 2 + postsZh.length + postsEn.length
-  console.log(`\n🎉 预渲染完成！共生成 ${total} 个路由文件（静态 ${staticRoutes.length * 2} + 博客 ${postsZh.length + postsEn.length}）。\n`)
+  // 3. 系列页：/series（已在 staticRoutes 中生成）与 /series/<slug>（详情），中 / 英各一份。
+  //    此前系列页完全没有静态 HTML，线上直接访问会落到 404.html（HTTP 404），爬虫无法收录。
+  const { zh: seriesZh, en: seriesEn } = getSeriesData()
+  console.log('\n📚 生成系列详情页静态 HTML（中 / 英）...')
+
+  for (const s of seriesZh) {
+    writeRoute(baseTemplate, `/series/${s.slug}`, {
+      meta: { title: s.title, description: s.description, canonical: `/series/${s.slug}` },
+      bodyHtml: buildSeriesDetailHtml(s, postsZh, 'zh'),
+      alternates: {
+        'zh-CN': `/series/${s.slug}`,
+        'en-US': `/en/series/${s.slug}`,
+        'x-default': `/series/${s.slug}`,
+      },
+      locale: 'zh-CN',
+    })
+  }
+
+  for (const s of seriesEn) {
+    writeRoute(baseTemplate, `/en/series/${s.slug}`, {
+      meta: { title: s.title, description: s.description, canonical: `/en/series/${s.slug}` },
+      bodyHtml: buildSeriesDetailHtml(s, postsEn, 'en'),
+      alternates: {
+        'zh-CN': `/series/${s.slug}`,
+        'en-US': `/en/series/${s.slug}`,
+        'x-default': `/series/${s.slug}`,
+      },
+      locale: 'en',
+    })
+  }
+
+  const total = staticRoutes.length * 2 + postsZh.length + postsEn.length + seriesZh.length + seriesEn.length
+  console.log(
+    `\n🎉 预渲染完成！共生成 ${total} 个路由文件（静态 ${staticRoutes.length * 2} + 博客 ${postsZh.length + postsEn.length} + 系列 ${seriesZh.length + seriesEn.length}）。\n`,
+  )
 }
 
 main()

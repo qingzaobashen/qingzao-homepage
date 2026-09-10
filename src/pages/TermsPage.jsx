@@ -14,7 +14,7 @@ import { useLanguage } from '../hooks/useLanguage'
  * @returns {JSX.Element} 服务条款独立页面
  */
 function TermsPage() {
-  const { localePath } = useLanguage()
+  const { t, localePath } = useLanguage()
 
   /** 页面加载时滚动到顶部 */
   useEffect(() => {
@@ -24,8 +24,8 @@ function TermsPage() {
   return (
     <>
       <SEO
-        title="服务条款"
-        description="青枣工作室服务条款，了解使用我们产品和服务的权利与义务。"
+        title={t('legal.terms.title')}
+        description={t('legal.terms.seoDescription')}
         canonical={localePath('/terms')}
         alternates={{
           'zh-CN': '/terms',

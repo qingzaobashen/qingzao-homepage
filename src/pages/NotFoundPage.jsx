@@ -15,8 +15,8 @@ function NotFoundPage() {
   return (
     <>
       <SEO
-        title="页面未找到"
-        description="您访问的页面不存在，请返回首页或浏览博客内容。"
+        title={t('notFound.title')}
+        description={t('notFound.seoDescription')}
         canonical="/404"
       />
       <div className="not-found-page">

@@ -14,7 +14,7 @@ import { useLanguage } from '../hooks/useLanguage'
  * @returns {JSX.Element} 隐私政策独立页面
  */
 function PrivacyPage() {
-  const { localePath } = useLanguage()
+  const { t, localePath } = useLanguage()
 
   /** 页面加载时滚动到顶部 */
   useEffect(() => {
@@ -24,8 +24,8 @@ function PrivacyPage() {
   return (
     <>
       <SEO
-        title="隐私政策"
-        description="青枣工作室隐私政策，了解我们如何保护您的个人信息。"
+        title={t('legal.privacy.title')}
+        description={t('legal.privacy.seoDescription')}
         canonical={localePath('/privacy')}
         alternates={{
           'zh-CN': '/privacy',

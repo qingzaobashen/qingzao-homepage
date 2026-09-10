@@ -12,9 +12,11 @@ const BASE_URL = 'https://qingzao.site'
 /** 静态路由及其优先级和更新频率 */
 const staticPages = [
   { path: '/', changefreq: 'weekly', priority: '1.0' },
+  { path: '/products', changefreq: 'monthly', priority: '0.8' },
   { path: '/about', changefreq: 'monthly', priority: '0.8' },
   { path: '/contact', changefreq: 'monthly', priority: '0.7' },
   { path: '/blog', changefreq: 'weekly', priority: '0.9' },
+  { path: '/series', changefreq: 'weekly', priority: '0.8' },
   { path: '/privacy', changefreq: 'yearly', priority: '0.3' },
   { path: '/terms', changefreq: 'yearly', priority: '0.3' },
   { path: '/disclaimer', changefreq: 'yearly', priority: '0.3' },
@@ -36,6 +38,24 @@ function getBlogPages() {
     }))
   } catch (e) {
     console.warn('⚠️ 读取博客数据失败:', e.message)
+    return []
+  }
+}
+
+/**
+ * 获取所有系列专题 URL
+ * @returns {Array} 系列页面信息数组
+ */
+function getSeriesPages() {
+  try {
+    const seriesZh = JSON.parse(readFileSync('src/data/series/series-zh.json', 'utf8'))
+    return seriesZh.map((s) => ({
+      path: `/series/${s.slug}`,
+      changefreq: 'weekly',
+      priority: '0.6',
+    }))
+  } catch (e) {
+    console.warn('⚠️ 读取系列数据失败:', e.message)
     return []
   }
 }
@@ -63,7 +83,8 @@ ${urls}
  */
 function main() {
   const blogPages = getBlogPages()
-  const allPages = [...staticPages, ...blogPages]
+  const seriesPages = getSeriesPages()
+  const allPages = [...staticPages, ...blogPages, ...seriesPages]
 
   const sitemap = generateSitemap(allPages)
   writeFileSync('public/sitemap.xml', sitemap, 'utf8')

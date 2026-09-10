@@ -327,6 +327,7 @@
     "close": "Close",
     "privacy": {
       "title": "Privacy Policy",
+      "seoDescription": "Qingzao Studio Privacy Policy — learn how we protect your personal information.",
       "intro": "Qingzao Studio (hereinafter referred to as \"we\") takes the privacy of our users very seriously. This Privacy Policy explains how we collect, use, store, and protect your personal information. Please read this policy carefully before using our products and services.",
       "sections": [
         {
@@ -410,6 +411,7 @@
     },
     "terms": {
       "title": "Terms of Service",
+      "seoDescription": "Qingzao Studio Terms of Service — understand your rights and obligations when using our products and services.",
       "intro": "Welcome to the products and services of Qingzao Studio (hereinafter referred to as \"we\"). These Terms of Service govern your rights and obligations when using our products and services. Please read these terms carefully before use. By using our products, you agree to comply with these terms.",
       "sections": [
         {
@@ -486,6 +488,7 @@
     },
     "disclaimer": {
       "title": "Disclaimer",
+      "seoDescription": "Qingzao Studio Disclaimer — understand the scope of use and limitation of liability for our site content.",
       "intro": "Welcome to the products and services of Qingzao Studio (hereinafter referred to as \"we\"). Please read the following disclaimer carefully before using our products and services. By using our products and services, you acknowledge that you have read, understood, and agreed to the following content.",
       "sections": [
         {
@@ -562,6 +565,7 @@
     },
     "editorial": {
       "title": "Editorial Guidelines",
+      "seoDescription": "How Qingzao Studio chooses topics, creates, and maintains blog content: original, experience-based, and tightly tied to our product lines.",
       "intro": "Every article on Qingzao Studio is written by our team members based on real product experience and hands-on renovation work. These editorial guidelines explain how we choose topics, create, and maintain our content so that it stays genuinely useful to readers.",
       "sections": [
         {
@@ -657,6 +661,7 @@
   },
   "notFound": {
     "title": "Page Not Found",
+    "seoDescription": "The page you visited does not exist. Return to the homepage or browse our blog.",
     "desc": "Sorry, the page you are looking for does not exist or has been moved.",
     "goHome": "Go Home",
     "goBlog": "Browse Blog"

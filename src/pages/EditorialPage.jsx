@@ -14,7 +14,7 @@ import { useLanguage } from '../hooks/useLanguage'
  * @returns {JSX.Element} 编辑方针独立页面
  */
 function EditorialPage() {
-  const { localePath } = useLanguage()
+  const { t, localePath } = useLanguage()
 
   /** 页面加载时滚动到顶部 */
   useEffect(() => {
@@ -24,8 +24,8 @@ function EditorialPage() {
   return (
     <>
       <SEO
-        title="编辑方针"
-        description="了解青枣工作室如何选题、创作与维护博客内容：全部原创、基于真实经验、与产品主线强相关。"
+        title={t('legal.editorial.title')}
+        description={t('legal.editorial.seoDescription')}
         canonical={localePath('/editorial')}
         alternates={{
           'zh-CN': '/editorial',

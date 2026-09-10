@@ -14,7 +14,7 @@ import { useLanguage } from '../hooks/useLanguage'
  * @returns {JSX.Element} 免责声明独立页面
  */
 function DisclaimerPage() {
-  const { localePath } = useLanguage()
+  const { t, localePath } = useLanguage()
 
   /** 页面加载时滚动到顶部 */
   useEffect(() => {
@@ -24,8 +24,8 @@ function DisclaimerPage() {
   return (
     <>
       <SEO
-        title="免责声明"
-        description="青枣工作室免责声明，了解网站内容的使用范围和责任限制。"
+        title={t('legal.disclaimer.title')}
+        description={t('legal.disclaimer.seoDescription')}
         canonical={localePath('/disclaimer')}
         alternates={{
           'zh-CN': '/disclaimer',
