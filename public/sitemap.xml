@@ -41,6 +41,18 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://qingzao.site/blog/ai-coding-august-experience</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-08-17</lastmod>
+  </url>
+  <url>
+    <loc>https://qingzao.site/blog/quiet-fortune-life-hacks</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-08-28</lastmod>
+  </url>
+  <url>
     <loc>https://qingzao.site/blog/living-body-and-soul</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -376,19 +376,53 @@ function buildStaticBodyHtml(route, locale = 'zh') {
   }
 
   switch (route) {
-    case '/':
+    case '/': {
+      // 首页已改为「博客首页」：Hero + 阅读入口 + 精选系列 + 分类浏览 + 最新文章。
+      // 旧版本仍渲染工作室介绍，与运行时 HomePage 不一致，会导致静态内容与真实页面漂移。
+      const { zh: postsZh, en: postsEn } = getPostsData()
+      const latestPosts = (locale === 'en' ? postsEn : postsZh)
+        .slice()
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
+        .slice(0, 6)
+      const h = L.home || {}
+
+      /** 内部链接按语言加前缀，外链保持原样 */
+      const href = (raw) => (raw.startsWith('/') ? p(raw) : raw)
+
+      const entriesHtml = (h.readingEntries || [])
+        .map((e) => `<h3>${esc(e.title)}</h3><p>${esc(e.desc)}</p><p><a href="${href(e.href)}">${esc(e.cta)}</a></p>`)
+        .join('')
+
+      const seriesHtml = (h.featuredSeries || [])
+        .map(
+          (s) =>
+            `<h3><a href="${p(`/series/${s.slug}`)}">${esc(s.title)}</a></h3>` +
+            `<p>${esc(s.count)}</p><p>${esc(s.description)}</p>`,
+        )
+        .join('')
+
+      const categoriesHtml = (h.categories || [])
+        .map((c) => {
+          const subs = (c.subs || [])
+            .map((sub) => `<a href="${href(sub.href)}">${esc(sub.label)}</a>`)
+            .join(' · ')
+          return `<h3>${esc(c.title)}</h3><p>${esc(c.desc)}</p><p>${subs}</p>`
+        })
+        .join('')
+
+      const latestHtml = latestPosts
+        .map((post) => `<h3><a href="${p(`/blog/${post.slug}`)}">${esc(post.title)}</a></h3><p>${esc(post.excerpt)}</p>`)
+        .join('')
+
       return wrap(
-        `<h1>${esc(L.hero.title)} ${esc(L.hero.titleLine2)}</h1>` +
-          `<p>${esc(L.hero.subtitle)}</p>` +
-          `<p>${esc(L.hero.midText)} ${esc(L.hero.midTextLine2)}</p>` +
-          `<h2>${esc(L.products.title)}</h2><p>${esc(L.products.subtitle)}</p>` +
-          `<h3>${esc(L.products.items.decoration.title)}</h3><p>${esc(L.products.items.decoration.description)}</p>` +
-          `<h3>${esc(L.products.items.trimmer.title)}</h3><p>${esc(L.products.items.trimmer.description)}</p>` +
-          `<h2>${esc(L.about.title)}</h2>` +
-          `<p>${esc(L.about.paragraphs.p1)}</p><p>${esc(L.about.paragraphs.p2)}</p><p>${esc(L.about.paragraphs.p3)}</p>` +
-          `<h2>${esc(L.contact.title)}</h2><p>${esc(L.contact.description)}</p>` +
-          `<p><a href="${p('/blog')}">${esc(L.header.nav.blog)}</a></p>`,
+        `<h1>${esc(h.blogTitle)}</h1><p>${esc(h.heroEyebrow)}</p><p>${esc(h.blogSubtitle)}</p>` +
+          `<h2>${esc(h.readingEntriesTitle)}</h2><p>${esc(h.readingEntriesDesc)}</p>${entriesHtml}` +
+          `<h2>${esc(h.featuredSeriesTitle)}</h2><p>${esc(h.featuredSeriesDesc)}</p>${seriesHtml}` +
+          `<h2>${esc(h.categoriesTitle)}</h2><p>${esc(h.categoriesDesc)}</p>${categoriesHtml}` +
+          `<h2>${esc(h.latestPostsTitle)}</h2><p>${esc(h.latestPostsDesc)}</p>${latestHtml}` +
+          `<p><a href="${p('/blog')}">${esc(h.viewAllPosts)}</a></p>`,
       )
+    }
 
     case '/products':
       return wrap(
@@ -456,6 +490,98 @@ function buildStaticBodyHtml(route, locale = 'zh') {
 }
 
 /**
+ * 按语言给站内路径加 /en 前缀（'/' 特殊处理为 '/en'）
+ * @param {string} path - 站内绝对路径
+ * @param {'zh'|'en'} locale - 目标语言
+ * @returns {string} 加前缀后的路径
+ */
+function localeHref(path, locale = 'zh') {
+  if (locale !== 'en') return path
+  return path === '/' ? '/en' : `/en${path}`
+}
+
+/**
+ * 生成静态页头 HTML（结构与 Header.jsx 一致，复用同一套 class，避免 hydration 前样式跳动）
+ * @param {'zh'|'en'} locale - 目标语言
+ * @returns {string} <header> HTML
+ */
+function buildSiteHeaderHtml(locale = 'zh') {
+  const L = locale === 'en' ? enLocale : zhLocale
+  const items = [
+    ['/', L.header.nav.home],
+    ['/blog', L.header.nav.blog],
+    ['/series', L.header.nav.series],
+    ['/about', L.header.nav.about],
+  ]
+  const links = items
+    .map(([href, label]) => `<a href="${localeHref(href, locale)}">${esc(label)}</a>`)
+    .join('')
+  return (
+    `<header class="header"><div class="header-inner">` +
+    `<a class="header-logo" href="${localeHref('/', locale)}"><span class="header-logo-mark" aria-hidden="true">青</span><span class="header-logo-text">${esc(L.header.logo)}</span></a>` +
+    `<nav class="header-nav">${links}</nav>` +
+    `<a class="btn-nav btn-nav-primary" href="${localeHref('/blog', locale)}">${esc(L.header.cta)}</a>` +
+    `</div></header>`
+  )
+}
+
+/**
+ * 生成静态页脚 HTML（结构与 Footer.jsx 一致）
+ * 关键：必须包含「法律」分组（隐私政策/服务条款/免责声明/编辑方针）与底部法律链接，
+ * 否则不执行 JS 的审核工具在原始 HTML 中找不到隐私政策入口，会被判 ADS-PRIV-01/02 不合格。
+ * @param {'zh'|'en'} locale - 目标语言
+ * @returns {string} <footer> HTML
+ */
+function buildSiteFooterHtml(locale = 'zh') {
+  const L = locale === 'en' ? enLocale : zhLocale
+  const year = new Date().getFullYear()
+
+  // 三栏导航（导航 / 资源 / 法律）：站内链接按语言加前缀，外链保持原样
+  const groups = ['navigation', 'resources', 'legal']
+    .map((key) => {
+      const g = L.footer.nav[key]
+      if (!g) return ''
+      const links = (g.links || [])
+        .map((l) => {
+          const href = l.href.startsWith('/') ? localeHref(l.href, locale) : l.href
+          return `<li><a href="${esc(href)}">${esc(l.label)}</a></li>`
+        })
+        .join('')
+      return `<div class="footer-group"><h4 class="footer-group-title">${esc(g.title)}</h4><ul class="footer-group-links">${links}</ul></div>`
+    })
+    .join('')
+
+  // 底部法律链接（与 Footer.jsx 的 footer-legal 一致）
+  const legal = [['/privacy', L.legal.privacy.title], ['/terms', L.legal.terms.title]]
+    .map(([href, label]) => `<a href="${localeHref(href, locale)}">${esc(label)}</a>`)
+    .join('')
+
+  return (
+    `<footer class="footer"><div class="container">` +
+    `<div class="footer-top"><div class="footer-brand">` +
+    `<a class="footer-logo" href="${localeHref('/', locale)}"><span class="footer-logo-mark" aria-hidden="true">青</span><span>${esc(L.footer.brand.logo)}</span></a>` +
+    `<p class="footer-desc">${esc(L.footer.brand.desc)}</p>` +
+    `</div><div class="footer-nav">${groups}</div></div>` +
+    `<div class="footer-bottom">` +
+    `<p class="footer-copyright">${esc(String(L.footer.copyright).replace('{year}', year))}</p>` +
+    `<div class="footer-legal">${legal}</div>` +
+    `</div></div></footer>`
+  )
+}
+
+/**
+ * 把静态页头/页脚包在预渲染正文外层
+ * 目的：让不执行 JS 的爬虫与审核工具也能在原始 HTML 里看到全站导航与信任页入口
+ * （此前只注入正文，导致「无隐私政策链接」的误判）。
+ * @param {string} bodyHtml - 页面正文 HTML
+ * @param {'zh'|'en'} locale - 目标语言
+ * @returns {string} 带页头页脚的完整 HTML
+ */
+function withSiteChrome(bodyHtml, locale = 'zh') {
+  return `${buildSiteHeaderHtml(locale)}<main>${bodyHtml}</main>${buildSiteFooterHtml(locale)}`
+}
+
+/**
  * 把 SEO 元信息注入到 HTML <head>
  * @param {string} html - 原始模板 HTML
  * @param {object} meta - { title, description, canonical }
@@ -506,7 +632,9 @@ function writeRoute(template, route, { meta, bodyHtml = '', jsonLd = '', alterna
   }
 
   if (bodyHtml) {
-    html = html.replace('<div id="root"></div>', `<div id="root">${bodyHtml}</div>`)
+    // 统一包上静态页头/页脚：保证原始 HTML（无 JS）里也有导航与隐私政策等信任页入口
+    const chromeLocale = locale === 'en' ? 'en' : 'zh'
+    html = html.replace('<div id="root"></div>', `<div id="root">${withSiteChrome(bodyHtml, chromeLocale)}</div>`)
   }
 
   // 强制注入 AdSense 自动广告脚本：保证「每一个」页面（含构建期生成的博客/静态 HTML）的
