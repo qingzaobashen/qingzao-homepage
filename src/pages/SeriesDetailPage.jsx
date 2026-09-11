@@ -5,7 +5,7 @@
  */
 
 import React, { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, Navigate } from 'react-router-dom'
 import { useLanguage } from '../hooks/useLanguage'
 import SEO from '../components/SEO'
 import Header from '../components/Header'
@@ -17,6 +17,18 @@ import postsEn from '../data/posts/posts-en.json'
 import './SeriesDetailPage.css'
 
 /**
+ * 旧系列 slug -> 新系列 slug
+ * 三个旧系列（验收标准、主材选购、机制生活、图片处理）合并为三大核心系列后，
+ * 保留旧链接可跳转，避免已收录/已分享的地址变成 404。
+ */
+const LEGACY_SERIES_SLUGS = {
+  'renovation-acceptance': 'decoration-full-process',
+  'main-materials-guide': 'decoration-full-process',
+  'smart-home': 'life-and-mind',
+  'image-processing': 'tools-and-tech',
+}
+
+/**
  * 系列详情页组件
  * @returns {JSX.Element} 系列详情页
  */
@@ -26,11 +38,14 @@ function SeriesDetailPage() {
   const [series, setSeries] = useState(null)
   const [articles, setArticles] = useState([])
 
+  // 旧系列地址统一重定向到合并后的新系列
+  const targetSlug = LEGACY_SERIES_SLUGS[seriesSlug] || seriesSlug
+
   useEffect(() => {
     const seriesData = language === 'zh-CN' ? seriesZh : seriesEn
     const postsData = language === 'zh-CN' ? postsZh : postsEn
 
-    const foundSeries = seriesData.find(s => s.slug === seriesSlug)
+    const foundSeries = seriesData.find(s => s.slug === targetSlug)
     setSeries(foundSeries || null)
 
     if (foundSeries) {
@@ -42,11 +57,16 @@ function SeriesDetailPage() {
     } else {
       setArticles([])
     }
-  }, [seriesSlug, language])
+  }, [targetSlug, language])
 
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [seriesSlug])
+  }, [targetSlug])
+
+  // 旧系列地址：直接跳转对应的新系列
+  if (LEGACY_SERIES_SLUGS[seriesSlug]) {
+    return <Navigate to={localePath(`/series/${targetSlug}`)} replace />
+  }
 
   // 系列未找到
   if (!series) {

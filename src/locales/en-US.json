@@ -160,60 +160,59 @@
         "href": "/series"
       }
     ],
-    "featuredSeriesTitle": "Featured Series",
-    "featuredSeriesDesc": "Each topic has a full series of articles. Start from the first, or jump to the one you need.",
+    "featuredSeriesTitle": "Three Core Series",
+    "featuredSeriesDesc": "Renovation, life reflections, and tools & tech — start each series from the first post.",
     "viewAllSeries": "Browse series",
     "startFromFirst": "Start from #1",
     "featuredSeries": [
       {
         "slug": "decoration-full-process",
         "title": "Full Decoration Process",
-        "count": "25 posts",
-        "description": "A systematic guide from home inspection to soft furnishing, covering every step.",
-        "tags": ["Process", "Avoid pitfalls", "Materials"],
+        "count": "39 posts",
+        "description": "From inspection, budgeting and design to site acceptance, materials selection and furnishing.",
+        "tags": ["Process", "Acceptance", "Materials"],
         "image": "/images/covers/renovation-guide.jpg"
       },
       {
-        "slug": "renovation-acceptance",
-        "title": "Acceptance Standards",
-        "count": "10 posts",
-        "description": "Standards and key points for plumbing, waterproofing, tiling, carpentry, and painting.",
-        "tags": ["Acceptance", "Plumbing", "Waterproof"],
+        "slug": "life-and-mind",
+        "title": "Life & Mind Series",
+        "count": "5 posts",
+        "description": "Reflections on dwelling, storage, smart living and the choices we live by.",
+        "tags": ["Living", "Home", "Storage"],
         "image": "/images/covers/home-living.jpg"
       },
       {
-        "slug": "main-materials-guide",
-        "title": "Materials Selection Guide",
-        "count": "15 posts",
-        "description": "Purchasing guides for AC, floor heating, windows, water purifiers, and more.",
-        "tags": ["Materials", "Selection", "AC"],
-        "image": "/images/covers/smart-home.jpg"
+        "slug": "tools-and-tech",
+        "title": "Tools & Tech Series",
+        "count": "6 posts",
+        "description": "Background removal, image formats, product photos and hands-on AI coding tool notes.",
+        "tags": ["Cutout", "Productivity", "AI"],
+        "image": "/images/covers/image-processing.jpg"
       }
     ],
     "categoriesTitle": "Browse by Category",
-    "categoriesDesc": "Enter content from renovation, smart home, or image processing.",
+    "categoriesDesc": "Enter content from renovation, life reflections, or tools and tech.",
     "viewCategory": "View all posts",
     "categories": [
       {
         "key": "renovation",
         "title": "Renovation",
-        "desc": "Practical content on the full renovation process, acceptance standards, and materials selection.",
+        "desc": "Practical content on the full renovation process, site acceptance, and materials selection.",
         "postCategories": ["Decoration Guide"],
         "image": "/images/covers/renovation-guide.jpg",
         "subs": [
-          { "label": "Full Process", "href": "/series/decoration-full-process" },
-          { "label": "Acceptance", "href": "/series/renovation-acceptance" },
-          { "label": "Materials", "href": "/series/main-materials-guide" }
+          { "label": "Full Decoration Process", "href": "/series/decoration-full-process" },
+          { "label": "All renovation posts", "href": "/blog?category=Decoration Guide" }
         ]
       },
       {
         "key": "smart-life",
         "title": "Smart Life",
-        "desc": "Smart home devices, home organization, and everyday life hacks.",
+        "desc": "Reflections on dwelling, home organization, smart home devices, and everyday life hacks.",
         "postCategories": ["Smart Life"],
         "image": "/images/covers/smart-home.jpg",
         "subs": [
-          { "label": "Smart Life Guide", "href": "/series/smart-home" },
+          { "label": "Life & Mind Series", "href": "/series/life-and-mind" },
           { "label": "Related posts", "href": "/blog?category=Smart Life" }
         ]
       },
@@ -224,7 +223,7 @@
         "postCategories": ["Image Processing", "Tool Reviews"],
         "image": "/images/covers/image-processing.jpg",
         "subs": [
-          { "label": "Image Processing", "href": "/series/image-processing" },
+          { "label": "Tools & Tech Series", "href": "/series/tools-and-tech" },
           { "label": "Tool Reviews", "href": "/blog?category=Tool Reviews" }
         ]
       }

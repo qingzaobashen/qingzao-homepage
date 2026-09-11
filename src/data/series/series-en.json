@@ -2,7 +2,7 @@
   {
     "slug": "decoration-full-process",
     "title": "Full Decoration Process",
-    "description": "A systematic guide covering every step of renovation, from home inspection to soft furnishing.",
+    "description": "From home inspection, budgeting, design and construction to materials selection, site acceptance and furnishing — every step of renovation, in order.",
     "category": "Decoration Guide",
     "coverImage": "",
     "order": [
@@ -10,15 +10,18 @@
       "planning-stage",
       "renovation-method-choice",
       "budget-planning",
+      "decoration-budget-guide",
+      "decoration-guide-beginners",
+      "decoration-flowchart-tutorial",
       "decoration-company-checklist",
       "studio-checklist",
       "individual-foreman-checklist",
       "individual-designer-checklist",
+      "contract-signing-notes",
       "design-style-selection",
+      "decoration-style-comparison",
       "design-details-reference",
       "design-drawings-render-final",
-      "contract-signing-notes",
-      "main-auxiliary-materials-selection",
       "hard-decoration-knowledge",
       "wall-demolition-new-wall",
       "plumbing-electrical-acceptance",
@@ -26,72 +29,51 @@
       "tile-installation-acceptance",
       "carpentry-acceptance",
       "painter-acceptance-putty-paint",
-      "soft-decoration-knowledge",
-      "whole-house-customization",
-      "bed-mattress-selection",
-      "sofa-selection",
-      "self-renovation-pitfalls"
-    ]
-  },
-  {
-    "slug": "renovation-acceptance",
-    "title": "Acceptance Standards",
-    "description": "Standards and key points for plumbing, waterproofing, tiling, carpentry, and painting acceptance.",
-    "category": "Decoration Guide",
-    "coverImage": "",
-    "order": [
-      "plumbing-electrical-acceptance",
-      "bathroom-backfill-waterproofing",
-      "tile-installation-acceptance",
-      "carpentry-acceptance",
-      "painter-acceptance-putty-paint",
-      "wall-demolition-new-wall"
-    ]
-  },
-  {
-    "slug": "main-materials-guide",
-    "title": "Materials Selection Guide",
-    "description": "Purchasing guides and tips for AC, floor heating, windows, water purifiers, and more.",
-    "category": "Decoration Guide",
-    "coverImage": "",
-    "order": [
+      "main-auxiliary-materials-selection",
       "central-ac-selection-install",
       "ducted-ac-selection-install",
       "floor-heating-online-selection",
       "window-sealing-online-checklist",
       "water-purifier-selection",
+      "whole-house-customization",
+      "cabinet-formaldehyde-removal",
       "washing-machine-selection",
       "robot-vacuum-selection",
-      "cabinet-formaldehyde-removal",
-      "whole-house-customization",
-      "main-auxiliary-materials-selection"
+      "soft-decoration-knowledge",
+      "sofa-selection",
+      "bed-mattress-selection",
+      "small-apartment-decoration",
+      "decoration-mistakes",
+      "self-renovation-pitfalls"
     ]
   },
   {
-    "slug": "smart-home",
-    "title": "Smart Life Guide",
-    "description": "Selection and configuration of smart home devices, plus home organization, living philosophy, and everyday life hacks.",
+    "slug": "life-and-mind",
+    "title": "Life & Mind Series",
+    "description": "Reflections on dwelling, storage, smart living and the choices we live by — how a house shelters the body and settles the mind.",
     "category": "Smart Life",
     "coverImage": "",
     "order": [
-      "smart-home-system",
-      "robot-vacuum-selection",
-      "home-storage-solutions",
       "living-body-and-soul",
+      "why-chinese-homes-big-living-room-small-kitchen",
+      "home-storage-solutions",
+      "smart-home-system",
       "quiet-fortune-life-hacks"
     ]
   },
   {
-    "slug": "image-processing",
-    "title": "Image Processing Tips",
-    "description": "Practical tips for background removal, image formats, and product photography.",
+    "slug": "tools-and-tech",
+    "title": "Tools & Tech Series",
+    "description": "Background removal, image formats, white-background product photos and AI coding tools — getting the most out of your tools.",
     "category": "Tool Reviews",
     "coverImage": "",
     "order": [
       "batch-background-removal",
       "online-background-removal-tools",
       "product-photo-guide",
-      "image-format-guide"
+      "image-format-guide",
+      "choose-right-tools",
+      "ai-coding-august-experience"
     ]
   }
 ]

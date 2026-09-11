@@ -356,22 +356,12 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://qingzao.site/series/renovation-acceptance</loc>
+    <loc>https://qingzao.site/series/life-and-mind</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://qingzao.site/series/main-materials-guide</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://qingzao.site/series/smart-home</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://qingzao.site/series/image-processing</loc>
+    <loc>https://qingzao.site/series/tools-and-tech</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

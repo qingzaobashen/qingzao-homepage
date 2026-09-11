@@ -26,6 +26,16 @@
 - 注意：`public/google<id>.html` 是 AdSense **站点验证文件**，只含验证 meta，**不应**注入广告脚本（已确认不注入）。
 - `npm run build:full` 链：`generate-sitemap` → `vite build` → `prerender`。任一步失败会导致 dist 残留旧文件；如改动 prerender 后验证，建议单独跑 `node scripts/prerender.mjs` 再 grep 确认。
 
+## 系列专题约定（2026-09-11 重构为三大核心系列）
+- 系列数据源：`src/data/series/series-zh.json` / `series-en.json`，**两个文件的 slug 与 order 必须完全一致**（英文只翻译 title/description/category）。
+- 只有三个系列，新文章必须归入其一：
+  1. `decoration-full-process` 装修全流程系列（装修相关文章全部归入）
+  2. `life-and-mind` 机制人生系列（生活、人生思考）
+  3. `tools-and-tech` 工具与技术系列（工具、技术）
+- 旧 slug（`renovation-acceptance`、`main-materials-guide`、`smart-home`、`image-processing`）已废弃，由 `SeriesDetailPage.jsx` 的 `LEGACY_SERIES_SLUGS` 做 `<Navigate>` 兼容跳转；**新增/改名系列时记得同步这张映射表**。
+- 首页展示在 `locales/*.json` 的 `home.featuredSeries`（3 张卡片：slug/title/count/description/tags/image）与 `home.categories[].subs`；改系列必须同步改这两处，否则首页链接 404。
+- 系列 `category` 字段沿用四分类词汇（装修指南/机制生活/工具评测）；文章 `category` 是另一套维度，供 `/blog?category=` 筛选，勿混用。
+
 ## 博客文章写作规范（2026-09-10 核实）
 - **文章首标题必须用 `#`（H1）**：`BlogPostPage.jsx` 与 `prerender.mjs` 的 `buildPostHtml` 都只输出面包屑 + meta，**不渲染 h1**，页面唯一的 h1 来自 markdown 正文。用 `##` 开头会导致整页无 h1（现存 `living-body-and-soul`、`quiet-fortune` 有此问题）。
 - 分类只有四个：zh「装修指南 / 机制生活 / 图片处理 / 工具评测」，en「Decoration Guide / Smart Life / Image Processing / Tool Reviews」。新文章须归入其一。
