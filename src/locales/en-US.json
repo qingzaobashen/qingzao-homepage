@@ -311,7 +311,8 @@
           { "label": "Privacy Policy", "href": "/privacy" },
           { "label": "Terms of Service", "href": "/terms" },
           { "label": "Disclaimer", "href": "/disclaimer" },
-          { "label": "Editorial Guidelines", "href": "/editorial" }
+          { "label": "Editorial Guidelines", "href": "/editorial" },
+          { "label": "BabyAI Art Studio Privacy Policy", "href": "/baby-ai-studio/privacy" }
         ]
       }
     },
@@ -404,6 +405,91 @@
             "If you have any questions, comments, or suggestions about this Privacy Policy, please contact us at:",
             "Email: xiayiye580@gmail.com",
             "Last Updated: January 2025"
+          ]
+        }
+      ]
+    },
+    "appPrivacy": {
+      "title": "BabyAI Art Studio Privacy Policy",
+      "seoDescription": "BabyAI Art Studio (baby photo editor) Privacy Policy — how we collect, use, store, and share your photos, device data, and purchase data.",
+      "intro": "BabyAI Art Studio (referred to as \"the App\" or \"we\") is a photo editing app that helps parents add frames, templates, and AI-powered creative effects to their baby photos. We understand that photos — especially photos of children — are highly sensitive personal data. We therefore handle your data under the principles of \"data minimization, local-first processing, and transparency.\" This policy explains how the App collects, uses, stores, shares, and protects your data, and the rights you have.",
+      "sections": [
+        {
+          "title": "1. Data We Collect",
+          "content": [
+            "We only collect the minimum data necessary to deliver our features. The categories are as follows:",
+            "1. Photos and images you provide: Photos you upload when using frames, collage, photo editing, and background cutout features. These photos (which may include portraits of you or your children) are processed locally on your device for local editing and on-device cutout, and are not uploaded to our servers.",
+            "2. Images used for AI creative features: When you use cloud-based features such as image-to-image generation or multi-image fusion in the \"AI Studio,\" the photos you select are sent to our partner AI cloud service provider to generate the effects. We do not use these images for model training or any other purpose.",
+            "3. Device and operational information: Device model, OS version, app version, crash logs, and feature usage statistics. This data is used to troubleshoot issues and improve the product, and generally does not contain information that directly identifies you (except the advertising identifier, see item 4).",
+            "4. Advertising identifier and ad interaction data: When using rewarded ads (Google AdMob), Google collects the advertising identifier (Advertising ID) and ad impression and click interaction data.",
+            "5. Purchase and membership data: When you subscribe or purchase a plan via in-app purchases (Google Play / Apple App Store), the transaction is handled by the respective platform; we record necessary information such as orders, membership entitlements, and generation credits through our backend service to fulfill delivery and entitlement verification.",
+            "We do not collect sensitive personal information such as your name, phone number, contacts, or precise location, unless you voluntarily provide it."
+          ]
+        },
+        {
+          "title": "2. How We Use Data",
+          "content": [
+            "1. To deliver core features: perform local photo editing, cutout, template composition, and export/sharing.",
+            "2. To provide AI creative features: send the images you select to the AI cloud provider to generate effects.",
+            "3. To complete transactions and entitlement fulfillment: process subscriptions/purchases, verify entitlements, and manage generation credits.",
+            "4. To maintain and improve: use crash logs and anonymized usage statistics to troubleshoot and optimize the experience.",
+            "5. To display ads: show rewarded ads via Google AdMob; after you watch them in full you receive extra generation credits. Ad personalization is handled by Google under its privacy policy."
+          ]
+        },
+        {
+          "title": "3. How We Share Data",
+          "content": [
+            "We do not sell your personal information. We share data with third parties only in the following cases:",
+            "1. AI cloud service provider: for cloud-based AI image generation; the shared content is the image itself used for generation.",
+            "2. Advertising partner (Google AdMob): for ad delivery and attribution; the shared content is the advertising identifier and ad interaction data.",
+            "3. App store platforms (Google Play / Apple App Store): to complete in-app purchases and subscriptions.",
+            "4. Backend service provider (Supabase): to host order, entitlement, and credit data.",
+            "5. Legal requirements: when disclosure is required by judicial or regulatory authorities under applicable law.",
+            "The third parties above are each bound by their own privacy policies; we recommend reviewing their policies to understand how they handle data."
+          ]
+        },
+        {
+          "title": "4. Data Storage & Security",
+          "content": [
+            "1. Local-first: photo editing and on-device cutout are completed locally; original photos are not uploaded.",
+            "2. Transmission security: all cloud transmissions are encrypted via HTTPS/TLS.",
+            "3. Cloud image processing: images sent to the AI cloud are used only for the current generation; after processing we require the provider not to retain them. The specific retention period is subject to that provider's policy.",
+            "4. Access control: we apply reasonable access-control and encryption measures to backend data.",
+            "5. Data retention: we retain data only for the period necessary to fulfill the purposes of this policy; after that we delete or anonymize it."
+          ]
+        },
+        {
+          "title": "5. Children's Data Protection",
+          "content": [
+            "The App is for parents to create edits of their children's photos. It is not specifically designed to be directed at children, and we do not knowingly collect information directly from children. The baby/children's photos you upload are uploaded by you (the guardian) through your own deliberate action, for creating content from your own family photos.",
+            "We treat such images like any other personal data, following the principle of \"data minimization.\" If you are a minor, please use the App with a guardian. If we discover that we have inadvertently collected a child's personal information, we will delete it as soon as possible."
+          ]
+        },
+        {
+          "title": "6. Your Rights",
+          "content": [
+            "Under applicable law, you have the right to access, correct, and delete your personal data; to withdraw consent previously given; and to opt out of personalized ads (by resetting or opting out of the advertising identifier via your device's \"Ads\" settings).",
+            "To delete your cloud data or exercise any other right, please contact us via the email below, and we will respond within a reasonable period."
+          ]
+        },
+        {
+          "title": "7. International Data Transfers",
+          "content": [
+            "Our third-party service providers (such as the AI cloud provider, Supabase, Google, and Apple) may be located in different countries or regions. Your data may be processed and stored in the countries/regions where these providers operate, and such transfers are subject to the providers' privacy policies and the corresponding legal frameworks."
+          ]
+        },
+        {
+          "title": "8. Policy Updates",
+          "content": [
+            "We may update this policy from time to time and publish the updated version in the App and on this page, with the \"Last Updated\" date revised accordingly. For material changes we will notify you via in-app notice or other reasonable means. Continued use of the App constitutes your acceptance of the updated policy."
+          ]
+        },
+        {
+          "title": "9. Contact Us",
+          "content": [
+            "If you have any questions, comments, or suggestions about this Privacy Policy, please contact us at:",
+            "Email: xiayiye580@gmail.com",
+            "Last Updated: October 2026"
           ]
         }
       ]

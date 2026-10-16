@@ -21,6 +21,7 @@ import SeriesListPage from './pages/SeriesListPage'
 import SeriesDetailPage from './pages/SeriesDetailPage'
 import DisclaimerPage from './pages/DisclaimerPage'
 import EditorialPage from './pages/EditorialPage'
+import AppPrivacyPage from './pages/AppPrivacyPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import ProductsPage from './pages/ProductsPage'
@@ -80,6 +81,7 @@ function App() {
           <Route path="/editorial" element={<EditorialPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/baby-ai-studio/privacy" element={<AppPrivacyPage />} />
           <Route path="/blog" element={<BlogListPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/series" element={<SeriesListPage />} />
@@ -95,6 +97,7 @@ function App() {
           <Route path="/en/editorial" element={<EditorialPage />} />
           <Route path="/en/about" element={<AboutPage />} />
           <Route path="/en/contact" element={<ContactPage />} />
+          <Route path="/en/baby-ai-studio/privacy" element={<AppPrivacyPage />} />
           <Route path="/en/blog" element={<BlogListPage />} />
           <Route path="/en/blog/:slug" element={<BlogPostPage />} />
           <Route path="/en/series" element={<SeriesListPage />} />
