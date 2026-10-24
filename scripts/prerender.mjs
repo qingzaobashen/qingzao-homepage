@@ -186,6 +186,28 @@ const staticRoutes = [
     alternates: { 'zh-CN': '/terms', 'en-US': '/en/terms', 'x-default': '/terms' },
   },
   {
+    // BabyAI Art Studio（婴儿照片编辑器 App）专属隐私政策页。
+    // 必须预渲染为真实静态 HTML：Google Play 审核爬虫只认 HTTP 200，
+    // SPA 客户端路由渲染出的内容对爬虫无效（此前线上返回 404 导致审核被拒）。
+    // 标题/描述直接取自 locales 的 legal.appPrivacy，与运行时 SEO 保持一致避免漂移。
+    route: '/baby-ai-studio/privacy',
+    zh: {
+      title: zhLocale.legal.appPrivacy.title,
+      description: zhLocale.legal.appPrivacy.seoDescription,
+      canonical: '/baby-ai-studio/privacy',
+    },
+    en: {
+      title: enLocale.legal.appPrivacy.title,
+      description: enLocale.legal.appPrivacy.seoDescription,
+      canonical: '/en/baby-ai-studio/privacy',
+    },
+    alternates: {
+      'zh-CN': '/baby-ai-studio/privacy',
+      'en-US': '/en/baby-ai-studio/privacy',
+      'x-default': '/baby-ai-studio/privacy',
+    },
+  },
+  {
     route: '/disclaimer',
     // 与 DisclaimerPage 的 t('legal.disclaimer.title' / 'legal.disclaimer.seoDescription') 对齐
     zh: { title: '免责声明', description: '青枣工作室免责声明，了解网站内容的使用范围和责任限制。', canonical: '/disclaimer' },
@@ -537,6 +559,8 @@ function buildStaticBodyHtml(route, locale = 'zh') {
 
     case '/privacy':
       return legalHtml('privacy')
+    case '/baby-ai-studio/privacy':
+      return legalHtml('appPrivacy')
     case '/terms':
       return legalHtml('terms')
     case '/disclaimer':
